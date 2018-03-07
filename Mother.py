@@ -10,7 +10,7 @@ from tkFileDialog import askopenfilename
 import copy
 import SampleVsPopulation as svp
 import SampleVsSample as svs
-import ChiTest as ct
+# import ChiTest as ct
 import os
 
 try:
@@ -794,12 +794,13 @@ class OOTO_Miner:
         self.labelFeatACount.configure(text="Dataset Count: " + str(len(self.datasetA['Data'])))
         self.labelFeatBCount.configure(text="Dataset Count: " + str(len(self.datasetB['Data']))) 
 
+        '''
         self.labelFramePreprocessor = LabelFrame(self.Tabs_t2)
         self.labelFramePreprocessor.place(relx=0.01, rely=0.2, relheight=0.19
                                           , relwidth=1.11)
         self.labelFramePreprocessor.configure(relief=GROOVE)
         self.labelFramePreprocessor.configure(foreground="black")
-        self.labelFramePreprocessor.configure(text='''Preprocessor''')
+        self.labelFramePreprocessor.configure(text="Preprocessor")
         self.labelFramePreprocessor.configure(background="#d9d9d9")
         self.labelFramePreprocessor.configure(highlightbackground="#d9d9d9")
         self.labelFramePreprocessor.configure(highlightcolor="black")
@@ -815,7 +816,7 @@ class OOTO_Miner:
         self.labelVariableDescriptor.configure(foreground="#000000")
         self.labelVariableDescriptor.configure(highlightbackground="#d9d9d9")
         self.labelVariableDescriptor.configure(highlightcolor="black")
-        self.labelVariableDescriptor.configure(text='''Variable Descriptor:''')
+        self.labelVariableDescriptor.configure(text="Variable Descriptor:")
 
         self.buttonVariableDescriptor = Button(self.labelFramePreprocessor)
         self.buttonVariableDescriptor.place(relx=0.74, rely=0.17, height=23
@@ -828,7 +829,7 @@ class OOTO_Miner:
         self.buttonVariableDescriptor.configure(highlightbackground="#d9d9d9")
         self.buttonVariableDescriptor.configure(highlightcolor="black")
         self.buttonVariableDescriptor.configure(pady="0")
-        self.buttonVariableDescriptor.configure(text='''Choose File...''')
+        self.buttonVariableDescriptor.configure(text="Choose File...")
 
         self.labelRawDataset = Label(self.labelFramePreprocessor)
         self.labelRawDataset.place(relx=0.01, rely=0.43, height=26, width=172)
@@ -839,7 +840,7 @@ class OOTO_Miner:
         self.labelRawDataset.configure(foreground="#000000")
         self.labelRawDataset.configure(highlightbackground="#d9d9d9")
         self.labelRawDataset.configure(highlightcolor="black")
-        self.labelRawDataset.configure(text='''Raw Dataset:''')
+        self.labelRawDataset.configure(text="Raw Dataset: ")
 
         self.entryRawDataset = Entry(self.labelFramePreprocessor)
         self.entryRawDataset.place(relx=0.17, rely=0.43, relheight=0.21
@@ -864,7 +865,7 @@ class OOTO_Miner:
         self.buttonRawDataset.configure(highlightbackground="#d9d9d9")
         self.buttonRawDataset.configure(highlightcolor="black")
         self.buttonRawDataset.configure(pady="0")
-        self.buttonRawDataset.configure(text='''Choose File...''')
+        self.buttonRawDataset.configure(text="Choose File...")
 
         self.buttonStartPreprocessor = Button(self.labelFramePreprocessor)
         self.buttonStartPreprocessor.place(relx=0.74, rely=0.7, height=23
@@ -877,14 +878,15 @@ class OOTO_Miner:
         self.buttonStartPreprocessor.configure(highlightbackground="#d9d9d9")
         self.buttonStartPreprocessor.configure(highlightcolor="black")
         self.buttonStartPreprocessor.configure(pady="0")
-        self.buttonStartPreprocessor.configure(text='''Start''')
+        self.buttonStartPreprocessor.configure(text="Start")
+        '''
 
         '''
         self.progressBarPreprocessor = ttk.Progressbar(self.labelFramePreprocessor)
         self.progressBarPreprocessor.place(relx=0.17, rely=0.7, relwidth=0.56
                                            , relheight=0.0, height=24)
                                            '''
-
+        '''
         self.entryVarDescriptor = Entry(self.labelFramePreprocessor)
         self.entryVarDescriptor.place(relx=0.17, rely=0.17, relheight=0.21, relwidth=0.56)
         self.entryVarDescriptor.configure(background="white")
@@ -893,6 +895,7 @@ class OOTO_Miner:
         self.entryVarDescriptor.configure(foreground="#000000")
         self.entryVarDescriptor.configure(insertbackground="black")
         self.entryVarDescriptor.configure(width=624)
+        '''
 
     '''
     Functions to be called by the bound commands
