@@ -214,6 +214,7 @@ class OOTO_Miner:
         self.buttonTest.configure(highlightcolor="black")
         self.buttonTest.configure(pady="0")
         self.buttonTest.configure(text='''Test''')
+        self.buttonTest.configure(state='disabled')
 
 
         self.buttonTestQueue = Button(self.Tabs_t1)
@@ -227,6 +228,7 @@ class OOTO_Miner:
         self.buttonTestQueue.configure(highlightcolor="black")
         self.buttonTestQueue.configure(pady="0")
         self.buttonTestQueue.configure(text='''Test Queue''')
+        self.buttonTestQueue.configure(state='disabled')
 
         self.buttonClearQueue = Button(self.Tabs_t1)
         self.buttonClearQueue.place(relx=0.627, rely=0.93, height=33, width=115)
@@ -239,6 +241,7 @@ class OOTO_Miner:
         self.buttonClearQueue.configure(highlightcolor="black")
         self.buttonClearQueue.configure(pady="0")
         self.buttonClearQueue.configure(text='''Clear Queue''')
+        self.buttonClearQueue.configure(state='disabled')
 
         self.buttonQueue = Button(self.Tabs_t1)
         self.buttonQueue.place(relx=0.51, rely=0.93, height=33, width=115)
@@ -251,6 +254,7 @@ class OOTO_Miner:
         self.buttonQueue.configure(highlightcolor="black")
         self.buttonQueue.configure(pady="0")
         self.buttonQueue.configure(text='''Enqueue''')
+        self.buttonQueue.configure(state='disabled')
 
         '''
         CHANGES HERE!
@@ -304,6 +308,7 @@ class OOTO_Miner:
         self.entryPopulation.configure(insertbackground="black")
         self.entryPopulation.configure(selectbackground="#c4c4c4")
         self.entryPopulation.configure(selectforeground="black")
+        self.entryPopulation.configure(state='disabled')
 
         self.buttonPopulation = Button(self.Tabs_t1)
         self.buttonPopulation.place(relx=0.01, rely=0.17, height=23, width=486)
@@ -316,6 +321,7 @@ class OOTO_Miner:
         self.buttonPopulation.configure(highlightcolor="black")
         self.buttonPopulation.configure(pady="0")
         self.buttonPopulation.configure(text='''Upload Population''')
+        self.buttonPopulation.configure(state='disabled')
 
         self.labelFrameZTest = LabelFrame(self.Tabs_t1)
         self.labelFrameZTest.place(relx=0.51, rely=0.0, relheight=0.85
@@ -376,6 +382,7 @@ class OOTO_Miner:
         self.listAttributes.configure(selectforeground="black")
         self.listAttributes.configure(width=454)
         self.listAttributes.configure(selectmode=MULTIPLE)
+        self.listAttributes.configure(state='disabled')
 
 
 
@@ -421,6 +428,7 @@ class OOTO_Miner:
         self.buttonGetFeat.configure(pady="0")
         self.buttonGetFeat.configure(text='''Enter Feature Code''')
         self.buttonGetFeat.configure(width=156)
+        self.buttonGetFeat.configure(state='disabled')
 
         '''
         self.Entry1 = Entry(self.labelFrameZTest)
@@ -455,6 +463,7 @@ class OOTO_Miner:
         self.entrySample.configure(insertbackground="black")
         self.entrySample.configure(selectbackground="#c4c4c4")
         self.entrySample.configure(selectforeground="black")
+        self.entrySample.configure(state='disabled')
 
         self.labelSample = Label(self.labelFrameGenerateSamples)
         self.labelSample.place(relx=0.02, rely=0.11, relheight=0.05, relwidth=0.95)
@@ -469,6 +478,7 @@ class OOTO_Miner:
         self.entryFocus.configure(foreground="#000000")
         self.entryFocus.configure(insertbackground="black")
         self.entryFocus.configure(width=184)
+        self.entryFocus.configure(state='disabled')
 
         '''
         self.entryFocus.place(relx=0.51, rely=0.05, relheight=0.05
@@ -495,6 +505,7 @@ class OOTO_Miner:
         self.buttonSample.configure(highlightcolor="black")
         self.buttonSample.configure(pady="0")
         self.buttonSample.configure(text='''Enter Sample Feature''')
+        self.buttonSample.configure(state='disabled')
 
         '''
         self.buttonFocus = Button(self.labelFrameGenerateSamples)
@@ -521,6 +532,7 @@ class OOTO_Miner:
         self.buttonShowA.configure(highlightcolor="black")
         self.buttonShowA.configure(pady="0")
         self.buttonShowA.configure(text='''Show Features A''')
+        self.buttonShowA.configure(state='disabled')
 
         self.buttonShowB = Button(self.labelFrameGenerateSamples)
         self.buttonShowB.place(relx=0.51, rely=0.24, height=23, width=226)
@@ -533,6 +545,7 @@ class OOTO_Miner:
         self.buttonShowB.configure(highlightcolor="black")
         self.buttonShowB.configure(pady="0")
         self.buttonShowB.configure(text='''Show Features B''')
+        self.buttonShowB.configure(state='disabled')
 
         self.listFeatA = Listbox(self.labelFrameGenerateSamples)
         self.listFeatA.place(relx=0.02, rely=0.41, relheight=0.48, relwidth=0.46)
@@ -547,6 +560,7 @@ class OOTO_Miner:
         self.listFeatA.configure(selectforeground="black")
         self.listFeatA.configure(width=224)
         self.listFeatA.configure(selectmode=MULTIPLE)
+        self.listFeatA.configure(state='disabled')
 
         #COUNT LABEL FOR DATASET A
         self.labelFeatACount = Label(self.labelFrameGenerateSamples)
@@ -570,6 +584,7 @@ class OOTO_Miner:
         self.listFeatB.configure(selectforeground="black")
         self.listFeatB.configure(width=224)
         self.listFeatB.configure(selectmode=MULTIPLE)
+        self.listFeatB.configure(state='disabled')
 
         # COUNT LABEL FOR DATASET B
         self.labelFeatBCount = Label(self.labelFrameGenerateSamples)
@@ -591,6 +606,7 @@ class OOTO_Miner:
         self.buttonSaveDatasets.configure(highlightcolor="black")
         self.buttonSaveDatasets.configure(pady="0")
         self.buttonSaveDatasets.configure(text='Save Datasets')
+        self.buttonSaveDatasets.configure(state='disabled')
         
 
         self.entryFeatA = Entry(self.labelFrameGenerateSamples)
@@ -605,6 +621,7 @@ class OOTO_Miner:
         self.entryFeatA.configure(insertbackground="black")
         self.entryFeatA.configure(selectbackground="#c4c4c4")
         self.entryFeatA.configure(selectforeground="black")
+        self.entryFeatA.configure(state='disabled')
 
         self.entryFeatB = Entry(self.labelFrameGenerateSamples)
         self.entryFeatB.place(relx=0.51, rely=0.17, relheight=0.05
@@ -618,6 +635,7 @@ class OOTO_Miner:
         self.entryFeatB.configure(insertbackground="black")
         self.entryFeatB.configure(selectbackground="#c4c4c4")
         self.entryFeatB.configure(selectforeground="black")
+        self.entryFeatB.configure(state='disabled')
         '''
         BINDING ELEMENTS FOR TAB 1
         notes: bind the functions as objects ( ie. setPopulation not setPopulation() )
@@ -1230,9 +1248,26 @@ class OOTO_Miner:
         self.entryFocus.configure(state='normal')
         self.entryFocus.delete(0, END)
         self.entryFeatA.configure(state='normal')
+        self.entryFeatA.delete(0, END)
         self.entryFeatB.configure(state='normal')
+        self.entryFeatB.delete(0, END)
         self.buttonShowA.configure(state='normal')
         self.buttonShowB.configure(state='normal')
+
+        # UNLOCK WHEN TEST SELECTED
+        self.entryVariableFile.configure(state='normal')
+        self.entryVariableFile.delete(0, END)
+        self.entryPopulation.configure(state='normal')
+        self.buttonPopulation.configure(state='normal')
+        self.buttonTest.configure(state='normal')
+        self.buttonTestQueue.configure(state='normal')
+        self.buttonPopulation.configure(state='normal')
+        self.buttonClearQueue.configure(state='normal')
+        self.buttonQueue.configure(state='normal')
+        self.buttonSaveDatasets.configure(state='normal')
+        self.listAttributes.configure(state='normal')
+        self.listFeatA.configure(state='normal')
+        self.listFeatB.configure(state='normal')
         if testType == 'Chi-test':
             self.buttonGetFeat.configure(state='disabled')
             self.labelZCriticalValue.configure(state='disabled')
