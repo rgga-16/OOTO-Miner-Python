@@ -1,0 +1,4871 @@
+^,a9,Main language spoken at home
+a,1, English
+b,2, Tagalog
+c,3, Cebuano
+d,4, Ilocano
+e,5, Bicol Riconada
+f,6, Bicol Partido
+g,7, Bicol Naga
+h,8, Waray
+i,9, Kapampangan
+j,10, Itawes
+^,reg1,Region
+a,1, Ilocos
+b,2, Cagayan Valley
+c,3, Central Luzon
+d,4, CALABARZON
+e,5, Bicol
+f,6, Western Visayas
+g,7, Central Visayas
+h,8, Eastern Visayas
+i,9, Zamboanga Peninsula
+j,10, Northern Mindanao
+k,11, Davao
+l,12, SOCCSKSARGEN
+m,13, NCR
+n,14, CAR
+o,15, ARMM
+p,16, CARAGA
+q,17, MIMAROPA
+r,18, Negros Island Region
+^,prov1,Province
+a,1, Pangasinan
+b,2, Cagayan
+c,3, Aurora
+d,4, Pampanga
+e,5, Batangas
+f,6, Cavite
+g,7, Rizal
+h,8, Camarines Sur
+i,9, Capiz
+j,10, Cebu
+k,11, Eastern Samar
+l,12, Zamboanga del Sur
+m,13, Bukidnon
+n,14, Davao del Norte
+o,15, Davao del Sur
+p,16, Sultan Kudarat
+q,17, Caloocan
+r,18, Manila+B3
+s,19, Marikina
+t,20, Quezon City
+u,21, Abra
+v,22, Benguet
+w,23, Surigao del Sur
+x,24, Occidental Mindoro
+y,25, Negros Occidental
+z,26, Maguindanao
+^,ur1,Urban or Rural
+a,0, Rural
+b,1, Urban
+^,a1,Gender
+a,1, Male
+b,2, Female
+^,a2,Birthdate
+a,9, 9-11
+a,10, 9-11
+a,11, 9-11
+b,12, 12-14
+b,13, 12-14
+b,14, 12-14
+c,15, 15-17
+c,16, 15-17
+c,17, 15-17
+^,a3a,Mother
+a,0, No
+b,1, Yes
+^,a3b,Father
+a,0, No
+b,1, Yes
+^,a3c,Step or foster mother
+a,0, No
+b,1, Yes
+^,a3d,Step or foster father
+a,0, No
+b,1, Yes
+^,a3e,Grandparent(s) or other relatives
+a,0, No
+b,1, Yes
+^,a3f,Siblings (including half; step or foster siblings)
+a,0, No
+b,1, Yes
+^,a3g,My spouse or partner (including boyfriend/girlfriend)
+a,0, No
+b,1, Yes
+^,a3h,My child or children
+a,0, No
+b,1, Yes
+^,a3i,Parents (or relatives) of my spouse or partner
+a,0, No
+b,1, Yes
+^,a3j,I live in a foster home or children's home
+a,0, No
+b,1, Yes
+^,a3k,I live alone
+a,0, No
+b,1, Yes
+^,a3l,Someone or somewhere else: please state____
+a,0, No
+b,1, Yes
+^,a4a,I am a school student
+a,0, No
+b,1, Yes
+^,a4g,I am a student in college
+a,0, No
+b,1, Yes
+^,a4h,I am attending training in technical/vocational course
+a,0, No
+b,1, Yes
+^,a4c,I do paid employment
+a,0, No
+b,1, Yes
+^,a4d,I do unpaid work
+a,0, No
+b,1, Yes
+^,a4e,I am looking for work
+a,0, No
+b,1, Yes
+^,a4f,I help out at home
+a,0, No
+b,1, Yes
+^,a4i,I am currently in a vacation
+a,0, No
+b,1, Yes
+^,a5,Schooling
+a,1, I have never been to school
+b,2, Preschool
+b,3, Elementary
+b,4, High School
+b,5, Senior High School
+b,6, Technical-vocational course
+b,7, College
+c,8, Other (please; specify)
+x,9, Prefer not to say
+^,b1,How old were you when you first used the internet?
+x,99, Prefer not to say
+^,b3,Are you able to access the internet when you want to or need to?
+a,1, Never
+b,2, Sometimes
+b,3, Often
+b,4, Always
+^,b6a,At school or college
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,b6b,At home
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,b6c,In the home of friends or relatives
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,b6d,In a public place (for example; in libraries; cafés; computer shops)
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,b6e,When I am on my way somewhere (e.g. on the street; in a bus or car)
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,b6f,When I am somewhere by myself
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,b6g,PisoNet
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,b7a,A mobile phone that is not a smartphone
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,b7b,A smartphone [iPhone; Samsung Galaxy; Cherry Mobile; Star Mobile; etc]
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,b7c,A desktop computer
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,b7d,A laptop or notebook computer
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,b7e,A tablet [iPad; Samsung Galaxy tab; PLDT Home tablet; etc]
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,b7f,A games console [Playstation; Xbox; PSP; Nintendo; 3DS; etc]
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,b8a,A mobile phone that is not a smartphone
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,b8b,A smartphone [iPhone; Samsung Galaxy; Cherry Mobile; Star Mobile; etc]
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,b8c,A desktop computer
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,b8d,A laptop or notebook computer
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,b8e,A tablet [iPad; Samsung Galaxy tab; PLDT Home tablet; etc]
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,b8f,A games console [Playstation; Xbox; PSP; Nintendo; 3DS; etc]
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,b9a,I use a postpaid plan (i.e.; with contracts)
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,b9b,I use freeWIFI (at home; in school; coffee shop or cafés; malls; etc.)
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,b9c,I pay for internet I use (e.g. in a cybercafé or internet cafe; PisoNet)
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,b9d,I use prepaid offers (e.g. GOSurf; GIGASurf; etc.)
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,b10a,Do you connect to the internet by yourself?
+a,0, No
+b,1, Yes
+^,b10b1,My parents
+a,0, No
+b,1, Yes
+^,b10b2,My siblings
+a,0, No
+b,1, Yes
+^,b10b3,Relatives
+a,0, No
+b,1, Yes
+^,b10c1,Friends who are the same age as I am
+a,0, No
+b,1, Yes
+^,b10c2,Friends who are older than me
+a,0, No
+b,1, Yes
+^,b10d,My teacher
+a,0, No
+b,1, Yes
+^,b10e,Others
+a,0, No
+b,1, Yes
+^,b11,About how long do you spend on the internet on an ordinary week day (school day or working day)?
+^,b12,About how long do you spend on the internet on a day at the weekend?
+^,c1,Do you usually have a good time or fun when you go online?
+a,1, Yes; always
+a,2, Yes; sometimes
+b,3, No; not often
+c,4, Other (please specify)
+x,5, Prefer not to say
+^,c2,What do you think about this sentence: ‘There are lots of things on the internet that are good for children of my age’?
+a,1, Not true
+b,2, A bit true
+b,3, Fairly true
+b,4, Very true
+x,5, Prefer not to say
+^,c4a,I learned something new by searching online
+a,1, Never
+a,2, Hardly ever
+b,3, At least every week
+b,4, Daily or almost daily
+b,5, Several times each day
+b,6, Almost all the time
+x,7, Prefer not to say
+^,c4c,I used the internet for schoolwork
+a,1, Never
+a,2, Hardly ever
+b,3, At least every week
+b,4, Daily or almost daily
+b,5, Several times each day
+b,6, Almost all the time
+x,7, Prefer not to say
+^,c4b,I looked for information about work or study opportunities
+a,1, Never
+a,2, Hardly ever
+b,3, At least every week
+b,4, Daily or almost daily
+b,5, Several times each day
+b,6, Almost all the time
+x,7, Prefer not to say
+^,c4c1,Checked maps
+a,1, Never
+a,2, Hardly ever
+b,3, At least every week
+b,4, Daily or almost daily
+b,5, Several times each day
+b,6, Almost all the time
+x,7, Prefer not to say
+^,c4c2,I looked for information about the place I want to go visit/eat
+a,1, Never
+a,2, Hardly ever
+b,3, At least every week
+b,4, Daily or almost daily
+b,5, Several times each day
+b,6, Almost all the time
+x,7, Prefer not to say
+^,c4d,I looked for resources or events about my local neighbourhood
+a,1, Never
+a,2, Hardly ever
+b,3, At least every week
+b,4, Daily or almost daily
+b,5, Several times each day
+b,6, Almost all the time
+x,7, Prefer not to say
+^,c4f,I got involved online in a local organisation or charity
+a,1, Never
+a,2, Hardly ever
+b,3, At least every week
+b,4, Daily or almost daily
+b,5, Several times each day
+b,6, Almost all the time
+x,7, Prefer not to say
+^,c4g,I used the internet to help somebody else
+a,1, Never
+a,2, Hardly ever
+b,3, At least every week
+b,4, Daily or almost daily
+b,5, Several times each day
+b,6, Almost all the time
+x,7, Prefer not to say
+^,c4e,I used the internet to talk to people from places or backgrounds different from mine
+a,1, Never
+a,2, Hardly ever
+b,3, At least every week
+b,4, Daily or almost daily
+b,5, Several times each day
+b,6, Almost all the time
+x,7, Prefer not to say
+^,c4h,I looked for the news online
+a,1, Never
+a,2, Hardly ever
+b,3, At least every week
+b,4, Daily or almost daily
+b,5, Several times each day
+b,6, Almost all the time
+x,7, Prefer not to say
+^,c4i,I discussed political or social problems with other people online
+a,1, Never
+a,2, Hardly ever
+b,3, At least every week
+b,4, Daily or almost daily
+b,5, Several times each day
+b,6, Almost all the time
+x,7, Prefer not to say
+^,c4j,I got involved online in a campaign or protest
+a,1, Never
+a,2, Hardly ever
+b,3, At least every week
+b,4, Daily or almost daily
+b,5, Several times each day
+b,6, Almost all the time
+x,7, Prefer not to say
+^,c4k,I signed a petition online
+a,1, Never
+a,2, Hardly ever
+b,3, At least every week
+b,4, Daily or almost daily
+b,5, Several times each day
+b,6, Almost all the time
+x,7, Prefer not to say
+^,c4l,I used the internet to join a civic; religious or political group
+a,1, Never
+a,2, Hardly ever
+b,3, At least every week
+b,4, Daily or almost daily
+b,5, Several times each day
+b,6, Almost all the time
+x,7, Prefer not to say
+^,c4o,I posted videos or music created by someone else
+a,1, Never
+a,2, Hardly ever
+b,3, At least every week
+b,4, Daily or almost daily
+b,5, Several times each day
+b,6, Almost all the time
+x,7, Prefer not to say
+^,c4m,I created my own video or music and uploaded it to share
+a,1, Never
+a,2, Hardly ever
+b,3, At least every week
+b,4, Daily or almost daily
+b,5, Several times each day
+b,6, Almost all the time
+x,7, Prefer not to say
+^,c4n,I created a blog or story or website online
+a,1, Never
+a,2, Hardly ever
+b,3, At least every week
+b,4, Daily or almost daily
+b,5, Several times each day
+b,6, Almost all the time
+x,7, Prefer not to say
+^,c4o1,I created my own artwork; designs and illustrations and uploaded them on the internet
+a,1, Never
+a,2, Hardly ever
+b,3, At least every week
+b,4, Daily or almost daily
+b,5, Several times each day
+b,6, Almost all the time
+x,7, Prefer not to say
+^,c4r,I used instant messaging [insert local examples e.g. Viber; WhatsApp]
+a,1, Never
+a,2, Hardly ever
+b,3, At least every week
+b,4, Daily or almost daily
+b,5, Several times each day
+b,6, Almost all the time
+x,7, Prefer not to say
+^,c4p,I visited a social network site (e.g.; Facebook [add local examples])
+a,1, Never
+a,2, Hardly ever
+b,3, At least every week
+b,4, Daily or almost daily
+b,5, Several times each day
+b,6, Almost all the time
+x,7, Prefer not to say
+^,c4t,I helped someone else who needed or wanted to go online
+a,1, Never
+a,2, Hardly ever
+b,3, At least every week
+b,4, Daily or almost daily
+b,5, Several times each day
+b,6, Almost all the time
+x,7, Prefer not to say
+^,c4q,I talked to family or friends who live further away (e.g. by Skype; Viber; FaceTime)
+a,1, Never
+a,2, Hardly ever
+b,3, At least every week
+b,4, Daily or almost daily
+b,5, Several times each day
+b,6, Almost all the time
+x,7, Prefer not to say
+^,c4u,I commented on the updates that friends or family have put online
+a,1, Never
+a,2, Hardly ever
+b,3, At least every week
+b,4, Daily or almost daily
+b,5, Several times each day
+b,6, Almost all the time
+x,7, Prefer not to say
+^,c4t1,I re-posted or shared a social media post online
+a,1, Never
+a,2, Hardly ever
+b,3, At least every week
+b,4, Daily or almost daily
+b,5, Several times each day
+b,6, Almost all the time
+x,7, Prefer not to say
+^,c4v,I showed my friends or family something that I saw online
+a,1, Never
+a,2, Hardly ever
+b,3, At least every week
+b,4, Daily or almost daily
+b,5, Several times each day
+b,6, Almost all the time
+x,7, Prefer not to say
+^,c4w,I visited a chatroom to meet new people [insert local examples]
+a,1, Never
+a,2, Hardly ever
+b,3, At least every week
+b,4, Daily or almost daily
+b,5, Several times each day
+b,6, Almost all the time
+x,7, Prefer not to say
+^,c4x,I watched video clips (e.g. on YouTube [insert local examples])
+a,1, Never
+a,2, Hardly ever
+b,3, At least every week
+b,4, Daily or almost daily
+b,5, Several times each day
+b,6, Almost all the time
+x,7, Prefer not to say
+^,c4y,I played online games alone
+a,1, Never
+a,2, Hardly ever
+b,3, At least every week
+b,4, Daily or almost daily
+b,5, Several times each day
+b,6, Almost all the time
+x,7, Prefer not to say
+^,c4z,I played games with other people online
+a,1, Never
+a,2, Hardly ever
+b,3, At least every week
+b,4, Daily or almost daily
+b,5, Several times each day
+b,6, Almost all the time
+x,7, Prefer not to say
+^,c4bb,I listened to music online (by downloading or streaming)
+a,1, Never
+a,2, Hardly ever
+b,3, At least every week
+b,4, Daily or almost daily
+b,5, Several times each day
+b,6, Almost all the time
+x,7, Prefer not to say
+^,c4cc,I watched my favourite TV shows
+a,1, Never
+a,2, Hardly ever
+b,3, At least every week
+b,4, Daily or almost daily
+b,5, Several times each day
+b,6, Almost all the time
+x,7, Prefer not to say
+^,c4cc1,I joined a fan site (of a celebrity or popular band)
+a,1, Never
+a,2, Hardly ever
+b,3, At least every week
+b,4, Daily or almost daily
+b,5, Several times each day
+b,6, Almost all the time
+x,7, Prefer not to say
+^,c4gg,I posted photos or comments online (e.g. on Facebook or a blog)
+a,1, Never
+a,2, Hardly ever
+b,3, At least every week
+b,4, Daily or almost daily
+b,5, Several times each day
+b,6, Almost all the time
+x,7, Prefer not to say
+^,c4ee,I looked for health information for myself or someone I know
+a,1, Never
+a,2, Hardly ever
+b,3, At least every week
+b,4, Daily or almost daily
+b,5, Several times each day
+b,6, Almost all the time
+x,7, Prefer not to say
+^,c4ff,I participated in a site where people share my interests or hobbies
+a,1, Never
+a,2, Hardly ever
+b,3, At least every week
+b,4, Daily or almost daily
+b,5, Several times each day
+b,6, Almost all the time
+x,7, Prefer not to say
+^,c4hh,I browsed for things to buy
+a,1, Never
+a,2, Hardly ever
+b,3, At least every week
+b,4, Daily or almost daily
+b,5, Several times each day
+b,6, Almost all the time
+x,7, Prefer not to say
+^,c4hh1,I checked out what things cost by looking online
+a,1, Never
+a,2, Hardly ever
+b,3, At least every week
+b,4, Daily or almost daily
+b,5, Several times each day
+b,6, Almost all the time
+x,7, Prefer not to say
+^,c4hh2,I have sold an item online
+a,1, Never
+a,2, Hardly ever
+b,3, At least every week
+b,4, Daily or almost daily
+b,5, Several times each day
+b,6, Almost all the time
+x,7, Prefer not to say
+^,c6a,My mother or father (or step/foster mother or father)
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,c6b,My brother or sister (or step/foster/half siblings)
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,c6c,A friend around my age
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,c6d,A teacher
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,c6e,Another adult I trust
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,c6f,Someone I first met on the internet; but who is friends or family of other people I know in person
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,c6g,Someone I first met on the internet; but who has no other connection to my life outside of the internet
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,c6g1,A relative or friend who is an OFW (overseas Filipino worker)
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,c6h,Someone else
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,c7a,My mother or father (or step/foster mother or father)
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,c7b,My brother or sister (or step/foster/half siblings)
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,c7c,A friend around my age
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,c7d,A teacher
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,c7e,Another adult I trust
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,c7f,Someone I first met on the internet; but who is friends or family of other people I know in person
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,c7g,Someone I first met on the internet; but who has no other connection to my life outside of the internet
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,c7g1,A relative or friend who is an OFW (overseas Filipino worker)
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,c7h,Someone else
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,c8a,My mother or father (or step/foster mother or father)
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,c8b,My brother or sister (or step/foster/half siblings)
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,c8c,A friend around my age
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,c8d,A teacher
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,c8e,Another adult I trust
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,c8f,Someone I first met on the internet; but who is friends or family of other people I know in person
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,c8g,Someone I first met on the internet; but who has no other connection to my life outside of the internet
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,c8g1,A relative or friend who is an OFW (overseas Filipino worker)
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,c8h,Someone else
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,c9a,My mother or father (or step/foster mother or father)
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,c9b,My brother or sister (or step/foster/half siblings)
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,c9c,A friend around my age
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,c9d,A teacher
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,c9e,Another adult I trust
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,c9f,Someone I first met on the internet; but who is friends or family of other people I know in person
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,c9g,Someone I first met on the internet; but who has no other connection to my life outside of the internet
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,c9g1,A relative or friend who is an OFW (overseas Filipino worker)
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,c9h,Someone else
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,c10a,Making presentations
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,c10b,Writing things
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,c10c,Making pictures
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,c10d,Practising something I am learning (e.g. maths or a language or music)
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,c10e,Checking out information on the school website
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,c10f,Doing group work with other students
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,c10g,Chatting online at school
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,c10h,Communicating with teachers (e.g. submitting homework or asking a question)
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,c10i,Contributing to a school blog or online discussion
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,d12,How were your social media accounts created?
+a,1, I created my account without changing any information about me
+b,2, I created my account by changing my age and other information about me
+c,3, My parents; brother; sister; or relatives created it for me
+d,4, My friends created it for me
+e,5, Other person created for me
+^,d13,How old were you when you first had your social media account?
+a,9, 9-11
+a,10, 9-11
+a,11, 9-11
+b,12, 12-14
+b,13, 12-14
+b,14, 12-14
+c,15, 15-17
+c,16, 15-17
+c,17, 15-17
+^,d7a,Thinking of the profile you use most often; about how many people are you in contact with when using [named profile]?
+a,1, Up to 10
+b,2, 11-50
+c,3, 51-100
+d,4, 101-300
+e,5, 301-500
+f,6, 501-1000
+g,7, 1001-1500
+h,8, 1501-2000
+i,9, 2001-2500
+j,10, 2501-3000
+k,11, 3001-3500
+l,12, 3501-4000
+m,13, 4001-4500
+n,14, 4501-5000
+o,15, More than 5000
+x,16, Prefer not to say
+^,d7b,More or less; how many are your followers?
+a,1, Up to 10
+b,2, 11-50
+c,3, 51-100
+d,4, 101-300
+e,5, 301-500
+f,6, 501-1000
+g,7, 1001-1500
+h,8, 1501-2000
+i,9, 2001-2500
+j,10, 2501-3000
+k,11, 3001-3500
+l,12, 3501-4000
+m,13, 4001-4500
+n,14, 4501-5000
+o,15, More than 5000
+x,16, Prefer not to say
+^,d7c,More or less; how many do you follow?
+a,1, Up to 10
+b,2, 11-50
+c,3, 51-100
+d,4, 101-300
+e,5, 301-500
+f,6, 501-1000
+g,7, 1001-1500
+h,8, 1501-2000
+i,9, 2001-2500
+j,10, 2501-3000
+k,11, 3001-3500
+l,12, 3501-4000
+m,13, 4001-4500
+n,14, 4501-5000
+o,15, More than 5000
+x,16, Prefer not to say
+^,d8,Is you [named profile] set to...?
+a,1, Public; so everyone can see it
+b,2, Partially private; so that friends of friends or my networks can see me
+c,3, Private so only my friends can see
+x,4, Prefer not to say
+^,d10,How do you usually respond to requests from people to become your ‘friends’ online?
+a,1, I usually accept all requests
+b,2, I accept only if we have friends in common
+b,3, I accept only if I know them
+b,4, I accept only if I know them very well
+c,5, I ignore them
+c,6, I block them or delete the request
+x,7, Prefer not to say
+^,e1a,I know how to save a photo that I find online
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,e1b,I know how to change my privacy settings (e.g. on a social networking site)
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,e1c,I know how to use a programming language (e.g. HTML; XML; etc.)
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,e1f1,I know how to jailbreak; crack games and apps; change IP address
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,e1f2,I know how to hide my IP address
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,e1f3,I know how to set network settings (LAN; wi-fi; device-connection)
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,e1f4,I know how to hack certain files
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,e1f5,I know how to set the firewall
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,e1i,I find it easy to find a website I have visited before
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,e1g,I find it easy to check if the information I find online is true
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,e1h,I find it easy to choose the best keywords for online searches
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,e1k,Sometimes I end up on websites without knowing how I got there
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,e1k1,I know how to use incognito in browsing
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,e1l,I know which information I should and shouldn't share online
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,e1m,I know how to remove people from my contact lists
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,e1m1,I know how to block
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,e1n,I know when I should and shouldn't share information online
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,e1o,I know how to behave according to the situation online
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,e1p,I know how to change who I share content with (e.g. friends; friends of friends or everyone)
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,e1p1,I know how to report abusive posts or things that I find offending in social media (e.g. Facebook report abuse)
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,e1t,I know how to create something new from video or music that I found online
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,e1q,I know how to post online video or music that I have created myself
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,e1s,I know which different types of licences apply to online content
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,e1r,I know how to edit or make basic changes to online content that others have created
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,e1u,I know how to design a website
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,e1v,I know how to install apps on a mobile device (e.g. phone or tablet)
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,e1w,I know how to safeguard my online expenses while using mobile apps
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,e1x,I know how to make an in-app purchase
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,e1x1,I know how to download and carck to full version some paid apps without paying a fee (e.g. torrent; etc.)
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,e3a,Deactivate the function showing my geographical position (on Facebook; Google Maps; etc.)
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,e3b,Connect to a Wi-Fi network
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,e3c,Block push notifications from different apps
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,e3d,Have the same documents; contacts or apps on all devices that I use (e.g. smartphone; tablet; PC)
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,e3e,Block pop ups which promote apps; games or services I have to pay for (unrequested windows that appear during web surfing)
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,e3f,Protect a smartphone with a PIN/with a screen pattern
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,e3g,Update my status on the social networking site I use the most
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,e3h,Find information on how to use smartphones safely
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,e3i,Compare similar apps to choose the one that is most reliable
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,e3j,Take a picture or a video with my smartphone and post it onto social media
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,d1d,Twitter
+a,0, No
+b,1, Yes
+^,d1e,Viber
+a,0, No
+b,1, Yes
+^,d1f,Skype
+a,0, No
+b,1, Yes
+^,d1a,Facebook
+a,0, No
+b,1, Yes
+^,d1c,Instagram
+a,0, No
+b,1, Yes
+^,d1b,WhatsApp
+a,0, No
+b,1, Yes
+^,d1g,YouTube
+a,0, No
+b,1, Yes
+^,d1h,Spotify
+a,0, No
+b,1, Yes
+^,d1i,Wikipedia
+a,0, No
+b,1, Yes
+^,d1j,Tumblr
+a,0, No
+b,1, Yes
+^,d2d,I find it easier to be myself online than when I am with people face-to-face
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,d2e,I talk about different things online than I do when speaking to people face-to-face
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,d2f,I talk about private things online which I do not talk about with people face-to-face
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,d2a,I feel safe on the internet
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,d2b,I find other people are kind and helpful on the internet
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,d2c,I know what to do if someone acts online in a way I don't like
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,d14a,Facebook/Messenger
+a,0, No
+b,1, Yes
+^,d14b,Skype
+a,0, No
+b,1, Yes
+^,d14c,Viber
+a,0, No
+b,1, Yes
+^,d14d,WeChat
+a,0, No
+b,1, Yes
+^,d14e,Instagram
+a,0, No
+b,1, Yes
+^,d14f,Twitter
+a,0, No
+b,1, Yes
+^,d14g,YouTube/Hangout (Google)
+a,0, No
+b,1, Yes
+^,d15a,Minecraft
+a,0, No
+b,1, Yes
+^,d15b,Warcraft DOTA
+a,0, No
+b,1, Yes
+^,d15c,DOTA 2
+a,0, No
+b,1, Yes
+^,d15d,League of Legends
+a,0, No
+b,1, Yes
+^,d15e,Counterstrike
+a,0, No
+b,1, Yes
+^,d15f,Others
+a,0, No
+b,1, Yes
+^,d9a,A photo that clearly shows your face
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,d9b,Your last name
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,d9c,Your address
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,d9d,Your phone number
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,d9e,Your school
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,d9f,Your correct age
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,d9g,An age that is not your real age
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,d9j,Places you've dined and visited
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,d9k,Pictures showing whole body
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f1a,Looked for new friends or contacts on the internet
+a,1, Never
+a,2, Hardly ever
+b,3, At least every week
+b,4, Daily or almost daily
+b,5, Several times each day
+b,6, Almost all the time
+x,7, Prefer not to say
+^,f1b,Sent my personal information (e.g.; my full name; address or phone number) to someone I have never met face-to-face
+a,1, Never
+a,2, Hardly ever
+b,3, At least every week
+b,4, Daily or almost daily
+b,5, Several times each day
+b,6, Almost all the time
+x,7, Prefer not to say
+^,f1c,Added people to my friends or contacts I have never met face-to-face
+a,1, Never
+a,2, Hardly ever
+b,3, At least every week
+b,4, Daily or almost daily
+b,5, Several times each day
+b,6, Almost all the time
+x,7, Prefer not to say
+^,f1d,Pretended to be a different kind of person online from who I really am
+a,1, Never
+a,2, Hardly ever
+b,3, At least every week
+b,4, Daily or almost daily
+b,5, Several times each day
+b,6, Almost all the time
+x,7, Prefer not to say
+^,f1e,Sent a photo or video of myself to someone I have never met face-to-face
+a,1, Never
+a,2, Hardly ever
+b,3, At least every week
+b,4, Daily or almost daily
+b,5, Several times each day
+b,6, Almost all the time
+x,7, Prefer not to say
+^,f1f,Post my current location and those I had been to
+a,1, Never
+a,2, Hardly ever
+b,3, At least every week
+b,4, Daily or almost daily
+b,5, Several times each day
+b,6, Almost all the time
+x,7, Prefer not to say
+^,f1g,Post my new stuff and clothes
+a,1, Never
+a,2, Hardly ever
+b,3, At least every week
+b,4, Daily or almost daily
+b,5, Several times each day
+b,6, Almost all the time
+x,7, Prefer not to say
+^,f1h,Post messages or love quotes that pertain to the boy/girl whom I have a crush on
+a,1, Never
+a,2, Hardly ever
+b,3, At least every week
+b,4, Daily or almost daily
+b,5, Several times each day
+b,6, Almost all the time
+x,7, Prefer not to say
+^,f1i,Seek to get acquainted or befriend persons who are Non-Filipinos (foreigners)
+a,1, Never
+a,2, Hardly ever
+b,3, At least every week
+b,4, Daily or almost daily
+b,5, Several times each day
+b,6, Almost all the time
+x,7, Prefer not to say
+^,f1j,Engage in chat activities with a person whom I only met on internet
+a,1, Never
+a,2, Hardly ever
+b,3, At least every week
+b,4, Daily or almost daily
+b,5, Several times each day
+b,6, Almost all the time
+x,7, Prefer not to say
+^,f1k,Do video calls with a person whom I only met on internet
+a,1, Never
+a,2, Hardly ever
+b,3, At least every week
+b,4, Daily or almost daily
+b,5, Several times each day
+b,6, Almost all the time
+x,7, Prefer not to say
+^,f1l,Receive offers or gifts online
+a,1, Never
+a,2, Hardly ever
+b,3, At least every week
+b,4, Daily or almost daily
+b,5, Several times each day
+b,6, Almost all the time
+x,7, Prefer not to say
+^,f2,Have you EVER had contact on the internet with someone you have not met face-to-face before?
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f3,In the PAST YEAR; have you at least once met anyone face to face that you first got to know on the internet?
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f4,If you met anyone face-to-face that you first got to know on the internet; how did you feel about it?
+a,1, I was happy
+b,2, I was not happy or upset
+c,3, I was a little upset
+c,4, I was fairly upset
+c,5, I was very upset
+x,6, Prefer not to say
+^,f5,Thinking about the LAST TIME you were bothered by meeting someone in this way; how old was the person you actually met?
+a,1, I met with someone about my age
+a,2, I met with someone younger than me
+b,3, I met with a teenager older than me (under 18)
+c,4, I met with an adult (over 18)
+x,5, Prefer not to say
+^,f6a,I've met face to face with a person I just got acquainted on internet but is already known by my friends or relatives
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f6b,I've met face to face with a person I just got acquainted on internet and who is totally unknown to anyone I personally know
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f6c,I've met with a foreigner (different nationality)
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f6d,I've personally met with an older person
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f6e,I've met face to face with a person I just got acquainted on internet and she/he was accompanied by another girl/boy
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f6f,I've met with another woman like myself whom i just got acquainted with on internet
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f6g,I've met with another man like myself whom i just got acquainted with on internet
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f6h,I've met with LGBT person (lesbian; gay; bisexual; transgender) whom i just got acquainted with on internet
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f8,In the PAST YEAR; how many people have you gone to a meeting with face-to-face that you had previously only met on the internet?
+a,1, None
+b,2, 1 to 2
+b,3, 3 to 4
+b,4, 5 to 10
+b,5, More than 10
+x,6, Prefer not to say
+^,f11,In the PAST YEAR; has anything EVER happened online that bothered or upset you in some way? (e.g.; made you feel uncomfortable; scared or that you shouldn’t have seen it)?
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f12,In the PAST YEAR; how often did this happen?
+a,1, Just once or twice
+b,2, At least every month
+b,3, At least every week
+b,4, Daily or almost daily
+x,5, Prefer not to say
+^,f13,Thinking now about the LAST TIME this happened to you; how upset were you about what happened?
+a,1, A little upset
+b,2, Fairly upset
+b,3, Very upset
+x,4, Prefer not to say
+^,f14a,My mother or father (or step/foster mother or father)
+a,0, No
+b,1, Yes
+^,f14b,My brother or sister (orstep/foster/half siblings)
+a,0, No
+b,1, Yes
+^,f14j,Cousin
+a,0, No
+b,1, Yes
+^,f14k,Aunt/Uncle
+a,0, No
+b,1, Yes
+^,f14l,Grandfather/Grandmother
+a,0, No
+b,1, Yes
+^,f14m,Nanny
+a,0, No
+b,1, Yes
+^,f14c,A friend around my age
+a,0, No
+b,1, Yes
+^,f14n,Classmate
+a,0, No
+b,1, Yes
+^,f14o,Boyfriend/Girlfriend
+a,0, No
+b,1, Yes
+^,f14d,A teacher
+a,0, No
+b,1, Yes
+^,f14e,Someone whose job it is to help children
+a,0, No
+b,1, Yes
+^,f14p,Godfather/Godmother
+a,0, No
+b,1, Yes
+^,f14q,Priest/Pastor/Nun
+a,0, No
+b,1, Yes
+^,f14r,Neighbor
+a,0, No
+b,1, Yes
+^,f14f,Another adult I trust
+a,0, No
+b,1, Yes
+^,f14g,Someone else
+a,0, No
+b,1, Yes
+^,f14h,I didn't talk to anyone
+a,0, No
+b,1, Yes
+^,f14i,Prefer not to say
+a,0, No
+b,1, Yes
+^,f15,The last time something happened online that bothered or upset you in some way; how long did you feel like that for?
+a,1, I got over it straight away
+b,2, I felt like that for a few days
+b,3, I felt like that for a few weeks
+b,4, I felt like that for a few months or more
+x,5, Prefer not to say
+^,f16a,I ignored the problem or hoped the problem would go away by itself
+a,0, No
+b,1, Yes
+^,f16b,I closed the window or app
+a,0, No
+b,1, Yes
+^,f16c,I felt a bit guilty about what went wrong
+a,0, No
+b,1, Yes
+^,f16d,I tried to get the other person to leave me alone
+a,0, No
+b,1, Yes
+^,f16e,I tried to get back at the other person
+a,0, No
+b,1, Yes
+^,f16f,I stopped using the internet for a while
+a,0, No
+b,1, Yes
+^,f16g,I deleted any messages from the other person
+a,0, No
+b,1, Yes
+^,f16h,I changed my privacy/ contact settings
+a,0, No
+b,1, Yes
+^,f16i,I blocked the person from contacting me
+a,0, No
+b,1, Yes
+^,f16j,I reported the problem online  (e.g.; clicked on a ‘report abuse’ button; contacted an internet advisor or Internet Service Provider (ISP))
+a,0, No
+b,1, Yes
+^,f16k,Other actions taken
+a,0, No
+b,1, Yes
+^,f18,In the PAST YEAR; has anyone ever treated you in a hurtful or nasty way?
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f19,In the PAST YEAR; how often did this happen?
+a,1, Just once or twice
+b,2, At least every month
+b,3, At least every week
+b,4, Daily or almost daily
+x,5, Prefer not to say
+^,f20a,In person face-to-face (by someone with you in the same place)
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f20b,Via a mobile phone or online device (computer;tablet; etc.)
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f21a,By mobile phone calls
+a,0, No
+b,1, Yes
+^,f21b,By messages sent to me on my phone (SMS/TEXT or MMS)
+a,0, No
+b,1, Yes
+^,f21c,On a social networking site (e.g. Facebook; Twitter etc.)
+a,0, No
+b,1, Yes
+^,f21d,On a media sharing platform (YouTube; Instagram; Flickr)
+a,0, No
+b,1, Yes
+^,f21e,By instant messaging (MSN; What’s app; Skype etc.)
+a,0, No
+b,1, Yes
+^,f21f,In a chatroom
+a,0, No
+b,1, Yes
+^,f21g,In an online game
+a,0, No
+b,1, Yes
+^,f21h,Some other way
+a,0, No
+b,1, Yes
+^,f21i,Prefer not to say
+a,0, No
+b,1, Yes
+^,f22a,Nasty or hurtful messages were sent to me
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f22b,Nasty or hurtful messages were passed around or posted where others could see
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f22c,I was left out or excluded from a group or activity on the internet
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f22d,I was threatened on the internet
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f22e,Other nasty or hurtful things happened to me on the internet
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f23,Thinking of the last time someone treated you in a hurtful or nasty way; how did you feel?
+a,1, I wasn't at all upset
+b,2, I was a little upset
+b,3, I was fairly upset
+b,4, I was very upset
+x,5, Prefer not to say
+^,f24,In the PAST YEAR; have you EVER treated someone else in a hurtful or nasty way?
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f25,In the PAST YEAR; how often have you treated someone in this way?
+a,1, Just once or twice
+b,2, At least every month
+b,3, At least every week
+b,4, Daily or almost daily
+x,5, Prefer not to say
+^,f26a,In person face-to-face (a person that is together with you in the same place at the same time)
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f26b,Via a mobile phone or online device (computer; tablet; etc.)
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f27a,By mobile phone calls
+a,0, No
+b,1, Yes
+^,f27b,By messages sent by the phone (SMS/Text or MMS)
+a,0, No
+b,1, Yes
+^,f27c,On a social networking site (e.g.; Facebook; Twitter)
+a,0, No
+b,1, Yes
+^,f27d,By instant messaging (MSN; WhatsApp; Skype etc.)
+a,0, No
+b,1, Yes
+^,f27e,On a media sharing platform (YouTube; Instagram; Flickr)
+a,0, No
+b,1, Yes
+^,f27f,In a chatroom
+a,0, No
+b,1, Yes
+^,f27g,In an online game
+a,0, No
+b,1, Yes
+^,f27h,Some other way
+a,0, No
+b,1, Yes
+^,f27i,Prefer not to say
+a,0, No
+b,1, Yes
+^,f28,In the PAST YEAR; have you EVER SEEN any sexual images?
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f29,If you have seen images of this kind; how did you feel about what you saw?
+a,1, I was happy
+b,2, I was not happy or upset
+c,3, I was a little upset
+c,4, I was fairly upset
+c,5, I was very upset
+x,6, Prefer not to say
+^,f31a,In a magazine or book
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f31b,On television; film
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f31c,Via a mobile phone; computer; tablet or anyother online device
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f32d,On an online video sharing platform (e.g. YouTube; [add local examples])
+a,0, No
+b,1, Yes
+^,f32e,On an online photo sharing platform (e.g. Instagram; Flickr; [add local examples])
+a,0, No
+b,1, Yes
+^,f32f,On a social networking site (e.g. Facebook; Twitter; [add local examples])
+a,0, No
+b,1, Yes
+^,f32g,In a chatroom
+a,0, No
+b,1, Yes
+^,f32h,In an online game
+a,0, No
+b,1, Yes
+^,f32i,On an adult/X-rated website
+a,0, No
+b,1, Yes
+^,f32j,By popups on the internet (unrequested windows that appear during web surfing)
+a,0, No
+b,1, Yes
+^,f32k,By instant messaging (MSN; WhatsApp; Skype; [add local examples])
+a,0, No
+b,1, Yes
+^,f32l,By text (SMS); images (MMS); or otherwise on my mobile phone
+a,0, No
+b,1, Yes
+^,f32m,By Bluetooth
+a,0, No
+b,1, Yes
+^,f32n,In an advert
+a,0, No
+b,1, Yes
+^,f32o,Prefer not to say
+a,0, No
+b,1, Yes
+^,f33a,A sexual image or video of someone naked
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f33b,A sexual image or video that shows someone's 'private parts' [translate as appropriate]
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f33c,An image or video that shows sexual acts or people having sex
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f33d,An image or video that shows sexual acts in a violent way
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f33e,Something else sexual or embarrassing
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f34,In the PAST YEAR; have you received any sexual messages (this could be words; pictures or videos) at least once?
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f35,If you have received any sexual messages; how did you feel about what you saw?
+a,1, I was happy
+b,2, I was not happy or upset
+c,3, I was a little upset
+c,4, I was fairly upset
+c,5, I was very upset
+x,6, Prefer not to say
+^,f37a,By mobile phone calls
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f37b,By text messages sent to me on my phone (SMS/text or MMS)
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f37c,On a social networking site (e.g.; Facebook; Twitter etc.)
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f37d,On a media sharing platform (YouTube; Instagram; Flickr)
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f37e,By IM (MSN; WhatsApp; Skype; etc.)
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f37f,In a chatroom (video chat)
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f37g,In an online game
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f37h,In a gaming community (also on the Xbox and other game consoles)
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f37i,By 'pop up' (something appears by accident)
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f38,In the PAST YEAR; have you sent or posted any sexual messages at least once? This could be words; pictures or videosabout you or someone else.
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f39,In the PAST YEAR; how often have you sent or posted sexual messages?
+a,1, Just once or twice
+b,2, At least every month
+b,3, At least every week
+b,4, Daily or almost daily
+x,5, Prefer not to say
+^,f40a,I have sent someone a sexual message (e.g.; words; pictures or video) on the internet
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f40b,I have posted a sexual message (e.g.; words; pictures or video) where other people could see it on the internet
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f40c,I have asked someone on the internet for sexual information about him or herself (like what his or her body looks like without clothes on or sexual things he or she has done)
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f41a,Ways of physically harming or hurting themselves
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f41b,Ways of committing suicide
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f41c,Ways to be very thin (such as being anorexic or bulimic)
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f41d,Hate messages that attack certain groups or individuals (e.g.; people of different colour or religion or nationality)
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f41e,Their experiences of taking drugs
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f41f,Gory or violent images
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f41g,Ways of courtship
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f41h,Ways how to find a relationship
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f41i,Ways to join in gambling
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f41j,Ways in which to buy drugs
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f41k,About abortion
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f41l,About cheating
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f41m,About sex
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f41n,About drinking alcohol
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f41o,About smoking
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f41p,About bullying
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f43a,Somebody used my personal information in a way I didn't like
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f43b,The device (e.g.; phone; tablet; computer) I use got a virus or spyware
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f43c,I lost money by being cheated on the internet
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f43d,Somebody used my password to access my information or to pretend to be me
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f43e,Somebody created a page or image about me that was hostile or hurtful
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f43f,I spent too much money on online games or in-app purchases
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f43g,I was asked to make an in-app purchase when playing an online game (e.g.; to do well in the game)
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f43h,Someone found out where I was because they tracked my phone or device
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,f45a,I have gone without eating or sleeping because of the time I spent on the internet
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,f45b,I have experienced conflicts with family or friends because of the time I spent on the internet
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,f45c,My grades have dropped because of the time I spent on the internet
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,f45d,I have tried unsuccessfully to spend less time on the internet
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,f45e,I think the amount of time I spend on the internet causes problems for me
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,f45f,I feel I have to check my device (e.g. phone or computer) to see if anything new has just happened
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,h1,Here is a picture of a ladder. The top of the ladder ‘10’ is the best possible life for you and the bottom ‘0’ is the worst possible life for you. In general; where on the ladder do you feel you stand at the moment? Mark the circle next to the number that best describes where you stand.
+a,0, 0
+a,1, 1
+a,2, 2
+a,3, 3
+a,4, 4
+b,5, 5
+b,6, 6
+b,7, 7
+b,8, 8
+b,9, 9
+b,10, 10
+^,h2a,Your mother or father (including step/foster mother or father)
+a,0, No
+b,1, Yes
+^,h2b,Your brother or sister (including step siblings)
+a,0, No
+b,1, Yes
+^,h2i,Cousin
+a,0, No
+b,1, Yes
+^,h2j,Aunt/Uncle
+a,0, No
+b,1, Yes
+^,h2k,Grandfather/Grandmother
+a,0, No
+b,1, Yes
+^,h2c,A friend around my age
+a,0, No
+b,1, Yes
+^,h2l,Boyfriend/Girlfriend
+a,0, No
+b,1, Yes
+^,h2d,A teacher
+a,0, No
+b,1, Yes
+^,h2m,Classmate
+a,0, No
+b,1, Yes
+^,h2e,Someone whose job it is to help children [give examples if needed]
+a,0, No
+b,1, Yes
+^,h2n,Nanny
+a,0, No
+b,1, Yes
+^,h2o,Godfather/Godmother
+a,0, No
+b,1, Yes
+^,h2p,Priest/Pastor/Nun
+a,0, No
+b,1, Yes
+^,h2q,Neighbor
+a,0, No
+b,1, Yes
+^,h2f,Another adult you trust
+a,0, No
+b,1, Yes
+^,h2g,Someone else
+a,0, No
+b,1, Yes
+^,h2h,No one
+a,0, No
+b,1, Yes
+^,i1,How easy is it for you to talk to your parent/carer about things that upset you?
+a,1, Very easy
+a,2, Fairly easy
+b,3, Fairly difficult
+b,4, Very difficult
+x,5, Prefer not to say
+^,i2a,When I speak someone listens to what I say
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,i2b,My family really tries to help me
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,i2c,I feel safe at home
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,i3b,My parent(s)/carer(s) sets rules about what I can do at home
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,i3c,My parent(s)/carer(s) sets rules about what I can do outside the home
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,i3d,My parent(s)/carer(s) tells me when I am doing something well
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,i3a,My parent(s)/carer(s) praises me for behaving well
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,i4a,Encourages me to explore and learn things on the internet
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,i4b,Suggests ways to use the internet safely
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,i4c,Talks to me about what I do on the internet
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,i4d,Sits with me while I use the internet
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,i4e,Stays nearby when I use the internet
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,i4f,Does shared activities together with me on the internet
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,i4g,Talks to me about what to do if something online bothers or upsets me
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,i4h,Helps me when something is difficult to do or find on the internet
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,i4i,Explains why some websites are appropriate or inappropriate
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,i4j,Helps me when something bothers me on the internet
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,i4k,Talks to me about the commercial activities I am exposed to online
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,i5a,Told my parent/carer about things that bother or upset me on the internet
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,i5b,Helped my parent/carer to do something they found difficult on the internet
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,i5c,Started a discussion with my parent/carer about what I do on the internet
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,i5d,Asked for my parent's/carer's advice on how I should act online
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,i5e,Asked my parent/carer for something that I have seen advertised online
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,i5f,Ask for your parent's/carer's help with a situation on the internet that I could not handle
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,i6a,Use a web or phone camera (e.g.; for Skype or video chat)
+a,1, I am allowed to do this anytime
+b,2, I am allowed to do this with permission or supervision
+b,3, I am not allowed do this
+x,4, Prefer not to say
+^,i6b,Download music or films
+a,1, I am allowed to do this anytime
+b,2, I am allowed to do this with permission or supervision
+b,3, I am not allowed do this
+x,4, Prefer not to say
+^,i6c,Visit a social networking site (e.g.; Facebook; [insert local terms])
+a,1, I am allowed to do this anytime
+b,2, I am allowed to do this with permission or supervision
+b,3, I am not allowed do this
+x,4, Prefer not to say
+^,i6d,Watch video clips (e.g.; on YouTube)
+a,1, I am allowed to do this anytime
+b,2, I am allowed to do this with permission or supervision
+b,3, I am not allowed do this
+x,4, Prefer not to say
+^,i6e,Play games with other people online
+a,1, I am allowed to do this anytime
+b,2, I am allowed to do this with permission or supervision
+b,3, I am not allowed do this
+x,4, Prefer not to say
+^,i6f,Visit a chat room
+a,1, I am allowed to do this anytime
+b,2, I am allowed to do this with permission or supervision
+b,3, I am not allowed do this
+x,4, Prefer not to say
+^,i6g,Use instant messaging
+a,1, I am allowed to do this anytime
+b,2, I am allowed to do this with permission or supervision
+b,3, I am not allowed do this
+x,4, Prefer not to say
+^,i6h,Read/watch news online
+a,1, I am allowed to do this anytime
+b,2, I am allowed to do this with permission or supervision
+b,3, I am not allowed do this
+x,4, Prefer not to say
+^,i6i,Use the internet for school work
+a,1, I am allowed to do this anytime
+b,2, I am allowed to do this with permission or supervision
+b,3, I am not allowed do this
+x,4, Prefer not to say
+^,i6j,Spend time in a virtual world (e.g.; Habbo; Club Penguin; Minecraft [add examples as needed])
+a,1, I am allowed to do this anytime
+b,2, I am allowed to do this with permission or supervision
+b,3, I am not allowed do this
+x,4, Prefer not to say
+^,i6k,Put (or post) photos; videos or music online to share with others (including social networking or instant messaging)
+a,1, I am allowed to do this anytime
+b,2, I am allowed to do this with permission or supervision
+b,3, I am not allowed do this
+x,4, Prefer not to say
+^,i7a,Parental controls or other means of blocking or filtering some types of website
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,i7b,Parental controls or other means of keeping track of the websites or apps I visit
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,i7c,Rules about how long or when I am allowed to go online
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,i7d,A service or contract that limits the time I spend on the internet
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,i7e,Software to prevent spam or junk mail/viruses
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,i7f,Parental controls that filter the apps I can download
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,i7g,Parental controls that alert my parent/carer when I want to buy content (in-app purchase)
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,i7h,Software that limits the people I can be in touch with (through voice calls and SMS/TEXT MMS)
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,i7i,Ad blocking software
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,i8a,Which friends or contacts you add to my social networking profile/instant messaging service
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,i8b,The messages in my email or other app for communicating with people
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,i8c,My profile on a social networking site or online community
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,i8d,Which websites I visited
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,i8e,The apps I downloaded
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,i8f,The in-app purchases I made
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,j1,How much do you like school at present?
+a,1, I don't like it at all
+a,2, I don't like it very much
+b,3, I like it a bit
+b,4, I like it a lot
+x,5, Prefer not to say
+^,j5a,Suggested ways to use the internet safely
+a,1, Never
+a,2, Hardly ever
+b,4, Often
+b,5, Very often
+c,3, Sometimes
+x,6, Prefer not to say
+^,j5b,Encouraged me to explore and learn things on the internet
+a,1, Never
+a,2, Hardly ever
+b,4, Often
+b,5, Very often
+c,3, Sometimes
+x,6, Prefer not to say
+^,j5c,Made rules about what I can do on the internet at school
+a,1, Never
+a,2, Hardly ever
+b,4, Often
+b,5, Very often
+c,3, Sometimes
+x,6, Prefer not to say
+^,j5d,Helped me when I found something difficult to do or find on the internet
+a,1, Never
+a,2, Hardly ever
+b,4, Often
+b,5, Very often
+c,3, Sometimes
+x,6, Prefer not to say
+^,j5e,Talked to me about what I do on the internet
+a,1, Never
+a,2, Hardly ever
+b,4, Often
+b,5, Very often
+c,3, Sometimes
+x,6, Prefer not to say
+^,j5f,Explained why some websites are good or bad
+a,1, Never
+a,2, Hardly ever
+b,4, Often
+b,5, Very often
+c,3, Sometimes
+x,6, Prefer not to say
+^,j5g,Suggested ways to behave towards other people online
+a,1, Never
+a,2, Hardly ever
+b,4, Often
+b,5, Very often
+c,3, Sometimes
+x,6, Prefer not to say
+^,j5h,Helped me in the past when something has bothered me on the internet
+a,1, Never
+a,2, Hardly ever
+b,4, Often
+b,5, Very often
+c,3, Sometimes
+x,6, Prefer not to say
+^,j5i,In general; talked to me about what I would do if something on the internet ever bothered me
+a,1, Never
+a,2, Hardly ever
+b,4, Often
+b,5, Very often
+c,3, Sometimes
+x,6, Prefer not to say
+^,k1a,My friends really try to help me
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,k1b,I can count on my friends when things go wrong
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,k1c,I can talk about my problems with my friends
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,k1d,I get worried when I �?nd out my friends are having fun without me 
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,k2a,Suggested ways to use the internet safely
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,k2b,Encouraged me to explore and learn things on the internet
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,k2c,Helped me when I found something difficult to do on the internet
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,k2d,Explained why some websites are good or bad
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,k2e,Suggested ways to behave towards other people on the internet
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,k2f,Helped me in the past when something has bothered me on the internet
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,k3,Have you suggested to your friends ways to use the internet safely?
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,k4a,I feel safe in the area where I live
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,k4b,It is safe for younger children to play outside during the day
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,k4c,You can trust people around here
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,a14,How often do you get some new clothes to wear?
+a,1, Hardly ever
+b,2, Once or twice a year
+b,3, Every few months
+b,4, Every few weeks
+x,5, Prefer not to say
+^,a15,How easily can you find a quiet place to study or do homework?
+a,1, Not at all
+b,2, Not very easily
+b,3, Quite easily
+b,4, Very easily
+x,5, Prefer not to say
+^,a16,How often do you go on holiday [for at least one week] away from home?
+a,1, Hardly ever
+b,2, Once or twice a year
+b,3, Every few months
+b,4, Every few weeks
+x,5, Prefer not to say
+^,a17,How often do you have fresh fruit and vegetables to eat?
+a,1, Less than once a month
+b,2, Once or twice a month
+b,3, Once or twice a week
+b,4, Every day or almost every day
+x,5, Prefer not to say
+^,a17a,How often do you have fish or meat to eat?
+a,1, Less than once a month
+b,2, Once or twice a month
+b,3, Once or twice a week
+b,4, Every day or almost every day
+x,5, Prefer not to say
+^,a18,Do you have at least two pairs of properly fitting shoes? [include: boots; sandals; trainers; etc.]
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,a19,How often do you get some new games or toys to play with?
+a,1, Hardly ever
+b,2, Once or twice a year
+b,3, Every few months
+b,4, Every few weeks
+x,5, Prefer not to say
+^,a20a,I get very angry and often lose my temper
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,a20b,I usually do as I am told
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,a20c,I fight a lot; I can make other people do what I want
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,a20d,I am often accused of lying or cheating
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,a20e,I take things that are not mine from home; school or elsewhere
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,a20f,I worry a lot
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,a20g,I am nervous in certain new situations; I easily lose confidence
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,a20h,I get a lot of headaches; stomach-aches or sickness
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,a20i,I am often unhappy; sad or tearful
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,a20j,I have many fears and I am easily scared
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,a20k,I am restless; I cannot stay still for long
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,a20l,I finish the work I'm doing. My attention is good
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,a20n,I am easily distracted and find it difficult to concentrate
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,a20o,I think before I do things
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,a20p,Other people my age generally like me
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,a20q,Other children or young people pick on me
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,a20r,I am usually on my own; I generally play alone or keep to myself
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,a20s,I have at least one good friend
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,a20t,I get on better with adults than with people my own age
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,a20u,I am helpful if someone is hurt; upset or feeling ill
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,a20v,I try to be nice to other people. I care about their feelings
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,a20w,I often volunteer to help others (e.g.; parents; carers; teachers; children)
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,a20x,I usually share with others (food; games; pens etc.)
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,a21a,Other children are treated better than me
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,a21b,People seem to think I am not smart
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,a21c,People seem to think they’re better than me
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,a21d,I get called names or insulted by other children
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,a22a,Because of where my family is from
+a,0, No
+b,1, Yes
+^,a22b,Because of my skin colour
+a,0, No
+b,1, Yes
+^,a22c,Because of my religion
+a,0, No
+b,1, Yes
+^,a22d,Because of my height or weight
+a,0, No
+b,1, Yes
+^,a22e,Because of a disability
+a,0, No
+b,1, Yes
+^,a22f,Because of not having enough money
+a,0, No
+b,1, Yes
+^,a22g,Because of my sexual orientation
+a,0, No
+b,1, Yes
+^,a22h,Because of how I look or behave
+a,0, No
+b,1, Yes
+^,a22i,Because of my opinions or beliefs
+a,0, No
+b,1, Yes
+^,a22j,Because of my attitude
+a,0, No
+b,1, Yes
+^,a22k,Because my parents are not around (i.e.; OFW)
+a,0, No
+b,1, Yes
+^,a22l,Because of the ethnic group I belong to
+a,0, No
+b,1, Yes
+^,a22m,Due to conflict / war in our area
+a,0, No
+b,1, Yes
+^,a22n,Because I am not studying (i.e.; out-of-school)
+a,0, No
+b,1, Yes
+^,a22o,Because I do not have a permanent residence / house
+a,0, No
+b,1, Yes
+^,a23,When you were treated this way; how often did it happen on the internet?
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,a24a,I do dangerous things for fun
+a,1, Not true
+b,2, A bit true
+b,3, Very true
+x,4, Prefer not to say
+^,a24b,I do exciting things; even if they are dangerous
+a,1, Not true
+b,2, A bit true
+b,3, Very true
+x,4, Prefer not to say
+^,a25a,Had so much alcohol that I got really drunk
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,a25b,Missed school lessons without my parent(s)/carer(s) knowing
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,a25c,Had sexual intercourse
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,a25d,Been in trouble with my teachers for bad behaviour
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,a25e,Been in trouble with the police
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,a25f,Met personally with someone whom I met online (i.e.; eyeball)
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,a26a,I can solve difficult problems if I try hard enough
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,a26b,If someone opposes me; I can find ways to get what I want
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,a26c,It's easy for me to stick to my aims and achieve my goals
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,a26d,I am confident that I can deal with unexpected problems
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,a26g,I can stay calm when things get difficult because I am good at coping
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,a27,Ideally; if you are given an opportunity; what level of education do you want to finish?
+a,1, Elementary
+a,2, High School
+b,3, College
+b,4, Beyond college degree (MA/MS/MBA/PhD/Law/Medicine)
+x,5, Prefer not to say
+^,a28,Imagine if given the opportunity to finish your studies or to get your desired career in the future; where do you want to work?
+a,1, In the Philippines
+a,2, Abroad
+a,3, I have other plans--I want to do business. 
+b,4, I don't like to work.
+x,5, Prefer not to say
+^,a29a,When I use the internet; I learn about different things that I could study; do or become what I want to be as productive as possible.
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,a29b,When I use the internet; I feel I want to achieve more in life.
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,g1a,I was sent a message that I did not want with advertisements for or links to X-rated websites [use local term for 'X-rated']
+a,1, No
+b,2, Yes
+c,3, Prefer not to say
+^,g1b,I opened a message or a link in a message that showed pictures of naked people or of people having sex that I did not want
+a,1, No
+b,2, Yes
+c,3, Prefer not to say
+^,g1c,I have seen or received a sexual message; image or video about someone else that I did not want
+a,1, No
+b,2, Yes
+c,3, Prefer not to say
+^,g2a,I have been asked for sexual information about myself (like what my body looks like without clothes on or sexual things I have done) when I did not want to answer such questions
+a,1, No
+b,2, Yes
+c,3, Prefer not to say
+^,g2b,I have been asked to talk about sexual acts with someone on the internet when I did not want to
+a,1, No
+b,2, Yes
+c,3, Prefer not to say
+^,g2c,I have been asked by someone on the internet to do something sexual when I did not want to
+a,1, No
+b,2, Yes
+c,3, Prefer not to say
+^,g2d,I have been asked on the internet for a photo or video showing my private parts [translate as appropriate] when I did not want to
+a,1, No
+b,2, Yes
+c,3, Prefer not to say
+^,g3a,I have sent sexual information about myself (like what my body looks like without clothes on or sexual things I have done) when I did not want
+a,1, No
+b,2, Yes
+c,3, Prefer not to say
+^,g3b,I have talked about sexual acts with someone on the internet when I did not want to
+a,1, No
+b,2, Yes
+c,3, Prefer not to say
+^,g3c,I have done something sexual on the internet when I did not want to
+a,1, No
+b,2, Yes
+c,3, Prefer not to say
+^,g3d,I have sent someone a photo or video showing my private parts when I did not want to [translate as appropriate]
+a,1, No
+b,2, Yes
+c,3, Prefer not to say
+^,g4,Thinking about the last time when you had unwanted sexual experience (that is; any of G2a-d); did it happen when you were using which of the following?
+a,1, A mobile phone that is not a smartphone
+a,2, A smartphone [iPhone; Samsung Galaxy; Cherry Mobile; Star Mobile; etc]
+b,3, A desktop computer
+b,4, A laptop or notebook computer
+c,5, A tablet [iPad; Samsung Galaxy tab; PLDT Home tablet; etc]
+d,6, A games console [Playstation; Xbox; PSP; Nintendo; 3DS; etc]
+e,7, Prefer not to say
+^,g5,Thinking about the last time when you had unwanted sexual experience (that is; any of G2a-d); who was the person who did this?
+a,1, An adult in your family (over 18)
+b,2, A child or young person in your family (under 18)
+c,3, A romantic partner (or ex-)
+d,4, Someone from work
+e,5, A friend or acquaintance (over 18) that you knew in person before this
+f,6, A friend or acquaintance (under 18) that you knew in person before this
+g,7, Someone you first met online who was a contact of a friend or family member
+h,8, Someone you met online who had no other connection with your life
+i,9, Someone else (specify)
+j,10, Prefer not to say
+^,g9a,Brother (over 18)
+a,0, No
+b,1, Yes
+^,g9b,Sister (over 18)
+a,0, No
+b,1, Yes
+^,g9c,A younger brother or sister
+a,0, No
+b,1, Yes
+^,g9d,Father or step-/foster father
+a,0, No
+b,1, Yes
+^,g9e,Mother or step-/foster mother
+a,0, No
+b,1, Yes
+^,g9f,Other adult relatives; such as aunts; uncles; or grandparents
+a,0, No
+b,1, Yes
+^,g9g,Friend or acquaintance
+a,0, No
+b,1, Yes
+^,g9h,Teacher/ educator
+a,0, No
+b,1, Yes
+^,g9j,Other adult you trust e.g. coach; neighbour; doctor; or babysitter
+a,0, No
+b,1, Yes
+^,g9i,Other (specify)
+a,0, No
+b,1, Yes
+^,g9k,I didn’t tell anyone about it
+a,0, No
+b,1, Yes
+^,g9l,Prefer not to say
+a,0, No
+b,1, Yes
+^,l41a,My spouse has a paid job locally.
+a,0, No
+b,1, Yes
+^,l41b,My other child/children has a paid job locally.
+a,0, No
+b,1, Yes
+^,l41c,Someone in my family is an overseas Filipino worker (OFW) who provides for us.
+a,0, No
+b,1, Yes
+^,l41d,Some relatives; who are not OFW’s; gives us monthly allowance.
+a,0, No
+b,1, Yes
+^,l41e,Our family has a business. (i.e. sari-sari store; vulcanizing shop; etc.)
+a,0, No
+b,1, Yes
+^,l41f,Our family receives a stipend from the government (i.e. member of 4P’s or any allowance from the local government unit)
+a,0, No
+b,1, Yes
+^,l41g,Others
+a,0, No
+b,1, Yes
+^,l35a,Your child’s health
+a,0, No
+b,1, Yes
+^,l35b,Having enough money to care for your child
+a,0, No
+b,1, Yes
+^,l35c,How your child is doing at school
+a,0, No
+b,1, Yes
+^,l35d,Other children treating your child in a hurtful or nasty way
+a,0, No
+b,1, Yes
+^,l35e,Your child drinking too much alcohol/taking drugs
+a,0, No
+b,1, Yes
+^,l35f,Your child seeing inappropriate material on the internet
+a,0, No
+b,1, Yes
+^,l35g,A stranger contacting your child on the internet
+a,0, No
+b,1, Yes
+^,l35h,Your child’s sexual activities
+a,0, No
+b,1, Yes
+^,l35i,Your child becoming a victim of crime
+a,0, No
+b,1, Yes
+^,l35j,Your child getting into trouble with the police
+a,0, No
+b,1, Yes
+^,l35k,Your child receiving an injury on the roads
+a,0, No
+b,1, Yes
+^,l35l,Other reasons (specify)
+a,0, No
+b,1, Yes
+^,l34a,Physical disability
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,l34b,Physical illness
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,l34c,Mental health difficulty
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,l34d,Behavioural difficulty
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,l34e,Learning difficulty
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,l34f,Other disability
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,l45a,He/she is into sports.
+a,0, No
+b,1, Yes
+^,l45b,He/she likes to read books.
+a,0, No
+b,1, Yes
+^,l45c,He/she likes to play games using a gadget/computer.
+a,0, No
+b,1, Yes
+^,l45d,He/she likes to send messages to friends and relatives using the mobile phone and/or computer.
+a,0, No
+b,1, Yes
+^,l45e,He/she likes to go out with friends.
+a,0, No
+b,1, Yes
+^,l45f,He/she likes music and/or playing musical instruments.
+a,0, No
+b,1, Yes
+^,l45g,He/she likes to take photos and videos.
+a,0, No
+b,1, Yes
+^,l45h,He/she likes to download and upload music; photos and videos in the internet.
+a,0, No
+b,1, Yes
+^,l45i,He/she likes to write short stories; poems; etc.
+a,0, No
+b,1, Yes
+^,l45j,He/she likes to watch movies/short videos in the internet.
+a,0, No
+b,1, Yes
+^,l45k,Others 
+a,0, No
+b,1, Yes
+^,l47a,Play online games.
+a,0, No
+b,1, Yes
+^,l47b,Use online messaging applications to communicate.
+a,0, No
+b,1, Yes
+^,l47c,Upload and download photos and videos.
+a,0, No
+b,1, Yes
+^,l47d,Use the webcam.
+a,0, No
+b,1, Yes
+^,l47e,Chat using a chatroom.
+a,0, No
+b,1, Yes
+^,l47f,Use the internet to help in research or homework.
+a,0, No
+b,1, Yes
+^,l47g,Watch movies/short videos in the internet.
+a,0, No
+b,1, Yes
+^,l47h,Others (specify)
+a,0, No
+b,1, Yes
+^,l6a,At work
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,l6b,At home
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,l6c,In the home of friends or relatives
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily of almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,l6d,In a public place (for example; In libraries; cafes; computer shops)
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,l6e,When I am on my way somewhere (e.g.; on the street; in a bus or car)
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,l6f,When I am somewhere by myself
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,l7a,A mobile phone that is not a smartphone
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,l7b,A smartphone [iPhone; Samsung Galaxy; Cherry Mobile; Star Mobile; etc]
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,l7c,A desktop computer
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,l7d,A laptop or notebook computer
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,l7e,A tablet [iPad; Samsung Galaxy tab; PLDT Home tablet; etc]
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,l7f,A games console [Playstation; Xbox; PSP; Nintendo; 3DS; etc]
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily of almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,l8a,I know how to save a photo that I find online
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,l8b,I know how to change my privacy settings (e.g. on a social networking site)
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,l8c,I know how to use a programming language (e.g. HTML; XML; etc.)
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,l8f1,I know how to jailbreak; crack games and apps; change IP address
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,l8f2,I know how to hide my IP address
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,l8f3,I know how to set network settings (LAN; wi-fi; device-connection)
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,l8f4,I know how to hack certain files
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,l8f5,I know how to set the firewall
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,l8i,I find it easy to find a website I have visited before
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,l8g,I find it easy to check if the information I find online is true
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,l8h,I find it easy to choose the best keywords for online searches
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,l8k,Sometimes I end up on websites without knowing how I got there
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,l8k1,I know how to use incognito in browsing
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,l8l,I know which information I should and shouldn’t share online
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,l8m,I know how to remove people from my contact lists
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,l8m1,I know how to block
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,l8n,I know when I should and shouldn’t share information online
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,l8o,I know how to behave according to the situation online
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,l8p,I know how to change who I share content with (e.g. friends; friends of friends or everyone)
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,l8p1,I know how to report abusive posts or things that I find offending in social media (e.g. Facebook report abuse)
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,l8t,I know how to create something new from video or music that I found online
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,l8q,I know how to post online video or music that I have created myself
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,l8s,I know which different types of licences apply to online content
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,l8r,I know how to edit or make basic changes to online content that others have created
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,l8u,I know how to design a website
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,l8v,I know how to install apps on a mobile device (e.g. phone or tablet)
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,l8w,I know how to keep track of the costs of mobile app use
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,l8x,I know how to make an in-app purchase
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,l8x1,I know how to download and carck to full version some paid apps without paying a fee (e.g. torrent; etc.)
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,l48a,Talk to your child about what he/she does on the internet?
+a,0, No
+b,1, Yes
+^,l48b,Encourage your child to explore and learn things on the internet?
+a,0, No
+b,1, Yes
+^,l48c,Sit with your child while he/she uses the internet?
+a,0, No
+b,1, Yes
+^,l48d,Stay nearby when your child uses the internet?
+a,0, No
+b,1, Yes
+^,l49a,Started a discussion with you about what he/she does on the internet?
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l49b,Told you about things she/he finds upsetting on the internet?
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l49c,Asked for your advice on how she/he should act online?
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l49d,Asked for products and/or services that she/he has seen advertisements for online?
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l49e,Asked for your help with a situation on the internet that she/he cannot handle?
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l12a,Use a web or phone camera (e.g.; for Skype or video chat)
+a,1, Allowed to do this anytime
+b,2, Allowed to do tis with permission or supervision
+b,3, Can never do this
+x,4, Prefer not to say
+^,l12d,Watch video clips (e.g.; on YouTube)
+a,1, Allowed to do this anytime
+b,2, Allowed to do tis with permission or supervision
+b,3, Can never do this
+x,4, Prefer not to say
+^,l12b,Download music or films
+a,1, Allowed to do this anytime
+b,2, Allowed to do tis with permission or supervision
+b,3, Can never do this
+x,4, Prefer not to say
+^,l12e,Play games with other people online
+a,1, Allowed to do this anytime
+b,2, Allowed to do tis with permission or supervision
+b,3, Can never do this
+x,4, Prefer not to say
+^,l12c,Visit a social networking site (e.g. Facebook; [insert local terms])
+a,1, Allowed to do this anytime
+b,2, Allowed to do tis with permission or supervision
+b,3, Can never do this
+x,4, Prefer not to say
+^,l12f,Visit a chat room
+a,1, Allowed to do this anytime
+b,2, Allowed to do tis with permission or supervision
+b,3, Can never do this
+x,4, Prefer not to say
+^,l12g,Use instant messaging
+a,1, Allowed to do this anytime
+b,2, Allowed to do tis with permission or supervision
+b,3, Can never do this
+x,4, Prefer not to say
+^,l12h,Read/watch news online
+a,1, Allowed to do this anytime
+b,2, Allowed to do tis with permission or supervision
+b,3, Can never do this
+x,4, Prefer not to say
+^,l12i,Use the internet for school work
+a,1, Allowed to do this anytime
+b,2, Allowed to do tis with permission or supervision
+b,3, Can never do this
+x,4, Prefer not to say
+^,l12j,Spend time in a virtual world (e.g.; Habbo; Club Penguin; Minecraft)
+a,1, Allowed to do this anytime
+b,2, Allowed to do tis with permission or supervision
+b,3, Can never do this
+x,4, Prefer not to say
+^,l12k,Put (or post) photos; videos or music online to share with others (including social networking or instant messaging)
+a,1, Allowed to do this anytime
+b,2, Allowed to do tis with permission or supervision
+b,3, Can never do this
+x,4, Prefer not to say
+^,l50a,Suggest ways to use the internet safely
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,l50b,Talk to him/her about what to do if something on the internet upsets him/her
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,l50c,Help him/her when something is difficult to do or to find on the internet
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,l50d,Explain why some websites are appropriate or inappropriate
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,l50e,Help him/her when something has upset him/her on the internet
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,l50f,Talk to him/her about the commercial activities they are exposed to online
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,l13a,Parental controls or other means of blocking or filtering some types of website
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,l13b,Parental controls or other means of keeping track of the websites or apps your child visits
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,l13c,Rules about how long or when your child is allowed to go online
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,l13d,A service or contract that limits the time your child spends on the internet
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,l13e,Software to prevent spam or junk mail/viruses
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,l13f,Parental controls that filter the apps your child can download
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,l13g,Parental controls that alert me when your child wants to buy content (in-app purchase)
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,l13h,Software that limits the people my child can be in touch with (through voice calls and SMS/TEXT MMS)
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,l13i,Ad blocking software
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,l14a,Which friends or contacts he/she adds to his/her social networking profile/instant messaging service
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,l14b,The messages in his/her email or other app for communicating with people
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,l14c,Which websites he/she visited
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,l14d,His/her profile on a social networking site or online community
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,l14e,The apps he/she downloaded
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,l14f,The in-app purchases he/she made
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,l21a,Had contact on the internet with someone that my child had not met face-to-face before
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l21b,Been treated in a hurtful or nasty way on the internet by someone? (This includes being teased repeatedly in a way he/she did not like; or being deliberately excluded or left out of things.)
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l21d,Treated someone else in a hurtful or nasty way on the internet? (This includes having teased someone repeatedly in a way he/she did not like; or threatened; or deliberately excluded or left them out of things.)
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l21c,Met anyone face-to-face that my child first got to know on the internet
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l21e,Sent or received any messages with inappropriate content in words; photos or videos (pertaining to sex; sexual intercourse or nudity) using the internet?
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l22a,Ways of physically harming or hurting themselves
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l22b,Ways of committing suicid
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l22c,Ways to be very thin (such as anorexic or bulimic)
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l22d,Hate messages that attack certain groups or individuals(e.g.; people of different colour or religion or nationality)
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l22e,Their experiences of taking drugs
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l22f,Gory or violent images
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l23a,Somebody used his or her personal information in a way he or she didn’t like
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l23b,The device s/he uses got a virus
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l23c,S/he lost money by being cheated on the internet
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l23d,Somebody used my child’s password to access his or her information or to pretend to be him or her
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l23e,Somebody created a page or image about him or her that was hostile or hurtful
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l23f,S/he spent too much money on online games or in-app purchases
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l23g, S/he was asked to make an in-app purchase when playing an online game (e.g. to progress faster in the game)
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l23h,Someone found out where your child was because they tracked his/her phone
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l24a,S/he has seen images on the internet that are obviously sexual
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l24b,S/he has received a sexual message (this could be words; pictures or videos)
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l24c,S/he has sent or posted a sexual message (this could be words; pictures or videos about them or someone else)
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l24d,S/he was sent a message that s/he did not want with advertisements for or links to X-rated websites [use local term for ‘X-rated’]
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l24e,S/he opened a message or a link in a message that showed pictures of naked people or of people having sex that s/he did not want
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l24f,S/he has seen or received a sexual message; image or video about someone else that s/he did not want
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l24g,S/he has been asked for sexual information about him/herself (like what his/her body looks like without clothes on or sexual things s/he has done) when s/he did not want to answer such questions
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l24h,S/he has been asked to talk about sexual acts with someone on the internet when s/he did not want to
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l24i,S/he has been asked by someone on the internet to do something sexual when s/he did not want to
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l24j,S/he has been asked on the internet for a photo or video showing her/his private parts [translate as appropriate] when s/he did not want to
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l27,Estimated total annual income bracket
+a,1, Less than P40000
+b,2, P40000 - P59999
+b,3, P60000 - P99999
+b,4, P100000 - P249999
+c,5, More than P250000
+^,l36,Attended school or pre-school
+a,1, No
+b,2, Yes
+^,l28,Highest level of education
+a,1, Post-graduate
+a,2, College
+b,3, High School
+b,4, Elementary
+b,5, Pre-school
+c,6, Don't know
+c,7, Others
+^,l37,Language
+a,1, Tagalog
+b,2, Cebuano
+c,3, Ilocano
+d,4, Bisaya
+e,5, Illonggo
+f,6, Bicol
+g,7, Waray
+h,8, Others
+^,l38,Religion
+a,1, Roman Catholic
+b,2, Islam
+c,3, Born-Again Christian
+d,4, Protestant
+e,5, Iglesia ni Cristo
+f,6, Others
+^,l31,Frequency church
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+^,l39,Muslim: frequency pray
+a,1, Never
+b,2, Once a day
+b,3, Three times a day
+b,4, Five times a day
+b,5, More than 5 times a day
+^,l32,Paid job
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,l40,Job status
+a,1, Permanent
+b,2, Contractual
+b,3, Under Probation
+^,l33,Why do you not have a job
+a,1, I am sick
+a,2, I am retired
+b,3, I am a student
+b,4, I am looking for a job
+c,5, I take care of others; or I am full-time in the home
+^,l41,Other source of income
+a,0, No
+b,1, Yes
+^,l41a,Spouse paid job locally
+a,0, No
+b,1, Yes
+^,l41b,Other children paid job locally
+a,0, No
+b,1, Yes
+^,l41c,Family OFW
+a,0, No
+b,1, Yes
+^,l41d,Non-OFW relatives
+a,0, No
+b,1, Yes
+^,l41e,Family business
+a,0, No
+b,1, Yes
+^,l41f,Family stipend from government
+a,0, No
+b,1, Yes
+^,l41g,Other
+a,0, No
+b,1, Yes
+^,l42,Marital Status
+a,1, Single
+b,2, Married
+c,3, Separated from spouse
+d,4, Has a live-in partner
+e,5, Widowed
+^,l43,How old are you?
+x,99, Prefer not to say
+^,l44,Gender
+a,1, Male
+b,2, Female
+^,l35a,Child health
+a,0, No
+b,1, Yes
+^,l35b,Having enough money
+a,0, No
+b,1, Yes
+^,l35c,Child school performance
+a,0, No
+b,1, Yes
+^,l35d,Other children treating your child
+a,0, No
+b,1, Yes
+^,l35e,Child drinking alcohol
+a,0, No
+b,1, Yes
+^,l35f,Child inappropriate material on the internet
+a,0, No
+b,1, Yes
+^,l35g,Stranger contacting child on internet
+a,0, No
+b,1, Yes
+^,l35h,Child sexual activities
+a,0, No
+b,1, Yes
+^,l35i,Child victim of crime
+a,0, No
+b,1, Yes
+^,l35j,Child trouble with police
+a,0, No
+b,1, Yes
+^,l35k,Child injury on the road
+a,0, No
+b,1, Yes
+^,l35l,Other
+a,0, No
+b,1, Yes
+^,l34a,Physical disability
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,l34b,Physical illness
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,l34c,Mental Health difficulty
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,l34d,Behavioural difficulty
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,l34e,Learning difficulty
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,l34f,Other
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,l45a,Sports
+a,0, No
+b,1, Yes
+^,l45b,Read books
+a,0, No
+b,1, Yes
+^,l45c,play games using gadget/computer
+a,0, No
+b,1, Yes
+^,l45d,send messages to friends using phone and/or computer
+a,0, No
+b,1, Yes
+^,l45e,Go out with friends
+a,0, No
+b,1, Yes
+^,l45f,Music
+a,0, No
+b,1, Yes
+^,l45g,Take picture/video
+a,0, No
+b,1, Yes
+^,l45h,Download/Upload music; photos and videos on the internet
+a,0, No
+b,1, Yes
+^,l45i,Write
+a,0, No
+b,1, Yes
+^,l45j,Watch movies/videos on the internet
+a,0, No
+b,1, Yes
+^,l45k,Other
+a,0, No
+b,1, Yes
+^,l1,Use internet
+a,1, No; I have never used it
+b,2, Yes; I have used it for a few months
+b,3, Yes; I have used it for about a year
+b,4, Yes; I have used if for a few years
+x,5, Prefer not to say
+^,l46,use internet with child
+a,1, No
+b,2, Yes
+^,l47a,play games
+a,0, No
+b,1, Yes
+^,l47b,online messaging
+a,0, No
+b,1, Yes
+^,l47c,upload/download photos/videos
+a,0, No
+b,1, Yes
+^,l47d,use webcam
+a,0, No
+b,1, Yes
+^,l47e,chat in chatroom
+a,0, No
+b,1, Yes
+^,l47f,research/homework
+a,0, No
+b,1, Yes
+^,l47g,movies/short videos
+a,0, No
+b,1, Yes
+^,l47h,other
+a,0, No
+b,1, Yes
+^,l6a,Work
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,l6b,Home
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,l6c,Home of friends or relatives
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily of almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,l6d,Public
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,l6e,On the way
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,l6f,By myself
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,l7a,Nonsmartphone mobile phone
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,l7b,Smartphone
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,l7c,Desktop PC
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,l7d,Laptop
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,l7e,Tablet
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,l7f,Game console
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily of almost daily
+b,6, Several times each day
+b,7, Almost all the time
+x,8, Prefer not to say
+^,l8a,Save photo online
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,l8b,Change privacy settings
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,l8c,Use programmin language
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,l8f1,Jailbreak
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,l8f2,Hide my IP
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,l8f3,Set network settings
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,l8f4,Hack files
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,l8f5,Set firewall
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,l8i,Find website I have visited before
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,l8g,Check information online is true
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,l8h,Choose best search keywords
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,l8k,I end up on websites without knowing
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,l8k1,Use incognito
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,l8l,Know which info to share and not share
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,l8m,remove from my contact lists
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,l8m1,Block
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,l8n,Know which info to send and not send
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,l8o,behave according to situation online
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,l8p,Change share settings
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,l8p1,Report abusive posts
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,l8t,Create something from video or music I found online
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,l8q,Post online video or music I created
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,l8s,Know which license apply to content
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,l8r,Edit online content others created
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,l8u,Design a website
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,l8v,Install apps
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,l8w,Keep track of the costs of app use
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,l8x,Make in-app purchase
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,l8x1,Download and crack apps without pating a fee
+a,1, Not true for me
+b,2, A bit true for me
+b,3, Fairly true for me
+b,4, Very true for me
+x,5, Prefer not to say
+^,l48a,Talk about what he/she does
+a,0, No
+b,1, Yes
+^,l48b,Encourage child to explore
+a,0, No
+b,1, Yes
+^,l48c,Sit with child
+a,0, No
+b,1, Yes
+^,l48d,Stay nearby
+a,0, No
+b,1, Yes
+^,l49a,Discuss with you about internet
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l49b,Told you things he/she finds on the internet
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l49c,Ask advice on how he/she act online
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l49d,Ask products/services from online ads
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l49e,Ask help for situations he/she can't handle online
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l12a,Use a web or phone camera
+a,1, Allowed to do this anytime
+b,2, Allowed to do tis with permission or supervision
+b,3, Can never do this
+x,4, Prefer not to say
+^,l12d,Watch video
+a,1, Allowed to do this anytime
+b,2, Allowed to do tis with permission or supervision
+b,3, Can never do this
+x,4, Prefer not to say
+^,l12b,Download music
+a,1, Allowed to do this anytime
+b,2, Allowed to do tis with permission or supervision
+b,3, Can never do this
+x,4, Prefer not to say
+^,l12e,Play games
+a,1, Allowed to do this anytime
+b,2, Allowed to do tis with permission or supervision
+b,3, Can never do this
+x,4, Prefer not to say
+^,l12c,Social networking
+a,1, Allowed to do this anytime
+b,2, Allowed to do tis with permission or supervision
+b,3, Can never do this
+x,4, Prefer not to say
+^,l12f,Chatroom
+a,1, Allowed to do this anytime
+b,2, Allowed to do tis with permission or supervision
+b,3, Can never do this
+x,4, Prefer not to say
+^,l12g,Instant messaging
+a,1, Allowed to do this anytime
+b,2, Allowed to do tis with permission or supervision
+b,3, Can never do this
+x,4, Prefer not to say
+^,l12h,Read/watch news
+a,1, Allowed to do this anytime
+b,2, Allowed to do tis with permission or supervision
+b,3, Can never do this
+x,4, Prefer not to say
+^,l12i,School work
+a,1, Allowed to do this anytime
+b,2, Allowed to do tis with permission or supervision
+b,3, Can never do this
+x,4, Prefer not to say
+^,l12j,Spend time in virtual world
+a,1, Allowed to do this anytime
+b,2, Allowed to do tis with permission or supervision
+b,3, Can never do this
+x,4, Prefer not to say
+^,l12k,Share music; photos; videos and posts
+a,1, Allowed to do this anytime
+b,2, Allowed to do tis with permission or supervision
+b,3, Can never do this
+x,4, Prefer not to say
+^,l50a,Suggest ways for safety
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,l50b,Talk if something upsets him/her
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,l50c,Help when something is difficult
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,l50d,Explain why things are in/appropriate
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,l50e,Help when something upsets him/her
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,l50f,Talk about commercial activities
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,l51,As far as you are aware; in the past year; how often has anything happened online that bothered or upset your child in some way (e.g. made them feel uncomfortable; upset; or feel that they shouldn't have seen it)?
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+c,6, Don't know
+x,7, Prefer not to say
+^,l13a,Blocking websites for your child
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,l13b,Keeping track of web apps for your child
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,l13c,Rules on how long he/she can go online
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,l13d,Service that limits time child sepnds on internet
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,l13e,Sowtware for spam/junk mail/virus
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,l13f,Filter apps child can download
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,l13g,Alert when child wants to but content
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,l13h,Limit people my child can be in touch
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,l13i,Ad block
+a,1, No
+b,2, Yes
+x,3, Prefer not to say
+^,l14a,Which friends or contacts he/she adds to his/her social networking profile/instant messaging service
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,l14b,Messages in email or other apps
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,l14c,Websites visited
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,l14d,Profile in social network
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,l14e,Apps downloaded
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,l14f,In-app purchases
+a,1, Never
+a,2, Hardly ever
+b,3, Sometimes
+b,4, Often
+b,5, Very often
+x,6, Prefer not to say
+^,l15,As far as you are aware; in the past year; how often has anything happened online that bothered or upset your child in some way (e.g. made them feel uncomfortable; upset; or feel that they shouldn’t have seen it)?
+a,1, Never
+a,2, Hardly ever
+b,3, At least every month
+b,4, At least every week
+b,5, Daily or almost daily
+c,6, Don't know
+x,7, Prefer not to say
+^,l17,The last time something happened online that bothered or upset your child; how upset was she/he about what happened (if at all)?
+a,1, Not at all upset
+b,2, A bit upset
+b,3, Fairly upset
+b,4, Very  upset
+c,5, Don't know
+x,6, Prefer not to say
+^,l18,In the NEXT few months; is it likely that something will happen online that will bother or upset your child? This could be things they may see; be sent or do online.
+a,1, Not at all likely
+a,2, Not very likely
+b,3, Fairly likely
+b,4, Very likely
+c,5, Don't know
+x,6, Prefer not to say
+^,l19,Do you feel you can help your child to cope with things online that bother or upset them?
+a,1, Not at all
+a,2, Not very much
+b,3, A fair amount
+b,4, Definitely
+c,5, Don't know
+x,6, Prefer not to say
+^,l20,Do you think your child can cope with things online that bother or upset them?
+a,1, Not at all
+a,2, Not very much
+b,3, A fair amount
+b,4, Definitely
+c,5, Don't know
+x,6, Prefer not to say
+^,l21a,Had contact on the internet with someone that my child had not met face-to-face before
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l21b,Been treated in a hurtful or nasty way on the internet by someone? (This includes being teased repeatedly in a way he/she did not like; or being deliberately excluded or left out of things.)
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l21d,Treated someone else in a hurtful or nasty way on the internet? (This includes having teased someone repeatedly in a way he/she did not like; or threatened; or deliberately excluded or left them out of things.)
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l21c,Met anyone face-to-face that my child first got to know on the internet
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l21e,Sent or received any messages with inappropriate content in words; photos or videos (pertaining to sex; sexual intercourse or nudity) using the internet?
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l22a,Ways of physically harming themselves
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l22b,Ways of suicide
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l22c,Ways to be thin
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l22d,Hate messages
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l22e,Drug experience
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l22f,Gory images
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l23a,Somebody used his or her personal information in a way he or she didn’t like
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l23b,Has a virus
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l23c,Lose money online
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l23d,Use child's password and pretend to be him/her
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l23e,Create page or image to hurt him/her
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l23f,Spend too much money
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l23g,Was ask to make in-app purchase in an online game
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l23h,Tracked your child's phone
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l24a,Seen images that are sexual
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l24b,Recieve sexual message
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l24c,Post sexual message
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l24d,Recieve a link to x-rated website
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l24e,Open message that show naked people
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l24f,Seen or recieve sexual message unwated
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l24g,Asked about sexual information
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l24h,Asked to talk about sexual acts
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l24i,Asked to do something sexual
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l24j,Asked for a photo/video showing private parts
+a,1, No
+b,2, Yes
+c,3, Don't know
+x,4, Prefer not to say
+^,l25a,Your child's school
+a,0, No
+b,1, Yes
+^,l25b,TV radio news or magazine
+a,0, No
+b,1, Yes
+^,l25c,ISP
+a,0, No
+b,1, Yes
+^,l25d,Government
+a,0, No
+b,1, Yes
+^,l25e,Charities
+a,0, No
+b,1, Yes
+^,l25f,Website with Safety info
+a,0, No
+b,1, Yes
+^,l25g,Retailers
+a,0, No
+b,1, Yes
+^,l25h,Family or Friend
+a,0, No
+b,1, Yes
+^,l25i,Child
+a,0, No
+b,1, Yes
+^,l25j,Other
+a,0, No
+b,1, Yes
+^,l25k,I don't get any
+a,0, No
+b,1, Yes
+^,l26a,Your child's school
+a,0, No
+b,1, Yes
+^,l26b,TV radio news or magazine
+a,0, No
+b,1, Yes
+^,l26c,ISP
+a,0, No
+b,1, Yes
+^,l26d,Government
+a,0, No
+b,1, Yes
+^,l26e,Charities
+a,0, No
+b,1, Yes
+^,l26f,Website with Safety info
+a,0, No
+b,1, Yes
+^,l26g,Retailers
+a,0, No
+b,1, Yes
+^,l26h,Family or Friend
+a,0, No
+b,1, Yes
+^,l26i,Child
+a,0, No
+b,1, Yes
+^,l26j,Other
+a,0, No
+b,1, Yes
+^,l26k,I don't want any
+a,0, No
+b,1, Yes

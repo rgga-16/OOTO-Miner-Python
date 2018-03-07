@@ -1,0 +1,2315 @@
+﻿proc format;
+
+/*** a : Group A, b : Group B, x : Group X etc. ***/
+
+/***   Child identity & resources (P1)   ***/
+
+value a9
+	a : 1 = "English"
+	b : 2 = "Tagalog"
+	c : 3 = "Cebuano"
+	d : 4 = "Ilocano"
+	e : 5 = "Bicol Riconada"
+	f : 6 = "Bicol Partido"
+	g : 7 = "Bicol Naga"
+	h : 8 = "Waray"
+	i : 9 = "Kapampangan"
+	j : 10 = "Itawes";
+
+value reg1
+	a : 1 = "Ilocos"
+	b : 2 = "Cagayan Valley"
+	c : 3 = "Central Luzon"
+	d : 4 = "CALABARZON"
+	e : 5 = "Bicol"
+	f : 6 = "Western Visayas"
+	g : 7 = "Central Visayas"
+	h : 8 = "Eastern Visayas"
+	i : 9 = "Zamboanga Peninsula"
+	j : 10 = "Northern Mindanao"
+	k : 11 = "Davao"
+	l : 12 = "SOCCSKSARGEN"
+	m : 13 = "NCR"
+	n : 14 = "CAR"
+	o : 15 = "ARMM"
+	p : 16 = "CARAGA"
+	q : 17 = "MIMAROPA"
+	r : 18 = "Negros Island Region";
+
+value prov1
+	a : 1 = "Pangasinan"
+	b : 2 = "Cagayan"
+	c : 3 = "Aurora"
+	d : 4 = "Pampanga"
+	e : 5 = "Batangas"
+	f : 6 = "Cavite"
+	g : 7 = "Rizal"
+	h : 8 = "Camarines Sur"
+	i : 9 = "Capiz"
+	j : 10 = "Cebu"
+	k : 11 = "Eastern Samar"
+	l : 12 = "Zamboanga del Sur"
+	m : 13 = "Bukidnon"
+	n : 14 = "Davao del Norte"
+	o : 15 = "Davao del Sur"
+	p : 16 = "Sultan Kudarat"
+	q : 17 = "Caloocan"
+	r : 18 = "Manila+B3"
+	s : 19 = "Marikina"
+	t : 20 = "Quezon City"
+	u : 21 = "Abra"
+	v : 22 = "Benguet"
+	w : 23 = "Surigao del Sur"
+	x : 24 = "Occidental Mindoro"
+	y : 25 = "Negros Occidental"
+	z : 26 = "Maguindanao";
+
+value ur1
+	a : 0 = "Rural"
+	b : 1 = "Urban";
+
+value a1
+	a : 1 = "Male"
+	b : 2 = "Female";
+
+value a2
+	a : 9 = "9-11"
+	a : 10 = "9-11"
+	a : 11 = "9-11"
+	b : 12 = "12-14"
+	b : 13 = "12-14"
+	b : 14 = "12-14"
+	c : 15 = "15-17"
+	c : 16 = "15-17"
+	c : 17 = "15-17";
+
+value a3a
+	a : 0 = "No"
+	b : 1 = "Yes";
+value a3b
+	a : 0 = "No"
+	b : 1 = "Yes";
+value a3c
+	a : 0 = "No"
+	b : 1 = "Yes";
+value a3d
+	a : 0 = "No"
+	b : 1 = "Yes";
+value a3e
+	a : 0 = "No"
+	b : 1 = "Yes";
+value a3f
+	a : 0 = "No"
+	b : 1 = "Yes";
+value a3g
+	a : 0 = "No"
+	b : 1 = "Yes";
+value a3h
+	a : 0 = "No"
+	b : 1 = "Yes";
+value a3i
+	a : 0 = "No"
+	b : 1 = "Yes";
+value a3j
+	a : 0 = "No"
+	b : 1 = "Yes";
+value a3k
+	a : 0 = "No"
+	b : 1 = "Yes";
+value a3l
+	a : 0 = "No"
+	b : 1 = "Yes";
+
+value a4a
+	a : 0 = "No"
+	b : 1 = "Yes";
+value a4g
+	a : 0 = "No"
+	b : 1 = "Yes";
+value a4h
+	a : 0 = "No"
+	b : 1 = "Yes";
+value a4c
+	a : 0 = "No"
+	b : 1 = "Yes";
+value a4d
+	a : 0 = "No"
+	b : 1 = "Yes";
+value a4e
+	a : 0 = "No"
+	b : 1 = "Yes";
+value a4f
+	a : 0 = "No"
+	b : 1 = "Yes";
+value a4i
+	a : 0 = "No"
+	b : 1 = "Yes";
+
+value a5
+	a : 1 = "I have never been to school"
+	b : 2 = "Preschool"
+	b : 3 = "Elementary"
+	b : 4 = "High School"
+	b : 5 = "Senior High School"
+	b : 6 = "Technical-vocational course"
+	b : 7 = "College"
+	c : 8 = "Other (please, specify)"
+	x : 9 = "Prefer not to say";
+	
+/***   Access   ***/
+value b1
+	x : 99 = "Prefer not to say";
+
+value b3
+	a : 1 = "Never"
+	b : 2 = "Sometimes"
+	b : 3 = "Often"
+	b : 4 = "Always";
+
+value b6
+	a : 1 = "Never"
+	a : 2 = "Hardly ever"
+	b : 3 = "At least every month"
+	b : 4 = "At least every week"
+	b : 5 = "Daily or almost daily"
+	b : 6 = "Several times each day"
+	b : 7 = "Almost all the time"
+	x : 8 = "Prefer not to say";
+
+value b7
+	a : 1 = "Never"
+	a : 2 = "Hardly ever"
+	b : 3 = "At least every month"
+	b : 4 = "At least every week"
+	b : 5 = "Daily or almost daily"
+	b : 6 = "Several times each day"
+	b : 7 = "Almost all the time"
+	x : 8 = "Prefer not to say";
+	
+value b8
+	a : 1 = "No"
+	b : 2 = "Yes"
+	x : 3 = "Prefer not to say";
+
+value b9
+	a : 1 = "No"
+	b : 2 = "Yes"
+	x : 3 = "Prefer not to say";
+	
+value b10a
+	a : 0 = "No"
+	b : 1 = "Yes";
+	
+value b10b1
+	a : 0 = "No"
+	b : 1 = "Yes";
+value b10b2
+	a : 0 = "No"
+	b : 1 = "Yes";
+value b10b3
+	a : 0 = "No"
+	b : 1 = "Yes";
+value b10c1
+	a : 0 = "No"
+	b : 1 = "Yes";
+value b10c2
+	a : 0 = "No"
+	b : 1 = "Yes";
+value b10d
+	a : 0 = "No"
+	b : 1 = "Yes";
+value b10e
+	a : 0 = "No"
+	b : 1 = "Yes";
+	
+/***   Opportunities & practices   ***/
+
+value c1
+	a : 1 = "Yes, always"
+	a : 2 = "Yes, sometimes"
+	b : 3 = "No, not often"
+	c : 4 = "Other (please specify)"
+	x : 5 = "Prefer not to say";
+
+value c2
+	a : 1 = "Not true"
+	b : 2 = "A bit true"
+	b : 3 = "Fairly true"
+	b : 4 = "Very true"
+	x : 5 = "Prefer not to say";
+
+value c4
+	a : 1 = "Never"
+	a : 2 = "Hardly ever"
+	b : 3 = "At least every week"
+	b : 4 = "Daily or almost daily"
+	b : 5 = "Several times each day"
+	b : 6 = "Almost all the time"
+	x : 7 = "Prefer not to say";
+	
+value c6
+	a : 1 = "Never"
+	a : 2 = "Hardly ever"
+	b : 3 = "At least every month"
+	b : 4 = "At least every week"
+	b : 5 = "Daily or almost daily"
+	b : 6 = "Several times each day"
+	b : 7 = "Almost all the time"
+	x : 8 = "Prefer not to say";
+	
+value c7
+	a : 1 = "Never"
+	a : 2 = "Hardly ever"
+	b : 3 = "At least every month"
+	b : 4 = "At least every week"
+	b : 5 = "Daily or almost daily"
+	b : 6 = "Several times each day"
+	b : 7 = "Almost all the time"
+	x : 8 = "Prefer not to say";
+	
+value c8
+	a : 1 = "Never"
+	a : 2 = "Hardly ever"
+	b : 3 = "At least every month"
+	b : 4 = "At least every week"
+	b : 5 = "Daily or almost daily"
+	b : 6 = "Several times each day"
+	b : 7 = "Almost all the time"
+	x : 8 = "Prefer not to say";
+	
+value c9
+	a : 1 = "Never"
+	a : 2 = "Hardly ever"
+	b : 3 = "At least every month"
+	b : 4 = "At least every week"
+	b : 5 = "Daily or almost daily"
+	b : 6 = "Several times each day"
+	b : 7 = "Almost all the time"
+	x : 8 = "Prefer not to say";
+	
+value c10
+	a : 1 = "Never"
+	a : 2 = "Hardly ever"
+	b : 3 = "At least every month"
+	b : 4 = "At least every week"
+	b : 5 = "Daily or almost daily"
+	b : 6 = "Several times each day"
+	b : 7 = "Almost all the time"
+	x : 8 = "Prefer not to say";
+	
+/***   Skills   ***/
+
+value e1
+	a : 1 = "Not true for me"
+	b : 2 = "A bit true for me"
+	b : 3 = "Fairly true for me"
+	b : 4 = "Very true for me"
+	x : 5 = "Prefer not to say";
+	
+value e3
+	a : 1 = "No"
+	b : 2 = "Yes"
+	x : 3 = "Prefer not to say";
+	
+/***   Digital ecology   ***/
+	
+value d1d
+	a : 0 = "No"
+	b : 1 = "Yes";
+value d1e
+	a : 0 = "No"
+	b : 1 = "Yes";
+value d1f
+	a : 0 = "No"
+	b : 1 = "Yes";
+value d1a
+	a : 0 = "No"
+	b : 1 = "Yes";
+value d1c
+	a : 0 = "No"
+	b : 1 = "Yes";
+value d1b
+	a : 0 = "No"
+	b : 1 = "Yes";
+value d1g
+	a : 0 = "No"
+	b : 1 = "Yes";
+value d1h
+	a : 0 = "No"
+	b : 1 = "Yes";
+value d1i
+	a : 0 = "No"
+	b : 1 = "Yes";
+value d1j
+	a : 0 = "No"
+	b : 1 = "Yes";
+	
+value d2 
+	a : 1 = "Not true for me"
+	b : 2 = "A bit true for me"
+	b : 3 = "Fairly true for me"
+	b : 4 = "Very true for me"
+	x : 5 = "Prefer not to say";
+
+value d12
+	a : 1 = "I created my account without changing any information about me"
+	b : 2 = "I created my account by changing my age and other information about me"
+	c : 3 = "My parents, brother, sister, or relatives created it for me"
+	d : 4 = "My friends created it for me"
+	e : 5 = "Other person created for me";
+
+value d13
+	a : 9 = "9-11"
+	a : 10 = "9-11"
+	a : 11 = "9-11"
+	b : 12 = "12-14"
+	b : 13 = "12-14"
+	b : 14 = "12-14"
+	c : 15 = "15-17"
+	c : 16 = "15-17"
+	c : 17 = "15-17";
+	
+value d14a
+	a : 0 = "No"
+	b : 1 = "Yes";
+value d14b
+	a : 0 = "No"
+	b : 1 = "Yes";
+
+value d14c
+	a : 0 = "No"
+	b : 1 = "Yes";
+value d14d
+	a : 0 = "No"
+	b : 1 = "Yes";
+value d14e
+	a : 0 = "No"
+	b : 1 = "Yes";
+value d14f
+	a : 0 = "No"
+	b : 1 = "Yes";
+value d14g
+	a : 0 = "No"
+	b : 1 = "Yes";
+
+value d15a
+	a : 0 = "No"
+	b : 1 = "Yes";
+value d15b
+	a : 0 = "No"
+	b : 1 = "Yes";
+value d15c
+	a : 0 = "No"
+	b : 1 = "Yes";
+value d15d
+	a : 0 = "No"
+	b : 1 = "Yes";
+value d15e
+	a : 0 = "No"
+	b : 1 = "Yes";
+value d15f
+	a : 0 = "No"
+	b : 1 = "Yes";
+	
+value d7a
+	a : 1 = "Up to 10"			
+	b : 2 = "11-50"		
+	c : 3 = "51-100"		
+	d : 4 = "101-300"			
+	e : 5 = "301-500"		
+	f : 6 = "501-1000"			
+	g : 7 = "1001-1500"		
+	h : 8 = "1501-2000"		
+	i : 9 = "2001-2500"		
+	j : 10 = "2501-3000"			
+	k : 11 = "3001-3500"			
+	l : 12 = "3501-4000"			
+	m : 13 = "4001-4500"			
+	n : 14 = "4501-5000"		
+	o : 15 = "More than 5000"			
+	x : 16 = "Prefer not to say";
+value d7b
+	a : 1 = "Up to 10"			
+	b : 2 = "11-50"		
+	c : 3 = "51-100"		
+	d : 4 = "101-300"			
+	e : 5 = "301-500"		
+	f : 6 = "501-1000"			
+	g : 7 = "1001-1500"		
+	h : 8 = "1501-2000"		
+	i : 9 = "2001-2500"		
+	j : 10 = "2501-3000"			
+	k : 11 = "3001-3500"			
+	l : 12 = "3501-4000"			
+	m : 13 = "4001-4500"			
+	n : 14 = "4501-5000"		
+	o : 15 = "More than 5000"			
+	x : 16 = "Prefer not to say";
+value d7c
+	a : 1 = "Up to 10"			
+	b : 2 = "11-50"		
+	c : 3 = "51-100"		
+	d : 4 = "101-300"			
+	e : 5 = "301-500"		
+	f : 6 = "501-1000"			
+	g : 7 = "1001-1500"		
+	h : 8 = "1501-2000"		
+	i : 9 = "2001-2500"		
+	j : 10 = "2501-3000"			
+	k : 11 = "3001-3500"			
+	l : 12 = "3501-4000"			
+	m : 13 = "4001-4500"			
+	n : 14 = "4501-5000"		
+	o : 15 = "More than 5000"			
+	x : 16 = "Prefer not to say";
+
+value d8
+	a : 1 = "Public, so everyone can see it"
+	b : 2 = "Partially private, so that friends of friends or my networks can see me"
+	c : 3 = "Private so only my friends can see"
+	x : 4 = "Prefer not to say";
+
+value d9
+	a : 1 = "No"
+	b : 2 = "Yes"
+	x : 3 = "Prefer not to say";
+
+value d10
+	a : 1 = "I usually accept all requests"
+	b : 2 = "I accept only if we have friends in common"
+	b : 3 = "I accept only if I know them"
+	b : 4 = "I accept only if I know them very well"
+	c : 5 = "I ignore them"
+	c : 6 = "I block them or delete the request"
+	x : 7 = "Prefer not to say";
+
+/***   Risks   ***/
+
+value f1
+	a : 1 = "Never"
+	a : 2 = "Hardly ever"
+	b : 3 = "At least every week"
+	b : 4 = "Daily or almost daily"
+	b : 5 = "Several times each day"
+	b : 6 = "Almost all the time"
+	x : 7 = "Prefer not to say";
+	
+value f2
+	a : 1 = "No"
+	b : 2 = "Yes"
+	x : 3 = "Prefer not to say";
+	
+value f3
+	a : 1 = "No"
+	b : 2 = "Yes"
+	x : 3 = "Prefer not to say";
+	
+value f4
+	a : 1 = "I was happy"
+	b : 2 = "I was not happy or upset"
+	c : 3 = "I was a little upset"
+	c : 4 = "I was fairly upset"
+	c : 5 = "I was very upset"
+	x : 6 = "Prefer not to say";
+
+value f5
+	a : 1 = "I met with someone about my age"
+	a : 2 = "I met with someone younger than me"
+	b : 3 = "I met with a teenager older than me (under 18)"
+	c : 4 = "I met with an adult (over 18)"
+	x : 5 = "Prefer not to say";
+	
+value f6
+	a : 1 = "No"
+	b : 2 = "Yes"
+	x : 3 = "Prefer not to say";	
+
+value f8
+	a : 1 = "None"
+	b : 2 = "1 to 2"
+	b : 3 = "3 to 4"
+	b : 4 = "5 to 10"
+	b : 5 = "More than 10"
+	x : 6 = "Prefer not to say";
+
+value f11
+	a : 1 = "No"
+	b : 2 = "Yes"
+	x : 3 = "Prefer not to say";	
+	
+value f12
+	a : 1 = "Just once or twice"
+	b : 2 = "At least every month"
+	b : 3 = "At least every week"
+	b : 4 = "Daily or almost daily"
+	x : 5 = "Prefer not to say";
+
+value f13
+	a : 1 = "A little upset"
+	b : 2 = "Fairly upset"
+	b : 3 = "Very upset"
+	x : 4 = "Prefer not to say";
+	
+value f14a
+	a : 0 = "No"
+	b : 1 = "Yes";
+value f14b
+	a : 0 = "No"
+	b : 1 = "Yes";
+value f14j
+	a : 0 = "No"
+	b : 1 = "Yes";
+value f14k
+	a : 0 = "No"
+	b : 1 = "Yes";
+value f14l
+	a : 0 = "No"
+	b : 1 = "Yes";
+value f14m
+	a : 0 = "No"
+	b : 1 = "Yes";
+value f14c
+	a : 0 = "No"
+	b : 1 = "Yes";
+value f14n
+	a : 0 = "No"
+	b : 1 = "Yes";
+value f14o
+	a : 0 = "No"
+	b : 1 = "Yes";
+value f14d
+	a : 0 = "No"
+	b : 1 = "Yes";
+value f14e
+	a : 0 = "No"
+	b : 1 = "Yes";
+value f14p
+	a : 0 = "No"
+	b : 1 = "Yes";
+value f14q
+	a : 0 = "No"
+	b : 1 = "Yes";
+value f14r
+	a : 0 = "No"
+	b : 1 = "Yes";
+value f14f
+	a : 0 = "No"
+	b : 1 = "Yes";
+value f14g
+	a : 0 = "No"
+	b : 1 = "Yes";
+value f14h
+	a : 0 = "No"
+	b : 1 = "Yes";
+value f14i
+	a : 0 = "No"
+	b : 1 = "Yes";
+
+value f15
+	a : 1 = "I got over it straight away"
+	b : 2 = "I felt like that for a few days"
+	b : 3 = "I felt like that for a few weeks"
+	b : 4 = "I felt like that for a few months or more"
+	x : 5 = "Prefer not to say";
+
+value f16a
+	a : 0 = "No"
+	b : 1 = "Yes";
+value f16b
+	a : 0 = "No"
+	b : 1 = "Yes";
+value f16c
+	a : 0 = "No"
+	b : 1 = "Yes";
+value f16d
+	a : 0 = "No"
+	b : 1 = "Yes";
+value f16e
+	a : 0 = "No"
+	b : 1 = "Yes";
+value f16f
+	a : 0 = "No"
+	b : 1 = "Yes";
+value f16g
+	a : 0 = "No"
+	b : 1 = "Yes";
+value f16h
+	a : 0 = "No"
+	b : 1 = "Yes";
+value f16i
+	a : 0 = "No"
+	b : 1 = "Yes";
+value f16j
+	a : 0 = "No"
+	b : 1 = "Yes";
+value f16k
+	a : 0 = "No"
+	b : 1 = "Yes";
+
+value f18
+	a : 1 = "No"
+	b : 2 = "Yes"
+	x : 3 = "Prefer not to say";
+
+value f19
+	a : 1 = "Just once or twice"
+	b : 2 = "At least every month"
+	b : 3 = "At least every week"
+	b : 4 = "Daily or almost daily"
+	x : 5 = "Prefer not to say";
+	
+value f20
+	a : 1 = "No"
+	b : 2 = "Yes"
+	x : 3 = "Prefer not to say";
+
+value f20a
+	a : 1 = "No"
+	b : 2 = "Yes"
+	x : 3 = "Prefer not to say";
+
+value f20b
+	a : 1 = "No"
+	b : 2 = "Yes"
+	x : 3 = "Prefer not to say";
+
+value f21a
+	a : 0 = "No"
+	b : 1 = "Yes";
+value f21b
+	a : 0 = "No"
+	b : 1 = "Yes";
+value f21c
+	a : 0 = "No"
+	b : 1 = "Yes";
+value f21d
+	a : 0 = "No"
+	b : 1 = "Yes";
+value f21e
+	a : 0 = "No"
+	b : 1 = "Yes";
+value f21f
+	a : 0 = "No"
+	b : 1 = "Yes";
+value f21g
+	a : 0 = "No"
+	b : 1 = "Yes";
+value f21h
+	a : 0 = "No"
+	b : 1 = "Yes";
+value f21i
+	a : 0 = "No"
+	b : 1 = "Yes";
+
+value f22
+	a : 1 = "No"
+	b : 2 = "Yes"
+	x : 3 = "Prefer not to say";
+
+value f23
+	a : 1 = "I wasn't at all upset"
+	b : 2 = "I was a little upset"
+	b : 3 = "I was fairly upset"
+	b : 4 = "I was very upset"
+	x : 5 = "Prefer not to say";
+	
+value f24
+	a : 1 = "No"
+	b : 2 = "Yes"
+	x : 3 = "Prefer not to say";	
+
+value f25
+	a : 1 = "Just once or twice"
+	b : 2 = "At least every month"
+	b : 3 = "At least every week"
+	b : 4 = "Daily or almost daily"
+	x : 5 = "Prefer not to say";
+
+value f26
+	a : 1 = "No"
+	b : 2 = "Yes"
+	x : 3 = "Prefer not to say";
+
+value f26a
+	a : 1 = "No"
+	b : 2 = "Yes"
+	x : 3 = "Prefer not to say";
+
+value f26b
+	a : 1 = "No"
+	b : 2 = "Yes"
+	x : 3 = "Prefer not to say";
+
+value f27a
+	a : 0 = "No"
+	b : 1 = "Yes";
+value f27b
+	a : 0 = "No"
+	b : 1 = "Yes";
+value f27c
+	a : 0 = "No"
+	b : 1 = "Yes";
+value f27d
+	a : 0 = "No"
+	b : 1 = "Yes";
+value f27e
+	a : 0 = "No"
+	b : 1 = "Yes";
+value f27f
+	a : 0 = "No"
+	b : 1 = "Yes";
+value f27g
+	a : 0 = "No"
+	b : 1 = "Yes";
+value f27h
+	a : 0 = "No"
+	b : 1 = "Yes";
+value f27i
+	a : 0 = "No"
+	b : 1 = "Yes";
+
+value f28
+	a : 1 = "No"
+	b : 2 = "Yes"
+	x : 3 = "Prefer not to say";
+
+value f29
+	a : 1 = "I was happy"
+	b : 2 = "I was not happy or upset"
+	c : 3 = "I was a little upset"
+	c : 4 = "I was fairly upset"
+	c : 5 = "I was very upset"
+	x : 6 = "Prefer not to say";
+
+value f31
+	a : 1 = "No"
+	b : 2 = "Yes"
+	x : 3 = "Prefer not to say";
+
+value f32d
+	a : 0 = "No"
+	b : 1 = "Yes";
+value f32e
+	a : 0 = "No"
+	b : 1 = "Yes";
+value f32f
+	a : 0 = "No"
+	b : 1 = "Yes";
+value f32g
+	a : 0 = "No"
+	b : 1 = "Yes";
+value f32h
+	a : 0 = "No"
+	b : 1 = "Yes";
+value f32i
+	a : 0 = "No"
+	b : 1 = "Yes";
+value f32j
+	a : 0 = "No"
+	b : 1 = "Yes";
+value f32k
+	a : 0 = "No"
+	b : 1 = "Yes";
+value f32l
+	a : 0 = "No"
+	b : 1 = "Yes";
+value f32m
+	a : 0 = "No"
+	b : 1 = "Yes";
+value f32n
+	a : 0 = "No"
+	b : 1 = "Yes";
+value f32o
+	a : 0 = "No"
+	b : 1 = "Yes";
+
+value f33
+	a : 1 = "No"
+	b : 2 = "Yes"
+	x : 3 = "Prefer not to say";
+
+value f34
+	a : 1 = "No"
+	b : 2 = "Yes"
+	x : 3 = "Prefer not to say";
+
+value f35
+	a : 1 = "I was happy"
+	b : 2 = "I was not happy or upset"
+	c : 3 = "I was a little upset"
+	c : 4 = "I was fairly upset"
+	c : 5 = "I was very upset"
+	x : 6 = "Prefer not to say";
+
+value f37
+	a : 1 = "No"
+	b : 2 = "Yes"
+	x : 3 = "Prefer not to say";
+
+value f38
+	a : 1 = "No"
+	b : 2 = "Yes"
+	x : 3 = "Prefer not to say";
+
+value f39
+	a : 1 = "Just once or twice"
+	b : 2 = "At least every month"
+	b : 3 = "At least every week"
+	b : 4 = "Daily or almost daily"
+	x : 5 = "Prefer not to say";
+
+value f40
+	a : 1 = "No"
+	b : 2 = "Yes"
+	x : 3 = "Prefer not to say";
+
+value f41
+	a : 1 = "No"
+	b : 2 = "Yes"
+	x : 3 = "Prefer not to say";
+
+value f43
+	a : 1 = "No"
+	b : 2 = "Yes"
+	x : 3 = "Prefer not to say";
+	
+value f45
+	a : 1 = "Never"
+	a : 2 = "Hardly ever"
+	b : 3 = "Sometimes"
+	b : 4 = "Often"
+	b : 5 = "Very often"
+	x : 6 = "Prefer not to say";
+
+/***   Well-being   ***/
+
+value h1
+	a : 0 = "0"
+	a : 1 = "1"
+	a : 2 = "2"
+	a : 3 = "3"
+	a : 4 = "4"
+	b : 5 = "5"
+	b : 6 = "6"
+	b : 7 = "7"
+	b : 8 = "8"
+	b : 9 = "9"
+	b : 10 = "10";
+
+value h2a
+	a : 0 = "No"
+	b : 1 = "Yes";
+value h2b
+	a : 0 = "No"
+	b : 1 = "Yes";
+value h2i
+	a : 0 = "No"
+	b : 1 = "Yes";
+value h2j
+	a : 0 = "No"
+	b : 1 = "Yes";
+value h2k
+	a : 0 = "No"
+	b : 1 = "Yes";
+value h2c
+	a : 0 = "No"
+	b : 1 = "Yes";
+value h2l
+	a : 0 = "No"
+	b : 1 = "Yes";
+value h2d
+	a : 0 = "No"
+	b : 1 = "Yes";
+value h2m
+	a : 0 = "No"
+	b : 1 = "Yes";
+value h2e
+	a : 0 = "No"
+	b : 1 = "Yes";
+value h2n
+	a : 0 = "No"
+	b : 1 = "Yes";
+value h2o
+	a : 0 = "No"
+	b : 1 = "Yes";
+value h2p
+	a : 0 = "No"
+	b : 1 = "Yes";
+value h2q
+	a : 0 = "No"
+	b : 1 = "Yes";
+value h2f
+	a : 0 = "No"
+	b : 1 = "Yes";
+value h2g
+	a : 0 = "No"
+	b : 1 = "Yes";
+value h2h
+	a : 0 = "No"
+	b : 1 = "Yes";
+
+/***   Family   ***/
+
+value i1
+	a : 1 = "Very easy"
+	a : 2 = "Fairly easy"
+	b : 3 = "Fairly difficult"
+	b : 4 = "Very difficult"
+	x : 5 = "Prefer not to say";
+
+value i2
+	a : 1 = "Not true for me"
+	b : 2 = "A bit true for me"
+	b : 3 = "Fairly true for me"
+	b : 4 = "Very true for me"
+	x : 5 = "Prefer not to say";
+
+value i3
+	a : 1 = "Never"
+	a : 2 = "Hardly ever"
+	b : 3 = "Sometimes"
+	b : 4 = "Often"
+	b : 5 = "Very often"
+	x : 6 = "Prefer not to say";
+
+value i4
+	a : 1 = "Never"
+	a : 2 = "Hardly ever"
+	b : 3 = "Sometimes"
+	b : 4 = "Often"
+	b : 5 = "Very often"
+	x : 6 = "Prefer not to say";
+
+value i5
+	a : 1 = "Never"
+	a : 2 = "Hardly ever"
+	b : 3 = "Sometimes"
+	b : 4 = "Often"
+	b : 5 = "Very often"
+	x : 6 = "Prefer not to say";
+
+value i6
+	a : 1 = "I am allowed to do this anytime"
+	b : 2 = "I am allowed to do this with permission or supervision"
+	b : 3 = "I am not allowed do this"
+	x : 4 = "Prefer not to say";
+
+value i7
+	a : 1 = "No"
+	b : 2 = "Yes"
+	x : 3 = "Prefer not to say";
+
+value i8
+	a : 1 = "Never"
+	a : 2 = "Hardly ever"
+	b : 3 = "Sometimes"
+	b : 4 = "Often"
+	b : 5 = "Very often"
+	x : 6 = "Prefer not to say";
+
+/***   School   ***/
+
+value j1
+	a : 1 = "I don't like it at all"
+	a : 2 = "I don't like it very much"
+	b : 3 = "I like it a bit"
+	b : 4 = "I like it a lot"
+	x : 5 = "Prefer not to say";
+
+value j5
+	a : 1 = "Never"
+	a : 2 = "Hardly ever"
+	b : 4 = "Often"
+	b : 5 = "Very often"
+	c : 3 = "Sometimes"
+	x : 6 = "Prefer not to say";
+
+/***   Peers&Community   ***/
+
+value k1
+	a : 1 = "Not true for me"
+	b : 2 = "A bit true for me"
+	b : 3 = "Fairly true for me"
+	b : 4 = "Very true for me"
+	x : 5 = "Prefer not to say";
+
+value k2
+	a : 1 = "Never"
+	a : 2 = "Hardly ever"
+	b : 3 = "Sometimes"
+	b : 4 = "Often"
+	b : 5 = "Very often"
+	x : 6 = "Prefer not to say";
+
+value k3
+	a : 1 = "Never"
+	a : 2 = "Hardly ever"
+	b : 3 = "Sometimes"
+	b : 4 = "Often"
+	b : 5 = "Very often"
+	x : 6 = "Prefer not to say";
+
+value k4
+	a : 1 = "Not true for me"
+	b : 2 = "A bit true for me"
+	b : 3 = "Fairly true for me"
+	b : 4 = "Very true for me"
+	x : 5 = "Prefer not to say";
+
+/***   Child identity and resources (P2)   ***/
+
+value a14
+	a : 1 = "Hardly ever"
+	b : 2 = "Once or twice a year"
+	b : 3 = "Every few months"
+	b : 4 = "Every few weeks"
+	x : 5 = "Prefer not to say";
+
+value a15
+	a : 1 = "Not at all"
+	b : 2 = "Not very easily"
+	b : 3 = "Quite easily"
+	b : 4 = "Very easily"
+	x : 5 = "Prefer not to say";
+
+value a16
+	a : 1 = "Hardly ever"
+	b : 2 = "Once or twice a year"
+	b : 3 = "Every few months"
+	b : 4 = "Every few weeks"
+	x : 5 = "Prefer not to say";
+
+value a17
+	a : 1 = "Less than once a month"
+	b : 2 = "Once or twice a month"
+	b : 3 = "Once or twice a week"
+	b : 4 = "Every day or almost every day"
+	x : 5 = "Prefer not to say";
+
+value a17a
+	a : 1 = "Less than once a month"
+	b : 2 = "Once or twice a month"
+	b : 3 = "Once or twice a week"
+	b : 4 = "Every day or almost every day"
+	x : 5 = "Prefer not to say";
+
+value a18
+	a : 1 = "No"
+	b : 2 = "Yes"
+	x : 3 = "Prefer not to say";
+
+value a19
+	a : 1 = "Hardly ever"
+	b : 2 = "Once or twice a year"
+	b : 3 = "Every few months"
+	b : 4 = "Every few weeks"
+	x : 5 = "Prefer not to say";
+
+value a20
+	a : 1 = "Not true for me"
+	b : 2 = "A bit true for me"
+	b : 3 = "Fairly true for me"
+	b : 4 = "Very true for me"
+	x : 5 = "Prefer not to say";
+
+value a21
+	a : 1 = "Not true for me"
+	b : 2 = "A bit true for me"
+	b : 3 = "Fairly true for me"
+	b : 4 = "Very true for me"
+	x : 5 = "Prefer not to say";
+
+value a22a
+	a : 0 = "No"
+	b : 1 = "Yes";
+value a22b
+	a : 0 = "No"
+	b : 1 = "Yes";
+value a22c
+	a : 0 = "No"
+	b : 1 = "Yes";
+value a22d
+	a : 0 = "No"
+	b : 1 = "Yes";
+value a22e
+	a : 0 = "No"
+	b : 1 = "Yes";
+value a22f
+	a : 0 = "No"
+	b : 1 = "Yes";
+value a22g
+	a : 0 = "No"
+	b : 1 = "Yes";
+value a22h
+	a : 0 = "No"
+	b : 1 = "Yes";
+value a22i
+	a : 0 = "No"
+	b : 1 = "Yes";
+value a22j
+	a : 0 = "No"
+	b : 1 = "Yes";
+value a22k
+	a : 0 = "No"
+	b : 1 = "Yes";
+value a22l
+	a : 0 = "No"
+	b : 1 = "Yes";
+value a22m
+	a : 0 = "No"
+	b : 1 = "Yes";
+value a22n
+	a : 0 = "No"
+	b : 1 = "Yes";
+value a22o
+	a : 0 = "No"
+	b : 1 = "Yes";
+
+value a23
+	a : 1 = "Never"
+	a : 2 = "Hardly ever"
+	b : 3 = "Sometimes"
+	b : 4 = "Often"
+	b : 5 = "Very often"
+	x : 6 = "Prefer not to say";
+
+value a24
+	a : 1 = "Not true"
+	b : 2 = "A bit true"
+	b : 3 = "Very true"
+	x : 4 = "Prefer not to say";
+
+value a25
+	a : 1 = "No"
+	b : 2 = "Yes"
+	x : 3 = "Prefer not to say";
+
+value a26
+	a : 1 = "Not true for me"
+	b : 2 = "A bit true for me"
+	b : 3 = "Fairly true for me"
+	b : 4 = "Very true for me"
+	x : 5 = "Prefer not to say";
+
+value a27
+	a : 1 = "Elementary"
+	a : 2 = "High School"
+	b : 3 = "College"
+	b : 4 = "Beyond college degree (MA/MS/MBA/PhD/Law/Medicine)"
+	x : 5 = "Prefer not to say";
+
+value a28
+	a : 1 = "In the Philippines"
+	a : 2 = "Abroad"
+	a : 3 = "I have other plans--I want to do business." 
+	b : 4 = "I don't like to work."
+	x : 5 = "Prefer not to say";
+
+value a29
+	a : 1 = "Never"
+	a : 2 = "Hardly ever"
+	b : 3 = "Sometimes"
+	b : 4 = "Often"
+	b : 5 = "Very often"
+	x : 6 = "Prefer not to say";
+	
+/***   Sexual Risks   ***/
+
+value g1
+	a : 1 = "No"
+	b : 2 = "Yes"
+	c : 3 = "Prefer not to say";
+
+value g2
+	a : 1 = "No"
+	b : 2 = "Yes"
+	c : 3 = "Prefer not to say";
+
+value g3
+	a : 1 = "No"
+	b : 2 = "Yes"
+	c : 3 = "Prefer not to say";
+	
+value g3a
+	a : 1 = "No"
+	b : 2 = "Yes"
+	c : 3 = "Prefer not to say";
+value g3b
+	a : 1 = "No"
+	b : 2 = "Yes"
+	c : 3 = "Prefer not to say";
+value g3c
+	a : 1 = "No"
+	b : 2 = "Yes"
+	c : 3 = "Prefer not to say";
+value g3d
+	a : 1 = "No"
+	b : 2 = "Yes"
+	c : 3 = "Prefer not to say";
+	
+value g4
+	a : 1 = "A mobile phone that is not a smartphone"
+	a : 2 = "A smartphone [iPhone, Samsung Galaxy, Cherry Mobile, Star Mobile, etc]"
+	b : 3 = "A desktop computer"
+	b : 4 = "A laptop or notebook computer"
+	c : 5 = "A tablet [iPad, Samsung Galaxy tab, PLDT Home tablet, etc]"
+	d : 6 = "A games console [Playstation, Xbox, PSP, Nintendo, 3DS, etc]"
+	e : 7 = "Prefer not to say";
+
+value g5
+	a : 1 = "An adult in your family (over 18)"
+	b : 2 = "A child or young person in your family (under 18)"
+	c : 3 = "A romantic partner (or ex-)"
+	d : 4 = "Someone from work"
+	e : 5 = "A friend or acquaintance (over 18) that you knew in person before this"
+	f : 6 = "A friend or acquaintance (under 18) that you knew in person before this"
+	g : 7 = "Someone you first met online who was a contact of a friend or family member"
+	h : 8 = "Someone you met online who had no other connection with your life"
+	i : 9 = "Someone else (specify)"
+	j : 10 = "Prefer not to say";
+
+value g9a
+	a : 0 = "No"
+	b : 1 = "Yes";
+value g9b
+	a : 0 = "No"
+	b : 1 = "Yes";
+value g9c
+	a : 0 = "No"
+	b : 1 = "Yes";
+value g9d
+	a : 0 = "No"
+	b : 1 = "Yes";
+value g9e
+	a : 0 = "No"
+	b : 1 = "Yes";
+value g9f
+	a : 0 = "No"
+	b : 1 = "Yes";
+value g9g
+	a : 0 = "No"
+	b : 1 = "Yes";
+value g9h
+	a : 0 = "No"
+	b : 1 = "Yes";
+value g9j
+	a : 0 = "No"
+	b : 1 = "Yes";
+value g9i
+	a : 0 = "No"
+	b : 1 = "Yes";
+value g9k
+	a : 0 = "No"
+	b : 1 = "Yes";
+value g9l
+	a : 0 = "No"
+	b : 1 = "Yes";
+
+/*** Parent Module ***/
+
+value l27
+	a : 1 = "Less than P40000"
+	b : 2 = "P40000 - P59999"
+	b : 3 = "P60000 - P99999"
+	b : 4 = "P100000 - P249999"
+	c : 5 = "More than P250000";
+
+value l36
+	a : 1 = "No"
+	b : 2 = "Yes";
+
+value l28
+	a : 1 = "Post-graduate"
+	a : 2 = "College"
+	b : 3 = "High School"
+	b : 4 = "Elementary"
+	b : 5 = "Pre-school"
+	c : 6 = "Don't know"
+	c : 7 = "Others";
+
+value l37
+	a : 1 = "Tagalog"
+	b : 2 = "Cebuano"
+	c : 3 = "Ilocano"
+	d : 4 = "Bisaya"
+	e : 5 = "Illonggo"
+	f : 6 = "Bicol"
+	g : 7 = "Waray"
+	h : 8 = "Others";
+
+value l38
+	a : 1 = "Roman Catholic"
+	b : 2 = "Islam"
+	c : 3 = "Born-Again Christian"
+	d : 4 = "Protestant"
+	e : 5 = "Iglesia ni Cristo"
+	f : 6 = "Others";
+
+value l31
+	a : 1 = "Never"
+	a : 2 = "Hardly ever"
+	b : 3 = "At least every month"
+	b : 4 = "At least every week"
+	b : 5 = "Daily or almost daily";
+
+value l39
+	a : 1 = "Never"
+	b : 2 = "Once a day"
+	b : 3 = "Three times a day"
+	b : 4 = "Five times a day"
+	b : 5 = "More than 5 times a day";
+
+value l32
+	a : 1 = "No"
+	b : 2 = "Yes"
+	x : 3 = "Prefer not to say";
+
+value l40
+	a : 1 = "Permanent"
+	b : 2 = "Contractual"
+	b : 3 = "Under Probation";
+
+value l33
+	a : 1 = "I am sick"
+	a : 2 = "I am retired"
+	b : 3 = "I am a student"
+	b : 4 = "I am looking for a job"
+	c : 5 = "I take care of others, or I am full-time in the home";
+
+value l41a
+	a : 0 = "No"
+	b : 1 = "Yes";
+value l41b
+	a : 0 = "No"
+	b : 1 = "Yes";
+value l41c
+	a : 0 = "No"
+	b : 1 = "Yes";
+value l41d
+	a : 0 = "No"
+	b : 1 = "Yes";
+value l41e
+	a : 0 = "No"
+	b : 1 = "Yes";
+value l41f
+	a : 0 = "No"
+	b : 1 = "Yes";
+value l41g
+	a : 0 = "No"
+	b : 1 = "Yes";
+
+value l42
+	a : 1 = "Single"
+	b : 2 = "Married"
+	c : 3 = "Separated from spouse"
+	d : 4 = "Has a live-in partner"
+	e : 5 = "Widowed";
+
+value l43
+	x : 99 = "Prefer not to say";
+
+value l44
+	a : 1 = "Male"
+	b : 2 = "Female";
+
+value l35a
+	a : 0 = "No"
+	b : 1 = "Yes";
+value l35b
+	a : 0 = "No"
+	b : 1 = "Yes";
+value l35c
+	a : 0 = "No"
+	b : 1 = "Yes";
+value l35d
+	a : 0 = "No"
+	b : 1 = "Yes";
+value l35e
+	a : 0 = "No"
+	b : 1 = "Yes";
+value l35f
+	a : 0 = "No"
+	b : 1 = "Yes";
+value l35g
+	a : 0 = "No"
+	b : 1 = "Yes";
+value l35h
+	a : 0 = "No"
+	b : 1 = "Yes";
+value l35i
+	a : 0 = "No"
+	b : 1 = "Yes";
+value l35j
+	a : 0 = "No"
+	b : 1 = "Yes";
+value l35k
+	a : 0 = "No"
+	b : 1 = "Yes";
+value l35l
+	a : 0 = "No"
+	b : 1 = "Yes";
+
+value l34a
+	a : 1 = "No"
+	b : 2 = "Yes"
+	x : 3 = "Prefer not to say";
+value l34b
+	a : 1 = "No"
+	b : 2 = "Yes"
+	x : 3 = "Prefer not to say";
+value l34c
+	a : 1 = "No"
+	b : 2 = "Yes"
+	x : 3 = "Prefer not to say";
+value l34d
+	a : 1 = "No"
+	b : 2 = "Yes"
+	x : 3 = "Prefer not to say";
+value l34e
+	a : 1 = "No"
+	b : 2 = "Yes"
+	x : 3 = "Prefer not to say";
+value l34f
+	a : 1 = "No"
+	b : 2 = "Yes"
+	x : 3 = "Prefer not to say";
+
+value l45a
+	a : 0 = "No"
+	b : 1 = "Yes";
+value l45b
+	a : 0 = "No"
+	b : 1 = "Yes";
+value l45c
+	a : 0 = "No"
+	b : 1 = "Yes";
+value l45d
+	a : 0 = "No"
+	b : 1 = "Yes";
+value l45e
+	a : 0 = "No"
+	b : 1 = "Yes";
+value l45f
+	a : 0 = "No"
+	b : 1 = "Yes";
+value l45g
+	a : 0 = "No"
+	b : 1 = "Yes";
+value l45h
+	a : 0 = "No"
+	b : 1 = "Yes";
+value l45i
+	a : 0 = "No"
+	b : 1 = "Yes";
+value l45j
+	a : 0 = "No"
+	b : 1 = "Yes";
+value l45k
+	a : 0 = "No"
+	b : 1 = "Yes";
+
+value l1
+	a : 1 = "No, I have never used it"
+	b : 2 = "Yes, I have used it for a few months"
+	b : 3 = "Yes, I have used it for about a year"
+	b : 4 = "Yes, I have used if for a few years"
+	x : 5 = "Prefer not to say";
+
+value l46
+	a : 1 = "No"
+	b : 2 = "Yes";
+
+value l47a
+	a : 0 = "No"
+	b : 1 = "Yes";
+value l47b
+	a : 0 = "No"
+	b : 1 = "Yes";
+value l47c
+	a : 0 = "No"
+	b : 1 = "Yes";
+value l47d
+	a : 0 = "No"
+	b : 1 = "Yes";
+value l47e
+	a : 0 = "No"
+	b : 1 = "Yes";
+value l47f
+	a : 0 = "No"
+	b : 1 = "Yes";
+value l47g
+	a : 0 = "No"
+	b : 1 = "Yes";
+value l47h
+	a : 0 = "No"
+	b : 1 = "Yes";
+
+value l6a
+	a : 1 = "Never"
+	a : 2 = "Hardly ever"
+	b : 3 = "At least every month"
+	b : 4 = "At least every week"
+	b : 5 = "Daily or almost daily"
+	b : 6 = "Several times each day"
+	b : 7 = "Almost all the time"
+	x : 8 = "Prefer not to say";
+value l6b
+	a : 1 = "Never"
+	a : 2 = "Hardly ever"
+	b : 3 = "At least every month"
+	b : 4 = "At least every week"
+	b : 5 = "Daily or almost daily"
+	b : 6 = "Several times each day"
+	b : 7 = "Almost all the time"
+	x : 8 = "Prefer not to say";
+value l6c
+	a : 1 = "Never"
+	a : 2 = "Hardly ever"
+	b : 3 = "At least every month"
+	b : 4 = "At least every week"
+	b : 5 = "Daily of almost daily"
+	b : 6 = "Several times each day"
+	b : 7 = "Almost all the time"
+	x : 8 = "Prefer not to say";
+value l6d
+	a : 1 = "Never"
+	a : 2 = "Hardly ever"
+	b : 3 = "At least every month"
+	b : 4 = "At least every week"
+	b : 5 = "Daily or almost daily"
+	b : 6 = "Several times each day"
+	b : 7 = "Almost all the time"
+	x : 8 = "Prefer not to say";
+value l6e
+	a : 1 = "Never"
+	a : 2 = "Hardly ever"
+	b : 3 = "At least every month"
+	b : 4 = "At least every week"
+	b : 5 = "Daily or almost daily"
+	b : 6 = "Several times each day"
+	b : 7 = "Almost all the time"
+	x : 8 = "Prefer not to say";
+value l6f
+	a : 1 = "Never"
+	a : 2 = "Hardly ever"
+	b : 3 = "At least every month"
+	b : 4 = "At least every week"
+	b : 5 = "Daily or almost daily"
+	b : 6 = "Several times each day"
+	b : 7 = "Almost all the time"
+	x : 8 = "Prefer not to say";
+
+value l7a
+	a : 1 = "Never"
+	a : 2 = "Hardly ever"
+	b : 3 = "At least every month"
+	b : 4 = "At least every week"
+	b : 5 = "Daily or almost daily"
+	b : 6 = "Several times each day"
+	b : 7 = "Almost all the time"
+	x : 8 = "Prefer not to say";
+value l7b
+	a : 1 = "Never"
+	a : 2 = "Hardly ever"
+	b : 3 = "At least every month"
+	b : 4 = "At least every week"
+	b : 5 = "Daily or almost daily"
+	b : 6 = "Several times each day"
+	b : 7 = "Almost all the time"
+	x : 8 = "Prefer not to say";
+value l7c
+	a : 1 = "Never"
+	a : 2 = "Hardly ever"
+	b : 3 = "At least every month"
+	b : 4 = "At least every week"
+	b : 5 = "Daily or almost daily"
+	b : 6 = "Several times each day"
+	b : 7 = "Almost all the time"
+	x : 8 = "Prefer not to say";
+value l7d
+	a : 1 = "Never"
+	a : 2 = "Hardly ever"
+	b : 3 = "At least every month"
+	b : 4 = "At least every week"
+	b : 5 = "Daily or almost daily"
+	b : 6 = "Several times each day"
+	b : 7 = "Almost all the time"
+	x : 8 = "Prefer not to say";
+value l7e
+	a : 1 = "Never"
+	a : 2 = "Hardly ever"
+	b : 3 = "At least every month"
+	b : 4 = "At least every week"
+	b : 5 = "Daily or almost daily"
+	b : 6 = "Several times each day"
+	b : 7 = "Almost all the time"
+	x : 8 = "Prefer not to say";
+value l7f
+	a : 1 = "Never"
+	a : 2 = "Hardly ever"
+	b : 3 = "At least every month"
+	b : 4 = "At least every week"
+	b : 5 = "Daily of almost daily"
+	b : 6 = "Several times each day"
+	b : 7 = "Almost all the time"
+	x : 8 = "Prefer not to say";
+
+value l8a
+	a : 1 = "Not true for me"
+	b : 2 = "A bit true for me"
+	b : 3 = "Fairly true for me"
+	b : 4 = "Very true for me"
+	x : 5 = "Prefer not to say";
+value l8b
+	a : 1 = "Not true for me"
+	b : 2 = "A bit true for me"
+	b : 3 = "Fairly true for me"
+	b : 4 = "Very true for me"
+	x : 5 = "Prefer not to say";
+value l8c
+	a : 1 = "Not true for me"
+	b : 2 = "A bit true for me"
+	b : 3 = "Fairly true for me"
+	b : 4 = "Very true for me"
+	x : 5 = "Prefer not to say";
+value l8f1
+	a : 1 = "Not true for me"
+	b : 2 = "A bit true for me"
+	b : 3 = "Fairly true for me"
+	b : 4 = "Very true for me"
+	x : 5 = "Prefer not to say";
+value l8f2
+	a : 1 = "Not true for me"
+	b : 2 = "A bit true for me"
+	b : 3 = "Fairly true for me"
+	b : 4 = "Very true for me"
+	x : 5 = "Prefer not to say";
+value l8f3
+	a : 1 = "Not true for me"
+	b : 2 = "A bit true for me"
+	b : 3 = "Fairly true for me"
+	b : 4 = "Very true for me"
+	x : 5 = "Prefer not to say";
+value l8f4
+	a : 1 = "Not true for me"
+	b : 2 = "A bit true for me"
+	b : 3 = "Fairly true for me"
+	b : 4 = "Very true for me"
+	x : 5 = "Prefer not to say";
+value l8f5
+	a : 1 = "Not true for me"
+	b : 2 = "A bit true for me"
+	b : 3 = "Fairly true for me"
+	b : 4 = "Very true for me"
+	x : 5 = "Prefer not to say";
+value l8i
+	a : 1 = "Not true for me"
+	b : 2 = "A bit true for me"
+	b : 3 = "Fairly true for me"
+	b : 4 = "Very true for me"
+	x : 5 = "Prefer not to say";
+value l8g
+	a : 1 = "Not true for me"
+	b : 2 = "A bit true for me"
+	b : 3 = "Fairly true for me"
+	b : 4 = "Very true for me"
+	x : 5 = "Prefer not to say";
+value l8h
+	a : 1 = "Not true for me"
+	b : 2 = "A bit true for me"
+	b : 3 = "Fairly true for me"
+	b : 4 = "Very true for me"
+	x : 5 = "Prefer not to say";
+value l8k
+	a : 1 = "Not true for me"
+	b : 2 = "A bit true for me"
+	b : 3 = "Fairly true for me"
+	b : 4 = "Very true for me"
+	x : 5 = "Prefer not to say";
+value l8k1
+	a : 1 = "Not true for me"
+	b : 2 = "A bit true for me"
+	b : 3 = "Fairly true for me"
+	b : 4 = "Very true for me"
+	x : 5 = "Prefer not to say";
+value l8l
+	a : 1 = "Not true for me"
+	b : 2 = "A bit true for me"
+	b : 3 = "Fairly true for me"
+	b : 4 = "Very true for me"
+	x : 5 = "Prefer not to say";
+value l8m
+	a : 1 = "Not true for me"
+	b : 2 = "A bit true for me"
+	b : 3 = "Fairly true for me"
+	b : 4 = "Very true for me"
+	x : 5 = "Prefer not to say";
+value l8m1
+	a : 1 = "Not true for me"
+	b : 2 = "A bit true for me"
+	b : 3 = "Fairly true for me"
+	b : 4 = "Very true for me"
+	x : 5 = "Prefer not to say";
+value l8n
+	a : 1 = "Not true for me"
+	b : 2 = "A bit true for me"
+	b : 3 = "Fairly true for me"
+	b : 4 = "Very true for me"
+	x : 5 = "Prefer not to say";
+value l8o
+	a : 1 = "Not true for me"
+	b : 2 = "A bit true for me"
+	b : 3 = "Fairly true for me"
+	b : 4 = "Very true for me"
+	x : 5 = "Prefer not to say";
+value l8p
+	a : 1 = "Not true for me"
+	b : 2 = "A bit true for me"
+	b : 3 = "Fairly true for me"
+	b : 4 = "Very true for me"
+	x : 5 = "Prefer not to say";
+value l8p1
+	a : 1 = "Not true for me"
+	b : 2 = "A bit true for me"
+	b : 3 = "Fairly true for me"
+	b : 4 = "Very true for me"
+	x : 5 = "Prefer not to say";
+value l8t
+	a : 1 = "Not true for me"
+	b : 2 = "A bit true for me"
+	b : 3 = "Fairly true for me"
+	b : 4 = "Very true for me"
+	x : 5 = "Prefer not to say";
+value l8q
+	a : 1 = "Not true for me"
+	b : 2 = "A bit true for me"
+	b : 3 = "Fairly true for me"
+	b : 4 = "Very true for me"
+	x : 5 = "Prefer not to say";
+value l8s
+	a : 1 = "Not true for me"
+	b : 2 = "A bit true for me"
+	b : 3 = "Fairly true for me"
+	b : 4 = "Very true for me"
+	x : 5 = "Prefer not to say";
+value l8r
+	a : 1 = "Not true for me"
+	b : 2 = "A bit true for me"
+	b : 3 = "Fairly true for me"
+	b : 4 = "Very true for me"
+	x : 5 = "Prefer not to say";
+value l8u
+	a : 1 = "Not true for me"
+	b : 2 = "A bit true for me"
+	b : 3 = "Fairly true for me"
+	b : 4 = "Very true for me"
+	x : 5 = "Prefer not to say";
+value l8v
+	a : 1 = "Not true for me"
+	b : 2 = "A bit true for me"
+	b : 3 = "Fairly true for me"
+	b : 4 = "Very true for me"
+	x : 5 = "Prefer not to say";
+value l8w
+	a : 1 = "Not true for me"
+	b : 2 = "A bit true for me"
+	b : 3 = "Fairly true for me"
+	b : 4 = "Very true for me"
+	x : 5 = "Prefer not to say";
+value l8x
+	a : 1 = "Not true for me"
+	b : 2 = "A bit true for me"
+	b : 3 = "Fairly true for me"
+	b : 4 = "Very true for me"
+	x : 5 = "Prefer not to say";
+value l8x1
+	a : 1 = "Not true for me"
+	b : 2 = "A bit true for me"
+	b : 3 = "Fairly true for me"
+	b : 4 = "Very true for me"
+	x : 5 = "Prefer not to say";
+
+value l48a
+	a : 0 = "No"
+	b : 1 = "Yes";
+value l48b
+	a : 0 = "No"
+	b : 1 = "Yes";
+value l48c
+	a : 0 = "No"
+	b : 1 = "Yes";
+value l48d
+	a : 0 = "No"
+	b : 1 = "Yes";
+
+value l49a
+	a : 1 = "No"
+	b : 2 = "Yes"
+	c : 3 = "Don't know"
+	x : 4 = "Prefer not to say";
+value l49b
+	a : 1 = "No"
+	b : 2 = "Yes"
+	c : 3 = "Don't know"
+	x : 4 = "Prefer not to say";
+value l49c
+	a : 1 = "No"
+	b : 2 = "Yes"
+	c : 3 = "Don't know"
+	x : 4 = "Prefer not to say";
+value l49d
+	a : 1 = "No"
+	b : 2 = "Yes"
+	c : 3 = "Don't know"
+	x : 4 = "Prefer not to say";
+value l49e
+	a : 1 = "No"
+	b : 2 = "Yes"
+	c : 3 = "Don't know"
+	x : 4 = "Prefer not to say";
+
+value l12a
+	a : 1 = "Allowed to do this anytime"
+	b : 2 = "Allowed to do tis with permission or supervision"
+	b : 3 = "Can never do this"
+	x : 4 = "Prefer not to say";
+value l12d
+	a : 1 = "Allowed to do this anytime"
+	b : 2 = "Allowed to do tis with permission or supervision"
+	b : 3 = "Can never do this"
+	x : 4 = "Prefer not to say";
+value l12b
+	a : 1 = "Allowed to do this anytime"
+	b : 2 = "Allowed to do tis with permission or supervision"
+	b : 3 = "Can never do this"
+	x : 4 = "Prefer not to say";
+value l12e
+	a : 1 = "Allowed to do this anytime"
+	b : 2 = "Allowed to do tis with permission or supervision"
+	b : 3 = "Can never do this"
+	x : 4 = "Prefer not to say";
+value l12c
+	a : 1 = "Allowed to do this anytime"
+	b : 2 = "Allowed to do tis with permission or supervision"
+	b : 3 = "Can never do this"
+	x : 4 = "Prefer not to say";
+value l12f
+	a : 1 = "Allowed to do this anytime"
+	b : 2 = "Allowed to do tis with permission or supervision"
+	b : 3 = "Can never do this"
+	x : 4 = "Prefer not to say";
+value l12g
+	a : 1 = "Allowed to do this anytime"
+	b : 2 = "Allowed to do tis with permission or supervision"
+	b : 3 = "Can never do this"
+	x : 4 = "Prefer not to say";
+value l12h
+	a : 1 = "Allowed to do this anytime"
+	b : 2 = "Allowed to do tis with permission or supervision"
+	b : 3 = "Can never do this"
+	x : 4 = "Prefer not to say";
+value l12i
+	a : 1 = "Allowed to do this anytime"
+	b : 2 = "Allowed to do tis with permission or supervision"
+	b : 3 = "Can never do this"
+	x : 4 = "Prefer not to say";
+value l12j
+	a : 1 = "Allowed to do this anytime"
+	b : 2 = "Allowed to do tis with permission or supervision"
+	b : 3 = "Can never do this"
+	x : 4 = "Prefer not to say";
+value l12k
+	a : 1 = "Allowed to do this anytime"
+	b : 2 = "Allowed to do tis with permission or supervision"
+	b : 3 = "Can never do this"
+	x : 4 = "Prefer not to say";
+
+value l50a
+	a : 1 = "Never"
+	a : 2 = "Hardly ever"
+	b : 3 = "Sometimes"
+	b : 4 = "Often"
+	b : 5 = "Very often"
+	x : 6 = "Prefer not to say";
+value l50b
+	a : 1 = "Never"
+	a : 2 = "Hardly ever"
+	b : 3 = "Sometimes"
+	b : 4 = "Often"
+	b : 5 = "Very often"
+	x : 6 = "Prefer not to say";
+value l50c
+	a : 1 = "Never"
+	a : 2 = "Hardly ever"
+	b : 3 = "Sometimes"
+	b : 4 = "Often"
+	b : 5 = "Very often"
+	x : 6 = "Prefer not to say";
+value l50d
+	a : 1 = "Never"
+	a : 2 = "Hardly ever"
+	b : 3 = "Sometimes"
+	b : 4 = "Often"
+	b : 5 = "Very often"
+	x : 6 = "Prefer not to say";
+value l50e
+	a : 1 = "Never"
+	a : 2 = "Hardly ever"
+	b : 3 = "Sometimes"
+	b : 4 = "Often"
+	b : 5 = "Very often"
+	x : 6 = "Prefer not to say";
+value l50f
+	a : 1 = "Never"
+	a : 2 = "Hardly ever"
+	b : 3 = "Sometimes"
+	b : 4 = "Often"
+	b : 5 = "Very often"
+	x : 6 = "Prefer not to say";
+
+value l51
+	a : 1 = "Never"
+	a : 2 = "Hardly ever"
+	b : 3 = "At least every month"
+	b : 4 = "At least every week"
+	b : 5 = "Daily or almost daily"
+	c : 6 = "Don't know"
+	x : 7 = "Prefer not to say";
+
+value l13a
+	a : 1 = "No"
+	b : 2 = "Yes"
+	x : 3 = "Prefer not to say";
+value l13b
+	a : 1 = "No"
+	b : 2 = "Yes"
+	x : 3 = "Prefer not to say";
+value l13c
+	a : 1 = "No"
+	b : 2 = "Yes"
+	x : 3 = "Prefer not to say";
+value l13d
+	a : 1 = "No"
+	b : 2 = "Yes"
+	x : 3 = "Prefer not to say";
+value l13e
+	a : 1 = "No"
+	b : 2 = "Yes"
+	x : 3 = "Prefer not to say";
+value l13f
+	a : 1 = "No"
+	b : 2 = "Yes"
+	x : 3 = "Prefer not to say";
+value l13g
+	a : 1 = "No"
+	b : 2 = "Yes"
+	x : 3 = "Prefer not to say";
+value l13h
+	a : 1 = "No"
+	b : 2 = "Yes"
+	x : 3 = "Prefer not to say";
+value l13i
+	a : 1 = "No"
+	b : 2 = "Yes"
+	x : 3 = "Prefer not to say";
+
+value l14a
+	a : 1 = "Never"
+	a : 2 = "Hardly ever"
+	b : 3 = "Sometimes"
+	b : 4 = "Often"
+	b : 5 = "Very often"
+	x : 6 = "Prefer not to say";
+value l14b
+	a : 1 = "Never"
+	a : 2 = "Hardly ever"
+	b : 3 = "Sometimes"
+	b : 4 = "Often"
+	b : 5 = "Very often"
+	x : 6 = "Prefer not to say";
+value l14c
+	a : 1 = "Never"
+	a : 2 = "Hardly ever"
+	b : 3 = "Sometimes"
+	b : 4 = "Often"
+	b : 5 = "Very often"
+	x : 6 = "Prefer not to say";
+value l14d
+	a : 1 = "Never"
+	a : 2 = "Hardly ever"
+	b : 3 = "Sometimes"
+	b : 4 = "Often"
+	b : 5 = "Very often"
+	x : 6 = "Prefer not to say";
+value l14e
+	a : 1 = "Never"
+	a : 2 = "Hardly ever"
+	b : 3 = "Sometimes"
+	b : 4 = "Often"
+	b : 5 = "Very often"
+	x : 6 = "Prefer not to say";
+value l14f
+	a : 1 = "Never"
+	a : 2 = "Hardly ever"
+	b : 3 = "Sometimes"
+	b : 4 = "Often"
+	b : 5 = "Very often"
+	x : 6 = "Prefer not to say";
+
+value l15
+	a : 1 = "Never"
+	a : 2 = "Hardly ever"
+	b : 3 = "At least every month"
+	b : 4 = "At least every week"
+	b : 5 = "Daily or almost daily"
+	c : 6 = "Don't know"
+	x : 7 = "Prefer not to say";
+
+value l17
+	a : 1 = "Not at all upset"
+	b : 2 = "A bit upset"
+	b : 3 = "Fairly upset"
+	b : 4 = "Very  upset"
+	c : 5 = "Don't know"
+	x : 6 = "Prefer not to say";
+
+value l18
+	a : 1 = "Not at all likely"
+	a : 2 = "Not very likely"
+	b : 3 = "Fairly likely"
+	b : 4 = "Very likely"
+	c : 5 = "Don't know"
+	x : 6 = "Prefer not to say";
+
+value l19
+	a : 1 = "Not at all"
+	a : 2 = "Not very much"
+	b : 3 = "A fair amount"
+	b : 4 = "Definitely"
+	c : 5 = "Don't know"
+	x : 6 = "Prefer not to say";
+
+value l20
+	a : 1 = "Not at all"
+	a : 2 = "Not very much"
+	b : 3 = "A fair amount"
+	b : 4 = "Definitely"
+	c : 5 = "Don't know"
+	x : 6 = "Prefer not to say";
+
+value l21a
+	a : 1 = "No"
+	b : 2 = "Yes"
+	c : 3 = "Don't know"
+	x : 4 = "Prefer not to say";
+value l21b
+	a : 1 = "No"
+	b : 2 = "Yes"
+	c : 3 = "Don't know"
+	x : 4 = "Prefer not to say";
+value l21d
+	a : 1 = "No"
+	b : 2 = "Yes"
+	c : 3 = "Don't know"
+	x : 4 = "Prefer not to say";
+value l21c
+	a : 1 = "No"
+	b : 2 = "Yes"
+	c : 3 = "Don't know"
+	x : 4 = "Prefer not to say";
+value l21e
+	a : 1 = "No"
+	b : 2 = "Yes"
+	c : 3 = "Don't know"
+	x : 4 = "Prefer not to say";
+
+value l22a
+	a : 1 = "No"
+	b : 2 = "Yes"
+	c : 3 = "Don't know"
+	x : 4 = "Prefer not to say";
+value l22b
+	a : 1 = "No"
+	b : 2 = "Yes"
+	c : 3 = "Don't know"
+	x : 4 = "Prefer not to say";
+value l22c
+	a : 1 = "No"
+	b : 2 = "Yes"
+	c : 3 = "Don't know"
+	x : 4 = "Prefer not to say";
+value l22d
+	a : 1 = "No"
+	b : 2 = "Yes"
+	c : 3 = "Don't know"
+	x : 4 = "Prefer not to say";
+value l22e
+	a : 1 = "No"
+	b : 2 = "Yes"
+	c : 3 = "Don't know"
+	x : 4 = "Prefer not to say";
+value l22f
+	a : 1 = "No"
+	b : 2 = "Yes"
+	c : 3 = "Don't know"
+	x : 4 = "Prefer not to say";
+
+value l23a
+	a : 1 = "No"
+	b : 2 = "Yes"
+	c : 3 = "Don't know"
+	x : 4 = "Prefer not to say";
+value l23b
+	a : 1 = "No"
+	b : 2 = "Yes"
+	c : 3 = "Don't know"
+	x : 4 = "Prefer not to say";
+value l23c
+	a : 1 = "No"
+	b : 2 = "Yes"
+	c : 3 = "Don't know"
+	x : 4 = "Prefer not to say";
+value l23d
+	a : 1 = "No"
+	b : 2 = "Yes"
+	c : 3 = "Don't know"
+	x : 4 = "Prefer not to say";
+value l23e
+	a : 1 = "No"
+	b : 2 = "Yes"
+	c : 3 = "Don't know"
+	x : 4 = "Prefer not to say";
+value l23f
+	a : 1 = "No"
+	b : 2 = "Yes"
+	c : 3 = "Don't know"
+	x : 4 = "Prefer not to say";
+value l23g
+	a : 1 = "No"
+	b : 2 = "Yes"
+	c : 3 = "Don't know"
+	x : 4 = "Prefer not to say";
+value l23h
+	a : 1 = "No"
+	b : 2 = "Yes"
+	c : 3 = "Don't know"
+	x : 4 = "Prefer not to say";
+
+value l24a
+	a : 1 = "No"
+	b : 2 = "Yes"
+	c : 3 = "Don't know"
+	x : 4 = "Prefer not to say";
+value l24b
+	a : 1 = "No"
+	b : 2 = "Yes"
+	c : 3 = "Don't know"
+	x : 4 = "Prefer not to say";
+value l24c
+	a : 1 = "No"
+	b : 2 = "Yes"
+	c : 3 = "Don't know"
+	x : 4 = "Prefer not to say";
+value l24d
+	a : 1 = "No"
+	b : 2 = "Yes"
+	c : 3 = "Don't know"
+	x : 4 = "Prefer not to say";
+value l24e
+	a : 1 = "No"
+	b : 2 = "Yes"
+	c : 3 = "Don't know"
+	x : 4 = "Prefer not to say";
+value l24f
+	a : 1 = "No"
+	b : 2 = "Yes"
+	c : 3 = "Don't know"
+	x : 4 = "Prefer not to say";
+value l24g
+	a : 1 = "No"
+	b : 2 = "Yes"
+	c : 3 = "Don't know"
+	x : 4 = "Prefer not to say";
+value l24h
+	a : 1 = "No"
+	b : 2 = "Yes"
+	c : 3 = "Don't know"
+	x : 4 = "Prefer not to say";
+value l24i
+	a : 1 = "No"
+	b : 2 = "Yes"
+	c : 3 = "Don't know"
+	x : 4 = "Prefer not to say";
+value l24j
+	a : 1 = "No"
+	b : 2 = "Yes"
+	c : 3 = "Don't know"
+	x : 4 = "Prefer not to say";
+
+value l25a
+	a : 0 = "No"
+	b : 1 = "Yes";
+value l25b
+	a : 0 = "No"
+	b : 1 = "Yes";
+value l25c
+	a : 0 = "No"
+	b : 1 = "Yes";
+value l25d
+	a : 0 = "No"
+	b : 1 = "Yes";
+value l25e
+	a : 0 = "No"
+	b : 1 = "Yes";
+value l25f
+	a : 0 = "No"
+	b : 1 = "Yes";
+value l25g
+	a : 0 = "No"
+	b : 1 = "Yes";
+value l25h
+	a : 0 = "No"
+	b : 1 = "Yes";
+value l25i
+	a : 0 = "No"
+	b : 1 = "Yes";
+value l25j
+	a : 0 = "No"
+	b : 1 = "Yes";
+value l25k
+	a : 0 = "No"
+	b : 1 = "Yes";
+
+value l26a
+	a : 0 = "No"
+	b : 1 = "Yes";
+value l26b
+	a : 0 = "No"
+	b : 1 = "Yes";
+value l26c
+	a : 0 = "No"
+	b : 1 = "Yes";
+value l26d
+	a : 0 = "No"
+	b : 1 = "Yes";
+value l26e
+	a : 0 = "No"
+	b : 1 = "Yes";
+value l26f
+	a : 0 = "No"
+	b : 1 = "Yes";
+value l26g
+	a : 0 = "No"
+	b : 1 = "Yes";
+value l26h
+	a : 0 = "No"
+	b : 1 = "Yes";
+value l26i
+	a : 0 = "No"
+	b : 1 = "Yes";
+value l26j
+	a : 0 = "No"
+	b : 1 = "Yes";
+value l26k
+	a : 0 = "No"
+	b : 1 = "Yes";
