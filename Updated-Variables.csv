@@ -1,0 +1,3627 @@
+^,a9,Main language spoken at home
+a,Group a
+b,Group b
+c,Group c
+d,Group d
+e,Group e
+f,Group f
+g,Group g
+h,Group h
+i,Group i
+j,Group j
+^,reg1,Region
+a,Group a
+b,Group b
+c,Group c
+d,Group d
+e,Group e
+f,Group f
+g,Group g
+h,Group h
+i,Group i
+j,Group j
+k,Group k
+l,Group l
+m,Group m
+n,Group n
+o,Group o
+p,Group p
+q,Group q
+r,Group r
+^,prov1,Province
+a,Group a
+b,Group b
+c,Group c
+d,Group d
+e,Group e
+f,Group f
+g,Group g
+h,Group h
+i,Group i
+j,Group j
+k,Group k
+l,Group l
+m,Group m
+n,Group n
+o,Group o
+p,Group p
+q,Group q
+r,Group r
+s,Group s
+t,Group t
+u,Group u
+v,Group v
+w,Group w
+x,Group x
+y,Group y
+z,Group z
+^,ur1,Urban or Rural
+a,Group a
+b,Group b
+^,a1,Gender
+a,Group a
+b,Group b
+^,a2,Birthdate
+a,Group a
+b,Group b
+c,Group c
+^,a3a,Mother
+a,Group a
+b,Group b
+^,a3b,Father
+a,Group a
+b,Group b
+^,a3c,Step or foster mother
+a,Group a
+b,Group b
+^,a3d,Step or foster father
+a,Group a
+b,Group b
+^,a3e,Grandparent(s) or other relatives
+a,Group a
+b,Group b
+^,a3f,Siblings (including half; step or foster siblings)
+a,Group a
+b,Group b
+^,a3g,My spouse or partner (including boyfriend/girlfriend)
+a,Group a
+b,Group b
+^,a3h,My child or children
+a,Group a
+b,Group b
+^,a3i,Parents (or relatives) of my spouse or partner
+a,Group a
+b,Group b
+^,a3j,I live in a foster home or children's home
+a,Group a
+b,Group b
+^,a3k,I live alone
+a,Group a
+b,Group b
+^,a3l,Someone or somewhere else: please state____
+a,Group a
+b,Group b
+^,a4a,I am a school student
+a,Group a
+b,Group b
+^,a4g,I am a student in college
+a,Group a
+b,Group b
+^,a4h,I am attending training in technical/vocational course
+a,Group a
+b,Group b
+^,a4c,I do paid employment
+a,Group a
+b,Group b
+^,a4d,I do unpaid work
+a,Group a
+b,Group b
+^,a4e,I am looking for work
+a,Group a
+b,Group b
+^,a4f,I help out at home
+a,Group a
+b,Group b
+^,a4i,I am currently in a vacation
+a,Group a
+b,Group b
+^,a5,Schooling
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,b1,How old were you when you first used the internet?
+x,Group x
+^,b3,Are you able to access the internet when you want to or need to?
+a,Group a
+b,Group b
+^,b6a,At school or college
+a,Group a
+b,Group b
+x,Group x
+^,b6b,At home
+a,Group a
+b,Group b
+x,Group x
+^,b6c,In the home of friends or relatives
+a,Group a
+b,Group b
+x,Group x
+^,b6d,In a public place (for example; in libraries; cafés; computer shops)
+a,Group a
+b,Group b
+x,Group x
+^,b6e,When I am on my way somewhere (e.g. on the street; in a bus or car)
+a,Group a
+b,Group b
+x,Group x
+^,b6f,When I am somewhere by myself
+a,Group a
+b,Group b
+x,Group x
+^,b6g,PisoNet
+a,Group a
+b,Group b
+x,Group x
+^,b7a,A mobile phone that is not a smartphone
+a,Group a
+b,Group b
+x,Group x
+^,b7b,A smartphone [iPhone; Samsung Galaxy; Cherry Mobile; Star Mobile; etc]
+a,Group a
+b,Group b
+x,Group x
+^,b7c,A desktop computer
+a,Group a
+b,Group b
+x,Group x
+^,b7d,A laptop or notebook computer
+a,Group a
+b,Group b
+x,Group x
+^,b7e,A tablet [iPad; Samsung Galaxy tab; PLDT Home tablet; etc]
+a,Group a
+b,Group b
+x,Group x
+^,b7f,A games console [Playstation; Xbox; PSP; Nintendo; 3DS; etc]
+a,Group a
+b,Group b
+x,Group x
+^,b8a,A mobile phone that is not a smartphone
+a,Group a
+b,Group b
+x,Group x
+^,b8b,A smartphone [iPhone; Samsung Galaxy; Cherry Mobile; Star Mobile; etc]
+a,Group a
+b,Group b
+x,Group x
+^,b8c,A desktop computer
+a,Group a
+b,Group b
+x,Group x
+^,b8d,A laptop or notebook computer
+a,Group a
+b,Group b
+x,Group x
+^,b8e,A tablet [iPad; Samsung Galaxy tab; PLDT Home tablet; etc]
+a,Group a
+b,Group b
+x,Group x
+^,b8f,A games console [Playstation; Xbox; PSP; Nintendo; 3DS; etc]
+a,Group a
+b,Group b
+x,Group x
+^,b9a,I use a postpaid plan (i.e.; with contracts)
+a,Group a
+b,Group b
+x,Group x
+^,b9b,I use freeWIFI (at home; in school; coffee shop or cafés; malls; etc.)
+a,Group a
+b,Group b
+x,Group x
+^,b9c,I pay for internet I use (e.g. in a cybercafé or internet cafe; PisoNet)
+a,Group a
+b,Group b
+x,Group x
+^,b9d,I use prepaid offers (e.g. GOSurf; GIGASurf; etc.)
+a,Group a
+b,Group b
+x,Group x
+^,b10a,Do you connect to the internet by yourself?
+a,Group a
+b,Group b
+^,b10b1,My parents
+a,Group a
+b,Group b
+^,b10b2,My siblings
+a,Group a
+b,Group b
+^,b10b3,Relatives
+a,Group a
+b,Group b
+^,b10c1,Friends who are the same age as I am
+a,Group a
+b,Group b
+^,b10c2,Friends who are older than me
+a,Group a
+b,Group b
+^,b10d,My teacher
+a,Group a
+b,Group b
+^,b10e,Others
+a,Group a
+b,Group b
+^,b11,About how long do you spend on the internet on an ordinary week day (school day or working day)?
+^,b12,About how long do you spend on the internet on a day at the weekend?
+^,c1,Do you usually have a good time or fun when you go online?
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,c2,What do you think about this sentence: ‘There are lots of things on the internet that are good for children of my age’?
+a,Group a
+b,Group b
+x,Group x
+^,c4a,I learned something new by searching online
+a,Group a
+b,Group b
+x,Group x
+^,c4c,I used the internet for schoolwork
+a,Group a
+b,Group b
+x,Group x
+^,c4b,I looked for information about work or study opportunities
+a,Group a
+b,Group b
+x,Group x
+^,c4c1,Checked maps
+a,Group a
+b,Group b
+x,Group x
+^,c4c2,I looked for information about the place I want to go visit/eat
+a,Group a
+b,Group b
+x,Group x
+^,c4d,I looked for resources or events about my local neighbourhood
+a,Group a
+b,Group b
+x,Group x
+^,c4f,I got involved online in a local organisation or charity
+a,Group a
+b,Group b
+x,Group x
+^,c4g,I used the internet to help somebody else
+a,Group a
+b,Group b
+x,Group x
+^,c4e,I used the internet to talk to people from places or backgrounds different from mine
+a,Group a
+b,Group b
+x,Group x
+^,c4h,I looked for the news online
+a,Group a
+b,Group b
+x,Group x
+^,c4i,I discussed political or social problems with other people online
+a,Group a
+b,Group b
+x,Group x
+^,c4j,I got involved online in a campaign or protest
+a,Group a
+b,Group b
+x,Group x
+^,c4k,I signed a petition online
+a,Group a
+b,Group b
+x,Group x
+^,c4l,I used the internet to join a civic; religious or political group
+a,Group a
+b,Group b
+x,Group x
+^,c4o,I posted videos or music created by someone else
+a,Group a
+b,Group b
+x,Group x
+^,c4m,I created my own video or music and uploaded it to share
+a,Group a
+b,Group b
+x,Group x
+^,c4n,I created a blog or story or website online
+a,Group a
+b,Group b
+x,Group x
+^,c4o1,I created my own artwork; designs and illustrations and uploaded them on the internet
+a,Group a
+b,Group b
+x,Group x
+^,c4r,I used instant messaging [insert local examples e.g. Viber; WhatsApp]
+a,Group a
+b,Group b
+x,Group x
+^,c4p,I visited a social network site (e.g.; Facebook [add local examples])
+a,Group a
+b,Group b
+x,Group x
+^,c4t,I helped someone else who needed or wanted to go online
+a,Group a
+b,Group b
+x,Group x
+^,c4q,I talked to family or friends who live further away (e.g. by Skype; Viber; FaceTime)
+a,Group a
+b,Group b
+x,Group x
+^,c4u,I commented on the updates that friends or family have put online
+a,Group a
+b,Group b
+x,Group x
+^,c4t1,I re-posted or shared a social media post online
+a,Group a
+b,Group b
+x,Group x
+^,c4v,I showed my friends or family something that I saw online
+a,Group a
+b,Group b
+x,Group x
+^,c4w,I visited a chatroom to meet new people [insert local examples]
+a,Group a
+b,Group b
+x,Group x
+^,c4x,I watched video clips (e.g. on YouTube [insert local examples])
+a,Group a
+b,Group b
+x,Group x
+^,c4y,I played online games alone
+a,Group a
+b,Group b
+x,Group x
+^,c4z,I played games with other people online
+a,Group a
+b,Group b
+x,Group x
+^,c4bb,I listened to music online (by downloading or streaming)
+a,Group a
+b,Group b
+x,Group x
+^,c4cc,I watched my favourite TV shows
+a,Group a
+b,Group b
+x,Group x
+^,c4cc1,I joined a fan site (of a celebrity or popular band)
+a,Group a
+b,Group b
+x,Group x
+^,c4gg,I posted photos or comments online (e.g. on Facebook or a blog)
+a,Group a
+b,Group b
+x,Group x
+^,c4ee,I looked for health information for myself or someone I know
+a,Group a
+b,Group b
+x,Group x
+^,c4ff,I participated in a site where people share my interests or hobbies
+a,Group a
+b,Group b
+x,Group x
+^,c4hh,I browsed for things to buy
+a,Group a
+b,Group b
+x,Group x
+^,c4hh1,I checked out what things cost by looking online
+a,Group a
+b,Group b
+x,Group x
+^,c4hh2,I have sold an item online
+a,Group a
+b,Group b
+x,Group x
+^,c6a,My mother or father (or step/foster mother or father)
+a,Group a
+b,Group b
+x,Group x
+^,c6b,My brother or sister (or step/foster/half siblings)
+a,Group a
+b,Group b
+x,Group x
+^,c6c,A friend around my age
+a,Group a
+b,Group b
+x,Group x
+^,c6d,A teacher
+a,Group a
+b,Group b
+x,Group x
+^,c6e,Another adult I trust
+a,Group a
+b,Group b
+x,Group x
+^,c6f,Someone I first met on the internet; but who is friends or family of other people I know in person
+a,Group a
+b,Group b
+x,Group x
+^,c6g,Someone I first met on the internet; but who has no other connection to my life outside of the internet
+a,Group a
+b,Group b
+x,Group x
+^,c6g1,A relative or friend who is an OFW (overseas Filipino worker)
+a,Group a
+b,Group b
+x,Group x
+^,c6h,Someone else
+a,Group a
+b,Group b
+x,Group x
+^,c7a,My mother or father (or step/foster mother or father)
+a,Group a
+b,Group b
+x,Group x
+^,c7b,My brother or sister (or step/foster/half siblings)
+a,Group a
+b,Group b
+x,Group x
+^,c7c,A friend around my age
+a,Group a
+b,Group b
+x,Group x
+^,c7d,A teacher
+a,Group a
+b,Group b
+x,Group x
+^,c7e,Another adult I trust
+a,Group a
+b,Group b
+x,Group x
+^,c7f,Someone I first met on the internet; but who is friends or family of other people I know in person
+a,Group a
+b,Group b
+x,Group x
+^,c7g,Someone I first met on the internet; but who has no other connection to my life outside of the internet
+a,Group a
+b,Group b
+x,Group x
+^,c7g1,A relative or friend who is an OFW (overseas Filipino worker)
+a,Group a
+b,Group b
+x,Group x
+^,c7h,Someone else
+a,Group a
+b,Group b
+x,Group x
+^,c8a,My mother or father (or step/foster mother or father)
+a,Group a
+b,Group b
+x,Group x
+^,c8b,My brother or sister (or step/foster/half siblings)
+a,Group a
+b,Group b
+x,Group x
+^,c8c,A friend around my age
+a,Group a
+b,Group b
+x,Group x
+^,c8d,A teacher
+a,Group a
+b,Group b
+x,Group x
+^,c8e,Another adult I trust
+a,Group a
+b,Group b
+x,Group x
+^,c8f,Someone I first met on the internet; but who is friends or family of other people I know in person
+a,Group a
+b,Group b
+x,Group x
+^,c8g,Someone I first met on the internet; but who has no other connection to my life outside of the internet
+a,Group a
+b,Group b
+x,Group x
+^,c8g1,A relative or friend who is an OFW (overseas Filipino worker)
+a,Group a
+b,Group b
+x,Group x
+^,c8h,Someone else
+a,Group a
+b,Group b
+x,Group x
+^,c9a,My mother or father (or step/foster mother or father)
+a,Group a
+b,Group b
+x,Group x
+^,c9b,My brother or sister (or step/foster/half siblings)
+a,Group a
+b,Group b
+x,Group x
+^,c9c,A friend around my age
+a,Group a
+b,Group b
+x,Group x
+^,c9d,A teacher
+a,Group a
+b,Group b
+x,Group x
+^,c9e,Another adult I trust
+a,Group a
+b,Group b
+x,Group x
+^,c9f,Someone I first met on the internet; but who is friends or family of other people I know in person
+a,Group a
+b,Group b
+x,Group x
+^,c9g,Someone I first met on the internet; but who has no other connection to my life outside of the internet
+a,Group a
+b,Group b
+x,Group x
+^,c9g1,A relative or friend who is an OFW (overseas Filipino worker)
+a,Group a
+b,Group b
+x,Group x
+^,c9h,Someone else
+a,Group a
+b,Group b
+x,Group x
+^,c10a,Making presentations
+a,Group a
+b,Group b
+x,Group x
+^,c10b,Writing things
+a,Group a
+b,Group b
+x,Group x
+^,c10c,Making pictures
+a,Group a
+b,Group b
+x,Group x
+^,c10d,Practising something I am learning (e.g. maths or a language or music)
+a,Group a
+b,Group b
+x,Group x
+^,c10e,Checking out information on the school website
+a,Group a
+b,Group b
+x,Group x
+^,c10f,Doing group work with other students
+a,Group a
+b,Group b
+x,Group x
+^,c10g,Chatting online at school
+a,Group a
+b,Group b
+x,Group x
+^,c10h,Communicating with teachers (e.g. submitting homework or asking a question)
+a,Group a
+b,Group b
+x,Group x
+^,c10i,Contributing to a school blog or online discussion
+a,Group a
+b,Group b
+x,Group x
+^,d12,How were your social media accounts created?
+a,Group a
+b,Group b
+c,Group c
+d,Group d
+e,Group e
+^,d13,How old were you when you first had your social media account?
+a,Group a
+b,Group b
+c,Group c
+^,d7a,Thinking of the profile you use most often; about how many people are you in contact with when using [named profile]?
+a,Group a
+b,Group b
+c,Group c
+d,Group d
+e,Group e
+f,Group f
+g,Group g
+h,Group h
+i,Group i
+j,Group j
+k,Group k
+l,Group l
+m,Group m
+n,Group n
+o,Group o
+x,Group x
+^,d7b,More or less; how many are your followers?
+a,Group a
+b,Group b
+c,Group c
+d,Group d
+e,Group e
+f,Group f
+g,Group g
+h,Group h
+i,Group i
+j,Group j
+k,Group k
+l,Group l
+m,Group m
+n,Group n
+o,Group o
+x,Group x
+^,d7c,More or less; how many do you follow?
+a,Group a
+b,Group b
+c,Group c
+d,Group d
+e,Group e
+f,Group f
+g,Group g
+h,Group h
+i,Group i
+j,Group j
+k,Group k
+l,Group l
+m,Group m
+n,Group n
+o,Group o
+x,Group x
+^,d8,Is you [named profile] set to...?
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,d10,How do you usually respond to requests from people to become your ‘friends’ online?
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,e1a,I know how to save a photo that I find online
+a,Group a
+b,Group b
+x,Group x
+^,e1b,I know how to change my privacy settings (e.g. on a social networking site)
+a,Group a
+b,Group b
+x,Group x
+^,e1c,I know how to use a programming language (e.g. HTML; XML; etc.)
+a,Group a
+b,Group b
+x,Group x
+^,e1f1,I know how to jailbreak; crack games and apps; change IP address
+a,Group a
+b,Group b
+x,Group x
+^,e1f2,I know how to hide my IP address
+a,Group a
+b,Group b
+x,Group x
+^,e1f3,I know how to set network settings (LAN; wi-fi; device-connection)
+a,Group a
+b,Group b
+x,Group x
+^,e1f4,I know how to hack certain files
+a,Group a
+b,Group b
+x,Group x
+^,e1f5,I know how to set the firewall
+a,Group a
+b,Group b
+x,Group x
+^,e1i,I find it easy to find a website I have visited before
+a,Group a
+b,Group b
+x,Group x
+^,e1g,I find it easy to check if the information I find online is true
+a,Group a
+b,Group b
+x,Group x
+^,e1h,I find it easy to choose the best keywords for online searches
+a,Group a
+b,Group b
+x,Group x
+^,e1k,Sometimes I end up on websites without knowing how I got there
+a,Group a
+b,Group b
+x,Group x
+^,e1k1,I know how to use incognito in browsing
+a,Group a
+b,Group b
+x,Group x
+^,e1l,I know which information I should and shouldn't share online
+a,Group a
+b,Group b
+x,Group x
+^,e1m,I know how to remove people from my contact lists
+a,Group a
+b,Group b
+x,Group x
+^,e1m1,I know how to block
+a,Group a
+b,Group b
+x,Group x
+^,e1n,I know when I should and shouldn't share information online
+a,Group a
+b,Group b
+x,Group x
+^,e1o,I know how to behave according to the situation online
+a,Group a
+b,Group b
+x,Group x
+^,e1p,I know how to change who I share content with (e.g. friends; friends of friends or everyone)
+a,Group a
+b,Group b
+x,Group x
+^,e1p1,I know how to report abusive posts or things that I find offending in social media (e.g. Facebook report abuse)
+a,Group a
+b,Group b
+x,Group x
+^,e1t,I know how to create something new from video or music that I found online
+a,Group a
+b,Group b
+x,Group x
+^,e1q,I know how to post online video or music that I have created myself
+a,Group a
+b,Group b
+x,Group x
+^,e1s,I know which different types of licences apply to online content
+a,Group a
+b,Group b
+x,Group x
+^,e1r,I know how to edit or make basic changes to online content that others have created
+a,Group a
+b,Group b
+x,Group x
+^,e1u,I know how to design a website
+a,Group a
+b,Group b
+x,Group x
+^,e1v,I know how to install apps on a mobile device (e.g. phone or tablet)
+a,Group a
+b,Group b
+x,Group x
+^,e1w,I know how to safeguard my online expenses while using mobile apps
+a,Group a
+b,Group b
+x,Group x
+^,e1x,I know how to make an in-app purchase
+a,Group a
+b,Group b
+x,Group x
+^,e1x1,I know how to download and carck to full version some paid apps without paying a fee (e.g. torrent; etc.)
+a,Group a
+b,Group b
+x,Group x
+^,e3a,Deactivate the function showing my geographical position (on Facebook; Google Maps; etc.)
+a,Group a
+b,Group b
+x,Group x
+^,e3b,Connect to a Wi-Fi network
+a,Group a
+b,Group b
+x,Group x
+^,e3c,Block push notifications from different apps
+a,Group a
+b,Group b
+x,Group x
+^,e3d,Have the same documents; contacts or apps on all devices that I use (e.g. smartphone; tablet; PC)
+a,Group a
+b,Group b
+x,Group x
+^,e3e,Block pop ups which promote apps; games or services I have to pay for (unrequested windows that appear during web surfing)
+a,Group a
+b,Group b
+x,Group x
+^,e3f,Protect a smartphone with a PIN/with a screen pattern
+a,Group a
+b,Group b
+x,Group x
+^,e3g,Update my status on the social networking site I use the most
+a,Group a
+b,Group b
+x,Group x
+^,e3h,Find information on how to use smartphones safely
+a,Group a
+b,Group b
+x,Group x
+^,e3i,Compare similar apps to choose the one that is most reliable
+a,Group a
+b,Group b
+x,Group x
+^,e3j,Take a picture or a video with my smartphone and post it onto social media
+a,Group a
+b,Group b
+x,Group x
+^,d1d,Twitter
+a,Group a
+b,Group b
+^,d1e,Viber
+a,Group a
+b,Group b
+^,d1f,Skype
+a,Group a
+b,Group b
+^,d1a,Facebook
+a,Group a
+b,Group b
+^,d1c,Instagram
+a,Group a
+b,Group b
+^,d1b,WhatsApp
+a,Group a
+b,Group b
+^,d1g,YouTube
+a,Group a
+b,Group b
+^,d1h,Spotify
+a,Group a
+b,Group b
+^,d1i,Wikipedia
+a,Group a
+b,Group b
+^,d1j,Tumblr
+a,Group a
+b,Group b
+^,d2d,I find it easier to be myself online than when I am with people face-to-face
+a,Group a
+b,Group b
+x,Group x
+^,d2e,I talk about different things online than I do when speaking to people face-to-face
+a,Group a
+b,Group b
+x,Group x
+^,d2f,I talk about private things online which I do not talk about with people face-to-face
+a,Group a
+b,Group b
+x,Group x
+^,d2a,I feel safe on the internet
+a,Group a
+b,Group b
+x,Group x
+^,d2b,I find other people are kind and helpful on the internet
+a,Group a
+b,Group b
+x,Group x
+^,d2c,I know what to do if someone acts online in a way I don't like
+a,Group a
+b,Group b
+x,Group x
+^,d14a,Facebook/Messenger
+a,Group a
+b,Group b
+^,d14b,Skype
+a,Group a
+b,Group b
+^,d14c,Viber
+a,Group a
+b,Group b
+^,d14d,WeChat
+a,Group a
+b,Group b
+^,d14e,Instagram
+a,Group a
+b,Group b
+^,d14f,Twitter
+a,Group a
+b,Group b
+^,d14g,YouTube/Hangout (Google)
+a,Group a
+b,Group b
+^,d15a,Minecraft
+a,Group a
+b,Group b
+^,d15b,Warcraft DOTA
+a,Group a
+b,Group b
+^,d15c,DOTA 2
+a,Group a
+b,Group b
+^,d15d,League of Legends
+a,Group a
+b,Group b
+^,d15e,Counterstrike
+a,Group a
+b,Group b
+^,d15f,Others
+a,Group a
+b,Group b
+^,d9a,A photo that clearly shows your face
+a,Group a
+b,Group b
+x,Group x
+^,d9b,Your last name
+a,Group a
+b,Group b
+x,Group x
+^,d9c,Your address
+a,Group a
+b,Group b
+x,Group x
+^,d9d,Your phone number
+a,Group a
+b,Group b
+x,Group x
+^,d9e,Your school
+a,Group a
+b,Group b
+x,Group x
+^,d9f,Your correct age
+a,Group a
+b,Group b
+x,Group x
+^,d9g,An age that is not your real age
+a,Group a
+b,Group b
+x,Group x
+^,d9j,Places you've dined and visited
+a,Group a
+b,Group b
+x,Group x
+^,d9k,Pictures showing whole body
+a,Group a
+b,Group b
+x,Group x
+^,f1a,Looked for new friends or contacts on the internet
+a,Group a
+b,Group b
+x,Group x
+^,f1b,Sent my personal information (e.g.; my full name; address or phone number) to someone I have never met face-to-face
+a,Group a
+b,Group b
+x,Group x
+^,f1c,Added people to my friends or contacts I have never met face-to-face
+a,Group a
+b,Group b
+x,Group x
+^,f1d,Pretended to be a different kind of person online from who I really am
+a,Group a
+b,Group b
+x,Group x
+^,f1e,Sent a photo or video of myself to someone I have never met face-to-face
+a,Group a
+b,Group b
+x,Group x
+^,f1f,Post my current location and those I had been to
+a,Group a
+b,Group b
+x,Group x
+^,f1g,Post my new stuff and clothes
+a,Group a
+b,Group b
+x,Group x
+^,f1h,Post messages or love quotes that pertain to the boy/girl whom I have a crush on
+a,Group a
+b,Group b
+x,Group x
+^,f1i,Seek to get acquainted or befriend persons who are Non-Filipinos (foreigners)
+a,Group a
+b,Group b
+x,Group x
+^,f1j,Engage in chat activities with a person whom I only met on internet
+a,Group a
+b,Group b
+x,Group x
+^,f1k,Do video calls with a person whom I only met on internet
+a,Group a
+b,Group b
+x,Group x
+^,f1l,Receive offers or gifts online
+a,Group a
+b,Group b
+x,Group x
+^,f2,Have you EVER had contact on the internet with someone you have not met face-to-face before?
+a,Group a
+b,Group b
+x,Group x
+^,f3,In the PAST YEAR; have you at least once met anyone face to face that you first got to know on the internet?
+a,Group a
+b,Group b
+x,Group x
+^,f4,If you met anyone face-to-face that you first got to know on the internet; how did you feel about it?
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,f5,Thinking about the LAST TIME you were bothered by meeting someone in this way; how old was the person you actually met?
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,f6a,I've met face to face with a person I just got acquainted on internet but is already known by my friends or relatives
+a,Group a
+b,Group b
+x,Group x
+^,f6b,I've met face to face with a person I just got acquainted on internet and who is totally unknown to anyone I personally know
+a,Group a
+b,Group b
+x,Group x
+^,f6c,I've met with a foreigner (different nationality)
+a,Group a
+b,Group b
+x,Group x
+^,f6d,I've personally met with an older person
+a,Group a
+b,Group b
+x,Group x
+^,f6e,I've met face to face with a person I just got acquainted on internet and she/he was accompanied by another girl/boy
+a,Group a
+b,Group b
+x,Group x
+^,f6f,I've met with another woman like myself whom i just got acquainted with on internet
+a,Group a
+b,Group b
+x,Group x
+^,f6g,I've met with another man like myself whom i just got acquainted with on internet
+a,Group a
+b,Group b
+x,Group x
+^,f6h,I've met with LGBT person (lesbian; gay; bisexual; transgender) whom i just got acquainted with on internet
+a,Group a
+b,Group b
+x,Group x
+^,f8,In the PAST YEAR; how many people have you gone to a meeting with face-to-face that you had previously only met on the internet?
+a,Group a
+b,Group b
+x,Group x
+^,f11,In the PAST YEAR; has anything EVER happened online that bothered or upset you in some way? (e.g.; made you feel uncomfortable; scared or that you shouldn’t have seen it)?
+a,Group a
+b,Group b
+x,Group x
+^,f12,In the PAST YEAR; how often did this happen?
+a,Group a
+b,Group b
+x,Group x
+^,f13,Thinking now about the LAST TIME this happened to you; how upset were you about what happened?
+a,Group a
+b,Group b
+x,Group x
+^,f14a,My mother or father (or step/foster mother or father)
+a,Group a
+b,Group b
+^,f14b,My brother or sister (orstep/foster/half siblings)
+a,Group a
+b,Group b
+^,f14j,Cousin
+a,Group a
+b,Group b
+^,f14k,Aunt/Uncle
+a,Group a
+b,Group b
+^,f14l,Grandfather/Grandmother
+a,Group a
+b,Group b
+^,f14m,Nanny
+a,Group a
+b,Group b
+^,f14c,A friend around my age
+a,Group a
+b,Group b
+^,f14n,Classmate
+a,Group a
+b,Group b
+^,f14o,Boyfriend/Girlfriend
+a,Group a
+b,Group b
+^,f14d,A teacher
+a,Group a
+b,Group b
+^,f14e,Someone whose job it is to help children
+a,Group a
+b,Group b
+^,f14p,Godfather/Godmother
+a,Group a
+b,Group b
+^,f14q,Priest/Pastor/Nun
+a,Group a
+b,Group b
+^,f14r,Neighbor
+a,Group a
+b,Group b
+^,f14f,Another adult I trust
+a,Group a
+b,Group b
+^,f14g,Someone else
+a,Group a
+b,Group b
+^,f14h,I didn't talk to anyone
+a,Group a
+b,Group b
+^,f14i,Prefer not to say
+a,Group a
+b,Group b
+^,f15,The last time something happened online that bothered or upset you in some way; how long did you feel like that for?
+a,Group a
+b,Group b
+x,Group x
+^,f16a,I ignored the problem or hoped the problem would go away by itself
+a,Group a
+b,Group b
+^,f16b,I closed the window or app
+a,Group a
+b,Group b
+^,f16c,I felt a bit guilty about what went wrong
+a,Group a
+b,Group b
+^,f16d,I tried to get the other person to leave me alone
+a,Group a
+b,Group b
+^,f16e,I tried to get back at the other person
+a,Group a
+b,Group b
+^,f16f,I stopped using the internet for a while
+a,Group a
+b,Group b
+^,f16g,I deleted any messages from the other person
+a,Group a
+b,Group b
+^,f16h,I changed my privacy/ contact settings
+a,Group a
+b,Group b
+^,f16i,I blocked the person from contacting me
+a,Group a
+b,Group b
+^,f16j,I reported the problem online  (e.g.; clicked on a ‘report abuse’ button; contacted an internet advisor or Internet Service Provider (ISP))
+a,Group a
+b,Group b
+^,f16k,Other actions taken
+a,Group a
+b,Group b
+^,f18,In the PAST YEAR; has anyone ever treated you in a hurtful or nasty way?
+a,Group a
+b,Group b
+x,Group x
+^,f19,In the PAST YEAR; how often did this happen?
+a,Group a
+b,Group b
+x,Group x
+^,f20a,In person face-to-face (by someone with you in the same place)
+a,Group a
+b,Group b
+x,Group x
+^,f20b,Via a mobile phone or online device (computer;tablet; etc.)
+a,Group a
+b,Group b
+x,Group x
+^,f21a,By mobile phone calls
+a,Group a
+b,Group b
+^,f21b,By messages sent to me on my phone (SMS/TEXT or MMS)
+a,Group a
+b,Group b
+^,f21c,On a social networking site (e.g. Facebook; Twitter etc.)
+a,Group a
+b,Group b
+^,f21d,On a media sharing platform (YouTube; Instagram; Flickr)
+a,Group a
+b,Group b
+^,f21e,By instant messaging (MSN; What’s app; Skype etc.)
+a,Group a
+b,Group b
+^,f21f,In a chatroom
+a,Group a
+b,Group b
+^,f21g,In an online game
+a,Group a
+b,Group b
+^,f21h,Some other way
+a,Group a
+b,Group b
+^,f21i,Prefer not to say
+a,Group a
+b,Group b
+^,f22a,Nasty or hurtful messages were sent to me
+a,Group a
+b,Group b
+x,Group x
+^,f22b,Nasty or hurtful messages were passed around or posted where others could see
+a,Group a
+b,Group b
+x,Group x
+^,f22c,I was left out or excluded from a group or activity on the internet
+a,Group a
+b,Group b
+x,Group x
+^,f22d,I was threatened on the internet
+a,Group a
+b,Group b
+x,Group x
+^,f22e,Other nasty or hurtful things happened to me on the internet
+a,Group a
+b,Group b
+x,Group x
+^,f23,Thinking of the last time someone treated you in a hurtful or nasty way; how did you feel?
+a,Group a
+b,Group b
+x,Group x
+^,f24,In the PAST YEAR; have you EVER treated someone else in a hurtful or nasty way?
+a,Group a
+b,Group b
+x,Group x
+^,f25,In the PAST YEAR; how often have you treated someone in this way?
+a,Group a
+b,Group b
+x,Group x
+^,f26a,In person face-to-face (a person that is together with you in the same place at the same time)
+a,Group a
+b,Group b
+x,Group x
+^,f26b,Via a mobile phone or online device (computer; tablet; etc.)
+a,Group a
+b,Group b
+x,Group x
+^,f27a,By mobile phone calls
+a,Group a
+b,Group b
+^,f27b,By messages sent by the phone (SMS/Text or MMS)
+a,Group a
+b,Group b
+^,f27c,On a social networking site (e.g.; Facebook; Twitter)
+a,Group a
+b,Group b
+^,f27d,By instant messaging (MSN; WhatsApp; Skype etc.)
+a,Group a
+b,Group b
+^,f27e,On a media sharing platform (YouTube; Instagram; Flickr)
+a,Group a
+b,Group b
+^,f27f,In a chatroom
+a,Group a
+b,Group b
+^,f27g,In an online game
+a,Group a
+b,Group b
+^,f27h,Some other way
+a,Group a
+b,Group b
+^,f27i,Prefer not to say
+a,Group a
+b,Group b
+^,f28,In the PAST YEAR; have you EVER SEEN any sexual images?
+a,Group a
+b,Group b
+x,Group x
+^,f29,If you have seen images of this kind; how did you feel about what you saw?
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,f31a,In a magazine or book
+a,Group a
+b,Group b
+x,Group x
+^,f31b,On television; film
+a,Group a
+b,Group b
+x,Group x
+^,f31c,Via a mobile phone; computer; tablet or anyother online device
+a,Group a
+b,Group b
+x,Group x
+^,f32d,On an online video sharing platform (e.g. YouTube; [add local examples])
+a,Group a
+b,Group b
+^,f32e,On an online photo sharing platform (e.g. Instagram; Flickr; [add local examples])
+a,Group a
+b,Group b
+^,f32f,On a social networking site (e.g. Facebook; Twitter; [add local examples])
+a,Group a
+b,Group b
+^,f32g,In a chatroom
+a,Group a
+b,Group b
+^,f32h,In an online game
+a,Group a
+b,Group b
+^,f32i,On an adult/X-rated website
+a,Group a
+b,Group b
+^,f32j,By popups on the internet (unrequested windows that appear during web surfing)
+a,Group a
+b,Group b
+^,f32k,By instant messaging (MSN; WhatsApp; Skype; [add local examples])
+a,Group a
+b,Group b
+^,f32l,By text (SMS); images (MMS); or otherwise on my mobile phone
+a,Group a
+b,Group b
+^,f32m,By Bluetooth
+a,Group a
+b,Group b
+^,f32n,In an advert
+a,Group a
+b,Group b
+^,f32o,Prefer not to say
+a,Group a
+b,Group b
+^,f33a,A sexual image or video of someone naked
+a,Group a
+b,Group b
+x,Group x
+^,f33b,A sexual image or video that shows someone's 'private parts' [translate as appropriate]
+a,Group a
+b,Group b
+x,Group x
+^,f33c,An image or video that shows sexual acts or people having sex
+a,Group a
+b,Group b
+x,Group x
+^,f33d,An image or video that shows sexual acts in a violent way
+a,Group a
+b,Group b
+x,Group x
+^,f33e,Something else sexual or embarrassing
+a,Group a
+b,Group b
+x,Group x
+^,f34,In the PAST YEAR; have you received any sexual messages (this could be words; pictures or videos) at least once?
+a,Group a
+b,Group b
+x,Group x
+^,f35,If you have received any sexual messages; how did you feel about what you saw?
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,f37a,By mobile phone calls
+a,Group a
+b,Group b
+x,Group x
+^,f37b,By text messages sent to me on my phone (SMS/text or MMS)
+a,Group a
+b,Group b
+x,Group x
+^,f37c,On a social networking site (e.g.; Facebook; Twitter etc.)
+a,Group a
+b,Group b
+x,Group x
+^,f37d,On a media sharing platform (YouTube; Instagram; Flickr)
+a,Group a
+b,Group b
+x,Group x
+^,f37e,By IM (MSN; WhatsApp; Skype; etc.)
+a,Group a
+b,Group b
+x,Group x
+^,f37f,In a chatroom (video chat)
+a,Group a
+b,Group b
+x,Group x
+^,f37g,In an online game
+a,Group a
+b,Group b
+x,Group x
+^,f37h,In a gaming community (also on the Xbox and other game consoles)
+a,Group a
+b,Group b
+x,Group x
+^,f37i,By 'pop up' (something appears by accident)
+a,Group a
+b,Group b
+x,Group x
+^,f38,In the PAST YEAR; have you sent or posted any sexual messages at least once? This could be words; pictures or videosabout you or someone else.
+a,Group a
+b,Group b
+x,Group x
+^,f39,In the PAST YEAR; how often have you sent or posted sexual messages?
+a,Group a
+b,Group b
+x,Group x
+^,f40a,I have sent someone a sexual message (e.g.; words; pictures or video) on the internet
+a,Group a
+b,Group b
+x,Group x
+^,f40b,I have posted a sexual message (e.g.; words; pictures or video) where other people could see it on the internet
+a,Group a
+b,Group b
+x,Group x
+^,f40c,I have asked someone on the internet for sexual information about him or herself (like what his or her body looks like without clothes on or sexual things he or she has done)
+a,Group a
+b,Group b
+x,Group x
+^,f41a,Ways of physically harming or hurting themselves
+a,Group a
+b,Group b
+x,Group x
+^,f41b,Ways of committing suicide
+a,Group a
+b,Group b
+x,Group x
+^,f41c,Ways to be very thin (such as being anorexic or bulimic)
+a,Group a
+b,Group b
+x,Group x
+^,f41d,Hate messages that attack certain groups or individuals (e.g.; people of different colour or religion or nationality)
+a,Group a
+b,Group b
+x,Group x
+^,f41e,Their experiences of taking drugs
+a,Group a
+b,Group b
+x,Group x
+^,f41f,Gory or violent images
+a,Group a
+b,Group b
+x,Group x
+^,f41g,Ways of courtship
+a,Group a
+b,Group b
+x,Group x
+^,f41h,Ways how to find a relationship
+a,Group a
+b,Group b
+x,Group x
+^,f41i,Ways to join in gambling
+a,Group a
+b,Group b
+x,Group x
+^,f41j,Ways in which to buy drugs
+a,Group a
+b,Group b
+x,Group x
+^,f41k,About abortion
+a,Group a
+b,Group b
+x,Group x
+^,f41l,About cheating
+a,Group a
+b,Group b
+x,Group x
+^,f41m,About sex
+a,Group a
+b,Group b
+x,Group x
+^,f41n,About drinking alcohol
+a,Group a
+b,Group b
+x,Group x
+^,f41o,About smoking
+a,Group a
+b,Group b
+x,Group x
+^,f41p,About bullying
+a,Group a
+b,Group b
+x,Group x
+^,f43a,Somebody used my personal information in a way I didn't like
+a,Group a
+b,Group b
+x,Group x
+^,f43b,The device (e.g.; phone; tablet; computer) I use got a virus or spyware
+a,Group a
+b,Group b
+x,Group x
+^,f43c,I lost money by being cheated on the internet
+a,Group a
+b,Group b
+x,Group x
+^,f43d,Somebody used my password to access my information or to pretend to be me
+a,Group a
+b,Group b
+x,Group x
+^,f43e,Somebody created a page or image about me that was hostile or hurtful
+a,Group a
+b,Group b
+x,Group x
+^,f43f,I spent too much money on online games or in-app purchases
+a,Group a
+b,Group b
+x,Group x
+^,f43g,I was asked to make an in-app purchase when playing an online game (e.g.; to do well in the game)
+a,Group a
+b,Group b
+x,Group x
+^,f43h,Someone found out where I was because they tracked my phone or device
+a,Group a
+b,Group b
+x,Group x
+^,f45a,I have gone without eating or sleeping because of the time I spent on the internet
+a,Group a
+b,Group b
+x,Group x
+^,f45b,I have experienced conflicts with family or friends because of the time I spent on the internet
+a,Group a
+b,Group b
+x,Group x
+^,f45c,My grades have dropped because of the time I spent on the internet
+a,Group a
+b,Group b
+x,Group x
+^,f45d,I have tried unsuccessfully to spend less time on the internet
+a,Group a
+b,Group b
+x,Group x
+^,f45e,I think the amount of time I spend on the internet causes problems for me
+a,Group a
+b,Group b
+x,Group x
+^,f45f,I feel I have to check my device (e.g. phone or computer) to see if anything new has just happened
+a,Group a
+b,Group b
+x,Group x
+^,h1,Here is a picture of a ladder. The top of the ladder ‘10’ is the best possible life for you and the bottom ‘0’ is the worst possible life for you. In general; where on the ladder do you feel you stand at the moment? Mark the circle next to the number that best describes where you stand.
+a,Group a
+b,Group b
+^,h2a,Your mother or father (including step/foster mother or father)
+a,Group a
+b,Group b
+^,h2b,Your brother or sister (including step siblings)
+a,Group a
+b,Group b
+^,h2i,Cousin
+a,Group a
+b,Group b
+^,h2j,Aunt/Uncle
+a,Group a
+b,Group b
+^,h2k,Grandfather/Grandmother
+a,Group a
+b,Group b
+^,h2c,A friend around my age
+a,Group a
+b,Group b
+^,h2l,Boyfriend/Girlfriend
+a,Group a
+b,Group b
+^,h2d,A teacher
+a,Group a
+b,Group b
+^,h2m,Classmate
+a,Group a
+b,Group b
+^,h2e,Someone whose job it is to help children [give examples if needed]
+a,Group a
+b,Group b
+^,h2n,Nanny
+a,Group a
+b,Group b
+^,h2o,Godfather/Godmother
+a,Group a
+b,Group b
+^,h2p,Priest/Pastor/Nun
+a,Group a
+b,Group b
+^,h2q,Neighbor
+a,Group a
+b,Group b
+^,h2f,Another adult you trust
+a,Group a
+b,Group b
+^,h2g,Someone else
+a,Group a
+b,Group b
+^,h2h,No one
+a,Group a
+b,Group b
+^,i1,How easy is it for you to talk to your parent/carer about things that upset you?
+a,Group a
+b,Group b
+x,Group x
+^,i2a,When I speak someone listens to what I say
+a,Group a
+b,Group b
+x,Group x
+^,i2b,My family really tries to help me
+a,Group a
+b,Group b
+x,Group x
+^,i2c,I feel safe at home
+a,Group a
+b,Group b
+x,Group x
+^,i3b,My parent(s)/carer(s) sets rules about what I can do at home
+a,Group a
+b,Group b
+x,Group x
+^,i3c,My parent(s)/carer(s) sets rules about what I can do outside the home
+a,Group a
+b,Group b
+x,Group x
+^,i3d,My parent(s)/carer(s) tells me when I am doing something well
+a,Group a
+b,Group b
+x,Group x
+^,i3a,My parent(s)/carer(s) praises me for behaving well
+a,Group a
+b,Group b
+x,Group x
+^,i4a,Encourages me to explore and learn things on the internet
+a,Group a
+b,Group b
+x,Group x
+^,i4b,Suggests ways to use the internet safely
+a,Group a
+b,Group b
+x,Group x
+^,i4c,Talks to me about what I do on the internet
+a,Group a
+b,Group b
+x,Group x
+^,i4d,Sits with me while I use the internet
+a,Group a
+b,Group b
+x,Group x
+^,i4e,Stays nearby when I use the internet
+a,Group a
+b,Group b
+x,Group x
+^,i4f,Does shared activities together with me on the internet
+a,Group a
+b,Group b
+x,Group x
+^,i4g,Talks to me about what to do if something online bothers or upsets me
+a,Group a
+b,Group b
+x,Group x
+^,i4h,Helps me when something is difficult to do or find on the internet
+a,Group a
+b,Group b
+x,Group x
+^,i4i,Explains why some websites are appropriate or inappropriate
+a,Group a
+b,Group b
+x,Group x
+^,i4j,Helps me when something bothers me on the internet
+a,Group a
+b,Group b
+x,Group x
+^,i4k,Talks to me about the commercial activities I am exposed to online
+a,Group a
+b,Group b
+x,Group x
+^,i5a,Told my parent/carer about things that bother or upset me on the internet
+a,Group a
+b,Group b
+x,Group x
+^,i5b,Helped my parent/carer to do something they found difficult on the internet
+a,Group a
+b,Group b
+x,Group x
+^,i5c,Started a discussion with my parent/carer about what I do on the internet
+a,Group a
+b,Group b
+x,Group x
+^,i5d,Asked for my parent's/carer's advice on how I should act online
+a,Group a
+b,Group b
+x,Group x
+^,i5e,Asked my parent/carer for something that I have seen advertised online
+a,Group a
+b,Group b
+x,Group x
+^,i5f,Ask for your parent's/carer's help with a situation on the internet that I could not handle
+a,Group a
+b,Group b
+x,Group x
+^,i6a,Use a web or phone camera (e.g.; for Skype or video chat)
+a,Group a
+b,Group b
+x,Group x
+^,i6b,Download music or films
+a,Group a
+b,Group b
+x,Group x
+^,i6c,Visit a social networking site (e.g.; Facebook; [insert local terms])
+a,Group a
+b,Group b
+x,Group x
+^,i6d,Watch video clips (e.g.; on YouTube)
+a,Group a
+b,Group b
+x,Group x
+^,i6e,Play games with other people online
+a,Group a
+b,Group b
+x,Group x
+^,i6f,Visit a chat room
+a,Group a
+b,Group b
+x,Group x
+^,i6g,Use instant messaging
+a,Group a
+b,Group b
+x,Group x
+^,i6h,Read/watch news online
+a,Group a
+b,Group b
+x,Group x
+^,i6i,Use the internet for school work
+a,Group a
+b,Group b
+x,Group x
+^,i6j,Spend time in a virtual world (e.g.; Habbo; Club Penguin; Minecraft [add examples as needed])
+a,Group a
+b,Group b
+x,Group x
+^,i6k,Put (or post) photos; videos or music online to share with others (including social networking or instant messaging)
+a,Group a
+b,Group b
+x,Group x
+^,i7a,Parental controls or other means of blocking or filtering some types of website
+a,Group a
+b,Group b
+x,Group x
+^,i7b,Parental controls or other means of keeping track of the websites or apps I visit
+a,Group a
+b,Group b
+x,Group x
+^,i7c,Rules about how long or when I am allowed to go online
+a,Group a
+b,Group b
+x,Group x
+^,i7d,A service or contract that limits the time I spend on the internet
+a,Group a
+b,Group b
+x,Group x
+^,i7e,Software to prevent spam or junk mail/viruses
+a,Group a
+b,Group b
+x,Group x
+^,i7f,Parental controls that filter the apps I can download
+a,Group a
+b,Group b
+x,Group x
+^,i7g,Parental controls that alert my parent/carer when I want to buy content (in-app purchase)
+a,Group a
+b,Group b
+x,Group x
+^,i7h,Software that limits the people I can be in touch with (through voice calls and SMS/TEXT MMS)
+a,Group a
+b,Group b
+x,Group x
+^,i7i,Ad blocking software
+a,Group a
+b,Group b
+x,Group x
+^,i8a,Which friends or contacts you add to my social networking profile/instant messaging service
+a,Group a
+b,Group b
+x,Group x
+^,i8b,The messages in my email or other app for communicating with people
+a,Group a
+b,Group b
+x,Group x
+^,i8c,My profile on a social networking site or online community
+a,Group a
+b,Group b
+x,Group x
+^,i8d,Which websites I visited
+a,Group a
+b,Group b
+x,Group x
+^,i8e,The apps I downloaded
+a,Group a
+b,Group b
+x,Group x
+^,i8f,The in-app purchases I made
+a,Group a
+b,Group b
+x,Group x
+^,j1,How much do you like school at present?
+a,Group a
+b,Group b
+x,Group x
+^,j5a,Suggested ways to use the internet safely
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,j5b,Encouraged me to explore and learn things on the internet
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,j5c,Made rules about what I can do on the internet at school
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,j5d,Helped me when I found something difficult to do or find on the internet
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,j5e,Talked to me about what I do on the internet
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,j5f,Explained why some websites are good or bad
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,j5g,Suggested ways to behave towards other people online
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,j5h,Helped me in the past when something has bothered me on the internet
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,j5i,In general; talked to me about what I would do if something on the internet ever bothered me
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,k1a,My friends really try to help me
+a,Group a
+b,Group b
+x,Group x
+^,k1b,I can count on my friends when things go wrong
+a,Group a
+b,Group b
+x,Group x
+^,k1c,I can talk about my problems with my friends
+a,Group a
+b,Group b
+x,Group x
+^,k1d,I get worried when I �?nd out my friends are having fun without me 
+a,Group a
+b,Group b
+x,Group x
+^,k2a,Suggested ways to use the internet safely
+a,Group a
+b,Group b
+x,Group x
+^,k2b,Encouraged me to explore and learn things on the internet
+a,Group a
+b,Group b
+x,Group x
+^,k2c,Helped me when I found something difficult to do on the internet
+a,Group a
+b,Group b
+x,Group x
+^,k2d,Explained why some websites are good or bad
+a,Group a
+b,Group b
+x,Group x
+^,k2e,Suggested ways to behave towards other people on the internet
+a,Group a
+b,Group b
+x,Group x
+^,k2f,Helped me in the past when something has bothered me on the internet
+a,Group a
+b,Group b
+x,Group x
+^,k3,Have you suggested to your friends ways to use the internet safely?
+a,Group a
+b,Group b
+x,Group x
+^,k4a,I feel safe in the area where I live
+a,Group a
+b,Group b
+x,Group x
+^,k4b,It is safe for younger children to play outside during the day
+a,Group a
+b,Group b
+x,Group x
+^,k4c,You can trust people around here
+a,Group a
+b,Group b
+x,Group x
+^,a14,How often do you get some new clothes to wear?
+a,Group a
+b,Group b
+x,Group x
+^,a15,How easily can you find a quiet place to study or do homework?
+a,Group a
+b,Group b
+x,Group x
+^,a16,How often do you go on holiday [for at least one week] away from home?
+a,Group a
+b,Group b
+x,Group x
+^,a17,How often do you have fresh fruit and vegetables to eat?
+a,Group a
+b,Group b
+x,Group x
+^,a17a,How often do you have fish or meat to eat?
+a,Group a
+b,Group b
+x,Group x
+^,a18,Do you have at least two pairs of properly fitting shoes? [include: boots; sandals; trainers; etc.]
+a,Group a
+b,Group b
+x,Group x
+^,a19,How often do you get some new games or toys to play with?
+a,Group a
+b,Group b
+x,Group x
+^,a20a,I get very angry and often lose my temper
+a,Group a
+b,Group b
+x,Group x
+^,a20b,I usually do as I am told
+a,Group a
+b,Group b
+x,Group x
+^,a20c,I fight a lot; I can make other people do what I want
+a,Group a
+b,Group b
+x,Group x
+^,a20d,I am often accused of lying or cheating
+a,Group a
+b,Group b
+x,Group x
+^,a20e,I take things that are not mine from home; school or elsewhere
+a,Group a
+b,Group b
+x,Group x
+^,a20f,I worry a lot
+a,Group a
+b,Group b
+x,Group x
+^,a20g,I am nervous in certain new situations; I easily lose confidence
+a,Group a
+b,Group b
+x,Group x
+^,a20h,I get a lot of headaches; stomach-aches or sickness
+a,Group a
+b,Group b
+x,Group x
+^,a20i,I am often unhappy; sad or tearful
+a,Group a
+b,Group b
+x,Group x
+^,a20j,I have many fears and I am easily scared
+a,Group a
+b,Group b
+x,Group x
+^,a20k,I am restless; I cannot stay still for long
+a,Group a
+b,Group b
+x,Group x
+^,a20l,I finish the work I'm doing. My attention is good
+a,Group a
+b,Group b
+x,Group x
+^,a20n,I am easily distracted and find it difficult to concentrate
+a,Group a
+b,Group b
+x,Group x
+^,a20o,I think before I do things
+a,Group a
+b,Group b
+x,Group x
+^,a20p,Other people my age generally like me
+a,Group a
+b,Group b
+x,Group x
+^,a20q,Other children or young people pick on me
+a,Group a
+b,Group b
+x,Group x
+^,a20r,I am usually on my own; I generally play alone or keep to myself
+a,Group a
+b,Group b
+x,Group x
+^,a20s,I have at least one good friend
+a,Group a
+b,Group b
+x,Group x
+^,a20t,I get on better with adults than with people my own age
+a,Group a
+b,Group b
+x,Group x
+^,a20u,I am helpful if someone is hurt; upset or feeling ill
+a,Group a
+b,Group b
+x,Group x
+^,a20v,I try to be nice to other people. I care about their feelings
+a,Group a
+b,Group b
+x,Group x
+^,a20w,I often volunteer to help others (e.g.; parents; carers; teachers; children)
+a,Group a
+b,Group b
+x,Group x
+^,a20x,I usually share with others (food; games; pens etc.)
+a,Group a
+b,Group b
+x,Group x
+^,a21a,Other children are treated better than me
+a,Group a
+b,Group b
+x,Group x
+^,a21b,People seem to think I am not smart
+a,Group a
+b,Group b
+x,Group x
+^,a21c,People seem to think they’re better than me
+a,Group a
+b,Group b
+x,Group x
+^,a21d,I get called names or insulted by other children
+a,Group a
+b,Group b
+x,Group x
+^,a22a,Because of where my family is from
+a,Group a
+b,Group b
+^,a22b,Because of my skin colour
+a,Group a
+b,Group b
+^,a22c,Because of my religion
+a,Group a
+b,Group b
+^,a22d,Because of my height or weight
+a,Group a
+b,Group b
+^,a22e,Because of a disability
+a,Group a
+b,Group b
+^,a22f,Because of not having enough money
+a,Group a
+b,Group b
+^,a22g,Because of my sexual orientation
+a,Group a
+b,Group b
+^,a22h,Because of how I look or behave
+a,Group a
+b,Group b
+^,a22i,Because of my opinions or beliefs
+a,Group a
+b,Group b
+^,a22j,Because of my attitude
+a,Group a
+b,Group b
+^,a22k,Because my parents are not around (i.e.; OFW)
+a,Group a
+b,Group b
+^,a22l,Because of the ethnic group I belong to
+a,Group a
+b,Group b
+^,a22m,Due to conflict / war in our area
+a,Group a
+b,Group b
+^,a22n,Because I am not studying (i.e.; out-of-school)
+a,Group a
+b,Group b
+^,a22o,Because I do not have a permanent residence / house
+a,Group a
+b,Group b
+^,a23,When you were treated this way; how often did it happen on the internet?
+a,Group a
+b,Group b
+x,Group x
+^,a24a,I do dangerous things for fun
+a,Group a
+b,Group b
+x,Group x
+^,a24b,I do exciting things; even if they are dangerous
+a,Group a
+b,Group b
+x,Group x
+^,a25a,Had so much alcohol that I got really drunk
+a,Group a
+b,Group b
+x,Group x
+^,a25b,Missed school lessons without my parent(s)/carer(s) knowing
+a,Group a
+b,Group b
+x,Group x
+^,a25c,Had sexual intercourse
+a,Group a
+b,Group b
+x,Group x
+^,a25d,Been in trouble with my teachers for bad behaviour
+a,Group a
+b,Group b
+x,Group x
+^,a25e,Been in trouble with the police
+a,Group a
+b,Group b
+x,Group x
+^,a25f,Met personally with someone whom I met online (i.e.; eyeball)
+a,Group a
+b,Group b
+x,Group x
+^,a26a,I can solve difficult problems if I try hard enough
+a,Group a
+b,Group b
+x,Group x
+^,a26b,If someone opposes me; I can find ways to get what I want
+a,Group a
+b,Group b
+x,Group x
+^,a26c,It's easy for me to stick to my aims and achieve my goals
+a,Group a
+b,Group b
+x,Group x
+^,a26d,I am confident that I can deal with unexpected problems
+a,Group a
+b,Group b
+x,Group x
+^,a26g,I can stay calm when things get difficult because I am good at coping
+a,Group a
+b,Group b
+x,Group x
+^,a27,Ideally; if you are given an opportunity; what level of education do you want to finish?
+a,Group a
+b,Group b
+x,Group x
+^,a28,Imagine if given the opportunity to finish your studies or to get your desired career in the future; where do you want to work?
+a,Group a
+b,Group b
+x,Group x
+^,a29a,When I use the internet; I learn about different things that I could study; do or become what I want to be as productive as possible.
+a,Group a
+b,Group b
+x,Group x
+^,a29b,When I use the internet; I feel I want to achieve more in life.
+a,Group a
+b,Group b
+x,Group x
+^,g1a,I was sent a message that I did not want with advertisements for or links to X-rated websites [use local term for 'X-rated']
+a,Group a
+b,Group b
+c,Group c
+^,g1b,I opened a message or a link in a message that showed pictures of naked people or of people having sex that I did not want
+a,Group a
+b,Group b
+c,Group c
+^,g1c,I have seen or received a sexual message; image or video about someone else that I did not want
+a,Group a
+b,Group b
+c,Group c
+^,g2a,I have been asked for sexual information about myself (like what my body looks like without clothes on or sexual things I have done) when I did not want to answer such questions
+a,Group a
+b,Group b
+c,Group c
+^,g2b,I have been asked to talk about sexual acts with someone on the internet when I did not want to
+a,Group a
+b,Group b
+c,Group c
+^,g2c,I have been asked by someone on the internet to do something sexual when I did not want to
+a,Group a
+b,Group b
+c,Group c
+^,g2d,I have been asked on the internet for a photo or video showing my private parts [translate as appropriate] when I did not want to
+a,Group a
+b,Group b
+c,Group c
+^,g3a,I have sent sexual information about myself (like what my body looks like without clothes on or sexual things I have done) when I did not want
+a,Group a
+b,Group b
+c,Group c
+^,g3b,I have talked about sexual acts with someone on the internet when I did not want to
+a,Group a
+b,Group b
+c,Group c
+^,g3c,I have done something sexual on the internet when I did not want to
+a,Group a
+b,Group b
+c,Group c
+^,g3d,I have sent someone a photo or video showing my private parts when I did not want to [translate as appropriate]
+a,Group a
+b,Group b
+c,Group c
+^,g4,Thinking about the last time when you had unwanted sexual experience (that is; any of G2a-d); did it happen when you were using which of the following?
+a,Group a
+b,Group b
+c,Group c
+d,Group d
+e,Group e
+^,g5,Thinking about the last time when you had unwanted sexual experience (that is; any of G2a-d); who was the person who did this?
+a,Group a
+b,Group b
+c,Group c
+d,Group d
+e,Group e
+f,Group f
+g,Group g
+h,Group h
+i,Group i
+j,Group j
+^,g9a,Brother (over 18)
+a,Group a
+b,Group b
+^,g9b,Sister (over 18)
+a,Group a
+b,Group b
+^,g9c,A younger brother or sister
+a,Group a
+b,Group b
+^,g9d,Father or step-/foster father
+a,Group a
+b,Group b
+^,g9e,Mother or step-/foster mother
+a,Group a
+b,Group b
+^,g9f,Other adult relatives; such as aunts; uncles; or grandparents
+a,Group a
+b,Group b
+^,g9g,Friend or acquaintance
+a,Group a
+b,Group b
+^,g9h,Teacher/ educator
+a,Group a
+b,Group b
+^,g9j,Other adult you trust e.g. coach; neighbour; doctor; or babysitter
+a,Group a
+b,Group b
+^,g9i,Other (specify)
+a,Group a
+b,Group b
+^,g9k,I didn’t tell anyone about it
+a,Group a
+b,Group b
+^,g9l,Prefer not to say
+a,Group a
+b,Group b
+^,l41a,My spouse has a paid job locally.
+a,Group a
+b,Group b
+^,l41b,My other child/children has a paid job locally.
+a,Group a
+b,Group b
+^,l41c,Someone in my family is an overseas Filipino worker (OFW) who provides for us.
+a,Group a
+b,Group b
+^,l41d,Some relatives; who are not OFW’s; gives us monthly allowance.
+a,Group a
+b,Group b
+^,l41e,Our family has a business. (i.e. sari-sari store; vulcanizing shop; etc.)
+a,Group a
+b,Group b
+^,l41f,Our family receives a stipend from the government (i.e. member of 4P’s or any allowance from the local government unit)
+a,Group a
+b,Group b
+^,l41g,Others
+a,Group a
+b,Group b
+^,l35a,Your child’s health
+a,Group a
+b,Group b
+^,l35b,Having enough money to care for your child
+a,Group a
+b,Group b
+^,l35c,How your child is doing at school
+a,Group a
+b,Group b
+^,l35d,Other children treating your child in a hurtful or nasty way
+a,Group a
+b,Group b
+^,l35e,Your child drinking too much alcohol/taking drugs
+a,Group a
+b,Group b
+^,l35f,Your child seeing inappropriate material on the internet
+a,Group a
+b,Group b
+^,l35g,A stranger contacting your child on the internet
+a,Group a
+b,Group b
+^,l35h,Your child’s sexual activities
+a,Group a
+b,Group b
+^,l35i,Your child becoming a victim of crime
+a,Group a
+b,Group b
+^,l35j,Your child getting into trouble with the police
+a,Group a
+b,Group b
+^,l35k,Your child receiving an injury on the roads
+a,Group a
+b,Group b
+^,l35l,Other reasons (specify)
+a,Group a
+b,Group b
+^,l34a,Physical disability
+a,Group a
+b,Group b
+x,Group x
+^,l34b,Physical illness
+a,Group a
+b,Group b
+x,Group x
+^,l34c,Mental health difficulty
+a,Group a
+b,Group b
+x,Group x
+^,l34d,Behavioural difficulty
+a,Group a
+b,Group b
+x,Group x
+^,l34e,Learning difficulty
+a,Group a
+b,Group b
+x,Group x
+^,l34f,Other disability
+a,Group a
+b,Group b
+x,Group x
+^,l45a,He/she is into sports.
+a,Group a
+b,Group b
+^,l45b,He/she likes to read books.
+a,Group a
+b,Group b
+^,l45c,He/she likes to play games using a gadget/computer.
+a,Group a
+b,Group b
+^,l45d,He/she likes to send messages to friends and relatives using the mobile phone and/or computer.
+a,Group a
+b,Group b
+^,l45e,He/she likes to go out with friends.
+a,Group a
+b,Group b
+^,l45f,He/she likes music and/or playing musical instruments.
+a,Group a
+b,Group b
+^,l45g,He/she likes to take photos and videos.
+a,Group a
+b,Group b
+^,l45h,He/she likes to download and upload music; photos and videos in the internet.
+a,Group a
+b,Group b
+^,l45i,He/she likes to write short stories; poems; etc.
+a,Group a
+b,Group b
+^,l45j,He/she likes to watch movies/short videos in the internet.
+a,Group a
+b,Group b
+^,l45k,Others 
+a,Group a
+b,Group b
+^,l47a,Play online games.
+a,Group a
+b,Group b
+^,l47b,Use online messaging applications to communicate.
+a,Group a
+b,Group b
+^,l47c,Upload and download photos and videos.
+a,Group a
+b,Group b
+^,l47d,Use the webcam.
+a,Group a
+b,Group b
+^,l47e,Chat using a chatroom.
+a,Group a
+b,Group b
+^,l47f,Use the internet to help in research or homework.
+a,Group a
+b,Group b
+^,l47g,Watch movies/short videos in the internet.
+a,Group a
+b,Group b
+^,l47h,Others (specify)
+a,Group a
+b,Group b
+^,l6a,At work
+a,Group a
+b,Group b
+x,Group x
+^,l6b,At home
+a,Group a
+b,Group b
+x,Group x
+^,l6c,In the home of friends or relatives
+a,Group a
+b,Group b
+x,Group x
+^,l6d,In a public place (for example; In libraries; cafes; computer shops)
+a,Group a
+b,Group b
+x,Group x
+^,l6e,When I am on my way somewhere (e.g.; on the street; in a bus or car)
+a,Group a
+b,Group b
+x,Group x
+^,l6f,When I am somewhere by myself
+a,Group a
+b,Group b
+x,Group x
+^,l7a,A mobile phone that is not a smartphone
+a,Group a
+b,Group b
+x,Group x
+^,l7b,A smartphone [iPhone; Samsung Galaxy; Cherry Mobile; Star Mobile; etc]
+a,Group a
+b,Group b
+x,Group x
+^,l7c,A desktop computer
+a,Group a
+b,Group b
+x,Group x
+^,l7d,A laptop or notebook computer
+a,Group a
+b,Group b
+x,Group x
+^,l7e,A tablet [iPad; Samsung Galaxy tab; PLDT Home tablet; etc]
+a,Group a
+b,Group b
+x,Group x
+^,l7f,A games console [Playstation; Xbox; PSP; Nintendo; 3DS; etc]
+a,Group a
+b,Group b
+x,Group x
+^,l8a,I know how to save a photo that I find online
+a,Group a
+b,Group b
+x,Group x
+^,l8b,I know how to change my privacy settings (e.g. on a social networking site)
+a,Group a
+b,Group b
+x,Group x
+^,l8c,I know how to use a programming language (e.g. HTML; XML; etc.)
+a,Group a
+b,Group b
+x,Group x
+^,l8f1,I know how to jailbreak; crack games and apps; change IP address
+a,Group a
+b,Group b
+x,Group x
+^,l8f2,I know how to hide my IP address
+a,Group a
+b,Group b
+x,Group x
+^,l8f3,I know how to set network settings (LAN; wi-fi; device-connection)
+a,Group a
+b,Group b
+x,Group x
+^,l8f4,I know how to hack certain files
+a,Group a
+b,Group b
+x,Group x
+^,l8f5,I know how to set the firewall
+a,Group a
+b,Group b
+x,Group x
+^,l8i,I find it easy to find a website I have visited before
+a,Group a
+b,Group b
+x,Group x
+^,l8g,I find it easy to check if the information I find online is true
+a,Group a
+b,Group b
+x,Group x
+^,l8h,I find it easy to choose the best keywords for online searches
+a,Group a
+b,Group b
+x,Group x
+^,l8k,Sometimes I end up on websites without knowing how I got there
+a,Group a
+b,Group b
+x,Group x
+^,l8k1,I know how to use incognito in browsing
+a,Group a
+b,Group b
+x,Group x
+^,l8l,I know which information I should and shouldn’t share online
+a,Group a
+b,Group b
+x,Group x
+^,l8m,I know how to remove people from my contact lists
+a,Group a
+b,Group b
+x,Group x
+^,l8m1,I know how to block
+a,Group a
+b,Group b
+x,Group x
+^,l8n,I know when I should and shouldn’t share information online
+a,Group a
+b,Group b
+x,Group x
+^,l8o,I know how to behave according to the situation online
+a,Group a
+b,Group b
+x,Group x
+^,l8p,I know how to change who I share content with (e.g. friends; friends of friends or everyone)
+a,Group a
+b,Group b
+x,Group x
+^,l8p1,I know how to report abusive posts or things that I find offending in social media (e.g. Facebook report abuse)
+a,Group a
+b,Group b
+x,Group x
+^,l8t,I know how to create something new from video or music that I found online
+a,Group a
+b,Group b
+x,Group x
+^,l8q,I know how to post online video or music that I have created myself
+a,Group a
+b,Group b
+x,Group x
+^,l8s,I know which different types of licences apply to online content
+a,Group a
+b,Group b
+x,Group x
+^,l8r,I know how to edit or make basic changes to online content that others have created
+a,Group a
+b,Group b
+x,Group x
+^,l8u,I know how to design a website
+a,Group a
+b,Group b
+x,Group x
+^,l8v,I know how to install apps on a mobile device (e.g. phone or tablet)
+a,Group a
+b,Group b
+x,Group x
+^,l8w,I know how to keep track of the costs of mobile app use
+a,Group a
+b,Group b
+x,Group x
+^,l8x,I know how to make an in-app purchase
+a,Group a
+b,Group b
+x,Group x
+^,l8x1,I know how to download and carck to full version some paid apps without paying a fee (e.g. torrent; etc.)
+a,Group a
+b,Group b
+x,Group x
+^,l48a,Talk to your child about what he/she does on the internet?
+a,Group a
+b,Group b
+^,l48b,Encourage your child to explore and learn things on the internet?
+a,Group a
+b,Group b
+^,l48c,Sit with your child while he/she uses the internet?
+a,Group a
+b,Group b
+^,l48d,Stay nearby when your child uses the internet?
+a,Group a
+b,Group b
+^,l49a,Started a discussion with you about what he/she does on the internet?
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l49b,Told you about things she/he finds upsetting on the internet?
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l49c,Asked for your advice on how she/he should act online?
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l49d,Asked for products and/or services that she/he has seen advertisements for online?
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l49e,Asked for your help with a situation on the internet that she/he cannot handle?
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l12a,Use a web or phone camera (e.g.; for Skype or video chat)
+a,Group a
+b,Group b
+x,Group x
+^,l12d,Watch video clips (e.g.; on YouTube)
+a,Group a
+b,Group b
+x,Group x
+^,l12b,Download music or films
+a,Group a
+b,Group b
+x,Group x
+^,l12e,Play games with other people online
+a,Group a
+b,Group b
+x,Group x
+^,l12c,Visit a social networking site (e.g. Facebook; [insert local terms])
+a,Group a
+b,Group b
+x,Group x
+^,l12f,Visit a chat room
+a,Group a
+b,Group b
+x,Group x
+^,l12g,Use instant messaging
+a,Group a
+b,Group b
+x,Group x
+^,l12h,Read/watch news online
+a,Group a
+b,Group b
+x,Group x
+^,l12i,Use the internet for school work
+a,Group a
+b,Group b
+x,Group x
+^,l12j,Spend time in a virtual world (e.g.; Habbo; Club Penguin; Minecraft)
+a,Group a
+b,Group b
+x,Group x
+^,l12k,Put (or post) photos; videos or music online to share with others (including social networking or instant messaging)
+a,Group a
+b,Group b
+x,Group x
+^,l50a,Suggest ways to use the internet safely
+a,Group a
+b,Group b
+x,Group x
+^,l50b,Talk to him/her about what to do if something on the internet upsets him/her
+a,Group a
+b,Group b
+x,Group x
+^,l50c,Help him/her when something is difficult to do or to find on the internet
+a,Group a
+b,Group b
+x,Group x
+^,l50d,Explain why some websites are appropriate or inappropriate
+a,Group a
+b,Group b
+x,Group x
+^,l50e,Help him/her when something has upset him/her on the internet
+a,Group a
+b,Group b
+x,Group x
+^,l50f,Talk to him/her about the commercial activities they are exposed to online
+a,Group a
+b,Group b
+x,Group x
+^,l13a,Parental controls or other means of blocking or filtering some types of website
+a,Group a
+b,Group b
+x,Group x
+^,l13b,Parental controls or other means of keeping track of the websites or apps your child visits
+a,Group a
+b,Group b
+x,Group x
+^,l13c,Rules about how long or when your child is allowed to go online
+a,Group a
+b,Group b
+x,Group x
+^,l13d,A service or contract that limits the time your child spends on the internet
+a,Group a
+b,Group b
+x,Group x
+^,l13e,Software to prevent spam or junk mail/viruses
+a,Group a
+b,Group b
+x,Group x
+^,l13f,Parental controls that filter the apps your child can download
+a,Group a
+b,Group b
+x,Group x
+^,l13g,Parental controls that alert me when your child wants to buy content (in-app purchase)
+a,Group a
+b,Group b
+x,Group x
+^,l13h,Software that limits the people my child can be in touch with (through voice calls and SMS/TEXT MMS)
+a,Group a
+b,Group b
+x,Group x
+^,l13i,Ad blocking software
+a,Group a
+b,Group b
+x,Group x
+^,l14a,Which friends or contacts he/she adds to his/her social networking profile/instant messaging service
+a,Group a
+b,Group b
+x,Group x
+^,l14b,The messages in his/her email or other app for communicating with people
+a,Group a
+b,Group b
+x,Group x
+^,l14c,Which websites he/she visited
+a,Group a
+b,Group b
+x,Group x
+^,l14d,His/her profile on a social networking site or online community
+a,Group a
+b,Group b
+x,Group x
+^,l14e,The apps he/she downloaded
+a,Group a
+b,Group b
+x,Group x
+^,l14f,The in-app purchases he/she made
+a,Group a
+b,Group b
+x,Group x
+^,l21a,Had contact on the internet with someone that my child had not met face-to-face before
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l21b,Been treated in a hurtful or nasty way on the internet by someone? (This includes being teased repeatedly in a way he/she did not like; or being deliberately excluded or left out of things.)
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l21d,Treated someone else in a hurtful or nasty way on the internet? (This includes having teased someone repeatedly in a way he/she did not like; or threatened; or deliberately excluded or left them out of things.)
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l21c,Met anyone face-to-face that my child first got to know on the internet
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l21e,Sent or received any messages with inappropriate content in words; photos or videos (pertaining to sex; sexual intercourse or nudity) using the internet?
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l22a,Ways of physically harming or hurting themselves
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l22b,Ways of committing suicid
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l22c,Ways to be very thin (such as anorexic or bulimic)
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l22d,Hate messages that attack certain groups or individuals(e.g.; people of different colour or religion or nationality)
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l22e,Their experiences of taking drugs
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l22f,Gory or violent images
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l23a,Somebody used his or her personal information in a way he or she didn’t like
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l23b,The device s/he uses got a virus
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l23c,S/he lost money by being cheated on the internet
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l23d,Somebody used my child’s password to access his or her information or to pretend to be him or her
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l23e,Somebody created a page or image about him or her that was hostile or hurtful
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l23f,S/he spent too much money on online games or in-app purchases
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l23g, S/he was asked to make an in-app purchase when playing an online game (e.g. to progress faster in the game)
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l23h,Someone found out where your child was because they tracked his/her phone
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l24a,S/he has seen images on the internet that are obviously sexual
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l24b,S/he has received a sexual message (this could be words; pictures or videos)
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l24c,S/he has sent or posted a sexual message (this could be words; pictures or videos about them or someone else)
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l24d,S/he was sent a message that s/he did not want with advertisements for or links to X-rated websites [use local term for ‘X-rated’]
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l24e,S/he opened a message or a link in a message that showed pictures of naked people or of people having sex that s/he did not want
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l24f,S/he has seen or received a sexual message; image or video about someone else that s/he did not want
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l24g,S/he has been asked for sexual information about him/herself (like what his/her body looks like without clothes on or sexual things s/he has done) when s/he did not want to answer such questions
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l24h,S/he has been asked to talk about sexual acts with someone on the internet when s/he did not want to
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l24i,S/he has been asked by someone on the internet to do something sexual when s/he did not want to
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l24j,S/he has been asked on the internet for a photo or video showing her/his private parts [translate as appropriate] when s/he did not want to
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l27,Estimated total annual income bracket
+a,Group a
+b,Group b
+c,Group c
+^,l36,Attended school or pre-school
+a,Group a
+b,Group b
+^,l28,Highest level of education
+a,Group a
+b,Group b
+c,Group c
+^,l37,Language
+a,Group a
+b,Group b
+c,Group c
+d,Group d
+e,Group e
+f,Group f
+g,Group g
+h,Group h
+^,l38,Religion
+a,Group a
+b,Group b
+c,Group c
+d,Group d
+e,Group e
+f,Group f
+^,l31,Frequency church
+a,Group a
+b,Group b
+^,l39,Muslim: frequency pray
+a,Group a
+b,Group b
+^,l32,Paid job
+a,Group a
+b,Group b
+x,Group x
+^,l40,Job status
+a,Group a
+b,Group b
+^,l33,Why do you not have a job
+a,Group a
+b,Group b
+c,Group c
+^,l41,Other source of income
+a,Group a
+b,Group b
+^,l41a,Spouse paid job locally
+a,Group a
+b,Group b
+^,l41b,Other children paid job locally
+a,Group a
+b,Group b
+^,l41c,Family OFW
+a,Group a
+b,Group b
+^,l41d,Non-OFW relatives
+a,Group a
+b,Group b
+^,l41e,Family business
+a,Group a
+b,Group b
+^,l41f,Family stipend from government
+a,Group a
+b,Group b
+^,l41g,Other
+a,Group a
+b,Group b
+^,l42,Marital Status
+a,Group a
+b,Group b
+c,Group c
+d,Group d
+e,Group e
+^,l43,How old are you?
+x,Group x
+^,l44,Gender
+a,Group a
+b,Group b
+^,l35a,Child health
+a,Group a
+b,Group b
+^,l35b,Having enough money
+a,Group a
+b,Group b
+^,l35c,Child school performance
+a,Group a
+b,Group b
+^,l35d,Other children treating your child
+a,Group a
+b,Group b
+^,l35e,Child drinking alcohol
+a,Group a
+b,Group b
+^,l35f,Child inappropriate material on the internet
+a,Group a
+b,Group b
+^,l35g,Stranger contacting child on internet
+a,Group a
+b,Group b
+^,l35h,Child sexual activities
+a,Group a
+b,Group b
+^,l35i,Child victim of crime
+a,Group a
+b,Group b
+^,l35j,Child trouble with police
+a,Group a
+b,Group b
+^,l35k,Child injury on the road
+a,Group a
+b,Group b
+^,l35l,Other
+a,Group a
+b,Group b
+^,l34a,Physical disability
+a,Group a
+b,Group b
+x,Group x
+^,l34b,Physical illness
+a,Group a
+b,Group b
+x,Group x
+^,l34c,Mental Health difficulty
+a,Group a
+b,Group b
+x,Group x
+^,l34d,Behavioural difficulty
+a,Group a
+b,Group b
+x,Group x
+^,l34e,Learning difficulty
+a,Group a
+b,Group b
+x,Group x
+^,l34f,Other
+a,Group a
+b,Group b
+x,Group x
+^,l45a,Sports
+a,Group a
+b,Group b
+^,l45b,Read books
+a,Group a
+b,Group b
+^,l45c,play games using gadget/computer
+a,Group a
+b,Group b
+^,l45d,send messages to friends using phone and/or computer
+a,Group a
+b,Group b
+^,l45e,Go out with friends
+a,Group a
+b,Group b
+^,l45f,Music
+a,Group a
+b,Group b
+^,l45g,Take picture/video
+a,Group a
+b,Group b
+^,l45h,Download/Upload music; photos and videos on the internet
+a,Group a
+b,Group b
+^,l45i,Write
+a,Group a
+b,Group b
+^,l45j,Watch movies/videos on the internet
+a,Group a
+b,Group b
+^,l45k,Other
+a,Group a
+b,Group b
+^,l1,Use internet
+a,Group a
+b,Group b
+x,Group x
+^,l46,use internet with child
+a,Group a
+b,Group b
+^,l47a,play games
+a,Group a
+b,Group b
+^,l47b,online messaging
+a,Group a
+b,Group b
+^,l47c,upload/download photos/videos
+a,Group a
+b,Group b
+^,l47d,use webcam
+a,Group a
+b,Group b
+^,l47e,chat in chatroom
+a,Group a
+b,Group b
+^,l47f,research/homework
+a,Group a
+b,Group b
+^,l47g,movies/short videos
+a,Group a
+b,Group b
+^,l47h,other
+a,Group a
+b,Group b
+^,l6a,Work
+a,Group a
+b,Group b
+x,Group x
+^,l6b,Home
+a,Group a
+b,Group b
+x,Group x
+^,l6c,Home of friends or relatives
+a,Group a
+b,Group b
+x,Group x
+^,l6d,Public
+a,Group a
+b,Group b
+x,Group x
+^,l6e,On the way
+a,Group a
+b,Group b
+x,Group x
+^,l6f,By myself
+a,Group a
+b,Group b
+x,Group x
+^,l7a,Nonsmartphone mobile phone
+a,Group a
+b,Group b
+x,Group x
+^,l7b,Smartphone
+a,Group a
+b,Group b
+x,Group x
+^,l7c,Desktop PC
+a,Group a
+b,Group b
+x,Group x
+^,l7d,Laptop
+a,Group a
+b,Group b
+x,Group x
+^,l7e,Tablet
+a,Group a
+b,Group b
+x,Group x
+^,l7f,Game console
+a,Group a
+b,Group b
+x,Group x
+^,l8a,Save photo online
+a,Group a
+b,Group b
+x,Group x
+^,l8b,Change privacy settings
+a,Group a
+b,Group b
+x,Group x
+^,l8c,Use programmin language
+a,Group a
+b,Group b
+x,Group x
+^,l8f1,Jailbreak
+a,Group a
+b,Group b
+x,Group x
+^,l8f2,Hide my IP
+a,Group a
+b,Group b
+x,Group x
+^,l8f3,Set network settings
+a,Group a
+b,Group b
+x,Group x
+^,l8f4,Hack files
+a,Group a
+b,Group b
+x,Group x
+^,l8f5,Set firewall
+a,Group a
+b,Group b
+x,Group x
+^,l8i,Find website I have visited before
+a,Group a
+b,Group b
+x,Group x
+^,l8g,Check information online is true
+a,Group a
+b,Group b
+x,Group x
+^,l8h,Choose best search keywords
+a,Group a
+b,Group b
+x,Group x
+^,l8k,I end up on websites without knowing
+a,Group a
+b,Group b
+x,Group x
+^,l8k1,Use incognito
+a,Group a
+b,Group b
+x,Group x
+^,l8l,Know which info to share and not share
+a,Group a
+b,Group b
+x,Group x
+^,l8m,remove from my contact lists
+a,Group a
+b,Group b
+x,Group x
+^,l8m1,Block
+a,Group a
+b,Group b
+x,Group x
+^,l8n,Know which info to send and not send
+a,Group a
+b,Group b
+x,Group x
+^,l8o,behave according to situation online
+a,Group a
+b,Group b
+x,Group x
+^,l8p,Change share settings
+a,Group a
+b,Group b
+x,Group x
+^,l8p1,Report abusive posts
+a,Group a
+b,Group b
+x,Group x
+^,l8t,Create something from video or music I found online
+a,Group a
+b,Group b
+x,Group x
+^,l8q,Post online video or music I created
+a,Group a
+b,Group b
+x,Group x
+^,l8s,Know which license apply to content
+a,Group a
+b,Group b
+x,Group x
+^,l8r,Edit online content others created
+a,Group a
+b,Group b
+x,Group x
+^,l8u,Design a website
+a,Group a
+b,Group b
+x,Group x
+^,l8v,Install apps
+a,Group a
+b,Group b
+x,Group x
+^,l8w,Keep track of the costs of app use
+a,Group a
+b,Group b
+x,Group x
+^,l8x,Make in-app purchase
+a,Group a
+b,Group b
+x,Group x
+^,l8x1,Download and crack apps without pating a fee
+a,Group a
+b,Group b
+x,Group x
+^,l48a,Talk about what he/she does
+a,Group a
+b,Group b
+^,l48b,Encourage child to explore
+a,Group a
+b,Group b
+^,l48c,Sit with child
+a,Group a
+b,Group b
+^,l48d,Stay nearby
+a,Group a
+b,Group b
+^,l49a,Discuss with you about internet
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l49b,Told you things he/she finds on the internet
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l49c,Ask advice on how he/she act online
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l49d,Ask products/services from online ads
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l49e,Ask help for situations he/she can't handle online
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l12a,Use a web or phone camera
+a,Group a
+b,Group b
+x,Group x
+^,l12d,Watch video
+a,Group a
+b,Group b
+x,Group x
+^,l12b,Download music
+a,Group a
+b,Group b
+x,Group x
+^,l12e,Play games
+a,Group a
+b,Group b
+x,Group x
+^,l12c,Social networking
+a,Group a
+b,Group b
+x,Group x
+^,l12f,Chatroom
+a,Group a
+b,Group b
+x,Group x
+^,l12g,Instant messaging
+a,Group a
+b,Group b
+x,Group x
+^,l12h,Read/watch news
+a,Group a
+b,Group b
+x,Group x
+^,l12i,School work
+a,Group a
+b,Group b
+x,Group x
+^,l12j,Spend time in virtual world
+a,Group a
+b,Group b
+x,Group x
+^,l12k,Share music; photos; videos and posts
+a,Group a
+b,Group b
+x,Group x
+^,l50a,Suggest ways for safety
+a,Group a
+b,Group b
+x,Group x
+^,l50b,Talk if something upsets him/her
+a,Group a
+b,Group b
+x,Group x
+^,l50c,Help when something is difficult
+a,Group a
+b,Group b
+x,Group x
+^,l50d,Explain why things are in/appropriate
+a,Group a
+b,Group b
+x,Group x
+^,l50e,Help when something upsets him/her
+a,Group a
+b,Group b
+x,Group x
+^,l50f,Talk about commercial activities
+a,Group a
+b,Group b
+x,Group x
+^,l51,As far as you are aware; in the past year; how often has anything happened online that bothered or upset your child in some way (e.g. made them feel uncomfortable; upset; or feel that they shouldn't have seen it)?
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l13a,Blocking websites for your child
+a,Group a
+b,Group b
+x,Group x
+^,l13b,Keeping track of web apps for your child
+a,Group a
+b,Group b
+x,Group x
+^,l13c,Rules on how long he/she can go online
+a,Group a
+b,Group b
+x,Group x
+^,l13d,Service that limits time child sepnds on internet
+a,Group a
+b,Group b
+x,Group x
+^,l13e,Sowtware for spam/junk mail/virus
+a,Group a
+b,Group b
+x,Group x
+^,l13f,Filter apps child can download
+a,Group a
+b,Group b
+x,Group x
+^,l13g,Alert when child wants to but content
+a,Group a
+b,Group b
+x,Group x
+^,l13h,Limit people my child can be in touch
+a,Group a
+b,Group b
+x,Group x
+^,l13i,Ad block
+a,Group a
+b,Group b
+x,Group x
+^,l14a,Which friends or contacts he/she adds to his/her social networking profile/instant messaging service
+a,Group a
+b,Group b
+x,Group x
+^,l14b,Messages in email or other apps
+a,Group a
+b,Group b
+x,Group x
+^,l14c,Websites visited
+a,Group a
+b,Group b
+x,Group x
+^,l14d,Profile in social network
+a,Group a
+b,Group b
+x,Group x
+^,l14e,Apps downloaded
+a,Group a
+b,Group b
+x,Group x
+^,l14f,In-app purchases
+a,Group a
+b,Group b
+x,Group x
+^,l15,As far as you are aware; in the past year; how often has anything happened online that bothered or upset your child in some way (e.g. made them feel uncomfortable; upset; or feel that they shouldn’t have seen it)?
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l17,The last time something happened online that bothered or upset your child; how upset was she/he about what happened (if at all)?
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l18,In the NEXT few months; is it likely that something will happen online that will bother or upset your child? This could be things they may see; be sent or do online.
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l19,Do you feel you can help your child to cope with things online that bother or upset them?
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l20,Do you think your child can cope with things online that bother or upset them?
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l21a,Had contact on the internet with someone that my child had not met face-to-face before
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l21b,Been treated in a hurtful or nasty way on the internet by someone? (This includes being teased repeatedly in a way he/she did not like; or being deliberately excluded or left out of things.)
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l21d,Treated someone else in a hurtful or nasty way on the internet? (This includes having teased someone repeatedly in a way he/she did not like; or threatened; or deliberately excluded or left them out of things.)
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l21c,Met anyone face-to-face that my child first got to know on the internet
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l21e,Sent or received any messages with inappropriate content in words; photos or videos (pertaining to sex; sexual intercourse or nudity) using the internet?
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l22a,Ways of physically harming themselves
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l22b,Ways of suicide
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l22c,Ways to be thin
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l22d,Hate messages
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l22e,Drug experience
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l22f,Gory images
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l23a,Somebody used his or her personal information in a way he or she didn’t like
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l23b,Has a virus
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l23c,Lose money online
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l23d,Use child's password and pretend to be him/her
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l23e,Create page or image to hurt him/her
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l23f,Spend too much money
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l23g,Was ask to make in-app purchase in an online game
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l23h,Tracked your child's phone
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l24a,Seen images that are sexual
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l24b,Recieve sexual message
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l24c,Post sexual message
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l24d,Recieve a link to x-rated website
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l24e,Open message that show naked people
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l24f,Seen or recieve sexual message unwated
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l24g,Asked about sexual information
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l24h,Asked to talk about sexual acts
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l24i,Asked to do something sexual
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l24j,Asked for a photo/video showing private parts
+a,Group a
+b,Group b
+c,Group c
+x,Group x
+^,l25a,Your child's school
+a,Group a
+b,Group b
+^,l25b,TV radio news or magazine
+a,Group a
+b,Group b
+^,l25c,ISP
+a,Group a
+b,Group b
+^,l25d,Government
+a,Group a
+b,Group b
+^,l25e,Charities
+a,Group a
+b,Group b
+^,l25f,Website with Safety info
+a,Group a
+b,Group b
+^,l25g,Retailers
+a,Group a
+b,Group b
+^,l25h,Family or Friend
+a,Group a
+b,Group b
+^,l25i,Child
+a,Group a
+b,Group b
+^,l25j,Other
+a,Group a
+b,Group b
+^,l25k,I don't get any
+a,Group a
+b,Group b
+^,l26a,Your child's school
+a,Group a
+b,Group b
+^,l26b,TV radio news or magazine
+a,Group a
+b,Group b
+^,l26c,ISP
+a,Group a
+b,Group b
+^,l26d,Government
+a,Group a
+b,Group b
+^,l26e,Charities
+a,Group a
+b,Group b
+^,l26f,Website with Safety info
+a,Group a
+b,Group b
+^,l26g,Retailers
+a,Group a
+b,Group b
+^,l26h,Family or Friend
+a,Group a
+b,Group b
+^,l26i,Child
+a,Group a
+b,Group b
+^,l26j,Other
+a,Group a
+b,Group b
+^,l26k,I don't want any
+a,Group a
+b,Group b

@@ -10,7 +10,7 @@ from tkFileDialog import askopenfilename
 import copy
 import SampleVsPopulation as svp
 import SampleVsSample as svs
-# import ChiTest as ct
+import ChiTest as ct
 import os
 
 try:
@@ -188,7 +188,7 @@ class OOTO_Miner:
         self.Tabs.tab(0, text="Tests", underline="-1", )
         self.Tabs_t2 = ttk.Frame(self.Tabs)
         self.Tabs.add(self.Tabs_t2, padding=3)
-        self.Tabs.tab(1, text="Preprocessor", underline="-1", )
+        self.Tabs.tab(1, text="Variable Descriptor", underline="-1", )
 
         self.menubar = Menu(top,font="TkMenuFont",bg=_bgcolor,fg=_fgcolor)
         top.configure(menu = self.menubar)
@@ -921,6 +921,7 @@ class OOTO_Miner:
                 test['Z Critical Value'] = copy.copy(params[key])
         tests.append(test)
         self.labelQueueCount.configure(text='Queue Count: ' + str(len(tests)))
+        tkMessageBox.showinfo("Test queued", test['Type'] + " has been queued.")
 
 
     '''
@@ -1181,6 +1182,9 @@ class OOTO_Miner:
 
     #Conducts all of the tests in the queue. 
     def testQueue(self, evt):
+        if len(tests) == 0:
+            tkMessageBox.showerror("Empty queue", "Queue is empty. Please queue a test.")
+            return -1
         for test in tests:
             fileNames = []
             if(test['Type'] == 'Sample vs Population'):
