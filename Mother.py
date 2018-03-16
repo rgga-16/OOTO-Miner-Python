@@ -11,7 +11,6 @@ import copy
 import SampleVsPopulation as svp
 import SampleVsSample as svs
 import ChiTest as ct
-# import ChiTest as ct
 import os
 
 try:
@@ -228,12 +227,13 @@ class OOTO_Miner:
         self.Tabs_t1 = ttk.Frame(self.Tabs)
         self.Tabs.add(self.Tabs_t1, padding=3)
         self.Tabs.tab(0, text="Tests", underline="-1", )
-        self.Tabs_t2 = ttk.Frame(self.Tabs)
-        self.Tabs.add(self.Tabs_t2, padding=3)
-        self.Tabs.tab(1, text="Variable Descriptor", underline="-1", )
         self.Tabs_t3 = ttk.Frame(self.Tabs)
         self.Tabs.add(self.Tabs_t3, padding=3)
-        self.Tabs.tab(2, text="Query", underline="-1", )
+        self.Tabs.tab(1, text="Query", underline="-1", )
+        self.Tabs_t2 = ttk.Frame(self.Tabs)
+        self.Tabs.add(self.Tabs_t2, padding=3)
+        self.Tabs.tab(2, text="Variable Descriptor", underline="-1", )
+
 
         self.menubar = Menu(top,font="TkMenuFont",bg=_bgcolor,fg=_fgcolor)
         top.configure(menu = self.menubar)
@@ -893,6 +893,10 @@ class OOTO_Miner:
         self.buttonQuerySaveA.configure(text='''Save''')
         self.buttonQuerySaveA.configure(width=96)
 
+        self.labelQueryDataACount = Label(self.labelFrameQueryDataA)
+        self.labelQueryDataACount.place(relx=0.02, rely=0.21, height=23, width=96)
+        self.labelQueryDataACount.configure(text='Count: ')
+
         self.entryQueryFeatureA = Entry(self.labelFrameQueryDataA)
         self.entryQueryFeatureA.place(relx=0.02, rely=0.32, relheight=0.05
                                       , relwidth=0.76)
@@ -987,6 +991,10 @@ class OOTO_Miner:
         self.buttonQuerySaveB.configure(pady="0")
         self.buttonQuerySaveB.configure(text='''Save''')
         self.buttonQuerySaveB.configure(width=96)
+
+        self.labelQueryDataBCount = Label(self.labelFrameQueryDataB)
+        self.labelQueryDataBCount.place(relx=0.02, rely=0.21, height=23, width=96)
+        self.labelQueryDataBCount.configure(text='Count: ')
 
         self.entryQueryFeatureB = Entry(self.labelFrameQueryDataB)
         self.entryQueryFeatureB.place(relx=0.02, rely=0.32, relheight=0.05
