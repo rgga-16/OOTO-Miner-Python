@@ -153,6 +153,47 @@ def getFocusFeatureValues(selectedFocusFeature, selectedFocusFeatureValues):
 
     return allValues, selectedValues
 
+def setDatasetFeatures(entryFeat, listFeat, dataset):
+        # Here is how to get the value from entryFeatA
+        featCode = entryFeat
+        arrTempItems = []
+        found = False
+        #Get proper list of features from initial variable description
+        for feature in features:
+            if feature['Code'] == featCode:
+                found = True
+                dataset['Feature'] = copy.deepcopy(feature)
+                for response in feature['Responses']:
+                    tempResp = response['Code'] + " - " + response['Description']
+                    arrTempItems.append(tempResp)
+                break
+        if not found:
+            tkMessageBox.showerror("Error: Feature not found", "Feature not found in Variable Descriptor. Try again.")
+        listFeat.delete(0, END)
+        for A in arrTempItems:
+            listFeat.insert(END, A)
+
+def selectDatasetValues(evt, dataset, populationDataset, labelFeatCount):
+    global populationDir
+    listbox = evt.widget
+    selectedValues = [listbox.get(i) for i in listbox.curselection()]
+    dataset['Selected Responses']=[]
+    for sv in selectedValues:
+        responseArr = sv.split(" - ")
+        for response in dataset['Feature']['Responses']:
+            if response['Code'] == responseArr[0]:
+                selected_response = copy.deepcopy(response)
+                dataset['Selected Responses'].append(selected_response)
+    dataset['Data']=[]
+    if not (populationDir == ""):
+        populationDataset = readCSVDict(populationDir)
+        for record in populationDataset:
+            if any (response['Code'] == record[dataset['Feature']['Code']] for response in dataset['Selected Responses']):
+                dataset['Data'].append(record)
+    else:
+        tkMessageBox.showwarning("Error: No population", "No population dataset uploaded.")
+    labelFeatCount.configure(text="Dataset Count: " + str(len(dataset['Data'])))
+
 
 
 class OOTO_Miner:
@@ -1210,16 +1251,23 @@ class OOTO_Miner:
                    "De La Salle University - Laguna"
         tkMessageBox.showinfo("About", strAbout)
 
+
     # UPLOAD MODULE
     def setPopulation(self, evt):
         global populationDir
         populationDir = askopenfilename(title = "Select file",filetypes = (("csv files","*.csv"),("all files","*.*")))
         self.entryPopulation.delete(0, END)
         self.entryPopulation.insert(0, populationDir)
+        self.entryQueryPopulation.delete(0,END)
+        self.entryQueryPopulation.insert(0,populationDir)
         self.buttonPopulation.configure(state='normal')
         self.populationDataset = readCSVDict(populationDir)
+        if(len(list(self.populationDataset)) > 0):
+            tkMessageBox.showinfo("Population set", "Population loaded")
     
     def selectValuesDatasetA(self, evt):
+        selectDatasetValues(evt, self.datasetA, self.populationDataset, self.labelFeatACount)
+        '''
         global populationDir
         listbox = evt.widget
         selectedValues = [listbox.get(i) for i in listbox.curselection()]
@@ -1239,6 +1287,7 @@ class OOTO_Miner:
         else:
             tkMessageBox.showwarning("Error: No population", "No population dataset uploaded.")
         self.labelFeatACount.configure(text="Dataset Count: " + str(len(self.datasetA['Data'])))
+        '''
         
     def selectFocusFeatureValues(self, evt):
         global selectedFocusFeatureValues
@@ -1271,53 +1320,15 @@ class OOTO_Miner:
             tkMessageBox.showwarning("Error: No population", "No population dataset uploaded.")
         self.labelFeatBCount.configure(text="Dataset Count: " + str(len(self.datasetB['Data'])))
 
+    
     # SET FEATURES A
     def setFeatA(self, evt):
-        # Here is how to get the value from entryFeatA
-        featACode = self.entryFeatA.get()
-        arrTempItemsA = []
-        found = False
-        #Get proper list of features from initial variable description
-        for feature in features:
-            if feature['Code'] == featACode:
-                found = True
-                self.datasetA['Feature'] = copy.deepcopy(feature)
-                for response in feature['Responses']:
-                    tempResp = response['Code'] + " - " + response['Description']
-                    arrTempItemsA.append(tempResp)
-                break
-        if not found:
-            tkMessageBox.showerror("Error: Feature not found", "Feature not found in Variable Descriptor. Try again.")
-
-        self.listFeatA.delete(0, END)
-        
-        for A in arrTempItemsA:
-            self.listFeatA.insert(END, A)
-        
+        setDatasetFeatures(self.entryFeatA.get(),self.listFeatA,self.datasetA)
 
 
     # SET FEATURES B
     def setFeatB(self, evt):
-        # Here is how to get the value from entryFeatB
-        featBCode = self.entryFeatB.get()
-        arrTempItemsB = []
-        found = False
-        # Get proper list of features from initial variable description
-        for feature in features:
-            if feature['Code'] == featBCode:
-                found = True
-                self.datasetB['Feature'] = copy.deepcopy(feature)
-                for response in feature['Responses']:
-                    tempResp = response['Code'] + " - " + response['Description']
-                    arrTempItemsB.append(tempResp)
-                break
-        if not found:
-            tkMessageBox.showerror("Error: Feature not found", "Feature not found in Variable Descriptor. Try again.")
-        
-        self.listFeatB.delete(0, END)
-        
-        for B in arrTempItemsB:
-            self.listFeatB.insert(END, B)
+        setDatasetFeatures(self.entryFeatB.get(), self.listFeatB, self.datasetB)
 
     # GET FEATURE CODE AND SET SAMPLE
     def setSample(self, evt):
@@ -1590,27 +1601,13 @@ class OOTO_Miner:
     '''
 
     def querySetPopulation(self, evt):
-        print 'Setting Population'
+        self.setPopulation(evt)
 
     def querySetDataA(self, evt):
-        print 'Setting Data A'
-
-        queryFeatureA = self.entryQuerySetDataA.get()
-
-        queryArrayA = ['A', 'B', 'C']
-
-        for qA in queryArrayA:
-            self.listQuerySetDataA.insert(END, qA)
+        setDatasetFeatures(self.entryQuerySetDataA.get(), self.listQuerySetDataA,self.datasetA)
 
     def querySetDataB(self, evt):
-        print 'Setting Data B'
-
-        queryFeatureB = self.entryQuerySetDataB.get()
-
-        queryArrayB = ['A', 'B', 'C']
-
-        for qB in queryArrayB:
-            self.listQuerySetDataB.insert(END, qB)
+        setDatasetFeatures(self.entryQuerySetDataB.get(), self.listQuerySetDataB, self.datasetB)
 
     def querySaveDataA(self, evt):
         print 'Saving Data A'
