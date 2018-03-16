@@ -11,6 +11,7 @@ import copy
 import SampleVsPopulation as svp
 import SampleVsSample as svs
 import ChiTest as ct
+# import ChiTest as ct
 import os
 
 try:
@@ -806,15 +807,15 @@ class OOTO_Miner:
         self.labelFrameQueryDataA.configure(background="#d9d9d9")
         self.labelFrameQueryDataA.configure(width=480)
 
-        self.entryQuerySetaDataA = Entry(self.labelFrameQueryDataA)
-        self.entryQuerySetaDataA.place(relx=0.02, rely=0.04, relheight=0.05
+        self.entryQuerySetDataA = Entry(self.labelFrameQueryDataA)
+        self.entryQuerySetDataA.place(relx=0.02, rely=0.04, relheight=0.05
                                        , relwidth=0.2)
-        self.entryQuerySetaDataA.configure(background="white")
-        self.entryQuerySetaDataA.configure(disabledforeground="#a3a3a3")
-        self.entryQuerySetaDataA.configure(font="TkFixedFont")
-        self.entryQuerySetaDataA.configure(foreground="#000000")
-        self.entryQuerySetaDataA.configure(insertbackground="black")
-        self.entryQuerySetaDataA.configure(width=94)
+        self.entryQuerySetDataA.configure(background="white")
+        self.entryQuerySetDataA.configure(disabledforeground="#a3a3a3")
+        self.entryQuerySetDataA.configure(font="TkFixedFont")
+        self.entryQuerySetDataA.configure(foreground="#000000")
+        self.entryQuerySetDataA.configure(insertbackground="black")
+        self.entryQuerySetDataA.configure(width=94)
 
         self.buttonQuerySetDataA = Button(self.labelFrameQueryDataA)
         self.buttonQuerySetDataA.place(relx=0.02, rely=0.1, height=23, width=96)
@@ -875,14 +876,14 @@ class OOTO_Miner:
         self.buttonQueryFeatureA.configure(text='''Enter Code''')
         self.buttonQueryFeatureA.configure(width=96)
 
-        self.listQueryAttributeA = Listbox(self.labelFrameQueryDataA)
-        self.listQueryAttributeA.place(relx=0.02, rely=0.38, relheight=0.53
+        self.listQueryDataA = Listbox(self.labelFrameQueryDataA)
+        self.listQueryDataA.place(relx=0.02, rely=0.38, relheight=0.53
                                        , relwidth=0.76)
-        self.listQueryAttributeA.configure(background="white")
-        self.listQueryAttributeA.configure(disabledforeground="#a3a3a3")
-        self.listQueryAttributeA.configure(font="TkFixedFont")
-        self.listQueryAttributeA.configure(foreground="#000000")
-        self.listQueryAttributeA.configure(width=364)
+        self.listQueryDataA.configure(background="white")
+        self.listQueryDataA.configure(disabledforeground="#a3a3a3")
+        self.listQueryDataA.configure(font="TkFixedFont")
+        self.listQueryDataA.configure(foreground="#000000")
+        self.listQueryDataA.configure(width=364)
 
         self.labelQueryDataA = Label(self.labelFrameQueryDataA)
         self.labelQueryDataA.place(relx=0.02, rely=0.91, height=26, width=462)
@@ -970,14 +971,14 @@ class OOTO_Miner:
         self.buttonQueryFeatureB.configure(text='''Enter Code''')
         self.buttonQueryFeatureB.configure(width=96)
 
-        self.listQueryAttributeB = Listbox(self.labelFrameQueryDataB)
-        self.listQueryAttributeB.place(relx=0.04, rely=0.38, relheight=0.53
+        self.listQueryDataB = Listbox(self.labelFrameQueryDataB)
+        self.listQueryDataB.place(relx=0.04, rely=0.38, relheight=0.53
                                        , relwidth=0.76)
-        self.listQueryAttributeB.configure(background="white")
-        self.listQueryAttributeB.configure(disabledforeground="#a3a3a3")
-        self.listQueryAttributeB.configure(font="TkFixedFont")
-        self.listQueryAttributeB.configure(foreground="#000000")
-        self.listQueryAttributeB.configure(width=364)
+        self.listQueryDataB.configure(background="white")
+        self.listQueryDataB.configure(disabledforeground="#a3a3a3")
+        self.listQueryDataB.configure(font="TkFixedFont")
+        self.listQueryDataB.configure(foreground="#000000")
+        self.listQueryDataB.configure(width=364)
 
         self.labelQueryDataB = Label(self.labelFrameQueryDataB)
         self.labelQueryDataB.place(relx=0.02, rely=0.91, height=26, width=462)
@@ -1005,8 +1006,21 @@ class OOTO_Miner:
         self.buttonQueryZTest.configure(highlightbackground="#d9d9d9")
         self.buttonQueryZTest.configure(highlightcolor="black")
         self.buttonQueryZTest.configure(pady="0")
-        self.buttonQueryZTest.configure(text='''Button''')
+        self.buttonQueryZTest.configure(text='''Z-Test''')
         self.buttonQueryZTest.configure(width=106)
+
+        '''
+        BINDING FOR QUERY TAB
+        '''
+
+        self.buttonQueryPopulation.bind('<Button-1>', self.querySetPopulation)
+        self.buttonQuerySetDataA.bind('<Button-1>', self.querySetDataA)
+        self.buttonQuerySetDataB.bind('<Button-1>', self.querySetDataB)
+        self.buttonQuerySaveA.bind('<Button-1>', self.querySaveDataA)
+        self.buttonQuerySaveB.bind('<Button-1>', self.querySaveDataB)
+        self.buttonQueryFeatureA.bind('<Button-1>', self.querySetFeatureA)
+        self.buttonQueryFeatureB.bind('<Button-1>', self.querySetFeatureB)
+        self.buttonQueryZTest.bind('<Button-1>', self.queryZTest)
 
 
         #######################################3
@@ -1571,24 +1585,64 @@ class OOTO_Miner:
             print -1
             Za = -1
 
-    
-           
-            
+    '''
+    QUERY FUNCTIONS
+    '''
 
-        #elif testType
-    
-    
+    def querySetPopulation(self, evt):
+        print 'Setting Population'
+
+    def querySetDataA(self, evt):
+        print 'Setting Data A'
+
+        queryFeatureA = self.entryQuerySetDataA.get()
+
+        queryArrayA = ['A', 'B', 'C']
+
+        for qA in queryArrayA:
+            self.listQuerySetDataA.insert(END, qA)
+
+    def querySetDataB(self, evt):
+        print 'Setting Data B'
+
+        queryFeatureB = self.entryQuerySetDataB.get()
+
+        queryArrayB = ['A', 'B', 'C']
+
+        for qB in queryArrayB:
+            self.listQuerySetDataB.insert(END, qB)
+
+    def querySaveDataA(self, evt):
+        print 'Saving Data A'
 
 
-        '''
-        self.buttonGetFeat.configure(state='disabled')
-        self.labelZCriticalValue.configure(state='disabled')
-        self.labelFeature.configure(state='disabled')
-        self.buttonGetFeat.configure(state='disabled')
-        self.buttonSample.configure(state = 'disabled')
-        self.entryCriticalValue.configure(state = 'disabled')
-        '''
+    def querySaveDataB(self, evt):
+        print 'Saving Data B'
 
+
+    def querySetFeatureA(self, evt):
+        print 'Setting Feature in Data A'
+
+        queryDataAFeature = self.entryQueryFeatureA.get()
+
+        queryArrayC = ['A', 'B', 'C', 'D']
+
+        for qC in queryArrayC:
+            self.listQueryDataA.insert(END, qC)
+
+    def querySetFeatureB(self, evt):
+        print 'Setting Feature in Data B'
+
+        queryDataBFeature = self.entryQueryFeatureB.get()
+
+        queryArrayD = ['A', 'B', 'C', 'D']
+
+        for qD in queryArrayD:
+            self.listQueryDataB.insert(END, qD)
+
+    def queryZTest(self, evt):
+        print 'Z Test'
+        self.labelQueryZTest.configure(text=' >> VIEW RESULTS HERE << ')
 
 
 if __name__ == '__main__':
