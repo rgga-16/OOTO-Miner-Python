@@ -1070,6 +1070,8 @@ class OOTO_Miner:
         self.buttonQueryFeatureA.bind('<Button-1>', self.querySetFeatureA)
         self.buttonQueryFeatureB.bind('<Button-1>', self.querySetFeatureB)
         self.buttonQueryZTest.bind('<Button-1>', self.queryZTest)
+        self.listQuerySetDataA.bind('<<ListboxSelect>>', self.querySelectDataValuesA)
+        self.listQuerySetDataB.bind('<<ListboxSelect>>', self.querySelectDataValuesB)
 
 
         #######################################3
@@ -1103,108 +1105,7 @@ class OOTO_Miner:
         self.labelFeatACount.configure(text="Dataset Count: " + str(len(self.datasetA['Data'])))
         self.labelFeatBCount.configure(text="Dataset Count: " + str(len(self.datasetB['Data']))) 
 
-        '''
-        self.labelFramePreprocessor = LabelFrame(self.Tabs_t2)
-        self.labelFramePreprocessor.place(relx=0.01, rely=0.2, relheight=0.19
-                                          , relwidth=1.11)
-        self.labelFramePreprocessor.configure(relief=GROOVE)
-        self.labelFramePreprocessor.configure(foreground="black")
-        self.labelFramePreprocessor.configure(text="Preprocessor")
-        self.labelFramePreprocessor.configure(background="#d9d9d9")
-        self.labelFramePreprocessor.configure(highlightbackground="#d9d9d9")
-        self.labelFramePreprocessor.configure(highlightcolor="black")
-        self.labelFramePreprocessor.configure(width=1110)
-
-        self.labelVariableDescriptor = Label(self.labelFramePreprocessor)
-        self.labelVariableDescriptor.place(relx=0.01, rely=0.17, height=26
-                                           , width=172)
-        self.labelVariableDescriptor.configure(activebackground="#f9f9f9")
-        self.labelVariableDescriptor.configure(activeforeground="black")
-        self.labelVariableDescriptor.configure(background="#d9d9d9")
-        self.labelVariableDescriptor.configure(disabledforeground="#a3a3a3")
-        self.labelVariableDescriptor.configure(foreground="#000000")
-        self.labelVariableDescriptor.configure(highlightbackground="#d9d9d9")
-        self.labelVariableDescriptor.configure(highlightcolor="black")
-        self.labelVariableDescriptor.configure(text="Variable Descriptor:")
-
-        self.buttonVariableDescriptor = Button(self.labelFramePreprocessor)
-        self.buttonVariableDescriptor.place(relx=0.74, rely=0.17, height=23
-                                            , width=146)
-        self.buttonVariableDescriptor.configure(activebackground="#d9d9d9")
-        self.buttonVariableDescriptor.configure(activeforeground="#000000")
-        self.buttonVariableDescriptor.configure(background="#d9d9d9")
-        self.buttonVariableDescriptor.configure(disabledforeground="#a3a3a3")
-        self.buttonVariableDescriptor.configure(foreground="#000000")
-        self.buttonVariableDescriptor.configure(highlightbackground="#d9d9d9")
-        self.buttonVariableDescriptor.configure(highlightcolor="black")
-        self.buttonVariableDescriptor.configure(pady="0")
-        self.buttonVariableDescriptor.configure(text="Choose File...")
-
-        self.labelRawDataset = Label(self.labelFramePreprocessor)
-        self.labelRawDataset.place(relx=0.01, rely=0.43, height=26, width=172)
-        self.labelRawDataset.configure(activebackground="#f9f9f9")
-        self.labelRawDataset.configure(activeforeground="black")
-        self.labelRawDataset.configure(background="#d9d9d9")
-        self.labelRawDataset.configure(disabledforeground="#a3a3a3")
-        self.labelRawDataset.configure(foreground="#000000")
-        self.labelRawDataset.configure(highlightbackground="#d9d9d9")
-        self.labelRawDataset.configure(highlightcolor="black")
-        self.labelRawDataset.configure(text="Raw Dataset: ")
-
-        self.entryRawDataset = Entry(self.labelFramePreprocessor)
-        self.entryRawDataset.place(relx=0.17, rely=0.43, relheight=0.21
-                                   , relwidth=0.56)
-        self.entryRawDataset.configure(background="white")
-        self.entryRawDataset.configure(disabledforeground="#a3a3a3")
-        self.entryRawDataset.configure(font="TkFixedFont")
-        self.entryRawDataset.configure(foreground="#000000")
-        self.entryRawDataset.configure(highlightbackground="#d9d9d9")
-        self.entryRawDataset.configure(highlightcolor="black")
-        self.entryRawDataset.configure(insertbackground="black")
-        self.entryRawDataset.configure(selectbackground="#c4c4c4")
-        self.entryRawDataset.configure(selectforeground="black")
-
-        self.buttonRawDataset = Button(self.labelFramePreprocessor)
-        self.buttonRawDataset.place(relx=0.74, rely=0.43, height=23, width=146)
-        self.buttonRawDataset.configure(activebackground="#d9d9d9")
-        self.buttonRawDataset.configure(activeforeground="#000000")
-        self.buttonRawDataset.configure(background="#d9d9d9")
-        self.buttonRawDataset.configure(disabledforeground="#a3a3a3")
-        self.buttonRawDataset.configure(foreground="#000000")
-        self.buttonRawDataset.configure(highlightbackground="#d9d9d9")
-        self.buttonRawDataset.configure(highlightcolor="black")
-        self.buttonRawDataset.configure(pady="0")
-        self.buttonRawDataset.configure(text="Choose File...")
-
-        self.buttonStartPreprocessor = Button(self.labelFramePreprocessor)
-        self.buttonStartPreprocessor.place(relx=0.74, rely=0.7, height=23
-                                           , width=146)
-        self.buttonStartPreprocessor.configure(activebackground="#d9d9d9")
-        self.buttonStartPreprocessor.configure(activeforeground="#000000")
-        self.buttonStartPreprocessor.configure(background="#d9d9d9")
-        self.buttonStartPreprocessor.configure(disabledforeground="#a3a3a3")
-        self.buttonStartPreprocessor.configure(foreground="#000000")
-        self.buttonStartPreprocessor.configure(highlightbackground="#d9d9d9")
-        self.buttonStartPreprocessor.configure(highlightcolor="black")
-        self.buttonStartPreprocessor.configure(pady="0")
-        self.buttonStartPreprocessor.configure(text="Start")
-        '''
-
-        '''
-        self.progressBarPreprocessor = ttk.Progressbar(self.labelFramePreprocessor)
-        self.progressBarPreprocessor.place(relx=0.17, rely=0.7, relwidth=0.56
-                                           , relheight=0.0, height=24)
-                                           '''
-        '''
-        self.entryVarDescriptor = Entry(self.labelFramePreprocessor)
-        self.entryVarDescriptor.place(relx=0.17, rely=0.17, relheight=0.21, relwidth=0.56)
-        self.entryVarDescriptor.configure(background="white")
-        self.entryVarDescriptor.configure(disabledforeground="#a3a3a3")
-        self.entryVarDescriptor.configure(font="TkFixedFont")
-        self.entryVarDescriptor.configure(foreground="#000000")
-        self.entryVarDescriptor.configure(insertbackground="black")
-        self.entryVarDescriptor.configure(width=624)
-        '''
+        
 
     '''
     Functions to be called by the bound commands
@@ -1275,27 +1176,7 @@ class OOTO_Miner:
     
     def selectValuesDatasetA(self, evt):
         selectDatasetValues(evt, self.datasetA, self.populationDataset, self.labelFeatACount)
-        '''
-        global populationDir
-        listbox = evt.widget
-        selectedValues = [listbox.get(i) for i in listbox.curselection()]
-        self.datasetA['Selected Responses']=[]
-        for sv in selectedValues:
-            responseArr = sv.split(" - ")
-            for response in self.datasetA['Feature']['Responses']:
-                if response['Code'] == responseArr[0]:
-                    selected_response = copy.deepcopy(response)
-                    self.datasetA['Selected Responses'].append(selected_response)
-        self.datasetA['Data']=[]
-        if not (populationDir == ""):
-            self.populationDataset = readCSVDict(populationDir)
-            for record in self.populationDataset:
-                if any (response['Code'] == record[self.datasetA['Feature']['Code']] for response in self.datasetA['Selected Responses']):
-                    self.datasetA['Data'].append(record)
-        else:
-            tkMessageBox.showwarning("Error: No population", "No population dataset uploaded.")
-        self.labelFeatACount.configure(text="Dataset Count: " + str(len(self.datasetA['Data'])))
-        '''
+
         
     def selectFocusFeatureValues(self, evt):
         global selectedFocusFeatureValues
@@ -1619,6 +1500,14 @@ class OOTO_Miner:
 
     def querySaveDataA(self, evt):
         print 'Saving Data A'
+    
+    def querySelectDataValuesA(self, evt):
+        selectDatasetValues(evt, self.datasetA, self.populationDataset, self.labelQueryDataACount)
+        print 'Selecting values for Data A'
+    
+    def querySelectDataValuesB(self, evt):
+        selectDatasetValues(evt, self.datasetB, self.populationDataset, self.labelQueryDataBCount)
+        print 'Selecting values for Data B'
 
 
     def querySaveDataB(self, evt):
