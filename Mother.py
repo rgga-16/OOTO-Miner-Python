@@ -182,12 +182,36 @@ def findFeature(entryFeat, listFeat, dataset, *args):
         for A in arrTempItems:
             listFeat.insert(END, A)
 
-def getDatasetFreqAndProp(evt, dataset):
+def getDatasetFreqAndProp(evt, dataset, focusFeat, label):
+    datasets = []
+    allValues = []
+    selectedValues = []
+
     listbox = evt.widget
-    allValues = listbox.get(0,END)
-    selectedValues = [listbox.get(i) for i in listbox.curselection()]
+    tempAV = listbox.get(0,END)
+    tempSV = [listbox.get(i) for i in listbox.curselection()]
+
+    for av in tempAV:
+        arr_av = av.split(" - ")
+        allValues.append(arr_av[0])
+    
+    for sv in tempSV:
+        arr_sv = sv.split(" - ")
+        selectedValues.append(arr_sv[0])
+    dataset['ColumnData'] = []
+    for record in dataset['Data']:
+        dataset['ColumnData'].append(record[focusFeat])
+
     print "All Values: " + str(allValues)
     print "Selected Values: " + str(selectedValues)
+    print "Feature responses: " + str(len(dataset['ColumnData']))
+    datasets.append(dataset)
+    svs.getTotalsAndProportions(datasets,allValues, selectedValues)
+    label.configure(text = "Frequency: " + str(datasets[0]['Proportion']) + " , Proportion: " + str(datasets[0]['ProportionPercent']))
+
+
+
+
 
 def selectDatasetValues(evt, dataset, populationDataset, labelFeatCount):
     global populationDir
@@ -1500,11 +1524,11 @@ class OOTO_Miner:
 
     def queryGetFrequencyAndProportionA(self, evt):
         print 'Getting freq and prop A'
-        getDatasetFreqAndProp(evt, self.datasetA)
+        getDatasetFreqAndProp(evt, self.datasetA, self.entryQueryFeatureA.get(), self.labelQueryDataA)
     
     def queryGetFrequencyAndProportionB(self, evt):
         print 'Getting freq and prop B'
-        getDatasetFreqAndProp(evt, self.datasetA)
+        getDatasetFreqAndProp(evt, self.datasetB, self.entryQueryFeatureB.get(), self.labelQueryDataB)
 
 
     def querySetPopulation(self, evt):
