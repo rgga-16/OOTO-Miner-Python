@@ -151,26 +151,43 @@ def getFocusFeatureValues(selectedFocusFeature, selectedFocusFeatureValues):
             selectedValues = selectedValues + str(selectedFocusFeatureValues[i]) + ":"
 
     return allValues, selectedValues
-
-def setDatasetFeatures(entryFeat, listFeat, dataset):
+  
+'''
+Finds the feature and displays its responses.
+'''
+def findFeature(entryFeat, listFeat, dataset, *args):
         # Here is how to get the value from entryFeatA
         featCode = entryFeat
+        print "Entered feature code: " + featCode
         arrTempItems = []
         found = False
         #Get proper list of features from initial variable description
         for feature in features:
             if feature['Code'] == featCode:
+                print feature['Code'] + " vs " + featCode
                 found = True
-                dataset['Feature'] = copy.deepcopy(feature)
+                for arg in args:
+                    if arg == "Dataset_Feature":
+                        dataset['Feature'] = copy.deepcopy(feature)
+                    if arg == "Focus_Feature":
+                        dataset['Focus Feature'] = copy.deepcopy(feature)
                 for response in feature['Responses']:
                     tempResp = response['Code'] + " - " + response['Description']
                     arrTempItems.append(tempResp)
                 break
         if not found:
             tkMessageBox.showerror("Error: Feature not found", "Feature not found in Variable Descriptor. Try again.")
+
         listFeat.delete(0, END)
         for A in arrTempItems:
             listFeat.insert(END, A)
+
+def getDatasetFreqAndProp(evt, dataset):
+    listbox = evt.widget
+    allValues = listbox.get(0,END)
+    selectedValues = [listbox.get(i) for i in listbox.curselection()]
+    print "All Values: " + str(allValues)
+    print "Selected Values: " + str(selectedValues)
 
 def selectDatasetValues(evt, dataset, populationDataset, labelFeatCount):
     global populationDir
@@ -193,6 +210,10 @@ def selectDatasetValues(evt, dataset, populationDataset, labelFeatCount):
         tkMessageBox.showwarning("Error: No population", "No population dataset uploaded.")
     labelFeatCount.configure(text="Dataset Count: " + str(len(dataset['Data'])))
 
+def saveDatasetFile(dataset):
+    fileName = makeFileName(dataset)
+    writeCSVDict(fileName, dataset['Data'])
+    tkMessageBox.showinfo("Dataset saved", "Dataset saved as " + fileName)
 
 
 class OOTO_Miner:
@@ -691,7 +712,6 @@ class OOTO_Miner:
 
         self.buttonPopulation.bind('<Button-1>', self.setPopulation)
         self.buttonSample.bind('<Button-1>', self.setSample)
-        # self.buttonFocus.bind('<Button-1>', self.setFocus)
         self.buttonShowA.bind('<Button-1>', self.setFeatA)
         self.buttonShowB.bind('<Button-1>', self.setFeatB)
         self.buttonSaveDatasets.bind('<Button-1>', self.saveDataset)
@@ -1070,8 +1090,13 @@ class OOTO_Miner:
         self.buttonQueryFeatureA.bind('<Button-1>', self.querySetFeatureA)
         self.buttonQueryFeatureB.bind('<Button-1>', self.querySetFeatureB)
         self.buttonQueryZTest.bind('<Button-1>', self.queryZTest)
+
         self.listQuerySetDataA.bind('<<ListboxSelect>>', self.querySelectDataValuesA)
         self.listQuerySetDataB.bind('<<ListboxSelect>>', self.querySelectDataValuesB)
+        self.listQueryDataA.bind('<<ListboxSelect>>', self.queryGetFrequencyAndProportionA)
+        self.listQueryDataB.bind('<<ListboxSelect>>', self.queryGetFrequencyAndProportionB)
+
+
 
 
         #######################################3
@@ -1189,35 +1214,17 @@ class OOTO_Miner:
         
 
     def selectValuesDatasetB(self, evt):
-        global populationDir
-        listbox = evt.widget
-        selectedValues = [listbox.get(i) for i in listbox.curselection()]
-        self.datasetB['Selected Responses']=[]
-        for sv in selectedValues:
-            responseArr = sv.split(" - ")
-            for response in self.datasetB['Feature']['Responses']:
-                if response['Code'] == responseArr[0]:
-                    selected_response = copy.deepcopy(response)
-                    self.datasetB['Selected Responses'].append(selected_response)
-        self.datasetB['Data']=[]
-        if not (populationDir == ""):
-            self.populationDataset = readCSVDict(populationDir)
-            for record in self.populationDataset:
-                if any (response['Code'] == record[self.datasetB['Feature']['Code']] for response in self.datasetB['Selected Responses']):
-                    self.datasetB['Data'].append(record)
-        else:
-            tkMessageBox.showwarning("Error: No population", "No population dataset uploaded.")
-        self.labelFeatBCount.configure(text="Dataset Count: " + str(len(self.datasetB['Data'])))
+        selectDatasetValues(evt, self.datasetB, self.populationDataset, self.labelFeatBCount)
 
     
     # SET FEATURES A
     def setFeatA(self, evt):
-        setDatasetFeatures(self.entryFeatA.get(),self.listFeatA,self.datasetA)
+        findFeature(self.entryFeatA.get(),self.listFeatA,self.datasetA)
 
 
     # SET FEATURES B
     def setFeatB(self, evt):
-        setDatasetFeatures(self.entryFeatB.get(), self.listFeatB, self.datasetB)
+        findFeature(self.entryFeatB.get(), self.listFeatB, self.datasetB)
 
     # GET FEATURE CODE AND SET SAMPLE
     def setSample(self, evt):
@@ -1247,9 +1254,7 @@ class OOTO_Miner:
         datasets.append(self.datasetB)
         for dataset in datasets:
             if(len(dataset['Data']) > 0):
-                fileName = makeFileName(dataset)
-                writeCSVDict(fileName, dataset['Data'])
-                tkMessageBox.showinfo("Dataset saved", "Dataset saved as " + fileName)
+                saveDatasetFile(dataset)
 
     # GET FEATURE CODE FOR Z TEST / SET FOCUS
     def getFeat(self, evt):
@@ -1489,17 +1494,24 @@ class OOTO_Miner:
     QUERY FUNCTIONS
     '''
 
+    def queryGetFrequencyAndProportionA(self, evt):
+        print 'Getting freq and prop A'
+        getDatasetFreqAndProp(evt, self.datasetA)
+    
+    def queryGetFrequencyAndProportionB(self, evt):
+        print 'Getting freq and prop B'
+        getDatasetFreqAndProp(evt, self.datasetA)
+
+
     def querySetPopulation(self, evt):
         self.setPopulation(evt)
 
     def querySetDataA(self, evt):
-        setDatasetFeatures(self.entryQuerySetDataA.get(), self.listQuerySetDataA,self.datasetA)
+        findFeature(self.entryQuerySetDataA.get(), self.listQuerySetDataA,self.datasetA,"Dataset_Feature")
 
     def querySetDataB(self, evt):
-        setDatasetFeatures(self.entryQuerySetDataB.get(), self.listQuerySetDataB, self.datasetB)
+        findFeature(self.entryQuerySetDataB.get(), self.listQuerySetDataB, self.datasetB,"Dataset_Feature")
 
-    def querySaveDataA(self, evt):
-        print 'Saving Data A'
     
     def querySelectDataValuesA(self, evt):
         selectDatasetValues(evt, self.datasetA, self.populationDataset, self.labelQueryDataACount)
@@ -1509,30 +1521,20 @@ class OOTO_Miner:
         selectDatasetValues(evt, self.datasetB, self.populationDataset, self.labelQueryDataBCount)
         print 'Selecting values for Data B'
 
+    def querySaveDataA(self, evt):
+        print 'Saving Data A'
+        saveDatasetFile(self.datasetA)
 
     def querySaveDataB(self, evt):
         print 'Saving Data B'
+        saveDatasetFile(self.datasetB)
 
 
     def querySetFeatureA(self, evt):
-        print 'Setting Feature in Data A'
-
-        queryDataAFeature = self.entryQueryFeatureA.get()
-
-        queryArrayC = ['A', 'B', 'C', 'D']
-
-        for qC in queryArrayC:
-            self.listQueryDataA.insert(END, qC)
+        findFeature(self.entryQueryFeatureA.get(), self.listQueryDataA,self.datasetA,"Focus_Feature")
 
     def querySetFeatureB(self, evt):
-        print 'Setting Feature in Data B'
-
-        queryDataBFeature = self.entryQueryFeatureB.get()
-
-        queryArrayD = ['A', 'B', 'C', 'D']
-
-        for qD in queryArrayD:
-            self.listQueryDataB.insert(END, qD)
+        findFeature(self.entryQueryFeatureB.get(), self.listQueryDataB,self.datasetB,"Focus_Feature")
 
     def queryZTest(self, evt):
         print 'Z Test'
