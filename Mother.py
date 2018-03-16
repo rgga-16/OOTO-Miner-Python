@@ -899,6 +899,7 @@ class OOTO_Miner:
         self.listQuerySetDataA.configure(font="TkFixedFont")
         self.listQuerySetDataA.configure(foreground="#000000")
         self.listQuerySetDataA.configure(width=364)
+        self.listQuerySetDataA.configure(selectmode=MULTIPLE)
 
         self.buttonQuerySaveA = Button(self.labelFrameQueryDataA)
         self.buttonQuerySaveA.place(relx=0.02, rely=0.15, height=23, width=96)
@@ -949,6 +950,7 @@ class OOTO_Miner:
         self.listQueryDataA.configure(font="TkFixedFont")
         self.listQueryDataA.configure(foreground="#000000")
         self.listQueryDataA.configure(width=364)
+        self.listQueryDataA.configure(selectmode=MULTIPLE)
 
         self.labelQueryDataA = Label(self.labelFrameQueryDataA)
         self.labelQueryDataA.place(relx=0.02, rely=0.91, height=26, width=462)
@@ -998,6 +1000,7 @@ class OOTO_Miner:
         self.listQuerySetDataB.configure(font="TkFixedFont")
         self.listQuerySetDataB.configure(foreground="#000000")
         self.listQuerySetDataB.configure(width=364)
+        self.listQuerySetDataB.configure(selectmode=MULTIPLE)
 
         self.buttonQuerySaveB = Button(self.labelFrameQueryDataB)
         self.buttonQuerySaveB.place(relx=0.02, rely=0.15, height=23, width=96)
@@ -1048,6 +1051,7 @@ class OOTO_Miner:
         self.listQueryDataB.configure(font="TkFixedFont")
         self.listQueryDataB.configure(foreground="#000000")
         self.listQueryDataB.configure(width=364)
+        self.listQueryDataB.configure(selectmode=MULTIPLE)
 
         self.labelQueryDataB = Label(self.labelFrameQueryDataB)
         self.labelQueryDataB.place(relx=0.02, rely=0.91, height=26, width=462)
