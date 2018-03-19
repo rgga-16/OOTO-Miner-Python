@@ -99,6 +99,15 @@ def getPPrime(n1,p1,n2,p2):
     return float(n1*p1 + n2*p2) / float(n1 + n2)
 
 '''
+Compares calculated z score with given z critical value whether you can reject or accept the null hypothesis.
+Reject if the z score > z critical value
+'''
+def compareZtoZCritical(z, zCritical):
+    if(math.fabs(z) > zCritical):
+        return 'Reject'
+    return 'Accept'
+
+'''
 Returns the standard error between the two groups
 
 Where n represents respectively the total of each group
@@ -150,16 +159,8 @@ def sampleVsSample(datasetPaths, selectedFeature, featureValues, selectedFeature
   greaterThanZ99 = '' #Determines if the Z-score surpasses the Z-Square Critical Value at 99% Confidence
   greaterThanZ95 = '' #Determines if the Z-score surpasses the Z-Square Critical Value at 95% Confidence
 
-  if(math.fabs(z) > z95):
-      greaterThanZ95 = 'Reject'
-  else:
-      greaterThanZ95 = 'Accept'
-
-  if(math.fabs(z)> z99):
-      greaterThanZ99 = 'Reject'
-  else:
-      greaterThanZ99 = 'Accept'
-
+  greaterThanZ95 = compareZtoZCritical(z, z95)
+  greaterThanZ99 = compareZtoZCritical(z, z99)
 
   #Summary of results
   print 'Z: ' + str(z)
@@ -203,7 +204,7 @@ def sampleVsSample(datasetPaths, selectedFeature, featureValues, selectedFeature
 
   summaryName = 'Sample vs Sample_' + selectedFeature+ '_' + datasets[0]['Name'] + '_VS_' + datasets[1]['Name'] + '.csv'
   writeOnCSV(summary, summaryName)
-  return summaryName
+  return summaryName, greaterThanZ95, greaterThanZ99
 
 
 

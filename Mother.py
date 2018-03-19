@@ -12,6 +12,7 @@ import SampleVsPopulation as svp
 import SampleVsSample as svs
 import ChiTest as ct
 import os
+import numpy as np
 
 try:
     from Tkinter import *
@@ -164,7 +165,6 @@ def findFeature(entryFeat, listFeat, dataset, *args):
         #Get proper list of features from initial variable description
         for feature in features:
             if feature['Code'] == featCode:
-                print feature['Code'] + " vs " + featCode
                 found = True
                 for arg in args:
                     if arg == "Dataset_Feature":
@@ -181,7 +181,20 @@ def findFeature(entryFeat, listFeat, dataset, *args):
         listFeat.delete(0, END)
         for A in arrTempItems:
             listFeat.insert(END, A)
-
+'''
+Splits an array retrieved from a listbox based on a delimiter, and appends to a new array
+which element of the split array given an index. The new array will be returned.
+'''
+def parseListBoxValues(raw_arr, delimiter, index):
+    proc_arr = []
+    for x in raw_arr:
+        temp = x.split(delimiter)
+        proc_arr.append(temp[index])   
+    return proc_arr
+'''
+Gets frequency and proportion of a dataset based on a feature and the values selected
+for that feature.
+'''
 def getDatasetFreqAndProp(evt, dataset, focusFeat, label):
     datasets = []
     allValues = []
@@ -190,26 +203,33 @@ def getDatasetFreqAndProp(evt, dataset, focusFeat, label):
     listbox = evt.widget
     tempAV = listbox.get(0,END)
     tempSV = [listbox.get(i) for i in listbox.curselection()]
-
-    for av in tempAV:
-        arr_av = av.split(" - ")
-        allValues.append(arr_av[0])
     
-    for sv in tempSV:
-        arr_sv = sv.split(" - ")
-        selectedValues.append(arr_sv[0])
+    allValues = parseListBoxValues(tempAV, " - ", 0)
+    selectedValues = parseListBoxValues(tempSV, " - ", 0)
+
+    dataset['Focus Feature']['All Values'] = allValues
+    dataset['Focus Feature']['Selected Values'] = selectedValues
+
     dataset['ColumnData'] = []
     for record in dataset['Data']:
         dataset['ColumnData'].append(record[focusFeat])
 
-    print "All Values: " + str(allValues)
-    print "Selected Values: " + str(selectedValues)
-    print "Feature responses: " + str(len(dataset['ColumnData']))
     datasets.append(dataset)
     svs.getTotalsAndProportions(datasets,allValues, selectedValues)
-    label.configure(text = "Frequency: " + str(datasets[0]['Proportion']) + " , Proportion: " + str(datasets[0]['ProportionPercent']))
+    label.configure(text = "Frequency: " + str(datasets[0]['Proportion']) + " , Proportion: " + str(round(datasets[0]['ProportionPercent']*100,2)) + "%")
 
-
+def isSameFocusFeat(dataset1, dataset2, selectedValD1, selectedValD2):
+    print selectedValD1
+    print selectedValD2 
+    if(dataset1['Focus Feature'] == dataset2['Focus Feature']):
+        if(np.array_equal(selectedValD1, selectedValD2)):
+            return 1
+        else:
+            tkMessageBox.showerror('Unequal values', 'Selected values on both datasets are not equal.')
+            return -1
+    else:
+        tkMessageBox.showerror('Unequal feature', 'Feature code on both datasets are not equal.')
+        return -1
 
 
 
@@ -232,7 +252,7 @@ def selectDatasetValues(evt, dataset, populationDataset, labelFeatCount):
                 dataset['Data'].append(record)
     else:
         tkMessageBox.showwarning("Error: No population", "No population dataset uploaded.")
-    labelFeatCount.configure(text="Dataset Count: " + str(len(dataset['Data'])))
+    labelFeatCount.configure(text="n: " + str(len(dataset['Data'])))
 
 def saveDatasetFile(dataset):
     fileName = makeFileName(dataset)
@@ -1220,8 +1240,10 @@ class OOTO_Miner:
         populationDir = askopenfilename(title = "Select file",filetypes = (("csv files","*.csv"),("all files","*.*")))
         self.entryPopulation.delete(0, END)
         self.entryPopulation.insert(0, populationDir)
+
         self.entryQueryPopulation.delete(0,END)
         self.entryQueryPopulation.insert(0,populationDir)
+
         self.buttonPopulation.configure(state='normal')
         self.populationDataset = readCSVDict(populationDir)
         if(len(list(self.populationDataset)) > 0):
@@ -1337,7 +1359,7 @@ class OOTO_Miner:
                 fileName = makeFileName(datasets[i])
                 writeCSVDict(fileName, datasets[i]['Data'])
                 fileNames.append(fileName)
-            saveFile = svs.sampleVsSample(fileNames, selectedFocusFeature['Code'], allValues, selectedValues)
+            saveFile,z95,z99 = svs.sampleVsSample(fileNames, selectedFocusFeature['Code'], allValues, selectedValues)
             removeFiles(fileNames)
             tkMessageBox.showinfo(testType, testType + " completed. Results file saved as " + saveFile)
         elif(testType == 'Chi-test'):
@@ -1565,8 +1587,22 @@ class OOTO_Miner:
         findFeature(self.entryQueryFeatureB.get(), self.listQueryDataB,self.datasetB,"Focus_Feature")
 
     def queryZTest(self, evt):
+        z95 = 1.645
+        z99 = 2.58
         print 'Z Test'
-        self.labelQueryZTest.configure(text=' >> VIEW RESULTS HERE << ')
+
+        #Check if the selected focus feature and selected values of it are the same for both samples
+        isSame = isSameFocusFeat(self.datasetA, self.datasetB, self.datasetA['Focus Feature']['Selected Values'], self.datasetB['Focus Feature']['Selected Values'])
+        if(isSame == 1):
+            #Calculate Z score between the two samples
+            zScore, pPrime, SE = svs.ZTest(self.datasetA['Total'], self.datasetA['ProportionPercent'], self.datasetB['Total'], self.datasetB['ProportionPercent'])
+            #Get result if accept/reject at 95% confidence
+            z95Result = svs.compareZtoZCritical(zScore, z95)
+            #Get result if accept/reject at 99% confidence
+            z99Result = svs.compareZtoZCritical(zScore, z99)
+            #Display Results
+            self.labelQueryZTest.configure(text='Z-Score: ' + str(round(zScore,2)) +  ', 95%: ' + z95Result + ', 99%: ' + z99Result)
+            
 
 
 if __name__ == '__main__':
