@@ -10,9 +10,9 @@ from tkFileDialog import askopenfilename
 import copy
 import SampleVsPopulation as svp
 import SampleVsSample as svs
-import ChiTest as ct
+# import ChiTest as ct
 import os
-import numpy as np
+# import numpy as np
 
 try:
     from Tkinter import *
@@ -944,6 +944,11 @@ class OOTO_Miner:
         self.listQuerySetDataA.configure(foreground="#000000")
         self.listQuerySetDataA.configure(width=364)
         self.listQuerySetDataA.configure(selectmode=MULTIPLE)
+        self.listQuerySetDataA.configure(exportselection="0")
+        self.listQuerySetDataA.configure(highlightbackground="#d9d9d9")
+        self.listQuerySetDataA.configure(highlightcolor="black")
+        self.listQuerySetDataA.configure(selectbackground="#c4c4c4")
+        self.listQuerySetDataA.configure(selectforeground="black")
 
         self.buttonQuerySaveA = Button(self.labelFrameQueryDataA)
         self.buttonQuerySaveA.place(relx=0.02, rely=0.15, height=23, width=96)
@@ -986,6 +991,14 @@ class OOTO_Miner:
         self.buttonQueryFeatureA.configure(text='''Enter Code''')
         self.buttonQueryFeatureA.configure(width=96)
 
+        strarrQueryCriticalValueA = ["0.80", "0.90", "0.95", "0.98", "0.99"]
+        self.comboQueryCriticalValueA = ttk.Combobox(self.labelFrameQueryDataA)
+        self.comboQueryCriticalValueA.place(relx=0.79, rely=0.39, height=23, width=96)
+        self.comboQueryCriticalValueA.configure(exportselection="0")
+        self.comboQueryCriticalValueA.configure(takefocus="")
+        self.comboQueryCriticalValueA.configure(values=strarrQueryCriticalValueA)
+        self.comboQueryCriticalValueA.current(0)
+
         self.listQueryDataA = Listbox(self.labelFrameQueryDataA)
         self.listQueryDataA.place(relx=0.02, rely=0.38, relheight=0.53
                                        , relwidth=0.76)
@@ -995,6 +1008,11 @@ class OOTO_Miner:
         self.listQueryDataA.configure(foreground="#000000")
         self.listQueryDataA.configure(width=364)
         self.listQueryDataA.configure(selectmode=MULTIPLE)
+        self.listQueryDataA.configure(exportselection="0")
+        self.listQueryDataA.configure(highlightbackground="#d9d9d9")
+        self.listQueryDataA.configure(highlightcolor="black")
+        self.listQueryDataA.configure(selectbackground="#c4c4c4")
+        self.listQueryDataA.configure(selectforeground="black")
 
         self.labelQueryDataA = Label(self.labelFrameQueryDataA)
         self.labelQueryDataA.place(relx=0.02, rely=0.91, height=26, width=462)
@@ -1045,6 +1063,11 @@ class OOTO_Miner:
         self.listQuerySetDataB.configure(foreground="#000000")
         self.listQuerySetDataB.configure(width=364)
         self.listQuerySetDataB.configure(selectmode=MULTIPLE)
+        self.listQuerySetDataB.configure(exportselection="0")
+        self.listQuerySetDataB.configure(highlightbackground="#d9d9d9")
+        self.listQuerySetDataB.configure(highlightcolor="black")
+        self.listQuerySetDataB.configure(selectbackground="#c4c4c4")
+        self.listQuerySetDataB.configure(selectforeground="black")
 
         self.buttonQuerySaveB = Button(self.labelFrameQueryDataB)
         self.buttonQuerySaveB.place(relx=0.02, rely=0.15, height=23, width=96)
@@ -1087,8 +1110,16 @@ class OOTO_Miner:
         self.buttonQueryFeatureB.configure(text='''Enter Code''')
         self.buttonQueryFeatureB.configure(width=96)
 
+        strarrQueryCriticalValueB = ["0.80", "0.90", "0.95", "0.98", "0.99"]
+        self.comboQueryCriticalValueB = ttk.Combobox(self.labelFrameQueryDataB)
+        self.comboQueryCriticalValueB.place(relx=0.79, rely=0.39, height=23, width=96)
+        self.comboQueryCriticalValueB.configure(exportselection="0")
+        self.comboQueryCriticalValueB.configure(takefocus="")
+        self.comboQueryCriticalValueB.configure(values=strarrQueryCriticalValueB)
+        self.comboQueryCriticalValueB.current(0)
+
         self.listQueryDataB = Listbox(self.labelFrameQueryDataB)
-        self.listQueryDataB.place(relx=0.04, rely=0.38, relheight=0.53
+        self.listQueryDataB.place(relx=0.02, rely=0.38, relheight=0.53
                                        , relwidth=0.76)
         self.listQueryDataB.configure(background="white")
         self.listQueryDataB.configure(disabledforeground="#a3a3a3")
@@ -1096,6 +1127,11 @@ class OOTO_Miner:
         self.listQueryDataB.configure(foreground="#000000")
         self.listQueryDataB.configure(width=364)
         self.listQueryDataB.configure(selectmode=MULTIPLE)
+        self.listQueryDataB.configure(exportselection="0")
+        self.listQueryDataB.configure(highlightbackground="#d9d9d9")
+        self.listQueryDataB.configure(highlightcolor="black")
+        self.listQueryDataB.configure(selectbackground="#c4c4c4")
+        self.listQueryDataB.configure(selectforeground="black")
 
         self.labelQueryDataB = Label(self.labelFrameQueryDataB)
         self.labelQueryDataB.place(relx=0.02, rely=0.91, height=26, width=462)
