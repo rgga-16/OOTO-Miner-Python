@@ -1665,8 +1665,14 @@ class OOTO_Miner:
             self.entryQuerySetDataB.configure(state='disabled')
             self.buttonQuerySetDataB.configure(state='disabled')
             self.labelQueryDataBCount.configure(state='disabled')
-            self.labelFrameQueryDataA.configure(text='Population')
-            self.labelFrameQueryDataB.configure(text='Sample')
+            self.labelFrameQueryDataA.configure(text='Sample')
+            self.labelFrameQueryDataB.configure(text='Population')
+            self.querySetAllFeatures()
+
+    def querySetAllFeatures(self):
+        #Test items
+        global strarrAllFeatures
+        strarrAllFeatures = list(self.listQuerySetDataA.get(0, END))
 
 
 
