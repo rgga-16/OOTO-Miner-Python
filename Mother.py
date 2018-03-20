@@ -128,15 +128,6 @@ def makeUpdatedVariables(features, fileName):
                     #Write that responseRow
                     writer.writerow(responseRow)
 
-
-def getData(code, selectedValues):
-    data = []
-    for record in self.populationDataset:
-        if(record[code] in selectedValues):
-            data.append(record)
-    
-    return data
-
 def getFocusFeatureValues(selectedFocusFeature, selectedFocusFeatureValues):
     allValues = ""
     for i in range(0, len(selectedFocusFeature['Responses'])):
@@ -218,6 +209,9 @@ def getDatasetFreqAndProp(evt, dataset, focusFeat, label):
     svs.getTotalsAndProportions(datasets,allValues, selectedValues)
     label.configure(text = "Frequency: " + str(datasets[0]['Proportion']) + " , Proportion: " + str(round(datasets[0]['ProportionPercent']*100,2)) + "%")
 
+'''
+Verifies if the focus features and their selected values for datasets 1 and 2 are the same.
+'''
 def isSameFocusFeat(dataset1, dataset2, selectedValD1, selectedValD2):
     print selectedValD1
     print selectedValD2 
@@ -418,7 +412,7 @@ class OOTO_Miner:
         self.entryPopulation.configure(insertbackground="black")
         self.entryPopulation.configure(selectbackground="#c4c4c4")
         self.entryPopulation.configure(selectforeground="black")
-        self.entryPopulation.configure(state='disabled')
+        self.entryPopulation.configure(state='normal')
 
         self.buttonPopulation = Button(self.Tabs_t1)
         self.buttonPopulation.place(relx=0.01, rely=0.17, height=23, width=486)
@@ -431,7 +425,7 @@ class OOTO_Miner:
         self.buttonPopulation.configure(highlightcolor="black")
         self.buttonPopulation.configure(pady="0")
         self.buttonPopulation.configure(text='''Upload Population''')
-        self.buttonPopulation.configure(state='disabled')
+        self.buttonPopulation.configure(state='normal')
 
         self.labelFrameZTest = LabelFrame(self.Tabs_t1)
         self.labelFrameZTest.place(relx=0.51, rely=0.0, relheight=0.85
@@ -900,7 +894,7 @@ class OOTO_Miner:
         self.buttonQueryPopulation.configure(highlightbackground="#d9d9d9")
         self.buttonQueryPopulation.configure(highlightcolor="black")
         self.buttonQueryPopulation.configure(pady="0")
-        self.buttonQueryPopulation.configure(text='''Set Population''')
+        self.buttonQueryPopulation.configure(text='''Upload Population''')
         self.buttonQueryPopulation.configure(width=316)
 
         self.labelFrameQueryDataA = LabelFrame(self.Tabs_t3)
