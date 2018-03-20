@@ -1,0 +1,1285 @@
+﻿label
+/*Child identity & res" " " " "ources*/
+
+a9 = "Main language spoken at home"
+reg1 = "Region"
+prov1 = "Province"
+ur1 = "Urban or Rural"
+
+a1 = "Gender"
+
+a2 = "Birthdate"
+
+a3a = "Mother"
+a3b = "Father"
+a3c = "Step or foster mother"
+a3d = "Step or foster father"
+a3e = "Grandparent(s) or other relatives"
+a3f = "Siblings (including half, step or foster siblings)"
+a3g = "My spouse or partner (including boyfriend/girlfriend)"
+a3h = "My child or children"
+a3i = "Parents (or relatives) of my spouse or partner"
+a3j = "I live in a foster home or children's home"
+a3k = "I live alone"
+a3l = "Someone or somewhere else: please state____"
+
+a4a = "I am a school student"
+a4g = "I am a student in college"
+a4h = "I am attending training in technical/vocational course"
+a4c = "I do paid employment"
+a4d = "I do unpaid work"
+a4e = "I am looking for work"
+a4f = "I help out at home"
+a4i = "I am currently in a vacation"
+
+a5 = "Schooling"
+
+/*Access*/
+
+b1 = "How old were you when you first used the internet?"
+b3 = "Are you able to access the internet when you want to or need to?"
+
+b6a = "At school or college"
+b6b = "At home"
+b6c = "In the home of friends or relatives"
+b6d = "In a public place (for example, in libraries, cafés, computer shops)"
+b6e = "When I am on my way somewhere (e.g. on the street, in a bus or car)"
+b6f = "When I am somewhere by myself"
+b6g = "PisoNet"
+
+b7a = "A mobile phone that is not a smartphone"
+b7b = "A smartphone [iPhone, Samsung Galaxy, Cherry Mobile, Star Mobile, etc]"
+b7c = "A desktop computer"
+b7d = "A laptop or notebook computer"
+b7e = "A tablet [iPad, Samsung Galaxy tab, PLDT Home tablet, etc]"
+b7f = "A games console [Playstation, Xbox, PSP, Nintendo, 3DS, etc]"
+
+b8a = "A mobile phone that is not a smartphone"
+b8b = "A smartphone [iPhone, Samsung Galaxy, Cherry Mobile, Star Mobile, etc]"
+b8c = "A desktop computer"
+b8d = "A laptop or notebook computer"
+b8e = "A tablet [iPad, Samsung Galaxy tab, PLDT Home tablet, etc]"
+b8f = "A games console [Playstation, Xbox, PSP, Nintendo, 3DS, etc]"
+
+b9a = "I use a postpaid plan (i.e., with contracts)"
+b9b = "I use freeWIFI (at home, in school, coffee shop or cafés, malls, etc.)"
+b9c = "I pay for internet I use (e.g. in a cybercafé or internet cafe; PisoNet)"
+b9d = "I use prepaid offers (e.g. GOSurf, GIGASurf, etc.)"
+
+b10a = "Do you connect to the internet by yourself?"
+b10b1 = "My parents"
+b10b2 = "My siblings"
+b10b3 = "Relatives"
+b10c1 = "Friends who are the same age as I am"
+b10c2 = "Friends who are older than me"
+b10d = "My teacher"
+b10e = "Others"
+
+b11 = "About how long do you spend on the internet on an ordinary week day (school day or working day)?"
+
+b12 = "About how long do you spend on the internet on a day at the weekend?"
+
+/*Opportunities & practices*/
+
+c1 = "Do you usually have a good time or fun when you go online?"
+c2 = "What do you think about this sentence: ‘There are lots of things on the internet that are good for children of my age’?"
+
+c4a = "I learned something new by searching online"
+c4c = "I used the internet for schoolwork"
+c4b = "I looked for information about work or study opportunities"
+c4c1 = "Checked maps"
+c4c2 = "I looked for information about the place I want to go visit/eat"
+
+c4d = "I looked for resources or events about my local neighbourhood"
+c4f = "I got involved online in a local organisation or charity"
+c4g = "I used the internet to help somebody else"
+c4e = "I used the internet to talk to people from places or backgrounds different from mine"
+
+c4h = "I looked for the news online"
+c4i = "I discussed political or social problems with other people online"
+c4j = "I got involved online in a campaign or protest"
+c4k = "I signed a petition online"
+c4l = "I used the internet to join a civic, religious or political group"
+	
+c4o = "I posted videos or music created by someone else"
+c4m = "I created my own video or music and uploaded it to share"
+c4n = "I created a blog or story or website online"
+c4o1 = "I created my own artwork, designs and illustrations and uploaded them on the internet"
+	
+c4r = "I used instant messaging [insert local examples e.g. Viber, WhatsApp]"
+c4p = "I visited a social network site (e.g., Facebook [add local examples])"
+c4t = "I helped someone else who needed or wanted to go online"
+c4q = "I talked to family or friends who live further away (e.g. by Skype, Viber, FaceTime)"
+c4u = "I commented on the updates that friends or family have put online"
+c4t1 = "I re-posted or shared a social media post online"
+c4v = "I showed my friends or family something that I saw online"
+c4w = "I visited a chatroom to meet new people [insert local examples]"
+	
+c4x = "I watched video clips (e.g. on YouTube [insert local examples])"
+c4y = "I played online games alone"
+c4z = "I played games with other people online"
+c4bb = "I listened to music online (by downloading or streaming)"
+c4cc = "I watched my favourite TV shows"
+c4cc1 = "I joined a fan site (of a celebrity or popular band)"
+	
+c4gg = "I posted photos or comments online (e.g. on Facebook or a blog)"
+c4ee = "I looked for health information for myself or someone I know"
+c4ff = "I participated in a site where people share my interests or hobbies"
+	
+c4hh = "I browsed for things to buy"
+c4hh1 = "I checked out what things cost by looking online"
+c4hh2 = "I have sold an item online"
+
+c6a = "My mother or father (or step/foster mother or father)"
+c6b = "My brother or sister (or step/foster/half siblings)"
+c6c = "A friend around my age"
+c6d = "A teacher"
+c6e = "Another adult I trust"
+c6f = "Someone I first met on the internet, but who is friends or family of other people I know in person"
+c6g = "Someone I first met on the internet, but who has no other connection to my life outside of the internet"
+c6g1 = "A relative or friend who is an OFW (overseas Filipino worker)"
+c6h = "Someone else"
+
+c7a = "My mother or father (or step/foster mother or father)"
+c7b = "My brother or sister (or step/foster/half siblings)"
+c7c = "A friend around my age"
+c7d = "A teacher"
+c7e = "Another adult I trust"
+c7f = "Someone I first met on the internet, but who is friends or family of other people I know in person"
+c7g = "Someone I first met on the internet, but who has no other connection to my life outside of the internet"
+c7g1 = "A relative or friend who is an OFW (overseas Filipino worker)"
+c7h = "Someone else"
+
+c8a = "My mother or father (or step/foster mother or father)"
+c8b = "My brother or sister (or step/foster/half siblings)"
+c8c = "A friend around my age"
+c8d = "A teacher"
+c8e = "Another adult I trust"
+c8f = "Someone I first met on the internet, but who is friends or family of other people I know in person"
+c8g = "Someone I first met on the internet, but who has no other connection to my life outside of the internet"
+c8g1 = "A relative or friend who is an OFW (overseas Filipino worker)"
+c8h = "Someone else"
+
+c9a = "My mother or father (or step/foster mother or father)"
+c9b = "My brother or sister (or step/foster/half siblings)"
+c9c = "A friend around my age"
+c9d = "A teacher"
+c9e = "Another adult I trust"
+c9f = "Someone I first met on the internet, but who is friends or family of other people I know in person"
+c9g = "Someone I first met on the internet, but who has no other connection to my life outside of the internet"
+c9g1 = "A relative or friend who is an OFW (overseas Filipino worker)"
+c9h = "Someone else"
+
+c10a = "Making presentations"
+c10b = "Writing things"
+c10c = "Making pictures"
+c10d = "Practising something I am learning (e.g. maths or a language or music)"
+c10e = "Checking out information on the school website"
+c10f = "Doing group work with other students"
+c10g = "Chatting online at school"
+c10h = "Communicating with teachers (e.g. submitting homework or asking a question)"
+c10i = "Contributing to a school blog or online discussion"
+
+/*Digital ecology*/
+d12 = "How were your social media accounts created?"
+d13 = "How old were you when you first had your social media account?"
+
+d7a = "Thinking of the profile you use most often, about how many people are you in contact with when using [named profile]?"
+d7b = "More or less, how many are your followers?"
+d7c = "More or less, how many do you follow?"
+d8 = "Is you [named profile] set to...?"
+d10 = "How do you usually respond to requests from people to become your ‘friends’ online?"
+
+/*Skills*/
+
+e1a = "I know how to save a photo that I find online"
+e1b = "I know how to change my privacy settings (e.g. on a social networking site)"
+e1c = "I know how to use a programming language (e.g. HTML, XML, etc.)"
+e1f1 = "I know how to jailbreak, crack games and apps, change IP address"
+e1f2 = "I know how to hide my IP address"
+e1f3 = "I know how to set network settings (LAN, wi-fi, device-connection)"
+e1f4 = "I know how to hack certain files"
+e1f5 = "I know how to set the firewall"
+
+e1i = "I find it easy to find a website I have visited before"
+e1g = "I find it easy to check if the information I find online is true"
+e1h = "I find it easy to choose the best keywords for online searches"
+e1k = "Sometimes I end up on websites without knowing how I got there"
+e1k1 = "I know how to use "incognito" in browsing"
+	
+e1l = "I know which information I should and shouldn't share online"
+e1m = "I know how to remove people from my contact lists"
+e1m1 = "I know how to block"
+e1n = "I know when I should and shouldn't share information online"
+e1o = "I know how to behave according to the situation online"
+e1p = "I know how to change who I share content with (e.g. friends, friends of friends or everyone)"
+e1p1 = "I know how to report abusive posts or things that I find offending in social media (e.g. Facebook report abuse)"
+	
+e1t = "I know how to create something new from video or music that I found online"
+e1q = "I know how to post online video or music that I have created myself"
+e1s = "I know which different types of licences apply to online content"
+e1r = "I know how to edit or make basic changes to online content that others have created"
+e1u = "I know how to design a website"
+	
+e1v = "I know how to install apps on a mobile device (e.g. phone or tablet)"
+e1w = "I know how to safeguard my online expenses while using mobile apps"
+e1x = "I know how to make an in-app purchase"
+e1x1 = "I know how to download and carck to full version some paid apps without paying a fee (e.g. torrent, etc.)"
+
+e3a = "Deactivate the function showing my geographical position (on Facebook, Google Maps, etc.)"
+e3b = "Connect to a Wi-Fi network"
+e3c = "Block push notifications from different apps"
+e3d = "Have the same documents, contacts or apps on all devices that I use (e.g. smartphone, tablet, PC)"
+e3e = "Block pop ups which promote apps, games or services I have to pay for (unrequested windows that appear during web surfing)"
+e3f = "Protect a smartphone with a PIN/with a screen pattern"
+e3g = "Update my status on the social networking site I use the most"
+e3h = "Find information on how to use smartphones safely"
+e3i = "Compare similar apps to choose the one that is most reliable"
+e3j = "Take a picture or a video with my smartphone and post it onto social media"
+
+/*Digital ecology*/
+
+d1d = "Twitter"
+d1e = "Viber"
+d1f = "Skype"
+d1a = "Facebook"
+d1c = "Instagram"
+d1b = "WhatsApp"
+d1g = "YouTube"
+d1h = "Spotify"
+d1i = "Wikipedia"
+d1j = "Tumblr"
+
+d2d = "I find it easier to be myself online than when I am with people face-to-face"
+d2e = "I talk about different things online than I do when speaking to people face-to-face"
+d2f = "I talk about private things online which I do not talk about with people face-to-face"
+d2a = "I feel safe on the internet"
+d2b = "I find other people are kind and helpful on the internet"
+d2c = "I know what to do if someone acts online in a way I don't like"
+
+d14a = "Facebook/Messenger"
+d14b = "Skype"
+d14c = "Viber"
+d14d = "WeChat"
+d14e = "Instagram"
+d14f = "Twitter"
+d14g = "YouTube/Hangout (Google)"
+
+d15a = "Minecraft"
+d15b = "Warcraft DOTA"
+d15c = "DOTA 2"
+d15d = "League of Legends"
+d15e = "Counterstrike"
+d15f = "Others"
+
+d9a = "A photo that clearly shows your face"
+d9b = "Your last name"
+d9c = "Your address"
+d9d = "Your phone number"
+d9e = "Your school"
+d9f = "Your correct age"
+d9g = "An age that is not your real age"
+d9j = "Places you've dined and visited"
+d9k = "Pictures showing whole body"
+
+/*Risks*/
+
+f1a = "Looked for new friends or contacts on the internet"
+f1b = "Sent my personal information (e.g., my full name, address or phone number) to someone I have never met face-to-face"
+f1c = "Added people to my friends or contacts I have never met face-to-face"
+f1d = "Pretended to be a different kind of person online from who I really am"
+f1e = "Sent a photo or video of myself to someone I have never met face-to-face"
+f1f = "Post my current location and those I had been to"
+f1g = "Post my new stuff and clothes"
+f1h = "Post messages or love quotes that pertain to the boy/girl whom I have a crush on"
+f1i = "Seek to get acquainted or befriend persons who are Non-Filipinos (foreigners)"
+f1j = "Engage in chat activities with a person whom I only met on internet"
+f1k	 = "Do video calls with a person whom I only met on internet"
+f1l = "Receive offers or gifts online"
+
+f2 = "Have you EVER had contact on the internet with someone you have not met face-to-face before?"
+f3 = "In the PAST YEAR, have you at least once met anyone face to face that you first got to know on the internet?"
+f4 = "If you met anyone face-to-face that you first got to know on the internet, how did you feel about it?"
+f5 = "Thinking about the LAST TIME you were bothered by meeting someone in this way, how old was the person you actually met?"
+
+f6a = "I've met face to face with a person I just got acquainted on internet but is already known by my friends or relatives"
+f6b = "I've met face to face with a person I just got acquainted on internet and who is totally unknown to anyone I personally know"
+f6c = "I've met with a foreigner (different nationality)"
+f6d = "I've personally met with an older person"
+f6e = "I've met face to face with a person I just got acquainted on internet and she/he was accompanied by another girl/boy"
+f6f = "I've met with another woman like myself whom i just got acquainted with on internet"
+f6g = "I've met with another man like myself whom i just got acquainted with on internet"
+f6h = "I've met with LGBT person (lesbian, gay, bisexual, transgender) whom i just got acquainted with on internet"
+
+f8 = "In the PAST YEAR, how many people have you gone to a meeting with face-to-face that you had previously only met on the internet?"
+
+f11 = "In the PAST YEAR, has anything EVER happened online that bothered or upset you in some way? (e.g., made you feel uncomfortable, scared or that you shouldn’t have seen it)?"
+f12 = "In the PAST YEAR, how often did this happen?"
+f13 = "Thinking now about the LAST TIME this happened to you, how upset were you about what happened?"
+
+
+f14a = "My mother or father (or step/foster mother or father)"
+f14b = "My brother or sister (orstep/foster/half siblings)"
+f14j = "Cousin"
+f14k = "Aunt/Uncle"
+f14l = "Grandfather/Grandmother"
+f14m = "Nanny"
+f14c = "A friend around my age"
+f14n = "Classmate"
+f14o = "Boyfriend/Girlfriend"
+f14d = "A teacher"
+f14e = "Someone whose job it is to help children"
+f14p = "Godfather/Godmother"
+f14q = "Priest/Pastor/Nun"
+f14r = "Neighbor"
+f14f = "Another adult I trust"
+f14g = "Someone else"
+f14h = "I didn't talk to anyone"
+f14i = "Prefer not to say"
+
+f15 = "The last time something happened online that bothered or upset you in some way, how long did you feel like that for?"
+
+
+f16a = "I ignored the problem or hoped the problem would go away by itself"
+f16b = "I closed the window or app"
+f16c = "I felt a bit guilty about what went wrong"
+f16d = "I tried to get the other person to leave me alone"
+f16e = "I tried to get back at the other person"
+f16f = "I stopped using the internet for a while"
+f16g = "I deleted any messages from the other person"
+f16h = "I changed my privacy/ contact settings"
+f16i = "I blocked the person from contacting me"
+f16j = "I reported the problem online  (e.g., clicked on a ‘report abuse’ button, contacted an internet advisor or Internet Service Provider (ISP))"
+f16k = "Other actions taken"
+
+f18 = "In the PAST YEAR, has anyone ever treated you in a hurtful or nasty way?"
+f19 = "In the PAST YEAR, how often did this happen?"
+
+f20a = "In person face-to-face (by someone with you in the same place)"
+f20b = "Via a mobile phone or online device (computer,tablet, etc.)"
+
+f21a = "By mobile phone calls"
+f21b = "By messages sent to me on my phone (SMS/TEXT or MMS)"
+f21c = "On a social networking site (e.g. Facebook, Twitter etc.)"
+f21d = "On a media sharing platform (YouTube, Instagram, Flickr)"
+f21e = "By instant messaging (MSN, What’s app, Skype etc.)"
+f21f = "In a chatroom"
+f21g = "In an online game"
+f21h = "Some other way"
+f21i = "Prefer not to say"
+
+f22a = "Nasty or hurtful messages were sent to me"
+f22b = "Nasty or hurtful messages were passed around or posted where others could see"
+f22c = "I was left out or excluded from a group or activity on the internet"
+f22d = "I was threatened on the internet"
+f22e = "Other nasty or hurtful things happened to me on the internet"
+
+f23 = "Thinking of the last time someone treated you in a hurtful or nasty way, how did you feel?"
+f24 = "In the PAST YEAR, have you EVER treated someone else in a hurtful or nasty way?"
+f25 = "In the PAST YEAR, how often have you treated someone in this way?"
+
+f26a = "In person face-to-face (a person that is together with you in the same place at the same time)"
+f26b = "Via a mobile phone or online device (computer, tablet, etc.)"
+
+
+f27a = "By mobile phone calls"
+f27b = "By messages sent by the phone (SMS/Text or MMS)"
+f27c = "On a social networking site (e.g., Facebook, Twitter)"
+f27d = "By instant messaging (MSN, WhatsApp, Skype etc.)"
+f27e = "On a media sharing platform (YouTube, Instagram, Flickr)"
+f27f = "In a chatroom"
+f27g = "In an online game"
+f27h = "Some other way"
+f27i = "Prefer not to say"
+
+f28 = "In the PAST YEAR, have you EVER SEEN any sexual images?"
+f29 = "If you have seen images of this kind, how did you feel about what you saw?"
+
+f31a = "In a magazine or book"
+f31b = "On television, film"
+f31c = "Via a mobile phone, computer, tablet or anyother online device"
+
+f32d = "On an online video sharing platform (e.g. YouTube, [add local examples])"
+f32e = "On an online photo sharing platform (e.g. Instagram, Flickr, [add local examples])"
+f32f = "On a social networking site (e.g. Facebook, Twitter, [add local examples])"
+f32g = "In a chatroom"
+f32h = "In an online game"
+f32i = "On an adult/X-rated website"
+f32j = "By popups on the internet (unrequested windows that appear during web surfing)"
+f32k = "By instant messaging (MSN, WhatsApp, Skype, [add local examples])"
+f32l = "By text (SMS), images (MMS), or otherwise on my mobile phone"
+f32m = "By Bluetooth"
+f32n = "In an advert"
+f32o = "Prefer not to say"
+
+f33a = "A sexual image or video of someone naked"
+f33b = "A sexual image or video that shows someone's 'private parts' [translate as appropriate]"
+f33c = "An image or video that shows sexual acts or people having sex"
+f33d = "An image or video that shows sexual acts in a violent way"
+f33e = "Something else sexual or embarrassing"
+
+f34 = "In the PAST YEAR, have you received any sexual messages (this could be words, pictures or videos) at least once?"
+f35 = "If you have received any sexual messages, how did you feel about what you saw?"
+
+f37a = "By mobile phone calls"
+f37b = "By text messages sent to me on my phone (SMS/text or MMS)"
+f37c = "On a social networking site (e.g., Facebook, Twitter etc.)"
+f37d = "On a media sharing platform (YouTube, Instagram, Flickr)"
+f37e = "By IM (MSN, WhatsApp, Skype, etc.)"
+f37f = "In a chatroom (video chat)"
+f37g = "In an online game"
+f37h = "In a gaming community (also on the Xbox and other game consoles)"
+f37i = "By 'pop up' (something appears by accident)"
+
+f38 = "In the PAST YEAR, have you sent or posted any sexual messages at least once? This could be words, pictures or videosabout you or someone else."
+f39 = "In the PAST YEAR, how often have you sent or posted sexual messages?"
+
+f40a = "I have sent someone a sexual message (e.g., words, pictures or video) on the internet"
+f40b = "I have posted a sexual message (e.g., words, pictures or video) where other people could see it on the internet"
+f40c = "I have asked someone on the internet for sexual information about him or herself (like what his or her body looks like without clothes on or sexual things he or she has done)"
+
+f41a = "Ways of physically harming or hurting themselves"
+f41b = "Ways of committing suicide"
+f41c = "Ways to be very thin (such as being anorexic or bulimic)"
+f41d = "Hate messages that attack certain groups or individuals (e.g., people of different colour or religion or nationality)"
+f41e = "Their experiences of taking drugs"
+f41f = "Gory or violent images"
+f41g = "Ways of courtship"
+f41h = "Ways how to find a relationship"
+f41i = "Ways to join in gambling"
+f41j = "Ways in which to buy drugs"
+f41k = "About abortion"
+f41l = "About cheating"
+f41m = "About sex"
+f41n = "About drinking alcohol"
+f41o = "About smoking"
+f41p = "About bullying"
+
+f43a = "Somebody used my personal information in a way I didn't like"
+f43b = "The device (e.g., phone, tablet, computer) I use got a virus or spyware"
+f43c = "I lost money by being cheated on the internet"
+f43d = "Somebody used my password to access my information or to pretend to be me"
+f43e = "Somebody created a page or image about me that was hostile or hurtful"
+f43f = "I spent too much money on online games or in-app purchases"
+f43g = "I was asked to make an in-app purchase when playing an online game (e.g., to do well in the game)"
+f43h = "Someone found out where I was because they tracked my phone or device"
+
+f45a = "I have gone without eating or sleeping because of the time I spent on the internet"
+f45b = "I have experienced conflicts with family or friends because of the time I spent on the internet"
+f45c = "My grades have dropped because of the time I spent on the internet"
+f45d = "I have tried unsuccessfully to spend less time on the internet"
+f45e = "I think the amount of time I spend on the internet causes problems for me"
+f45f = "I feel I have to check my device (e.g. phone or computer) to see if anything new has just happened"
+
+/*Well-being*/
+
+h1 = "Here is a picture of a ladder. The top of the ladder ‘10’ is the best possible life for you and the bottom ‘0’ is the worst possible life for you. In general, where on the ladder do you feel you stand at the moment? Mark the circle next to the number that best describes where you stand."
+
+h2a = "Your mother or father (including step/foster mother or father)"
+h2b = "Your brother or sister (including step siblings)"
+h2i = "Cousin"
+h2j = "Aunt/Uncle"
+h2k = "Grandfather/Grandmother"
+h2c = "A friend around my age"
+h2l = "Boyfriend/Girlfriend"
+h2d = "A teacher"
+h2m = "Classmate"
+h2e = "Someone whose job it is to help children [give examples if needed]"
+h2n = "Nanny"
+h2o = "Godfather/Godmother"
+h2p = "Priest/Pastor/Nun"
+h2q = "Neighbor"
+h2f = "Another adult you trust"
+h2g = "Someone else"
+h2h = "No one"
+
+/*Family*/
+i1 = "How easy is it for you to talk to your parent/carer about things that upset you?"
+
+i2a = "When I speak someone listens to what I say"
+i2b = "My family really tries to help me"
+i2c = "I feel safe at home"
+
+i3b = "My parent(s)/carer(s) sets rules about what I can do at home"
+i3c = "My parent(s)/carer(s) sets rules about what I can do outside the home"
+i3d = "My parent(s)/carer(s) tells me when I am doing something well"
+i3a = "My parent(s)/carer(s) praises me for behaving well"
+
+i4a = "Encourages me to explore and learn things on the internet"
+i4b = "Suggests ways to use the internet safely"
+i4c = "Talks to me about what I do on the internet"
+i4d = "Sits with me while I use the internet"
+i4e = "Stays nearby when I use the internet"
+i4f = "Does shared activities together with me on the internet"
+i4g = "Talks to me about what to do if something online bothers or upsets me"
+i4h = "Helps me when something is difficult to do or find on the internet"
+i4i = "Explains why some websites are appropriate or inappropriate"
+i4j = "Helps me when something bothers me on the internet"
+i4k = "Talks to me about the commercial activities I am exposed to online"
+
+i5a = "Told my parent/carer about things that bother or upset me on the internet"
+i5b = "Helped my parent/carer to do something they found difficult on the internet"
+i5c = "Started a discussion with my parent/carer about what I do on the internet"
+i5d = "Asked for my parent's/carer's advice on how I should act online"
+i5e = "Asked my parent/carer for something that I have seen advertised online"
+i5f = "Ask for your parent's/carer's help with a situation on the internet that I could not handle"
+
+i6a = "Use a web or phone camera (e.g., for Skype or video chat)"
+i6b = "Download music or films"
+i6c = "Visit a social networking site (e.g., Facebook, [insert local terms])"
+i6d = "Watch video clips (e.g., on YouTube)"
+i6e = "Play games with other people online"
+i6f = "Visit a chat room"
+i6g = "Use instant messaging"
+i6h = "Read/watch news online"
+i6i = "Use the internet for school work"
+i6j = "Spend time in a virtual world (e.g., Habbo, Club Penguin, Minecraft [add examples as needed])"
+i6k = "Put (or post) photos, videos or music online to share with others (including social networking or instant messaging)"
+
+i7a = "Parental controls or other means of blocking or filtering some types of website"
+i7b = "Parental controls or other means of keeping track of the websites or apps I visit"
+i7c = "Rules about how long or when I am allowed to go online"
+i7d = "A service or contract that limits the time I spend on the internet"
+i7e = "Software to prevent spam or junk mail/viruses"
+i7f = "Parental controls that filter the apps I can download"
+i7g = "Parental controls that alert my parent/carer when I want to buy content (in-app purchase)"
+i7h = "Software that limits the people I can be in touch with (through voice calls and SMS/TEXT MMS)"
+i7i = "Ad blocking software"
+
+i8a = "Which friends or contacts you add to my social networking profile/instant messaging service"
+i8b = "The messages in my email or other app for communicating with people"
+i8c = "My profile on a social networking site or online community"
+i8d = "Which websites I visited"
+i8e = "The apps I downloaded"
+i8f = "The in-app purchases I made"
+
+
+/*School*/
+
+j1 = "How much do you like school at present?"
+
+j5a = "Suggested ways to use the internet safely"
+j5b = "Encouraged me to explore and learn things on the internet"
+j5c = "Made rules about what I can do on the internet at school"
+j5d = "Helped me when I found something difficult to do or find on the internet"
+j5e = "Talked to me about what I do on the internet"
+j5f = "Explained why some websites are good or bad"
+j5g = "Suggested ways to behave towards other people online"
+j5h = "Helped me in the past when something has bothered me on the internet"
+j5i = "In general, talked to me about what I would do if something on the internet ever bothered me"
+
+/*Peers & community*/
+
+k1a = "My friends really try to help me"
+k1b = "I can count on my friends when things go wrong"
+k1c = "I can talk about my problems with my friends"
+k1d = "I get worried when I ﬁnd out my friends are having fun without me "
+
+k2a = "Suggested ways to use the internet safely"
+k2b = "Encouraged me to explore and learn things on the internet"
+k2c = "Helped me when I found something difficult to do on the internet"
+k2d = "Explained why some websites are good or bad"
+k2e = "Suggested ways to behave towards other people on the internet"
+k2f = "Helped me in the past when something has bothered me on the internet"
+
+k3 = "Have you suggested to your friends ways to use the internet safely?"
+
+k4a = "I feel safe in the area where I live"
+k4b = "It is safe for younger children to play outside during the day"
+k4c = "You can trust people around here"
+
+/*Child identity & resources (P2)*/
+
+a14 = "How often do you get some new clothes to wear?"
+a15 = "How easily can you find a quiet place to study or do homework?"
+a16 = "How often do you go on holiday [for at least one week] away from home?"
+a17 = "How often do you have fresh fruit and vegetables to eat?"
+a17a = "How often do you have fish or meat to eat?"
+a18 = "Do you have at least two pairs of properly fitting shoes? [include: boots, sandals, trainers, etc.]"
+a19 = "How often do you get some new games or toys to play with?"
+
+
+a20a = "I get very angry and often lose my temper"
+a20b = "I usually do as I am told"
+a20c = "I fight a lot, I can make other people do what I want"
+a20d = "I am often accused of lying or cheating"
+a20e = "I take things that are not mine from home, school or elsewhere"
+	
+a20f = "I worry a lot"
+a20g = "I am nervous in certain new situations, I easily lose confidence"
+a20h = "I get a lot of headaches, stomach-aches or sickness"
+a20i = "I am often unhappy, sad or tearful"
+a20j = "I have many fears and I am easily scared"
+
+a20k = "I am restless, I cannot stay still for long"
+a20l = "I finish the work I'm doing. My attention is good"
+a20n = "I am easily distracted and find it difficult to concentrate"
+a20o = "I think before I do things"
+	
+a20p = "Other people my age generally like me"
+a20q = "Other children or young people pick on me"
+a20r = "I am usually on my own, I generally play alone or keep to myself"
+a20s = "I have at least one good friend"
+a20t = "I get on better with adults than with people my own age"
+	
+a20u = "I am helpful if someone is hurt, upset or feeling ill"
+a20v = "I try to be nice to other people. I care about their feelings"
+a20w = "I often volunteer to help others (e.g., parents, carers, teachers, children)"
+a20x = "I usually share with others (food, games, pens etc.)"
+
+a21a = "Other children are treated better than me"
+a21b = "People seem to think I am not smart"
+a21c = "People seem to think they’re better than me"
+a21d = "I get called names or insulted by other children"
+
+a22a = "Because of where my family is from"
+a22b = "Because of my skin colour"
+a22c = "Because of my religion"
+a22d = "Because of my height or weight"
+a22e = "Because of a disability"
+a22f = "Because of not having enough money"
+a22g = "Because of my sexual orientation"
+a22h = "Because of how I look or behave"
+a22i = "Because of my opinions or beliefs"
+a22j = "Because of my attitude"
+a22k = "Because my parents are not around (i.e., OFW)"
+a22l = "Because of the ethnic group I belong to"
+a22m = "Due to conflict / war in our area"
+a22n = "Because I am not studying (i.e., out-of-school)"
+a22o = "Because I do not have a permanent residence / house"
+
+a23 = "When you were treated this way, how often did it happen on the internet?"
+
+a24a = "I do dangerous things for fun"
+a24b = "I do exciting things, even if they are dangerous"
+
+a25a = "Had so much alcohol that I got really drunk"
+a25b = "Missed school lessons without my parent(s)/carer(s) knowing"
+a25c = "Had sexual intercourse"
+a25d = "Been in trouble with my teachers for bad behaviour"
+a25e = "Been in trouble with the police"
+a25f = "Met personally with someone whom I met online (i.e., eyeball)"
+
+a26a = "I can solve difficult problems if I try hard enough"
+a26b = "If someone opposes me, I can find ways to get what I want"
+a26c = "It's easy for me to stick to my aims and achieve my goals"
+a26d = "I am confident that I can deal with unexpected problems"
+a26g = "I can stay calm when things get difficult because I am good at coping"
+
+a27 = "Ideally, if you are given an opportunity, what level of education do you want to finish?"
+a28 = "Imagine if given the opportunity to finish your studies or to get your desired career in the future, where do you want to work?"
+
+a29a = "When I use the internet, I learn about different things that I could study, do or become what I want to be as productive as possible."
+a29b = "When I use the internet, I feel I want to achieve more in life."
+
+/*Sexual risks*/
+
+g1a = "I was sent a message that I did not want with advertisements for or links to X-rated websites [use local term for 'X-rated']"
+g1b = "I opened a message or a link in a message that showed pictures of naked people or of people having sex that I did not want"
+g1c = "I have seen or received a sexual message, image or video about someone else that I did not want"
+
+g2a = "I have been asked for sexual information about myself (like what my body looks like without clothes on or sexual things I have done) when I did not want to answer such questions"
+g2b = "I have been asked to talk about sexual acts with someone on the internet when I did not want to"
+g2c = "I have been asked by someone on the internet to do something sexual when I did not want to"
+g2d = "I have been asked on the internet for a photo or video showing my private parts [translate as appropriate] when I did not want to"
+
+g3a = "I have sent sexual information about myself (like what my body looks like without clothes on or sexual things I have done) when I did not want"
+g3b = "I have talked about sexual acts with someone on the internet when I did not want to"
+g3c = "I have done something sexual on the internet when I did not want to"
+g3d = "I have sent someone a photo or video showing my private parts when I did not want to [translate as appropriate]"
+
+g4 = "Thinking about the last time when you had unwanted sexual experience (that is, any of G2a-d), did it happen when you were using which of the following?"
+g5 = "Thinking about the last time when you had unwanted sexual experience (that is, any of G2a-d), who was the person who did this?"
+
+g9a = "Brother (over 18)"
+g9b = "Sister (over 18)"
+g9c = "A younger brother or sister"
+g9d = "Father or step-/foster father"
+g9e = "Mother or step-/foster mother"
+g9f = "Other adult relatives, such as aunts, uncles, or grandparents"
+g9g = "Friend or acquaintance"
+g9h = "Teacher/ educator"
+g9j = "Other adult you trust e.g. coach, neighbour, doctor, or babysitter"
+g9i = "Other (specify)"
+g9k = "I didn’t tell anyone about it"
+g9l = "Prefer not to say"
+
+/*Parent module*/
+
+l41a = "My spouse has a paid job locally."
+l41b = "My other child/children has a paid job locally."
+l41c = "Someone in my family is an overseas Filipino worker (OFW) who provides for us."
+l41d = "Some relatives, who are not OFW’s, gives us monthly allowance."
+l41e = "Our family has a business. (i.e. sari-sari store, vulcanizing shop, etc.)"
+l41f = "Our family receives a stipend from the government (i.e. member of 4P’s or any allowance from the local government unit)"
+l41g = "Others"
+
+l35a = "Your child’s health"
+l35b = "Having enough money to care for your child"
+l35c = "How your child is doing at school"
+l35d = "Other children treating your child in a hurtful or nasty way"
+l35e = "Your child drinking too much alcohol/taking drugs"
+l35f = "Your child seeing inappropriate material on the internet"
+l35g = "A stranger contacting your child on the internet"
+l35h = "Your child’s sexual activities"
+l35i = "Your child becoming a victim of crime"
+l35j = "Your child getting into trouble with the police"
+l35k = "Your child receiving an injury on the roads"
+l35l = "Other reasons (specify)"
+
+l34a = "Physical disability"
+l34b = "Physical illness"
+l34c = "Mental health difficulty"
+l34d = "Behavioural difficulty"
+l34e = "Learning difficulty"
+l34f = "Other disability"
+
+l45a = "He/she is into sports."
+l45b = "He/she likes to read books."
+l45c = "He/she likes to play games using a gadget/computer."
+l45d = "He/she likes to send messages to friends and relatives using the mobile phone and/or computer."
+l45e = "He/she likes to go out with friends."
+l45f = "He/she likes music and/or playing musical instruments."
+l45g = "He/she likes to take photos and videos."
+l45h = "He/she likes to download and upload music, photos and videos in the internet."
+l45i = "He/she likes to write short stories, poems, etc."
+l45j = "He/she likes to watch movies/short videos in the internet."
+l45k = "Others ""
+
+l47a = "Play online games."
+l47b = "Use online messaging applications to communicate."
+l47c = "Upload and download photos and videos."
+l47d = "Use the webcam."
+l47e = "Chat using a chatroom."
+l47f = "Use the internet to help in research or homework."
+l47g = "Watch movies/short videos in the internet."
+l47h = "Others (specify)"
+
+l6a = "At work"
+l6b = "At home"
+l6c = "In the home of friends or relatives"
+l6d = "In a public place (for example, In libraries, cafes, computer shops)"
+l6e = "When I am on my way somewhere (e.g., on the street, in a bus or car)"
+l6f = "When I am somewhere by myself"
+
+l7a = "A mobile phone that is not a smartphone"
+l7b = "A smartphone [iPhone, Samsung Galaxy, Cherry Mobile, Star Mobile, etc]"
+l7c = "A desktop computer"
+l7d = "A laptop or notebook computer"
+l7e = "A tablet [iPad, Samsung Galaxy tab, PLDT Home tablet, etc]"
+l7f = "A games console [Playstation, Xbox, PSP, Nintendo, 3DS, etc]"
+
+l8a = "I know how to save a photo that I find online"
+l8b = "I know how to change my privacy settings (e.g. on a social networking site)"
+l8c = "I know how to use a programming language (e.g. HTML, XML, etc.)"
+l8f1 = "I know how to jailbreak, crack games and apps, change IP address"
+l8f2 = "I know how to hide my IP address"
+l8f3 = "I know how to set network settings (LAN, wi-fi, device-connection)"
+l8f4 = "I know how to hack certain files"
+l8f5 = "I know how to set the firewall"
+
+l8i = "I find it easy to find a website I have visited before"
+l8g = "I find it easy to check if the information I find online is true"
+l8h = "I find it easy to choose the best keywords for online searches"
+l8k = "Sometimes I end up on websites without knowing how I got there"
+l8k1 = "I know how to use "incognito" in browsing"
+	
+l8l = "I know which information I should and shouldn’t share online"
+l8m = "I know how to remove people from my contact lists"
+l8m1 = "I know how to block"
+l8n = "I know when I should and shouldn’t share information online"
+l8o = "I know how to behave according to the situation online"
+l8p = "I know how to change who I share content with (e.g. friends, friends of friends or everyone)"
+l8p1 = "I know how to report abusive posts or things that I find offending in social media (e.g. Facebook report abuse)"
+	
+l8t = "I know how to create something new from video or music that I found online"
+l8q = "I know how to post online video or music that I have created myself"
+l8s = "I know which different types of licences apply to online content"
+l8r = "I know how to edit or make basic changes to online content that others have created"
+l8u = "I know how to design a website"
+	
+l8v = "I know how to install apps on a mobile device (e.g. phone or tablet)"
+l8w = "I know how to keep track of the costs of mobile app use"
+l8x = "I know how to make an in-app purchase"
+l8x1 = "I know how to download and carck to full version some paid apps without paying a fee (e.g. torrent, etc.)"
+
+l48a = "Talk to your child about what he/she does on the internet?"
+l48b = "Encourage your child to explore and learn things on the internet?"
+l48c = "Sit with your child while he/she uses the internet?"
+l48d = "Stay nearby when your child uses the internet?"
+
+l49a = "Started a discussion with you about what he/she does on the internet?"
+l49b = "Told you about things she/he finds upsetting on the internet?"
+l49c = "Asked for your advice on how she/he should act online?"
+l49d = "Asked for products and/or services that she/he has seen advertisements for online?"
+l49e = "Asked for your help with a situation on the internet that she/he cannot handle?"
+
+l12a = "Use a web or phone camera (e.g., for Skype or video chat)"
+l12d = "Watch video clips (e.g., on YouTube)"
+l12b = "Download music or films"
+l12e = "Play games with other people online"
+l12c = "Visit a social networking site (e.g. Facebook, [insert local terms])"
+l12f = "Visit a chat room"
+l12g = "Use instant messaging"
+l12h = "Read/watch news online"
+l12i = "Use the internet for school work"
+l12j = "Spend time in a virtual world (e.g., Habbo, Club Penguin, Minecraft)"
+l12k = "Put (or post) photos, videos or music online to share with others (including social networking or instant messaging)"
+
+l50a = "Suggest ways to use the internet safely"
+l50b = "Talk to him/her about what to do if something on the internet upsets him/her"
+l50c = "Help him/her when something is difficult to do or to find on the internet"
+l50d = "Explain why some websites are appropriate or inappropriate"
+l50e = "Help him/her when something has upset him/her on the internet"
+l50f = "Talk to him/her about the commercial activities they are exposed to online"
+
+l13a = "Parental controls or other means of blocking or filtering some types of website"
+l13b = "Parental controls or other means of keeping track of the websites or apps your child visits"
+l13c = "Rules about how long or when your child is allowed to go online"
+l13d = "A service or contract that limits the time your child spends on the internet"
+l13e = "Software to prevent spam or junk mail/viruses"
+l13f = "Parental controls that filter the apps your child can download"
+l13g = "Parental controls that alert me when your child wants to buy content (in-app purchase)"
+l13h = "Software that limits the people my child can be in touch with (through voice calls and SMS/TEXT MMS)"
+l13i = "Ad blocking software"
+
+l14a = "Which friends or contacts he/she adds to his/her social networking profile/instant messaging service"
+l14b = "The messages in his/her email or other app for communicating with people"
+l14c = "Which websites he/she visited"
+l14d = "His/her profile on a social networking site or online community"
+l14e = "The apps he/she downloaded"
+l14f = "The in-app purchases he/she made"
+
+l21a = "Had contact on the internet with someone that my child had not met face-to-face before"
+l21b = "Been treated in a hurtful or nasty way on the internet by someone? (This includes being teased repeatedly in a way he/she did not like, or being deliberately excluded or left out of things.)"
+l21d = "Treated someone else in a hurtful or nasty way on the internet? (This includes having teased someone repeatedly in a way he/she did not like, or threatened, or deliberately excluded or left them out of things.)"
+l21c = "Met anyone face-to-face that my child first got to know on the internet"
+l21e = "Sent or received any messages with inappropriate content in words, photos or videos (pertaining to sex, sexual intercourse or nudity) using the internet?"
+
+l22a = "Ways of physically harming or hurting themselves"
+l22b = "Ways of committing suicid"
+l22c = "Ways to be very thin (such as anorexic or bulimic)"
+l22d = "Hate messages that attack certain groups or individuals(e.g., people of different colour or religion or nationality)"
+l22e = "Their experiences of taking drugs"
+l22f = "Gory or violent images"
+
+l23a = "Somebody used his or her personal information in a way he or she didn’t like"
+l23b = "The device s/he uses got a virus"
+l23c = "S/he lost money by being cheated on the internet"
+l23d = "Somebody used my child’s password to access his or her information or to pretend to be him or her"
+l23e = "Somebody created a page or image about him or her that was hostile or hurtful"
+l23f = "S/he spent too much money on online games or in-app purchases"
+l23g = " S/he was asked to make an in-app purchase when playing an online game (e.g. to progress faster in the game)"
+l23h = "Someone found out where your child was because they tracked his/her phone"
+
+l24a = "S/he has seen images on the internet that are obviously sexual"
+l24b = "S/he has received a sexual message (this could be words, pictures or videos)"
+l24c = "S/he has sent or posted a sexual message (this could be words, pictures or videos about them or someone else)"
+l24d = "S/he was sent a message that s/he did not want with advertisements for or links to X-rated websites [use local term for ‘X-rated’]"
+l24e = "S/he opened a message or a link in a message that showed pictures of naked people or of people having sex that s/he did not want"
+l24f = "S/he has seen or received a sexual message, image or video about someone else that s/he did not want"
+l24g = "S/he has been asked for sexual information about him/herself (like what his/her body looks like without clothes on or sexual things s/he has done) when s/he did not want to answer such questions"
+l24h = "S/he has been asked to talk about sexual acts with someone on the internet when s/he did not want to"
+l24i = "S/he has been asked by someone on the internet to do something sexual when s/he did not want to"
+l24j = "S/he has been asked on the internet for a photo or video showing her/his private parts [translate as appropriate] when s/he did not want to"
+
+/*Parent Module*/
+l27 = "Estimated total annual income bracket"
+
+l36 = "Attended school or pre-school"
+
+l28 = "Highest level of education"
+
+l37 = "Language"
+
+l38 = "Religion"
+
+l31 = "Frequency church"
+
+l39 = "Muslim: frequency pray"
+
+l32 = "Paid job"
+
+l40 = "Job status"
+
+l33 = "Why do you not have a job"
+
+l41 = "Other source of income"
+
+l41a = "Spouse paid job locally"
+
+l41b = "Other children paid job locally"
+
+l41c = "Family OFW"
+
+l41d = "Non-OFW relatives"
+
+l41e = "Family business"
+
+l41f = "Family stipend from government"
+
+l41g = "Other"
+
+l42 = "Marital Status"
+
+l43 = "How old are you?"
+
+l44 = "Gender"
+
+l35a = "Child health"
+
+l35b = "Having enough money"
+
+l35c = "Child school performance"
+
+l35d = "Other children treating your child"
+
+l35e = "Child drinking alcohol"
+
+l35f = "Child inappropriate material on the internet"
+
+l35g = "Stranger contacting child on internet"
+
+l35h = "Child sexual activities"
+
+l35i = "Child victim of crime"
+
+l35j = "Child trouble with police"
+
+l35k = "Child injury on the road"
+
+l35l = "Other"
+
+l34a = Physical disability"
+
+l34b = "Physical illness"
+
+l34c = "Mental Health difficulty"
+
+l34d = "Behavioural difficulty"
+
+l34e = Learning difficulty"
+
+l34f = "Other"
+
+l45a = "Sports"
+
+l45b = "Read books"
+
+l45c = "play games using gadget/computer"
+
+l45d = "send messages to friends using phone and/or computer"
+
+l45e = "Go out with friends"
+
+l45f = "Music"
+
+l45g = "Take picture/video"
+
+l45h = "Download/Upload music, photos and videos on the internet"
+
+l45i = "Write"
+
+l45j = "Watch movies/videos on the internet"
+
+l45k = "Other"
+
+l1 = "Use internet"
+
+l46 = "use internet with child"
+
+l47a = "play games"
+
+l47b = "online messaging"
+
+l47c = "upload/download photos/videos"
+
+l47d = "use webcam"
+
+l47e = "chat in chatroom"
+
+l47f = "research/homework"
+
+l47g = "movies/short videos"
+
+l47h = "other"
+
+l6a = "Work"
+
+l6b = "Home"
+
+l6c = "Home of friends or relatives"
+
+l6d = "Public"
+
+l6e = "On the way"
+
+l6f = "By myself"
+
+l7a = "Nonsmartphone mobile phone"
+
+l7b = "Smartphone"
+
+l7c = "Desktop PC"
+
+l7d = "Laptop"
+
+l7e = "Tablet"
+
+l7f = "Game console"
+
+l8a = "Save photo online"
+
+l8b = "Change privacy settings"
+
+l8c = "Use programmin language"
+
+l8f1 = "Jailbreak"
+
+l8f2 = "Hide my IP"
+
+l8f3 = "Set network settings"
+
+l8f4 = "Hack files"
+
+l8f5 = "Set firewall"
+
+l8i = "Find website I have visited before"
+
+l8g = "Check information online is true"
+
+l8h = "Choose best search keywords"
+
+l8k = "I end up on websites without knowing"
+
+l8k1 = "Use incognito"
+
+l8l = "Know which info to share and not share"
+
+l8m = "remove from my contact lists"
+
+l8m1 = "Block"
+
+l8n = "Know which info to send and not send"
+
+l8o = "behave according to situation online"
+
+l8p = "Change share settings"
+
+l8p1 = "Report abusive posts"
+
+l8t = "Create something from video or music I found online"
+
+l8q = "Post online video or music I created"
+
+l8s = "Know which license apply to content"
+
+l8r = "Edit online content others created"
+
+l8u = "Design a website"
+
+l8v = "Install apps"
+
+l8w = "Keep track of the costs of app use"
+
+l8x = "Make in-app purchase"
+
+l8x1 = "Download and crack apps without pating a fee"
+
+l48a = "Talk about what he/she does"
+
+l48b = "Encourage child to explore"
+
+l48c = "Sit with child"
+
+l48d = "Stay nearby"
+
+l49a = "Discuss with you about internet"
+
+l49b = "Told you things he/she finds on the internet"
+
+l49c = "Ask advice on how he/she act online"
+
+l49d = "Ask products/services from online ads"
+
+l49e = "Ask help for situations he/she can't handle online"
+
+l12a = "Use a web or phone camera"
+
+l12d = "Watch video"
+
+l12b = "Download music"
+
+l12e = "Play games"
+
+l12c = "Social networking"
+
+l12f = "Chatroom"
+
+l12g = "Instant messaging"
+
+l12h = "Read/watch news"
+
+l12i = "School work"
+
+l12j = "Spend time in virtual world"
+
+l12k = "Share music, photos, videos and posts"
+
+l50a = "Suggest ways for safety"
+
+l50b = "Talk if something upsets him/her"
+
+l50c = "Help when something is difficult"
+
+l50d = "Explain why things are in/appropriate"
+
+l50e = "Help when something upsets him/her"
+
+l50f = "Talk about commercial activities"
+
+l51 = "As far as you are aware, in the past year, how often has anything happened online that bothered or upset your child in some way (e.g. made them feel uncomfortable, upset, or feel that they shouldn't have seen it)?"
+
+l13a = "Blocking websites for your child"
+
+l13b = "Keeping track of web apps for your child"
+
+l13c = "Rules on how long he/she can go online"
+
+l13d = "Service that limits time child sepnds on internet"
+
+l13e = "Sowtware for spam/junk mail/virus"
+
+l13f = "Filter apps child can download"
+
+l13g = "Alert when child wants to but content"
+
+l13h = "Limit people my child can be in touch"
+
+l13i = "Ad block"
+
+l14a = "Which friends or contacts he/she adds to his/her social networking profile/instant messaging service"
+
+l14b = "Messages in email or other apps"
+
+l14c = "Websites visited"
+
+l14d = "Profile in social network"
+
+l14e = "Apps downloaded"
+
+l14f = "In-app purchases"
+
+l15 = "As far as you are aware, in the past year, how often has anything happened online that bothered or upset your child in some way (e.g. made them feel uncomfortable, upset, or feel that they shouldn’t have seen it)?"
+
+l17 = "The last time something happened online that bothered or upset your child, how upset was she/he about what happened (if at all)?"
+
+l18 = "In the NEXT few months, is it likely that something will happen online that will bother or upset your child? This could be things they may see, be sent or do online."
+
+l19 = "Do you feel you can help your child to cope with things online that bother or upset them?"
+
+l20 = "Do you think your child can cope with things online that bother or upset them?"
+
+l21a = "Had contact on the internet with someone that my child had not met face-to-face before"
+
+l21b = "Been treated in a hurtful or nasty way on the internet by someone? (This includes being teased repeatedly in a way he/she did not like, or being deliberately excluded or left out of things.)"
+
+l21d = "Treated someone else in a hurtful or nasty way on the internet? (This includes having teased someone repeatedly in a way he/she did not like, or threatened, or deliberately excluded or left them out of things.)"
+
+l21c = "Met anyone face-to-face that my child first got to know on the internet"
+
+l21e = "Sent or received any messages with inappropriate content in words, photos or videos (pertaining to sex, sexual intercourse or nudity) using the internet?"
+
+l22a = "Ways of physically harming themselves"
+
+l22b = "Ways of suicide"
+
+l22c = "Ways to be thin"
+
+l22d = "Hate messages"
+
+l22e = "Drug experience"
+
+l22f = "Gory images"
+
+l23a = "Somebody used his or her personal information in a way he or she didn’t like"
+
+l23b = "Has a virus"
+
+l23c = "Lose money online"
+
+l23d = "Use child's password and pretend to be him/her"
+
+l23e = "Create page or image to hurt him/her"
+
+l23f = "Spend too much money"
+
+l23g = "Was ask to make in-app purchase in an online game"
+
+l23h = "Tracked your child's phone"
+
+l24a = "Seen images that are sexual"
+
+l24b = "Recieve sexual message"
+
+l24c = "Post sexual message"
+
+l24d = "Recieve a link to x-rated website"
+
+l24e = "Open message that show naked people"
+
+l24f = "Seen or recieve sexual message unwated"
+
+l24g = "Asked about sexual information"
+
+l24h = "Asked to talk about sexual acts"
+
+l24i = "Asked to do something sexual"
+
+l24j = "Asked for a photo/video showing private parts"
+
+l25a = "Your child's school"
+
+l25b = "TV radio news or magazine"
+
+l25c = "ISP"
+
+l25d = "Government"
+
+l25e = "Charities"
+
+l25f = "Website with Safety info"
+
+l25g = "Retailers"
+
+l25h = "Family or Friend"
+
+l25i = "Child"
+
+l25j = "Other"
+
+l25k = "I don't get any"
+
+l26a = "Your child's school"
+
+l26b = "TV radio news or magazine"
+
+l26c = "ISP"
+
+l26d = "Government"
+
+l26e = "Charities"
+
+l26f = "Website with Safety info"
+
+l26g = "Retailers"
+
+l26h = "Family or Friend"
+
+l26i = "Child"
+
+l26j = "Other"
+
+l26k = "I don't want any"
+
+;

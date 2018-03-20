@@ -10,9 +10,9 @@ from tkFileDialog import askopenfilename
 import copy
 import SampleVsPopulation as svp
 import SampleVsSample as svs
-# import ChiTest as ct
+import ChiTest as ct
 import os
-# import numpy as np
+import numpy as np
 
 try:
     from Tkinter import *
@@ -66,6 +66,12 @@ def readFeatures(filename, varMark):
                 new_response = {'Group':row[0], 'Code':row[1], 'Description':row[2]}
                 new_feature['Responses'].append(new_response)
     return features
+'''
+def convertToGroup(features):
+    groupedFeatures = copy.deepcopy(features)
+    for feature in groupedFeatures:
+        for response in feature['Responses']:
+            '''
 
 def readCSVDict(filename):
     rows = csv.DictReader(open(filename))
@@ -127,7 +133,9 @@ def makeUpdatedVariables(features, fileName):
                     responseRow.append('Group ' + response['Group'])
                     #Write that responseRow
                     writer.writerow(responseRow)
-
+'''
+Concatenates all of the focus feature values together using a ':'
+'''
 def getFocusFeatureValues(selectedFocusFeature, selectedFocusFeatureValues):
     allValues = ""
     for i in range(0, len(selectedFocusFeature['Responses'])):
@@ -1380,9 +1388,22 @@ class OOTO_Miner:
         global populationDir
         global features
         if(testType == 'Sample vs Population'):
+            for dataset in datasets:
+                convertDatasetValuesToGroups(dataset, features)
+                for feature in features:
+                    allValues, selectedValues = getFocusFeatureValues(feature, ['b'])
+
+
+            
+
+            
+            '''
             allValues, selectedValues = getFocusFeatureValues(selectedFocusFeature, selectedFocusFeatureValues)
+
             saveFile = svp.sampleVsPopulation(populationDir, sampleFeature, selectedFocusFeature['Code'], allValues, selectedValues, Za)
+
             tkMessageBox.showinfo(testType, testType + " completed. Results file saved as " + saveFile)
+            '''
         elif(testType == 'Sample vs Sample'):
             allValues, selectedValues = getFocusFeatureValues(selectedFocusFeature, selectedFocusFeatureValues)
             for i in range(0, len(datasets)):
