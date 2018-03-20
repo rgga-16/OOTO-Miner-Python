@@ -83,6 +83,18 @@ def writeCSVDict(filename, dataset):
         w.writeheader()
         w.writerows(dataset)
 
+'''
+Returns a new dataset by filtering from the old one based on a feature and its selected values
+'''
+def filterDataset(dataset, feature, values):
+    new_data = []
+    for record in dataset['Data']:
+        if record[feature['Code']] in values:
+            new_data.append(copy.deepcopy(record))
+    
+    return new_data
+
+
 def convertDatasetValuesToGroups(dataset, features):
     #response['Code'] == record[self.datasetA['Feature']['Code']] for response in self.datasetA['Selected Responses']
     for record in dataset['Data']:
@@ -234,7 +246,9 @@ def isSameFocusFeat(dataset1, dataset2, selectedValD1, selectedValD2):
         return -1
 
 
-
+'''
+Set selected dataset values for that dataset. 
+'''
 def selectDatasetValues(evt, dataset, populationDataset, labelFeatCount):
     global populationDir
     listbox = evt.widget
