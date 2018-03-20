@@ -291,10 +291,10 @@ class OOTO_Miner:
         self.Tabs.configure(takefocus="")
         self.Tabs_t1 = ttk.Frame(self.Tabs)
         self.Tabs.add(self.Tabs_t1, padding=3)
-        self.Tabs.tab(0, text="Tests", underline="-1", )
+        self.Tabs.tab(0, text="Miner", underline="-1", )
         self.Tabs_t3 = ttk.Frame(self.Tabs)
         self.Tabs.add(self.Tabs_t3, padding=3)
-        self.Tabs.tab(1, text="Query", underline="-1", )
+        self.Tabs.tab(1, text="Prober", underline="-1", )
         self.Tabs_t2 = ttk.Frame(self.Tabs)
         self.Tabs.add(self.Tabs_t2, padding=3)
         self.Tabs.tab(2, text="Variable Descriptor", underline="-1", )
@@ -770,6 +770,12 @@ class OOTO_Miner:
 
         self.comboCriticalValue.bind('<<ComboboxSelected>>', self.getCriticalValue)
 
+        self.listFeatA.bind('<<ListboxSelect>>', self.selectValuesDatasetA)
+        self.listFeatB.bind('<<ListboxSelect>>', self.selectValuesDatasetB)
+        self.listAttributes.bind('<<ListboxSelect>>', self.selectFocusFeatureValues)
+
+
+
         '''
         TAB 2 - PREPROCESSOR
         '''
@@ -859,20 +865,48 @@ class OOTO_Miner:
         self.buttonStartVariableDescriptor.configure(pady="0")
         self.buttonStartVariableDescriptor.configure(text='''Start''')
         self.buttonStartVariableDescriptor.configure(width=146)
-        
-        '''
-        self.progressBarVariableDescriptor = ttk.Progressbar(self.labelFrameVariableDescriptor)
-        self.progressBarVariableDescriptor.place(relx=0.19, rely=0.7
-                                                 , relwidth=0.64, relheight=0.0, height=24)
-        self.progressBarVariableDescriptor.configure(length="620")
-        '''
-        self.listFeatA.bind('<<ListboxSelect>>', self.selectValuesDatasetA)
-        self.listFeatB.bind('<<ListboxSelect>>', self.selectValuesDatasetB)
-        self.listAttributes.bind('<<ListboxSelect>>', self.selectFocusFeatureValues)
 
+        self.entryInitialVarDesc = Entry(self.Tabs_t2)
+        self.entryInitialVarDesc.place(relx=0.19, rely=0.25, relheight=0.04
+                                   , relwidth=0.64)
+        self.entryInitialVarDesc.configure(background="white")
+        self.entryInitialVarDesc.configure(disabledforeground="#a3a3a3")
+        self.entryInitialVarDesc.configure(font="TkFixedFont")
+        self.entryInitialVarDesc.configure(foreground="#000000")
+        self.entryInitialVarDesc.configure(insertbackground="black")
+        self.entryInitialVarDesc.configure(width=624)
+
+        self.buttonInitialVarDesc = Button(self.Tabs_t2)
+        self.buttonInitialVarDesc.place(relx=0.84, rely=0.25, height=23
+                                                 , width=146)
+        self.buttonInitialVarDesc.configure(activebackground="#d9d9d9")
+        self.buttonInitialVarDesc.configure(activeforeground="#000000")
+        self.buttonInitialVarDesc.configure(background="#d9d9d9")
+        self.buttonInitialVarDesc.configure(disabledforeground="#a3a3a3")
+        self.buttonInitialVarDesc.configure(foreground="#000000")
+        self.buttonInitialVarDesc.configure(highlightbackground="#d9d9d9")
+        self.buttonInitialVarDesc.configure(highlightcolor="black")
+        self.buttonInitialVarDesc.configure(pady="0")
+        self.buttonInitialVarDesc.configure(text='''Start''')
+        self.buttonInitialVarDesc.configure(width=146)
+
+        self.labelInitialVarDesc = Label(self.Tabs_t2)
+        self.labelInitialVarDesc.place(relx=0.01, rely=0.2, height=26, width=250)
+        self.labelInitialVarDesc.configure(background="#d9d9d9")
+        self.labelInitialVarDesc.configure(disabledforeground="#a3a3a3")
+        self.labelInitialVarDesc.configure(foreground="#000000")
+        self.labelInitialVarDesc.configure(text='''Upload Initial Variable Description:''')
+        self.labelInitialVarDesc.configure(width=172)
+
+
+
+        '''
+        BINDING PREPROCESSOR ELEMENTS
+        '''
         self.buttonStartVariableDescriptor.bind('<Button-1>', self.makeInitialVarDesc)
         self.buttonVariableFile.bind('<Button-1>', self.getVariableFile)
         self.buttonValuesFile.bind('<Button-1>', self.getValuesFile)
+
 
 
         '''
@@ -888,15 +922,6 @@ class OOTO_Miner:
         self.entryQueryPopulation.configure(foreground="#000000")
         self.entryQueryPopulation.configure(insertbackground="black")
         self.entryQueryPopulation.configure(width=654)
-
-        strarrQueryType = ["Sample VS Sample", "Sample VS Population"]
-        self.comboQueryType = ttk.Combobox(self.Tabs_t3)
-        self.comboQueryType.place(relx=0.01, rely=0.02, relheight=0.04
-                                        , relwidth=0.14)
-        self.comboQueryType.configure(exportselection="0")
-        self.comboQueryType.configure(takefocus="")
-        self.comboQueryType.configure(values=strarrQueryType)
-        self.comboQueryType.current(0)
 
         self.buttonQueryPopulation = Button(self.Tabs_t3)
         self.buttonQueryPopulation.place(relx=0.67, rely=0.02, height=23
@@ -920,6 +945,7 @@ class OOTO_Miner:
         self.labelFrameQueryDataA.configure(text='''Dataset A''')
         self.labelFrameQueryDataA.configure(background="#d9d9d9")
         self.labelFrameQueryDataA.configure(width=480)
+        global queryStrFilterB
 
         self.entryQuerySetDataA = Entry(self.labelFrameQueryDataA)
         self.entryQuerySetDataA.place(relx=0.02, rely=0.04, relheight=0.05
@@ -959,21 +985,34 @@ class OOTO_Miner:
         self.listQuerySetDataA.configure(selectbackground="#c4c4c4")
         self.listQuerySetDataA.configure(selectforeground="black")
 
-        self.buttonQuerySaveA = Button(self.labelFrameQueryDataA)
-        self.buttonQuerySaveA.place(relx=0.02, rely=0.15, height=23, width=96)
-        self.buttonQuerySaveA.configure(activebackground="#d9d9d9")
-        self.buttonQuerySaveA.configure(activeforeground="#000000")
-        self.buttonQuerySaveA.configure(background="#d9d9d9")
-        self.buttonQuerySaveA.configure(disabledforeground="#a3a3a3")
-        self.buttonQuerySaveA.configure(foreground="#000000")
-        self.buttonQuerySaveA.configure(highlightbackground="#d9d9d9")
-        self.buttonQuerySaveA.configure(highlightcolor="black")
-        self.buttonQuerySaveA.configure(pady="0")
-        self.buttonQuerySaveA.configure(text='''Save''')
-        self.buttonQuerySaveA.configure(width=96)
+        self.buttonQueryAddFilterA = Button(self.labelFrameQueryDataA)
+        self.buttonQueryAddFilterA.place(relx=0.02, rely=0.15, height=23, width=96)
+        self.buttonQueryAddFilterA.configure(activebackground="#d9d9d9")
+        self.buttonQueryAddFilterA.configure(activeforeground="#000000")
+        self.buttonQueryAddFilterA.configure(background="#d9d9d9")
+        self.buttonQueryAddFilterA.configure(disabledforeground="#a3a3a3")
+        self.buttonQueryAddFilterA.configure(foreground="#000000")
+        self.buttonQueryAddFilterA.configure(highlightbackground="#d9d9d9")
+        self.buttonQueryAddFilterA.configure(highlightcolor="black")
+        self.buttonQueryAddFilterA.configure(pady="0")
+        self.buttonQueryAddFilterA.configure(text='''Add Filter''')
+        self.buttonQueryAddFilterA.configure(width=96)
+
+        self.buttonQueryResetFilterA = Button(self.labelFrameQueryDataA)
+        self.buttonQueryResetFilterA.place(relx=0.02, rely=0.20, height=23, width=96)
+        self.buttonQueryResetFilterA.configure(activebackground="#d9d9d9")
+        self.buttonQueryResetFilterA.configure(activeforeground="#000000")
+        self.buttonQueryResetFilterA.configure(background="#d9d9d9")
+        self.buttonQueryResetFilterA.configure(disabledforeground="#a3a3a3")
+        self.buttonQueryResetFilterA.configure(foreground="#000000")
+        self.buttonQueryResetFilterA.configure(highlightbackground="#d9d9d9")
+        self.buttonQueryResetFilterA.configure(highlightcolor="black")
+        self.buttonQueryResetFilterA.configure(pady="0")
+        self.buttonQueryResetFilterA.configure(text='''Reset Filters''')
+        self.buttonQueryResetFilterA.configure(width=96)
 
         self.labelQueryDataACount = Label(self.labelFrameQueryDataA)
-        self.labelQueryDataACount.place(relx=0.02, rely=0.21, height=23, width=96)
+        self.labelQueryDataACount.place(relx=0.02, rely=0.25, height=23, width=96)
         self.labelQueryDataACount.configure(text='Count: ')
 
         self.entryQueryFeatureA = Entry(self.labelFrameQueryDataA)
@@ -1033,6 +1072,7 @@ class OOTO_Miner:
         self.labelFrameQueryDataB.configure(text='''Dataset B''')
         self.labelFrameQueryDataB.configure(background="#d9d9d9")
         self.labelFrameQueryDataB.configure(width=480)
+        global queryStrFilterA
 
         self.entryQuerySetDataB = Entry(self.labelFrameQueryDataB)
         self.entryQuerySetDataB.place(relx=0.02, rely=0.04, relheight=0.05
@@ -1072,21 +1112,33 @@ class OOTO_Miner:
         self.listQuerySetDataB.configure(selectbackground="#c4c4c4")
         self.listQuerySetDataB.configure(selectforeground="black")
 
-        self.buttonQuerySaveB = Button(self.labelFrameQueryDataB)
-        self.buttonQuerySaveB.place(relx=0.02, rely=0.15, height=23, width=96)
-        self.buttonQuerySaveB.configure(activebackground="#d9d9d9")
-        self.buttonQuerySaveB.configure(activeforeground="#000000")
-        self.buttonQuerySaveB.configure(background="#d9d9d9")
-        self.buttonQuerySaveB.configure(disabledforeground="#a3a3a3")
-        self.buttonQuerySaveB.configure(foreground="#000000")
-        self.buttonQuerySaveB.configure(highlightbackground="#d9d9d9")
-        self.buttonQuerySaveB.configure(highlightcolor="black")
-        self.buttonQuerySaveB.configure(pady="0")
-        self.buttonQuerySaveB.configure(text='''Save''')
-        self.buttonQuerySaveB.configure(width=96)
+        self.buttonQueryAddFilterB = Button(self.labelFrameQueryDataB)
+        self.buttonQueryAddFilterB.place(relx=0.02, rely=0.15, height=23, width=96)
+        self.buttonQueryAddFilterB.configure(activebackground="#d9d9d9")
+        self.buttonQueryAddFilterB.configure(activeforeground="#000000")
+        self.buttonQueryAddFilterB.configure(background="#d9d9d9")
+        self.buttonQueryAddFilterB.configure(disabledforeground="#a3a3a3")
+        self.buttonQueryAddFilterB.configure(foreground="#000000")
+        self.buttonQueryAddFilterB.configure(highlightbackground="#d9d9d9")
+        self.buttonQueryAddFilterB.configure(highlightcolor="black")
+        self.buttonQueryAddFilterB.configure(pady="0")
+        self.buttonQueryAddFilterB.configure(text='''Add Filter''')
+        self.buttonQueryAddFilterB.configure(width=96)
+
+        self.buttonQueryResetFilterB = Button(self.labelFrameQueryDataB)
+        self.buttonQueryResetFilterB.place(relx=0.02, rely=0.20, height=23, width=96)
+        self.buttonQueryResetFilterB.configure(activebackground="#d9d9d9")
+        self.buttonQueryResetFilterB.configure(activeforeground="#000000")
+        self.buttonQueryResetFilterB.configure(background="#d9d9d9")
+        self.buttonQueryResetFilterB.configure(disabledforeground="#a3a3a3")
+        self.buttonQueryResetFilterB.configure(foreground="#000000")
+        self.buttonQueryResetFilterB.configure(highlightbackground="#d9d9d9")
+        self.buttonQueryResetFilterB.configure(highlightcolor="black")
+        self.buttonQueryResetFilterB.configure(pady="0")
+        self.buttonQueryResetFilterB.configure(text='''Reset Filters''')
 
         self.labelQueryDataBCount = Label(self.labelFrameQueryDataB)
-        self.labelQueryDataBCount.place(relx=0.02, rely=0.21, height=23, width=96)
+        self.labelQueryDataBCount.place(relx=0.02, rely=0.25, height=23, width=96)
         self.labelQueryDataBCount.configure(text='Count: ')
 
         self.entryQueryFeatureB = Entry(self.labelFrameQueryDataB)
@@ -1157,6 +1209,15 @@ class OOTO_Miner:
         self.buttonQueryZTest.configure(text='''Test''')
         self.buttonQueryZTest.configure(width=106)
 
+        strarrQueryClass = ["-1"]
+        self.comboQueryClass = ttk.Combobox(self.Tabs_t3)
+        self.comboQueryClass.place(relx=0.18, rely=0.95, height=23, width=58)
+        self.comboQueryClass.configure(exportselection="0")
+        self.comboQueryClass.configure(takefocus="")
+        self.comboQueryClass.configure(values=strarrQueryClass)
+        # self.comboQueryClass.configure()
+        self.comboQueryClass.current(0)
+
         strarrQueryCriticalValueA = ["0.80", "0.90", "0.95", "0.98", "0.99"]
         self.comboQueryCriticalValueA = ttk.Combobox(self.Tabs_t3)
         self.comboQueryCriticalValueA.place(relx=0.12, rely=0.95, height=23, width=58)
@@ -1172,8 +1233,8 @@ class OOTO_Miner:
         self.buttonQueryPopulation.bind('<Button-1>', self.querySetPopulation)
         self.buttonQuerySetDataA.bind('<Button-1>', self.querySetDataA)
         self.buttonQuerySetDataB.bind('<Button-1>', self.querySetDataB)
-        self.buttonQuerySaveA.bind('<Button-1>', self.querySaveDataA)
-        self.buttonQuerySaveB.bind('<Button-1>', self.querySaveDataB)
+        self.buttonQueryAddFilterA.bind('<Button-1>', self.queryAddFilterA)
+        self.buttonQueryAddFilterB.bind('<Button-1>', self.queryAddFilterB)
         self.buttonQueryFeatureA.bind('<Button-1>', self.querySetFeatureA)
         self.buttonQueryFeatureB.bind('<Button-1>', self.querySetFeatureB)
         self.buttonQueryZTest.bind('<Button-1>', self.queryZTest)
@@ -1182,11 +1243,6 @@ class OOTO_Miner:
         self.listQuerySetDataB.bind('<<ListboxSelect>>', self.querySelectDataValuesB)
         self.listQueryDataA.bind('<<ListboxSelect>>', self.queryGetFrequencyAndProportionA)
         self.listQueryDataB.bind('<<ListboxSelect>>', self.queryGetFrequencyAndProportionB)
-
-        self.comboQueryType.bind('<<ComboboxSelected>>', self.querySetType)
-
-
-
 
         #######################################3
 
@@ -1612,13 +1668,23 @@ class OOTO_Miner:
         selectDatasetValues(evt, self.datasetB, self.populationDataset, self.labelQueryDataBCount)
         print 'Selecting values for Data B'
 
-    def querySaveDataA(self, evt):
-        print 'Saving Data A'
-        saveDatasetFile(self.datasetA)
+    def queryAddFilterA(self, evt):
+        # print 'Saving Data A'
+        # saveDatasetFile(self.datasetA)
+        print "ADD FILTER"
 
-    def querySaveDataB(self, evt):
-        print 'Saving Data B'
-        saveDatasetFile(self.datasetB)
+        queryStrFilterA = "Dataset A>"
+        # Concat the Filter String Here
+        self.labelFrameQueryDataA.configure(text=queryStrFilterA)
+
+    def queryAddFilterB(self, evt):
+        # print 'Saving Data B'
+        # saveDatasetFile(self.datasetB)
+        print "ADD FILTER"
+
+        queryStrFilterB = "Dataset B>"
+        # Concat the Filter String Here
+        self.labelFrameQueryDataB.configure(text=queryStrFilterB)
 
 
     def querySetFeatureA(self, evt):
@@ -1649,6 +1715,7 @@ class OOTO_Miner:
         queryType = self.comboQueryType.get()
         self.adjustQueryViews()
 
+    '''
     def adjustQueryViews(self):
         self.listQuerySetDataB.configure(state='normal')
         self.buttonQuerySaveB.configure(state='normal')
@@ -1673,6 +1740,15 @@ class OOTO_Miner:
         #Test items
         global strarrAllFeatures
         strarrAllFeatures = list(self.listQuerySetDataA.get(0, END))
+        
+    '''
+
+
+    '''
+    allValues, selectedValues = getFocusFeatureValues(selectedFocusFeature, selectedFocusFeatureValues)
+    saveFile = svp.sampleVsPopulation(populationDir, sampleFeature, selectedFocusFeature['Code'], allValues, selectedValues, Za)
+    tkMessageBox.showinfo(testType, testType + " completed. Results file saved as " + saveFile)
+    '''
 
 
 
