@@ -86,11 +86,13 @@ def writeCSVDict(filename, dataset):
 '''
 Returns a new dataset by filtering from the old one based on a feature and its selected values
 '''
-def filterDataset(dataset, feature, values):
+def filterDataset(dataset, feature, responses):
     new_data = []
     for record in dataset['Data']:
-        if record[feature['Code']] in values:
-            new_data.append(copy.deepcopy(record))
+        for response in responses:
+            if record[feature['Code']] == response['Code']:
+                new_data.append(copy.deepcopy(record))
+                break
     
     return new_data
 
@@ -121,7 +123,7 @@ def makeFileName(dataset):
     if(len(featureDesc) > 10):
         featureDesc = featureDesc[:11]
     fileName = featureDesc
-    for response in dataset['Selected Responses']:
+    for response in dataset['Feature']['Selected Responses']:
         fileName = fileName + response['Description'] + "_"
     fileName = fileName + ".csv"
     return fileName
@@ -253,22 +255,22 @@ def selectDatasetValues(evt, dataset, populationDataset, labelFeatCount):
     global populationDir
     listbox = evt.widget
     selectedValues = [listbox.get(i) for i in listbox.curselection()]
-    dataset['Selected Responses']=[]
+    dataset['Feature']['Selected Responses']=[]
+
     for sv in selectedValues:
         responseArr = sv.split(" - ")
         for response in dataset['Feature']['Responses']:
             if response['Code'] == responseArr[0]:
                 selected_response = copy.deepcopy(response)
-                dataset['Selected Responses'].append(selected_response)
-    dataset['Data']=[]
-    if not (populationDir == ""):
-        populationDataset = readCSVDict(populationDir)
-        for record in populationDataset:
-            if any (response['Code'] == record[dataset['Feature']['Code']] for response in dataset['Selected Responses']):
-                dataset['Data'].append(record)
-    else:
-        tkMessageBox.showwarning("Error: No population", "No population dataset uploaded.")
-    labelFeatCount.configure(text="n: " + str(len(dataset['Data'])))
+                dataset['Feature']['Selected Responses'].append(selected_response)
+    
+    datasetCount = 0
+    print str(len(dataset['Data']))
+    for record in dataset['Data']:
+        if any (response['Code'] == record[dataset['Feature']['Code']] for response in dataset['Feature']['Selected Responses']):
+            datasetCount +=1
+
+    labelFeatCount.configure(text="n: " + str(datasetCount))
 
 def saveDatasetFile(dataset):
     fileName = makeFileName(dataset)
@@ -1259,18 +1261,11 @@ class OOTO_Miner:
 
         self.listQuerySetDataA.bind('<<ListboxSelect>>', self.querySelectDataValuesA)
         self.listQuerySetDataB.bind('<<ListboxSelect>>', self.querySelectDataValuesB)
+
         self.listQueryDataA.bind('<<ListboxSelect>>', self.queryGetFrequencyAndProportionA)
         self.listQueryDataB.bind('<<ListboxSelect>>', self.queryGetFrequencyAndProportionB)
 
         #######################################3
-
-        '''
-        Reading features from Initial Variable Description
-
-        '''
-        initVarDisc = "InitialVarDesc.csv"
-        global features
-        features = readFeatures(initVarDisc,"^")
 
         global testType
         testType = ''
@@ -1284,8 +1279,8 @@ class OOTO_Miner:
         Za = 1.27
         populationDir = ""
         self.populationDataset = []
-        self.datasetA = {'Data':[]}
-        self.datasetB = {'Data':[]}
+        self.datasetA = {'Data':[], 'Filter Features':[]}
+        self.datasetB = {'Data':[], 'Filter Features':[]}
 
         global tests
         tests = []
@@ -1361,8 +1356,16 @@ class OOTO_Miner:
 
         self.buttonPopulation.configure(state='normal')
         self.populationDataset = readCSVDict(populationDir)
+
         if(len(list(self.populationDataset)) > 0):
-            tkMessageBox.showinfo("Population set", "Population loaded")
+            tkMessageBox.showinfo("Population set", "Population dataset uploaded")
+            self.populationDataset = readCSVDict(populationDir)
+            for record in self.populationDataset:
+                self.datasetA['Data'].append(record)
+                self.datasetB['Data'].append(record)
+            print len(self.datasetA['Data'])
+        else:
+            tkMessageBox.showerror("Upload error", "Error uploading population dataset. Please try again.")
     
     def selectValuesDatasetA(self, evt):
         selectDatasetValues(evt, self.datasetA, self.populationDataset, self.labelFeatACount)
@@ -1703,17 +1706,34 @@ class OOTO_Miner:
         # print 'Saving Data A'
         # saveDatasetFile(self.datasetA)
         print "ADD FILTER"
+        new_data = filterDataset(self.datasetA, self.datasetA['Feature'], self.datasetA['Feature']['Selected Responses'])
+        self.datasetA['Filter Features'].append(self.datasetA['Feature'])
+        self.datasetA['Data'] = new_data
 
-        queryStrFilterA = "Dataset A>"
+        queryStrFilterA = ''
+
+        for i in range(0, len(self.datasetA['Filter Features'])):
+            if i == 0:
+                queryStrFilterA = queryStrFilterA + self.datasetA['Filter Features'][i]['Code']
+            else:
+                queryStrFilterA = queryStrFilterA + "->" + self.datasetA['Filter Features'][i]['Code']
+
         # Concat the Filter String Here
         self.labelFrameQueryDataA.configure(text=queryStrFilterA)
 
     def queryAddFilterB(self, evt):
-        # print 'Saving Data B'
-        # saveDatasetFile(self.datasetB)
-        print "ADD FILTER"
+        new_data = filterDataset(self.datasetB, self.datasetB['Feature'], self.datasetB['Feature']['Selected Responses'])
+        self.datasetB['Filter Features'].append(self.datasetB['Feature'])
+        self.datasetB['Data'] = new_data
 
-        queryStrFilterB = "Dataset B>"
+        queryStrFilterB = ''
+
+        for i in range(0, len(self.datasetB['Filter Features'])):
+            if i == 0:
+                queryStrFilterB = queryStrFilterB + self.datasetB['Filter Features'][i]['Code']
+            else:
+                queryStrFilterB = queryStrFilterB + "->" + self.datasetB['Filter Features'][i]['Code']
+
         # Concat the Filter String Here
         self.labelFrameQueryDataB.configure(text=queryStrFilterB)
 
@@ -1783,6 +1803,15 @@ class OOTO_Miner:
 
     def uploadInitVarDesc(self, evt):
         print "UPLOADED"
+        initVarDisc = askopenfilename(title = "Select file",filetypes = (("csv files","*.csv"),("all files","*.*")))
+        self.entryInitialVarDesc.delete(0, END)
+        self.entryInitialVarDesc.insert(0, initVarDisc)
+        global features
+        features = readFeatures(initVarDisc,"^")
+        if (len(features)) > 0:
+            tkMessageBox.showinfo("Initial Variable Description set","Initial Variable Description uploaded")
+        else:
+            tkMessageBox.showerror("Upload error", "Error uploading Initial Variable Description. Please try again.")
 
             
 
