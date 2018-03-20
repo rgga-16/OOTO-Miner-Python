@@ -880,14 +880,23 @@ class OOTO_Miner:
         '''
 
         self.entryQueryPopulation = Entry(self.Tabs_t3)
-        self.entryQueryPopulation.place(relx=0.01, rely=0.02, relheight=0.04
-                                        , relwidth=0.65)
+        self.entryQueryPopulation.place(relx=0.155, rely=0.02, relheight=0.04
+                                        , relwidth=0.51)
         self.entryQueryPopulation.configure(background="white")
         self.entryQueryPopulation.configure(disabledforeground="#a3a3a3")
         self.entryQueryPopulation.configure(font="TkFixedFont")
         self.entryQueryPopulation.configure(foreground="#000000")
         self.entryQueryPopulation.configure(insertbackground="black")
         self.entryQueryPopulation.configure(width=654)
+
+        strarrQueryType = ["Sample VS Sample", "Sample VS Population"]
+        self.comboQueryType = ttk.Combobox(self.Tabs_t3)
+        self.comboQueryType.place(relx=0.01, rely=0.02, relheight=0.04
+                                        , relwidth=0.14)
+        self.comboQueryType.configure(exportselection="0")
+        self.comboQueryType.configure(takefocus="")
+        self.comboQueryType.configure(values=strarrQueryType)
+        self.comboQueryType.current(0)
 
         self.buttonQueryPopulation = Button(self.Tabs_t3)
         self.buttonQueryPopulation.place(relx=0.67, rely=0.02, height=23
@@ -991,13 +1000,7 @@ class OOTO_Miner:
         self.buttonQueryFeatureA.configure(text='''Enter Code''')
         self.buttonQueryFeatureA.configure(width=96)
 
-        strarrQueryCriticalValueA = ["0.80", "0.90", "0.95", "0.98", "0.99"]
-        self.comboQueryCriticalValueA = ttk.Combobox(self.labelFrameQueryDataA)
-        self.comboQueryCriticalValueA.place(relx=0.79, rely=0.39, height=23, width=96)
-        self.comboQueryCriticalValueA.configure(exportselection="0")
-        self.comboQueryCriticalValueA.configure(takefocus="")
-        self.comboQueryCriticalValueA.configure(values=strarrQueryCriticalValueA)
-        self.comboQueryCriticalValueA.current(0)
+
 
         self.listQueryDataA = Listbox(self.labelFrameQueryDataA)
         self.listQueryDataA.place(relx=0.02, rely=0.38, relheight=0.53
@@ -1110,14 +1113,6 @@ class OOTO_Miner:
         self.buttonQueryFeatureB.configure(text='''Enter Code''')
         self.buttonQueryFeatureB.configure(width=96)
 
-        strarrQueryCriticalValueB = ["0.80", "0.90", "0.95", "0.98", "0.99"]
-        self.comboQueryCriticalValueB = ttk.Combobox(self.labelFrameQueryDataB)
-        self.comboQueryCriticalValueB.place(relx=0.79, rely=0.39, height=23, width=96)
-        self.comboQueryCriticalValueB.configure(exportselection="0")
-        self.comboQueryCriticalValueB.configure(takefocus="")
-        self.comboQueryCriticalValueB.configure(values=strarrQueryCriticalValueB)
-        self.comboQueryCriticalValueB.current(0)
-
         self.listQueryDataB = Listbox(self.labelFrameQueryDataB)
         self.listQueryDataB.place(relx=0.02, rely=0.38, relheight=0.53
                                        , relwidth=0.76)
@@ -1159,8 +1154,16 @@ class OOTO_Miner:
         self.buttonQueryZTest.configure(highlightbackground="#d9d9d9")
         self.buttonQueryZTest.configure(highlightcolor="black")
         self.buttonQueryZTest.configure(pady="0")
-        self.buttonQueryZTest.configure(text='''Z-Test''')
+        self.buttonQueryZTest.configure(text='''Test''')
         self.buttonQueryZTest.configure(width=106)
+
+        strarrQueryCriticalValueA = ["0.80", "0.90", "0.95", "0.98", "0.99"]
+        self.comboQueryCriticalValueA = ttk.Combobox(self.Tabs_t3)
+        self.comboQueryCriticalValueA.place(relx=0.12, rely=0.95, height=23, width=58)
+        self.comboQueryCriticalValueA.configure(exportselection="0")
+        self.comboQueryCriticalValueA.configure(takefocus="")
+        self.comboQueryCriticalValueA.configure(values=strarrQueryCriticalValueA)
+        self.comboQueryCriticalValueA.current(0)
 
         '''
         BINDING FOR QUERY TAB
@@ -1179,6 +1182,8 @@ class OOTO_Miner:
         self.listQuerySetDataB.bind('<<ListboxSelect>>', self.querySelectDataValuesB)
         self.listQueryDataA.bind('<<ListboxSelect>>', self.queryGetFrequencyAndProportionA)
         self.listQueryDataB.bind('<<ListboxSelect>>', self.queryGetFrequencyAndProportionB)
+
+        self.comboQueryType.bind('<<ComboboxSelected>>', self.querySetType)
 
 
 
@@ -1638,6 +1643,33 @@ class OOTO_Miner:
             z99Result = svs.compareZtoZCritical(zScore, z99)
             #Display Results
             self.labelQueryZTest.configure(text='Z-Score: ' + str(round(zScore,2)) +  ', 95%: ' + z95Result + ', 99%: ' + z99Result)
+
+    def querySetType(self, evt):
+        global queryType
+        queryType = self.comboQueryType.get()
+        self.adjustQueryViews()
+
+    def adjustQueryViews(self):
+        self.listQuerySetDataB.configure(state='normal')
+        self.buttonQuerySaveB.configure(state='normal')
+        self.entryQuerySetDataB.configure(state='normal')
+        self.buttonQuerySetDataB.configure(state='normal')
+        self.labelQueryDataBCount.configure(state='normal')
+        self.labelFrameQueryDataA.configure(text='Dataset A')
+        self.labelFrameQueryDataB.configure(text='Dataset A')
+
+        if queryType == 'Sample VS Population':
+            self.listQuerySetDataB.configure(state='disabled')
+            self.listQuerySetDataB.delete(0, END)
+            self.buttonQuerySaveB.configure(state='disabled')
+            self.entryQuerySetDataB.configure(state='disabled')
+            self.buttonQuerySetDataB.configure(state='disabled')
+            self.labelQueryDataBCount.configure(state='disabled')
+            self.labelFrameQueryDataA.configure(text='Population')
+            self.labelFrameQueryDataB.configure(text='Sample')
+
+
+
             
 
 
