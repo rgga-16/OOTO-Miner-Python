@@ -903,7 +903,7 @@ class OOTO_Miner:
         self.buttonInitialVarDesc.configure(highlightbackground="#d9d9d9")
         self.buttonInitialVarDesc.configure(highlightcolor="black")
         self.buttonInitialVarDesc.configure(pady="0")
-        self.buttonInitialVarDesc.configure(text='''Start''')
+        self.buttonInitialVarDesc.configure(text='''Upload''')
         self.buttonInitialVarDesc.configure(width=146)
 
         self.labelInitialVarDesc = Label(self.Tabs_t2)
@@ -922,6 +922,8 @@ class OOTO_Miner:
         self.buttonStartVariableDescriptor.bind('<Button-1>', self.makeInitialVarDesc)
         self.buttonVariableFile.bind('<Button-1>', self.getVariableFile)
         self.buttonValuesFile.bind('<Button-1>', self.getValuesFile)
+
+        self.buttonInitialVarDesc.bind('<Button-1>', self.uploadInitVarDesc)
 
 
 
@@ -1231,7 +1233,7 @@ class OOTO_Miner:
         self.comboQueryClass.configure(exportselection="0")
         self.comboQueryClass.configure(takefocus="")
         self.comboQueryClass.configure(values=strarrQueryClass)
-        # self.comboQueryClass.configure()
+        #self.comboQueryClass.configure()
         self.comboQueryClass.current(0)
 
         strarrQueryCriticalValueA = ["0.80", "0.90", "0.95", "0.98", "0.99"]
@@ -1779,7 +1781,8 @@ class OOTO_Miner:
     tkMessageBox.showinfo(testType, testType + " completed. Results file saved as " + saveFile)
     '''
 
-
+    def uploadInitVarDesc(self, evt):
+        print "UPLOADED"
 
             
 
