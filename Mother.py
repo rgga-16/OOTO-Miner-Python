@@ -1230,13 +1230,13 @@ class OOTO_Miner:
         self.labelQueryDataB.configure(text='''NO DATA SELECTED''')
         self.labelQueryDataB.configure(width=462)
 
-        strarrQueryTest = ["Sample vs Sample","Sample vs Population"]
+        global testTypes
+        testTypes = ["Sample vs Sample","Sample vs Population"]
         self.comboQueryTest = ttk.Combobox(self.Tabs_t3)
         self.comboQueryTest.place(relx=0.01, rely=0.02, height=23, width=316)
         self.comboQueryTest.configure(exportselection="0")
         self.comboQueryTest.configure(takefocus="")
-        self.comboQueryTest.configure(values=strarrQueryTest)
-        #self.comboQueryClass.configure()
+        self.comboQueryTest.configure(values=testTypes)
         self.comboQueryTest.current(0)
         self.comboQueryTest.configure(state="readonly")
 
@@ -1419,7 +1419,7 @@ class OOTO_Miner:
         
         self.listQueryDataA.bind('<<ListboxSelect>>', self.setFocusFeatureValuesA)
         self.listQueryDataB.bind('<<ListboxSelect>>', self.setFocusFeatureValuesB)
-
+        self.comboQueryTest.bind('<<ComboboxSelected>>', self.querySetType)
 
         
 
@@ -1637,7 +1637,7 @@ class OOTO_Miner:
             saveFile = svp.sampleVsPopulation(populationDir, sampleFeature, selectedFocusFeature['Code'], allValues, selectedValues, Za)
 
             tkMessageBox.showinfo(testType, testType + " completed. Results file saved as " + saveFile)
-            
+
         elif(testType == 'Sample vs Sample'):
             allValues, selectedValues = getFocusFeatureValues(selectedFocusFeature, selectedFocusFeatureValues)
             for i in range(0, len(datasets)):
@@ -1920,8 +1920,7 @@ class OOTO_Miner:
             self.labelQueryZTest.configure(text='Z-Score: ' + str(round(zScore,2)) +  ', ' + str(float(confidenceInterval)) + ' confidence: '+ zResult)
 
     def querySetType(self, evt):
-        global queryType
-        queryType = self.comboQueryType.get()
+        testType = self.comboQueryTest.get()
         self.adjustQueryViews()
 
     '''
