@@ -67,12 +67,6 @@ def readFeatures(filename, varMark):
                 new_response = {'Group':row[0], 'Code':row[1], 'Description':row[2]}
                 new_feature['Responses'].append(new_response)
     return features
-'''
-def convertToGroup(features):
-    groupedFeatures = copy.deepcopy(features)
-    for feature in groupedFeatures:
-        for response in feature['Responses']:
-            '''
 
 def readCSVDict(filename):
     rows = csv.DictReader(open(filename))
@@ -97,6 +91,17 @@ def filterDataset(dataset, feature, responses):
     
     return new_data
 
+'''
+Clears all of the filters of the dataset and resets back to the uploaded population file. 
+'''
+def resetDataset(dataset):
+    global populationDir
+    populationDataset = readCSVDict(populationDir)
+    dataset = {'Data':[], 'Filter Features':[]}
+    for record in populationDataset:
+        dataset['Data'].append(record)
+
+
 
 def convertDatasetValuesToGroups(dataset, features):
     #response['Code'] == record[self.datasetA['Feature']['Code']] for response in self.datasetA['Selected Responses']
@@ -120,12 +125,16 @@ def removeFiles(fileNames):
         os.remove(fileName)
     
 def makeFileName(dataset):
-    featureDesc = copy.deepcopy(dataset['Feature']['Description'])
-    if(len(featureDesc) > 10):
-        featureDesc = featureDesc[:11]
-    fileName = featureDesc
-    for response in dataset['Feature']['Selected Responses']:
-        fileName = fileName + response['Description'] + "_"
+    fileName = ''
+    for filterFeature in dataset['Filter Features']:
+        featureCode = copy.deepcopy(filterFeature['Code'])
+        fileName = fileName + "_" + str(featureCode)
+        for i in range(0, len(filterFeature['Selected Responses'])):
+            if i == 0:
+                fileName = fileName + "("
+            fileName = fileName + filterFeature['Selected Responses'][i]['Code'] + " "
+            if i == (len(filterFeature['Selected Responses'])-1):
+                fileName = fileName + ")"
     fileName = fileName + ".csv"
     return fileName
 
@@ -1413,6 +1422,12 @@ class OOTO_Miner:
         self.buttonClearQueue.bind('<Button-1>', self.clearQueue)
         self.buttonTestQueue.bind('<Button-1>', self.testQueue)
 
+        '''
+        self.buttonQueryAddFilterA('<Button-1>', )
+        self.buttonQueryAddFilterA('<Button-1>', )
+        '''
+
+
         self.listQuerySetDataA.bind('<<ListboxSelect>>', self.querySelectDataValuesA)
         self.listQuerySetDataB.bind('<<ListboxSelect>>', self.querySelectDataValuesB)
 
@@ -1426,7 +1441,7 @@ class OOTO_Miner:
         #######################################
 
         global testType
-        testType = ''
+        testType = self.comboQueryTest.get()
         global sampleFeature
         global selectedFocusFeature
         global allValues
@@ -1443,8 +1458,8 @@ class OOTO_Miner:
         global tests
         tests = []
 
-        self.labelFeatACount.configure(text="Dataset Count: " + str(len(self.datasetA['Data'])))
-        self.labelFeatBCount.configure(text="Dataset Count: " + str(len(self.datasetB['Data']))) 
+        self.labelQueryDataACount.configure(text="Dataset Count: " + str(len(self.datasetA['Data'])))
+        self.labelQueryDataBCount.configure(text="Dataset Count: " + str(len(self.datasetB['Data']))) 
 
         
 
@@ -1514,7 +1529,8 @@ class OOTO_Miner:
 
         self.buttonPopulation.configure(state='normal')
         self.populationDataset = readCSVDict(populationDir)
-
+        self.datasetA['Data']=[]
+        self.datasetB['Data']=[]
         if(len(list(self.populationDataset)) > 0):
             tkMessageBox.showinfo("Population set", "Population dataset uploaded")
             self.populationDataset = readCSVDict(populationDir)
@@ -1669,13 +1685,7 @@ class OOTO_Miner:
         datasets.append(self.datasetA)
         datasets.append(self.datasetB)
         global testType
-        if(testType == 'Sample vs Population'):
-            allValues, selectedValues = getFocusFeatureValues(selectedFocusFeature, selectedFocusFeatureValues)
-            self.addToQueue(testType, popDirArg = populationDir, sampleFeatArg = sampleFeature, selectedFeatArg = selectedFocusFeature['Code'], allValArg = allValues, selValArg = selectedValues, zArg = Za)
-        elif(testType == 'Sample vs Sample'):
-            allValues, selectedValues = getFocusFeatureValues(selectedFocusFeature, selectedFocusFeatureValues)
-            self.addToQueue(testType, datasetArgs = datasets, selectedFeatArg = selectedFocusFeature['Code'], allValArg = allValues, selValArg = selectedValues)
-        elif(testType == 'Chi-test'):
+        if(testType == 'Sample vs Sample'):
             self.addToQueue(testType, datasetArgs=datasets)
         else:
             tkMessageBox.showerror("Error: No test selected", "Please select a test")
@@ -1685,29 +1695,27 @@ class OOTO_Miner:
         if len(tests) == 0:
             tkMessageBox.showerror("Empty queue", "Queue is empty. Please queue a test.")
             return -1
+        self.listQueryDataB.delete(0,END)
+        i = 0
         for test in tests:
             fileNames = []
             if(test['Type'] == 'Sample vs Population'):
                 svp.sampleVsPopulation(test['Population Path'], test['Sample Feature'], test['Selected Feature'], test['SF All Values'], test['SF Selected Values'], test['Z Critical Value'])
             elif(test['Type'] == 'Sample vs Sample'):
-                for i in range(0, len(test['Datasets'])):
-                    fileName = makeFileName(test['Datasets'][i])
-                    writeCSVDict(fileName, test['Datasets'][i]['Data'])
-                    fileNames.append(fileName)
-                svs.sampleVsSample(fileNames, test['Selected Feature'], test['SF All Values'], test['SF Selected Values'])
-                removeFiles(fileNames)
-            elif(test['Type'] == 'Chi-test'):
-                i = 0
+                i += 1
                 for dataset in test['Datasets']:
                     convertDatasetValuesToGroups(dataset, features)
                     fileName = makeFileName(dataset)
-                    i = i + 1
                     writeCSVDict(fileName, dataset['Data'])
                     fileNames.append(fileName)
                 if not (os.path.isfile("Updated-Variables.csv")):
                     makeUpdatedVariables(features, "Updated-Variables.csv")
-                ct.chiTest(fileNames)
+                saveFile = ct.chiTest(fileNames)
+                tempString = "Chi-test complete. " + str(i) + "/" + str(len(tests)) + "complete."
+                self.listQueryDataB.insert(END, tempString)
                 removeFiles(fileNames)
+                
+
         tkMessageBox.showinfo("Test Queue Complete", "All of the tests in the queue have been completed.")
 
 
