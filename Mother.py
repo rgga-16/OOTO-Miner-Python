@@ -10,9 +10,9 @@ from tkFileDialog import askopenfilename
 import copy
 import SampleVsPopulation as svp
 import SampleVsSample as svs
-import ChiTest as ct
+# import ChiTest as ct
 import os
-import numpy as np
+# import numpy as np
 from collections import Counter
 
 try:
@@ -352,7 +352,7 @@ class OOTO_Miner:
         self.style.map('.',background=
             [('selected', _compcolor), ('active',_ana2color)])
 
-        top.geometry("1000x600+522+139")
+        top.geometry("1000x700+522+139")
         top.title("OOTO Miner")
         top.configure(background="#d9d9d9")
         top.configure(highlightbackground="#d9d9d9")
@@ -362,15 +362,17 @@ class OOTO_Miner:
         self.Tabs.place(relx=0.0, rely=0.0, relheight=1.0, relwidth=1.01)
         self.Tabs.configure(width=604)
         self.Tabs.configure(takefocus="")
-        self.Tabs_t1 = ttk.Frame(self.Tabs)
-        self.Tabs.add(self.Tabs_t1, padding=3)
-        self.Tabs.tab(0, text="Miner", underline="-1", )
-        self.Tabs_t3 = ttk.Frame(self.Tabs)
-        self.Tabs.add(self.Tabs_t3, padding=3)
-        self.Tabs.tab(1, text="Prober", underline="-1", )
         self.Tabs_t2 = ttk.Frame(self.Tabs)
         self.Tabs.add(self.Tabs_t2, padding=3)
-        self.Tabs.tab(2, text="Variable Descriptor", underline="-1", )
+        self.Tabs.tab(0, text="Start", underline="-1", )
+        self.Tabs_t3 = ttk.Frame(self.Tabs)
+        self.Tabs.add(self.Tabs_t3, padding=3)
+        self.Tabs.tab(1, text="Test", underline="-1", )
+        self.Tabs_t1 = ttk.Frame(self.Tabs)
+        self.Tabs.add(self.Tabs_t1, padding=3)
+        self.Tabs.tab(2, text="Miner", underline="-1", )
+
+
 
 
         self.menubar = Menu(top,font="TkMenuFont",bg=_bgcolor,fg=_fgcolor)
@@ -382,63 +384,6 @@ class OOTO_Miner:
         '''
         TAB 1 - TESTS
         '''
-        self.labelQueueCount = Label(self.Tabs_t1)
-        self.labelQueueCount.place(relx=0.64, rely=0.86, height=33, width=210)
-        self.labelQueueCount.configure(text='''Queue Count: 0''')
-
-        self.buttonTest = Button(self.Tabs_t1)
-        self.buttonTest.place(relx=0.877, rely=0.93, height=33, width=115)
-        self.buttonTest.configure(activebackground="#d9d9d9")
-        self.buttonTest.configure(activeforeground="#000000")
-        self.buttonTest.configure(background="#d9d9d9")
-        self.buttonTest.configure(disabledforeground="#a3a3a3")
-        self.buttonTest.configure(foreground="#000000")
-        self.buttonTest.configure(highlightbackground="#d9d9d9")
-        self.buttonTest.configure(highlightcolor="black")
-        self.buttonTest.configure(pady="0")
-        self.buttonTest.configure(text='''Test''')
-        self.buttonTest.configure(state='disabled')
-
-
-        self.buttonTestQueue = Button(self.Tabs_t1)
-        self.buttonTestQueue.place(relx=0.744, rely=0.93, height=33, width=115)
-        self.buttonTestQueue.configure(activebackground="#d9d9d9")
-        self.buttonTestQueue.configure(activeforeground="#000000")
-        self.buttonTestQueue.configure(background="#d9d9d9")
-        self.buttonTestQueue.configure(disabledforeground="#a3a3a3")
-        self.buttonTestQueue.configure(foreground="#000000")
-        self.buttonTestQueue.configure(highlightbackground="#d9d9d9")
-        self.buttonTestQueue.configure(highlightcolor="black")
-        self.buttonTestQueue.configure(pady="0")
-        self.buttonTestQueue.configure(text='''Test Queue''')
-        self.buttonTestQueue.configure(state='disabled')
-
-        self.buttonClearQueue = Button(self.Tabs_t1)
-        self.buttonClearQueue.place(relx=0.627, rely=0.93, height=33, width=115)
-        self.buttonClearQueue.configure(activebackground="#d9d9d9")
-        self.buttonClearQueue.configure(activeforeground="#000000")
-        self.buttonClearQueue.configure(background="#d9d9d9")
-        self.buttonClearQueue.configure(disabledforeground="#a3a3a3")
-        self.buttonClearQueue.configure(foreground="#000000")
-        self.buttonClearQueue.configure(highlightbackground="#d9d9d9")
-        self.buttonClearQueue.configure(highlightcolor="black")
-        self.buttonClearQueue.configure(pady="0")
-        self.buttonClearQueue.configure(text='''Clear Queue''')
-        self.buttonClearQueue.configure(state='disabled')
-
-        self.buttonQueue = Button(self.Tabs_t1)
-        self.buttonQueue.place(relx=0.51, rely=0.93, height=33, width=115)
-        self.buttonQueue.configure(activebackground="#d9d9d9")
-        self.buttonQueue.configure(activeforeground="#000000")
-        self.buttonQueue.configure(background="#d9d9d9")
-        self.buttonQueue.configure(disabledforeground="#a3a3a3")
-        self.buttonQueue.configure(foreground="#000000")
-        self.buttonQueue.configure(highlightbackground="#d9d9d9")
-        self.buttonQueue.configure(highlightcolor="black")
-        self.buttonQueue.configure(pady="0")
-        self.buttonQueue.configure(text='''Enqueue''')
-        self.buttonQueue.configure(state='disabled')
-
         '''
         CHANGES HERE!
         '''
@@ -833,10 +778,7 @@ class OOTO_Miner:
         self.buttonShowB.bind('<Button-1>', self.setFeatB)
         self.buttonSaveDatasets.bind('<Button-1>', self.saveDataset)
         self.buttonGetFeat.bind('<Button-1>', self.getFeat)
-        self.buttonTest.bind('<Button-1>', self.test)
-        self.buttonQueue.bind('<Button-1>', self.queue)
-        self.buttonClearQueue.bind('<Button-1>', self.clearQueue)
-        self.buttonTestQueue.bind('<Button-1>', self.testQueue)
+
         
 
         self.comboBoxTestType.bind('<<ComboboxSelected>>', self.setTest)
@@ -971,6 +913,38 @@ class OOTO_Miner:
         self.labelInitialVarDesc.configure(text='''Upload Initial Variable Description:''')
         self.labelInitialVarDesc.configure(width=172)
 
+        self.entryQueryPopulation = Entry(self.Tabs_t2)
+        self.entryQueryPopulation.place(relx=0.19, rely=0.35, relheight=0.04
+                                   , relwidth=0.64)
+        self.entryQueryPopulation.configure(background="white")
+        self.entryQueryPopulation.configure(disabledforeground="#a3a3a3")
+        self.entryQueryPopulation.configure(font="TkFixedFont")
+        self.entryQueryPopulation.configure(foreground="#000000")
+        self.entryQueryPopulation.configure(insertbackground="black")
+        self.entryQueryPopulation.configure(width=654)
+
+        self.buttonQueryPopulation = Button(self.Tabs_t2)
+        self.buttonQueryPopulation.place(relx=0.84, rely=0.35, height=23
+                                                 , width=146)
+        self.buttonQueryPopulation.configure(activebackground="#d9d9d9")
+        self.buttonQueryPopulation.configure(activeforeground="#000000")
+        self.buttonQueryPopulation.configure(background="#d9d9d9")
+        self.buttonQueryPopulation.configure(disabledforeground="#a3a3a3")
+        self.buttonQueryPopulation.configure(foreground="#000000")
+        self.buttonQueryPopulation.configure(highlightbackground="#d9d9d9")
+        self.buttonQueryPopulation.configure(highlightcolor="black")
+        self.buttonQueryPopulation.configure(pady="0")
+        self.buttonQueryPopulation.configure(text='''Upload Population''')
+        self.buttonQueryPopulation.configure(width=316)
+
+        self.labelInitialVarDesc = Label(self.Tabs_t2)
+        self.labelInitialVarDesc.place(relx=0.01, rely=0.3, height=26, width=250)
+        self.labelInitialVarDesc.configure(background="#d9d9d9")
+        self.labelInitialVarDesc.configure(disabledforeground="#a3a3a3")
+        self.labelInitialVarDesc.configure(foreground="#000000")
+        self.labelInitialVarDesc.configure(text='''Upload Initial Population:''')
+        self.labelInitialVarDesc.configure(width=172)
+
 
 
         '''
@@ -987,33 +961,8 @@ class OOTO_Miner:
         '''
         TAB 3 - QUERY
         '''
-
-        self.entryQueryPopulation = Entry(self.Tabs_t3)
-        self.entryQueryPopulation.place(relx=0.155, rely=0.02, relheight=0.04
-                                        , relwidth=0.51)
-        self.entryQueryPopulation.configure(background="white")
-        self.entryQueryPopulation.configure(disabledforeground="#a3a3a3")
-        self.entryQueryPopulation.configure(font="TkFixedFont")
-        self.entryQueryPopulation.configure(foreground="#000000")
-        self.entryQueryPopulation.configure(insertbackground="black")
-        self.entryQueryPopulation.configure(width=654)
-
-        self.buttonQueryPopulation = Button(self.Tabs_t3)
-        self.buttonQueryPopulation.place(relx=0.67, rely=0.02, height=23
-                                         , width=316)
-        self.buttonQueryPopulation.configure(activebackground="#d9d9d9")
-        self.buttonQueryPopulation.configure(activeforeground="#000000")
-        self.buttonQueryPopulation.configure(background="#d9d9d9")
-        self.buttonQueryPopulation.configure(disabledforeground="#a3a3a3")
-        self.buttonQueryPopulation.configure(foreground="#000000")
-        self.buttonQueryPopulation.configure(highlightbackground="#d9d9d9")
-        self.buttonQueryPopulation.configure(highlightcolor="black")
-        self.buttonQueryPopulation.configure(pady="0")
-        self.buttonQueryPopulation.configure(text='''Upload Population''')
-        self.buttonQueryPopulation.configure(width=316)
-
         self.labelFrameQueryDataA = LabelFrame(self.Tabs_t3)
-        self.labelFrameQueryDataA.place(relx=0.01, rely=0.07, relheight=0.88
+        self.labelFrameQueryDataA.place(relx=0.01, rely=0.07, relheight=0.7
                                         , relwidth=0.48)
         self.labelFrameQueryDataA.configure(relief=GROOVE)
         self.labelFrameQueryDataA.configure(foreground="black")
@@ -1091,7 +1040,7 @@ class OOTO_Miner:
         self.labelQueryDataACount.configure(text='Count: ')
 
         self.entryQueryFeatureA = Entry(self.labelFrameQueryDataA)
-        self.entryQueryFeatureA.place(relx=0.02, rely=0.32, relheight=0.05
+        self.entryQueryFeatureA.place(relx=0.23, rely=0.32, relheight=0.05
                                       , relwidth=0.76)
         self.entryQueryFeatureA.configure(background="white")
         self.entryQueryFeatureA.configure(disabledforeground="#a3a3a3")
@@ -1101,7 +1050,7 @@ class OOTO_Miner:
         self.entryQueryFeatureA.configure(width=364)
 
         self.buttonQueryFeatureA = Button(self.labelFrameQueryDataA)
-        self.buttonQueryFeatureA.place(relx=0.79, rely=0.32, height=23, width=96)
+        self.buttonQueryFeatureA.place(relx=0.02, rely=0.32, height=23, width=96)
 
         self.buttonQueryFeatureA.configure(activebackground="#d9d9d9")
         self.buttonQueryFeatureA.configure(activeforeground="#000000")
@@ -1118,7 +1067,7 @@ class OOTO_Miner:
 
         self.listQueryDataA = Listbox(self.labelFrameQueryDataA)
         self.listQueryDataA.place(relx=0.02, rely=0.38, relheight=0.53
-                                       , relwidth=0.76)
+                                       , relwidth=0.97)
         self.listQueryDataA.configure(background="white")
         self.listQueryDataA.configure(disabledforeground="#a3a3a3")
         self.listQueryDataA.configure(font="TkFixedFont")
@@ -1140,7 +1089,7 @@ class OOTO_Miner:
         self.labelQueryDataA.configure(width=462)
 
         self.labelFrameQueryDataB = LabelFrame(self.Tabs_t3)
-        self.labelFrameQueryDataB.place(relx=0.5, rely=0.07, relheight=0.88
+        self.labelFrameQueryDataB.place(relx=0.5, rely=0.07, relheight=0.7
                                         , relwidth=0.48)
         self.labelFrameQueryDataB.configure(relief=GROOVE)
         self.labelFrameQueryDataB.configure(foreground="black")
@@ -1217,7 +1166,7 @@ class OOTO_Miner:
         self.labelQueryDataBCount.configure(text='Count: ')
 
         self.entryQueryFeatureB = Entry(self.labelFrameQueryDataB)
-        self.entryQueryFeatureB.place(relx=0.02, rely=0.32, relheight=0.05
+        self.entryQueryFeatureB.place(relx=0.23, rely=0.32, relheight=0.05
                                       , relwidth=0.76)
         self.entryQueryFeatureB.configure(background="white")
         self.entryQueryFeatureB.configure(disabledforeground="#a3a3a3")
@@ -1227,7 +1176,7 @@ class OOTO_Miner:
         self.entryQueryFeatureB.configure(width=364)
 
         self.buttonQueryFeatureB = Button(self.labelFrameQueryDataB)
-        self.buttonQueryFeatureB.place(relx=0.79, rely=0.32, height=23, width=96)
+        self.buttonQueryFeatureB.place(relx=0.02, rely=0.32, height=23, width=96)
 
         self.buttonQueryFeatureB.configure(activebackground="#d9d9d9")
         self.buttonQueryFeatureB.configure(activeforeground="#000000")
@@ -1242,7 +1191,7 @@ class OOTO_Miner:
 
         self.listQueryDataB = Listbox(self.labelFrameQueryDataB)
         self.listQueryDataB.place(relx=0.02, rely=0.38, relheight=0.53
-                                       , relwidth=0.76)
+                                       , relwidth=0.97)
         self.listQueryDataB.configure(background="white")
         self.listQueryDataB.configure(disabledforeground="#a3a3a3")
         self.listQueryDataB.configure(font="TkFixedFont")
@@ -1260,19 +1209,45 @@ class OOTO_Miner:
         self.labelQueryDataB.configure(background="#d9d9d9")
         self.labelQueryDataB.configure(disabledforeground="#a3a3a3")
         self.labelQueryDataB.configure(foreground="#000000")
-        self.labelQueryDataB.configure(text='''Label''')
+        self.labelQueryDataB.configure(text='''NO DATA SELECTED''')
         self.labelQueryDataB.configure(width=462)
 
-        self.labelQueryZTest = Label(self.Tabs_t3)
-        self.labelQueryZTest.place(relx=0.12, rely=0.95, height=26, width=862)
-        self.labelQueryZTest.configure(background="#d9d9d9")
+        strarrQueryTest = ["Sample vs Sample","Sample vs Population"]
+        self.comboQueryTest = ttk.Combobox(self.Tabs_t3)
+        self.comboQueryTest.place(relx=0.01, rely=0.02, height=23, width=316)
+        self.comboQueryTest.configure(exportselection="0")
+        self.comboQueryTest.configure(takefocus="")
+        self.comboQueryTest.configure(values=strarrQueryTest)
+        #self.comboQueryClass.configure()
+        self.comboQueryTest.current(0)
+        self.comboQueryTest.configure(state="readonly")
+
+        global arrQueryCriticalValue
+        arrQueryCriticalValue = ["0.80", "0.90", "0.95", "0.98", "0.99"]
+
+        global arrQueryCriticalValueMapping
+        arrQueryCriticalValueMapping = {"0.80":1.28, "0.90":1.645, "0.95":1.96, "0.98":2.33, "0.99":2.58}
+
+        self.labelFrameQueryZ = LabelFrame(self.Tabs_t3)
+        self.labelFrameQueryZ.place(relx=0.01, rely=0.78, relheight=0.1
+                                        , relwidth=0.48)
+        self.labelFrameQueryZ.configure(relief=GROOVE)
+        self.labelFrameQueryZ.configure(foreground="black")
+        self.labelFrameQueryZ.configure(text='''Z-Test''')
+        self.labelFrameQueryZ.configure(background="#d9d9d9")
+        self.labelFrameQueryZ.configure(width=480)
+
+
+        self.labelQueryZTest = Label(self.labelFrameQueryZ)
+        self.labelQueryZTest.place(relx=0.47, rely=0.01, height=26, width=240)
+        # self.labelQueryZTest.configure(background="#d9d9d9")
         self.labelQueryZTest.configure(disabledforeground="#a3a3a3")
         self.labelQueryZTest.configure(foreground="#000000")
         self.labelQueryZTest.configure(text='''Label''')
         self.labelQueryZTest.configure(width=862)
 
-        self.buttonQueryZTest = Button(self.Tabs_t3)
-        self.buttonQueryZTest.place(relx=0.01, rely=0.95, height=23, width=106)
+        self.buttonQueryZTest = Button(self.labelFrameQueryZ)
+        self.buttonQueryZTest.place(relx=0.01, rely=0.01, height=23, width=106)
         self.buttonQueryZTest.configure(activebackground="#d9d9d9")
         self.buttonQueryZTest.configure(activeforeground="#000000")
         self.buttonQueryZTest.configure(background="#d9d9d9")
@@ -1284,27 +1259,114 @@ class OOTO_Miner:
         self.buttonQueryZTest.configure(text='''Test''')
         self.buttonQueryZTest.configure(width=106)
 
-        strarrQueryClass = ["-1"]
-        self.comboQueryClass = ttk.Combobox(self.Tabs_t3)
-        self.comboQueryClass.place(relx=0.18, rely=0.95, height=23, width=58)
-        self.comboQueryClass.configure(exportselection="0")
-        self.comboQueryClass.configure(takefocus="")
-        self.comboQueryClass.configure(values=strarrQueryClass)
-        #self.comboQueryClass.configure()
-        self.comboQueryClass.current(0)
+        self.labelFrameQueryChi = LabelFrame(self.Tabs_t3)
+        self.labelFrameQueryChi.place(relx=0.5, rely=0.78, relheight=0.1
+                                    , relwidth=0.48)
+        self.labelFrameQueryChi.configure(relief=GROOVE)
+        self.labelFrameQueryChi.configure(foreground="black")
+        self.labelFrameQueryChi.configure(text='''Chi Test''')
+        self.labelFrameQueryChi.configure(background="#d9d9d9")
+        self.labelFrameQueryChi.configure(width=480)
 
-        global arrQueryCriticalValue
-        arrQueryCriticalValue = ["0.80", "0.90", "0.95", "0.98", "0.99"]
-
-        global arrQueryCriticalValueMapping
-        arrQueryCriticalValueMapping = {"0.80":1.28, "0.90":1.645, "0.95":1.96, "0.98":2.33, "0.99":2.58}
-
-        self.comboQueryCriticalValue = ttk.Combobox(self.Tabs_t3)
-        self.comboQueryCriticalValue.place(relx=0.12, rely=0.95, height=23, width=58)
+        self.comboQueryCriticalValue = ttk.Combobox(self.labelFrameQueryZ)
+        self.comboQueryCriticalValue.place(relx=0.24, rely=0.01, height=23, width=106)
         self.comboQueryCriticalValue.configure(exportselection="0")
         self.comboQueryCriticalValue.configure(takefocus="")
         self.comboQueryCriticalValue.configure(values=arrQueryCriticalValue)
         self.comboQueryCriticalValue.current(0)
+
+        self.labelQueueCount = Label(self.Tabs_t3)
+        self.labelQueueCount.place(relx=0.87, rely=0.01, height=23, width=106)
+        self.labelQueueCount.configure(text='''Queue Count: 0''')
+
+        self.buttonTest = Button(self.labelFrameQueryChi)
+        self.buttonTest.place(relx=0.01, rely=0.01, height=23, width=106)
+        self.buttonTest.configure(activebackground="#d9d9d9")
+        self.buttonTest.configure(activeforeground="#000000")
+        self.buttonTest.configure(background="#d9d9d9")
+        self.buttonTest.configure(disabledforeground="#a3a3a3")
+        self.buttonTest.configure(foreground="#000000")
+        self.buttonTest.configure(highlightbackground="#d9d9d9")
+        self.buttonTest.configure(highlightcolor="black")
+        self.buttonTest.configure(pady="0")
+        self.buttonTest.configure(text='''Test''')
+        # self.buttonTest.configure(state='disabled')
+
+        self.buttonTestQueue = Button(self.labelFrameQueryChi)
+        self.buttonTestQueue.place(relx=0.24, rely=0.01, height=23, width=106)
+        self.buttonTestQueue.configure(activebackground="#d9d9d9")
+        self.buttonTestQueue.configure(activeforeground="#000000")
+        self.buttonTestQueue.configure(background="#d9d9d9")
+        self.buttonTestQueue.configure(disabledforeground="#a3a3a3")
+        self.buttonTestQueue.configure(foreground="#000000")
+        self.buttonTestQueue.configure(highlightbackground="#d9d9d9")
+        self.buttonTestQueue.configure(highlightcolor="black")
+        self.buttonTestQueue.configure(pady="0")
+        self.buttonTestQueue.configure(text='''Test Queue''')
+        # self.buttonTestQueue.configure(state='disabled')
+
+        self.buttonClearQueue = Button(self.labelFrameQueryChi)
+        self.buttonClearQueue.place(relx=0.47, rely=0.01, height=23, width=106)
+        self.buttonClearQueue.configure(activebackground="#d9d9d9")
+        self.buttonClearQueue.configure(activeforeground="#000000")
+        self.buttonClearQueue.configure(background="#d9d9d9")
+        self.buttonClearQueue.configure(disabledforeground="#a3a3a3")
+        self.buttonClearQueue.configure(foreground="#000000")
+        self.buttonClearQueue.configure(highlightbackground="#d9d9d9")
+        self.buttonClearQueue.configure(highlightcolor="black")
+        self.buttonClearQueue.configure(pady="0")
+        self.buttonClearQueue.configure(text='''Clear Queue''')
+        # self.buttonClearQueue.configure(state='disabled')
+
+        self.buttonQueue = Button(self.labelFrameQueryChi)
+        self.buttonQueue.place(relx=0.7, rely=0.01, height=23, width=106)
+        self.buttonQueue.configure(activebackground="#d9d9d9")
+        self.buttonQueue.configure(activeforeground="#000000")
+        self.buttonQueue.configure(background="#d9d9d9")
+        self.buttonQueue.configure(disabledforeground="#a3a3a3")
+        self.buttonQueue.configure(foreground="#000000")
+        self.buttonQueue.configure(highlightbackground="#d9d9d9")
+        self.buttonQueue.configure(highlightcolor="black")
+        self.buttonQueue.configure(pady="0")
+        self.buttonQueue.configure(text='''Enqueue''')
+        # self.buttonQueue.configure(state='disabled')
+
+        self.labelFrameQuerySvP = LabelFrame(self.Tabs_t3)
+        self.labelFrameQuerySvP.place(relx=0.01, rely=0.88, relheight=0.1
+                                    , relwidth=0.48)
+        self.labelFrameQuerySvP.configure(relief=GROOVE)
+        self.labelFrameQuerySvP.configure(foreground="black")
+        self.labelFrameQuerySvP.configure(text='''Z-Test Sample Vs Population''')
+        self.labelFrameQuerySvP.configure(background="#d9d9d9")
+        self.labelFrameQuerySvP.configure(width=480)
+
+        self.comboQueryCriticalValueSvP = ttk.Combobox(self.labelFrameQuerySvP)
+        self.comboQueryCriticalValueSvP.place(relx=0.24, rely=0.01, height=23, width=106)
+        self.comboQueryCriticalValueSvP.configure(exportselection="0")
+        self.comboQueryCriticalValueSvP.configure(takefocus="")
+        self.comboQueryCriticalValueSvP.configure(values=arrQueryCriticalValue)
+        self.comboQueryCriticalValueSvP.current(0)
+
+        self.labelQueryZTestSvP = Label(self.labelFrameQuerySvP)
+        self.labelQueryZTestSvP.place(relx=0.47, rely=0.01, height=26, width=240)
+        # self.labelQueryZTest.configure(background="#d9d9d9")
+        self.labelQueryZTestSvP.configure(disabledforeground="#a3a3a3")
+        self.labelQueryZTestSvP.configure(foreground="#000000")
+        self.labelQueryZTestSvP.configure(text='''Label''')
+        self.labelQueryZTestSvP.configure(width=862)
+
+        self.buttonQueryZTestSvP = Button(self.labelFrameQuerySvP)
+        self.buttonQueryZTestSvP.place(relx=0.01, rely=0.01, height=23, width=106)
+        self.buttonQueryZTestSvP.configure(activebackground="#d9d9d9")
+        self.buttonQueryZTestSvP.configure(activeforeground="#000000")
+        self.buttonQueryZTestSvP.configure(background="#d9d9d9")
+        self.buttonQueryZTestSvP.configure(disabledforeground="#a3a3a3")
+        self.buttonQueryZTestSvP.configure(foreground="#000000")
+        self.buttonQueryZTestSvP.configure(highlightbackground="#d9d9d9")
+        self.buttonQueryZTestSvP.configure(highlightcolor="black")
+        self.buttonQueryZTestSvP.configure(pady="0")
+        self.buttonQueryZTestSvP.configure(text='''Test''')
+        self.buttonQueryZTestSvP.configure(width=106)
 
         '''
         BINDING FOR QUERY TAB
@@ -1319,15 +1381,22 @@ class OOTO_Miner:
         self.buttonQueryFeatureB.bind('<Button-1>', self.querySetFeatureB)
         self.buttonQueryZTest.bind('<Button-1>', self.queryZTest)
 
+        self.buttonTest.bind('<Button-1>', self.test)
+        self.buttonQueue.bind('<Button-1>', self.queue)
+        self.buttonClearQueue.bind('<Button-1>', self.clearQueue)
+        self.buttonTestQueue.bind('<Button-1>', self.testQueue)
+
         self.listQuerySetDataA.bind('<<ListboxSelect>>', self.querySelectDataValuesA)
         self.listQuerySetDataB.bind('<<ListboxSelect>>', self.querySelectDataValuesB)
 
         
         self.listQueryDataA.bind('<<ListboxSelect>>', self.setFocusFeatureValuesA)
         self.listQueryDataB.bind('<<ListboxSelect>>', self.setFocusFeatureValuesB)
+
+
         
 
-        #######################################3
+        #######################################
 
         global testType
         testType = ''
