@@ -10,9 +10,9 @@ from tkFileDialog import askopenfilename
 import copy
 import SampleVsPopulation as svp
 import SampleVsSample as svs
-import ChiTest as ct
+# import ChiTest as ct
 import os
-import numpy as np
+# import numpy as np
 from collections import Counter
 
 try:
@@ -1103,7 +1103,7 @@ class OOTO_Miner:
         self.labelQueryDataA.configure(background="#d9d9d9")
         self.labelQueryDataA.configure(disabledforeground="#a3a3a3")
         self.labelQueryDataA.configure(foreground="#000000")
-        self.labelQueryDataA.configure(text='''Label''')
+        self.labelQueryDataA.configure(text='''NO DATA SELECTED''')
         self.labelQueryDataA.configure(width=462)
 
         self.labelFrameQueryDataB = LabelFrame(self.Tabs_t3)
@@ -1254,7 +1254,7 @@ class OOTO_Miner:
         # self.labelQueryZTest.configure(background="#d9d9d9")
         self.labelQueryZTest.configure(disabledforeground="#a3a3a3")
         self.labelQueryZTest.configure(foreground="#000000")
-        self.labelQueryZTest.configure(text='''Label''')
+        self.labelQueryZTest.configure(text='''NO DATA''')
         self.labelQueryZTest.configure(width=862)
 
         self.buttonQueryZTest = Button(self.labelFrameQueryZ)
@@ -1279,15 +1279,6 @@ class OOTO_Miner:
         self.labelFrameQueryChi.configure(text='''Chi Test''')
         self.labelFrameQueryChi.configure(background="#d9d9d9")
         self.labelFrameQueryChi.configure(width=480)
-
-        strarrQueryClass = ["-1"]
-        self.comboQueryClass = ttk.Combobox(self.Tabs_t3)
-        self.comboQueryClass.place(relx=0.18, rely=0.95, height=23, width=58)
-        self.comboQueryClass.configure(exportselection="0")
-        self.comboQueryClass.configure(takefocus="")
-        self.comboQueryClass.configure(values=strarrQueryClass)
-        #self.comboQueryClass.configure()
-        self.comboQueryClass.current(0)
 
         global arrQueryCriticalValue
         arrQueryCriticalValue = ["0.80", "0.90", "0.95", "0.98", "0.99"]
@@ -1373,14 +1364,16 @@ class OOTO_Miner:
         self.comboQueryCriticalValueSvP.configure(takefocus="")
         self.comboQueryCriticalValueSvP.configure(values=arrQueryCriticalValue)
         self.comboQueryCriticalValueSvP.current(0)
+        self.comboQueryCriticalValueSvP.configure(state="disabled")
 
         self.labelQueryZTestSvP = Label(self.labelFrameQuerySvP)
         self.labelQueryZTestSvP.place(relx=0.47, rely=0.01, height=26, width=240)
         # self.labelQueryZTest.configure(background="#d9d9d9")
         self.labelQueryZTestSvP.configure(disabledforeground="#a3a3a3")
         self.labelQueryZTestSvP.configure(foreground="#000000")
-        self.labelQueryZTestSvP.configure(text='''Label''')
+        self.labelQueryZTestSvP.configure(text='''NO DATA''')
         self.labelQueryZTestSvP.configure(width=862)
+        self.labelQueryZTestSvP.configure(state="disabled")
 
         self.buttonQueryZTestSvP = Button(self.labelFrameQuerySvP)
         self.buttonQueryZTestSvP.place(relx=0.01, rely=0.01, height=23, width=106)
@@ -1394,6 +1387,7 @@ class OOTO_Miner:
         self.buttonQueryZTestSvP.configure(pady="0")
         self.buttonQueryZTestSvP.configure(text='''Test''')
         self.buttonQueryZTestSvP.configure(width=106)
+        self.buttonQueryZTestSvP.configure(state="disabled")
 
         '''
         BINDING FOR QUERY TAB
@@ -1920,36 +1914,58 @@ class OOTO_Miner:
             self.labelQueryZTest.configure(text='Z-Score: ' + str(round(zScore,2)) +  ', ' + str(float(confidenceInterval)) + ' confidence: '+ zResult)
 
     def querySetType(self, evt):
-        testType = self.comboQueryTest.get()
+        global queryType
+        queryType = self.comboQueryTest.get()
         self.adjustQueryViews()
 
-    '''
-    def adjustQueryViews(self):
-        self.listQuerySetDataB.configure(state='normal')
-        self.buttonQuerySaveB.configure(state='normal')
-        self.entryQuerySetDataB.configure(state='normal')
-        self.buttonQuerySetDataB.configure(state='normal')
-        self.labelQueryDataBCount.configure(state='normal')
-        self.labelFrameQueryDataA.configure(text='Dataset A')
-        self.labelFrameQueryDataB.configure(text='Dataset A')
 
-        if queryType == 'Sample VS Population':
-            self.listQuerySetDataB.configure(state='disabled')
-            self.listQuerySetDataB.delete(0, END)
-            self.buttonQuerySaveB.configure(state='disabled')
-            self.entryQuerySetDataB.configure(state='disabled')
-            self.buttonQuerySetDataB.configure(state='disabled')
-            self.labelQueryDataBCount.configure(state='disabled')
-            self.labelFrameQueryDataA.configure(text='Sample')
-            self.labelFrameQueryDataB.configure(text='Population')
-            self.querySetAllFeatures()
+    def adjustQueryViews(self):
+        self.buttonQueryFeatureA.configure(state="normal")
+        self.buttonQueryFeatureB.configure(state="normal")
+        self.entryQueryFeatureA.configure(state="normal")
+        self.entryQueryFeatureB.configure(state="normal")
+        self.buttonQueryZTest.configure(state="normal")
+        self.comboQueryCriticalValue.configure(state="normal")
+        self.buttonQueue.configure(state="normal")
+        self.buttonClearQueue.configure(state="normal")
+        self.buttonTestQueue.configure(state="normal")
+        self.buttonTest.configure(state="normal")
+        self.labelQueryZTest.configure(state="normal")
+        self.labelQueryDataA.configure(state="normal")
+        self.labelQueryDataB.configure(state="normal")
+        self.buttonQueryZTestSvP.configure(state="normal")
+        self.comboQueryCriticalValueSvP.configure(state="normal")
+        self.labelQueryZTestSvP.configure(state="normal")
+        self.listQueryDataA.configure(state="normal")
+        self.listQueryDataB.configure(state="normal")
+
+        if queryType == 'Sample vs Population':
+            self.buttonQueryFeatureA.configure(state="disabled")
+            self.buttonQueryFeatureB.configure(state="disabled")
+            self.entryQueryFeatureA.configure(state="disabled")
+            self.entryQueryFeatureB.configure(state="disabled")
+            self.buttonQueryZTest.configure(state="disabled")
+            self.comboQueryCriticalValue.configure(state="disabled")
+            self.buttonQueue.configure(state="disabled")
+            self.buttonClearQueue.configure(state="disabled")
+            self.buttonTestQueue.configure(state="disabled")
+            self.buttonTest.configure(state="disabled")
+            self.labelQueryZTest.configure(state="disabled")
+            self.labelQueryDataA.configure(state="disabled")
+            self.labelQueryDataB.configure(state="disabled")
+            self.listQueryDataA.configure(state="disabled")
+            self.listQueryDataB.configure(state="disabled")
+        else:
+            self.buttonQueryZTestSvP.configure(state="disabled")
+            self.comboQueryCriticalValueSvP.configure(state="disabled")
+            self.labelQueryZTestSvP.configure(state="disabled")
 
     def querySetAllFeatures(self):
         #Test items
         global strarrAllFeatures
         strarrAllFeatures = list(self.listQuerySetDataA.get(0, END))
         
-    '''
+
 
 
     '''
