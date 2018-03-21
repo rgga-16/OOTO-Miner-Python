@@ -13,6 +13,7 @@ import SampleVsSample as svs
 import ChiTest as ct
 import os
 import numpy as np
+from collections import Counter
 
 try:
     from Tkinter import *
@@ -175,6 +176,7 @@ def findFeature(entryFeat, listFeat, dataset, *args):
         print "Entered feature code: " + featCode
         arrTempItems = []
         found = False
+        hasFocusFeature = False
         #Get proper list of features from initial variable description
         for feature in features:
             if feature['Code'] == featCode:
@@ -184,6 +186,7 @@ def findFeature(entryFeat, listFeat, dataset, *args):
                         dataset['Feature'] = copy.deepcopy(feature)
                     if arg == "Focus_Feature":
                         dataset['Focus Feature'] = copy.deepcopy(feature)
+                        hasFocusFeature = True
                 for response in feature['Responses']:
                     tempResp = response['Code'] + " - " + response['Description']
                     arrTempItems.append(tempResp)
@@ -191,9 +194,55 @@ def findFeature(entryFeat, listFeat, dataset, *args):
         if not found:
             tkMessageBox.showerror("Error: Feature not found", "Feature not found in Variable Descriptor. Try again.")
 
+        #Getting the proportions and frequencies of each value (including invalid values) in the focus feature
+        if hasFocusFeature == True:
+            arrTempItems=[]
+            dataset['ColumnData']=[]
+            for record in dataset['Data']:
+                dataset['ColumnData'].append(record[featCode])
+            c = Counter(dataset['ColumnData']) #Counts the number of occurrences of each value of the focus feature
+            
+            countN = len(dataset['ColumnData'])#N is the size of the dataset
+            countn = 0 #n is the total number of values where their group is not -1
+
+            notInGroupNega1 = []#List that keeps track of the values whose group is not -1
+            for val in c:
+                for response in dataset['Focus Feature']['Responses']:
+                    if val == response['Code']:
+                        if response['Group'] != '-1':
+                            notInGroupNega1.append(val)
+                            countn = countn + int(c[val])
+                        break 
+            
+            for val in c:
+                countP = 0
+                countP = countP + int(c[val])
+                print 'Value: ' + val
+                print 'Frequency: ' + str(countP)
+                print 'n:' + str(countn)
+                print 'N:' + str(countN)
+
+                proportionOverN = round(countP/float(countN) * 100.0 ,2)
+                proportionOvern = round(countP/float(countn) * 100.0, 2)
+
+                if val not in notInGroupNega1: #If the value is an invalid value or its group/class is -1
+                    proportionOvern = proportionOvern * 0
+
+                tempResp = str(countP) + " | " + str(proportionOverN) + "%(N) | " + str(proportionOvern) + "%(n) | "
+                isValidResponse = False
+                for response in dataset['Focus Feature']['Responses']:
+                    if val == response['Code']:
+                        isValidResponse = True
+                        tempResp = tempResp + response['Group'] + " | " +  response['Code'] + " | " + response['Description']  
+                        break
+                if not isValidResponse:
+                    tempResp = tempResp +  "-1" + " | " +   str(val) + " | " + "INVALID VALUE" 
+                arrTempItems.append(tempResp)
+                         
         listFeat.delete(0, END)
         for A in arrTempItems:
             listFeat.insert(END, A)
+        
 '''
 Splits an array retrieved from a listbox based on a delimiter, and appends to a new array
 which element of the split array given an index. The new array will be returned.
@@ -205,10 +254,9 @@ def parseListBoxValues(raw_arr, delimiter, index):
         proc_arr.append(temp[index])   
     return proc_arr
 '''
-Gets frequency and proportion of a dataset based on a feature and the values selected
-for that feature.
+Selects the values of the focus feature
 '''
-def getDatasetFreqAndProp(evt, dataset, focusFeat, label):
+def setFocusFeatureValues(evt, dataset, focusFeat, label):
     datasets = []
     allValues = []
     selectedValues = []
@@ -217,19 +265,26 @@ def getDatasetFreqAndProp(evt, dataset, focusFeat, label):
     tempAV = listbox.get(0,END)
     tempSV = [listbox.get(i) for i in listbox.curselection()]
     
-    allValues = parseListBoxValues(tempAV, " - ", 0)
-    selectedValues = parseListBoxValues(tempSV, " - ", 0)
+    allValuesRaw = parseListBoxValues(tempAV, " | ", 4)
+    selectedValues = parseListBoxValues(tempSV, " | ", 4)
+    
+    for val in allValuesRaw:
+        for response in dataset['Focus Feature']['Responses']:
+            if response['Code'] == val and response['Group'] != '-1':
+                allValues.append(val)
+                break
+    
+    print str(allValues)
 
     dataset['Focus Feature']['All Values'] = allValues
     dataset['Focus Feature']['Selected Values'] = selectedValues
-
-    dataset['ColumnData'] = []
-    for record in dataset['Data']:
-        dataset['ColumnData'].append(record[focusFeat])
-
+    
     datasets.append(dataset)
     svs.getTotalsAndProportions(datasets,allValues, selectedValues)
-    label.configure(text = "Frequency: " + str(datasets[0]['Proportion']) + " , Proportion: " + str(round(datasets[0]['ProportionPercent']*100,2)) + "%")
+    label.configure(text = "Frequency: " + str(datasets[0]['Proportion']) + " , Proportion: " + str(round(datasets[0]['ProportionPercent']*100,2)) + "%" + ", Total: " + str(datasets[0]['Total']))
+
+    
+
 
 '''
 Verifies if the focus features and their selected values for datasets 1 and 2 are the same.
@@ -1238,13 +1293,18 @@ class OOTO_Miner:
         #self.comboQueryClass.configure()
         self.comboQueryClass.current(0)
 
-        strarrQueryCriticalValueA = ["0.80", "0.90", "0.95", "0.98", "0.99"]
-        self.comboQueryCriticalValueA = ttk.Combobox(self.Tabs_t3)
-        self.comboQueryCriticalValueA.place(relx=0.12, rely=0.95, height=23, width=58)
-        self.comboQueryCriticalValueA.configure(exportselection="0")
-        self.comboQueryCriticalValueA.configure(takefocus="")
-        self.comboQueryCriticalValueA.configure(values=strarrQueryCriticalValueA)
-        self.comboQueryCriticalValueA.current(0)
+        global arrQueryCriticalValue
+        arrQueryCriticalValue = ["0.80", "0.90", "0.95", "0.98", "0.99"]
+
+        global arrQueryCriticalValueMapping
+        arrQueryCriticalValueMapping = {"0.80":1.28, "0.90":1.645, "0.95":1.96, "0.98":2.33, "0.99":2.58}
+
+        self.comboQueryCriticalValue = ttk.Combobox(self.Tabs_t3)
+        self.comboQueryCriticalValue.place(relx=0.12, rely=0.95, height=23, width=58)
+        self.comboQueryCriticalValue.configure(exportselection="0")
+        self.comboQueryCriticalValue.configure(takefocus="")
+        self.comboQueryCriticalValue.configure(values=arrQueryCriticalValue)
+        self.comboQueryCriticalValue.current(0)
 
         '''
         BINDING FOR QUERY TAB
@@ -1262,8 +1322,10 @@ class OOTO_Miner:
         self.listQuerySetDataA.bind('<<ListboxSelect>>', self.querySelectDataValuesA)
         self.listQuerySetDataB.bind('<<ListboxSelect>>', self.querySelectDataValuesB)
 
-        self.listQueryDataA.bind('<<ListboxSelect>>', self.queryGetFrequencyAndProportionA)
-        self.listQueryDataB.bind('<<ListboxSelect>>', self.queryGetFrequencyAndProportionB)
+        
+        self.listQueryDataA.bind('<<ListboxSelect>>', self.setFocusFeatureValuesA)
+        self.listQueryDataB.bind('<<ListboxSelect>>', self.setFocusFeatureValuesB)
+        
 
         #######################################3
 
@@ -1675,13 +1737,14 @@ class OOTO_Miner:
     QUERY FUNCTIONS
     '''
 
-    def queryGetFrequencyAndProportionA(self, evt):
+    def setFocusFeatureValuesA(self, evt):
         print 'Getting freq and prop A'
-        getDatasetFreqAndProp(evt, self.datasetA, self.entryQueryFeatureA.get(), self.labelQueryDataA)
+        setFocusFeatureValues(evt, self.datasetA, self.entryQueryFeatureA.get(), self.labelQueryDataA)
     
-    def queryGetFrequencyAndProportionB(self, evt):
+    def setFocusFeatureValuesB(self, evt):
         print 'Getting freq and prop B'
-        getDatasetFreqAndProp(evt, self.datasetB, self.entryQueryFeatureB.get(), self.labelQueryDataB)
+        setFocusFeatureValues(evt, self.datasetB, self.entryQueryFeatureB.get(), self.labelQueryDataB)
+
 
 
     def querySetPopulation(self, evt):
@@ -1705,7 +1768,6 @@ class OOTO_Miner:
     def queryAddFilterA(self, evt):
         # print 'Saving Data A'
         # saveDatasetFile(self.datasetA)
-        print "ADD FILTER"
         new_data = filterDataset(self.datasetA, self.datasetA['Feature'], self.datasetA['Feature']['Selected Responses'])
         self.datasetA['Filter Features'].append(self.datasetA['Feature'])
         self.datasetA['Data'] = new_data

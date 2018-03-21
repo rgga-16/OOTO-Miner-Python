@@ -66,7 +66,7 @@ def getTotalsAndProportions(datasets, featureValues, selectedFeatureValues):
         for x in c:
             if x in featureValues:
                 countN = countN + int(c[x])
-            if x in selectedFeatureValues:
+            if x in selectedFeatureValues and x in featureValues:
                 countP = countP + int(c[x])
         dataset['Total'] = countN #The total number of records that had a valid answer
         dataset['Proportion'] = countP #The number of records that answered any of the chosen feature values
@@ -80,8 +80,12 @@ Requires total amount and proportion of the two groups that will be compared wit
 def ZTest(n1,p1,n2,p2):
     
     PPrime = getPPrime(n1,p1,n2,p2)
+
+    print 'PPrime: ' + str(PPrime)
     
     standardError = getStandardError(PPrime, n1, n2)
+
+    print 'Standard Error: ' + str(standardError)
 
     z = (p1 - p2) / float(standardError)
 
