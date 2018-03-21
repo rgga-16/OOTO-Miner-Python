@@ -10,9 +10,9 @@ from tkFileDialog import askopenfilename
 import copy
 import SampleVsPopulation as svp
 import SampleVsSample as svs
-# import ChiTest as ct
+import ChiTest as ct
 import os
-# import numpy as np
+import numpy as np
 from collections import Counter
 
 try:
@@ -1240,15 +1240,8 @@ class OOTO_Miner:
         self.comboQueryTest.current(0)
         self.comboQueryTest.configure(state="readonly")
 
-        global arrQueryCriticalValue
-        arrQueryCriticalValue = ["0.80", "0.90", "0.95", "0.98", "0.99"]
-
-        global arrQueryCriticalValueMapping
-        arrQueryCriticalValueMapping = {"0.80":1.28, "0.90":1.645, "0.95":1.96, "0.98":2.33, "0.99":2.58}
-
         self.labelFrameQueryZ = LabelFrame(self.Tabs_t3)
-        self.labelFrameQueryZ.place(relx=0.01, rely=0.78, relheight=0.1
-                                        , relwidth=0.48)
+        self.labelFrameQueryZ.place(relx=0.01, rely=0.78, relheight=0.1, relwidth=0.48)
         self.labelFrameQueryZ.configure(relief=GROOVE)
         self.labelFrameQueryZ.configure(foreground="black")
         self.labelFrameQueryZ.configure(text='''Z-Test''')
@@ -1639,16 +1632,12 @@ class OOTO_Miner:
                     allValues, selectedValues = getFocusFeatureValues(feature, ['b'])
 
 
-            
-
-            
-            '''
             allValues, selectedValues = getFocusFeatureValues(selectedFocusFeature, selectedFocusFeatureValues)
 
             saveFile = svp.sampleVsPopulation(populationDir, sampleFeature, selectedFocusFeature['Code'], allValues, selectedValues, Za)
 
             tkMessageBox.showinfo(testType, testType + " completed. Results file saved as " + saveFile)
-            '''
+            
         elif(testType == 'Sample vs Sample'):
             allValues, selectedValues = getFocusFeatureValues(selectedFocusFeature, selectedFocusFeatureValues)
             for i in range(0, len(datasets)):
