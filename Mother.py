@@ -206,37 +206,53 @@ def findFeature(entryFeat, listFeat, dataset, *args):
             countn = 0 #n is the total number of values where their group is not -1
 
             notInGroupNega1 = []#List that keeps track of the values whose group is not -1
-            for val in c:
-                for response in dataset['Focus Feature']['Responses']:
+            presentInData = []#List of values that occurred at least once in the data
+
+            for response in dataset['Focus Feature']['Responses']:
+                for val in c:
                     if val == response['Code']:
+                        presentInData.append(val)
                         if response['Group'] != '-1':
                             notInGroupNega1.append(val)
                             countn = countn + int(c[val])
-                        break 
+                        break
+            '''
+            reminderN = "N = Total no. of records"
+            remindern = "n = Total no. of records where Group is not -1\n"
+            header = "Freq | p/N | p/n | Group | Code | Description"
             
-            for val in c:
+            arrTempItems.append(reminderN)
+            arrTempItems.append(remindern)
+            arrTempItems.append(header)
+            '''
+            for response in dataset['Focus Feature']['Responses']:
                 countP = 0
-                countP = countP + int(c[val])
-                print 'Value: ' + val
+                print 'Value: ' + response['Code']
                 print 'Frequency: ' + str(countP)
                 print 'n:' + str(countn)
                 print 'N:' + str(countN)
 
+                if response['Code'] in presentInData: #If the value has occurred in the data
+                    countP = int(c[response['Code']])
+                
                 proportionOverN = round(countP/float(countN) * 100.0 ,2)
                 proportionOvern = round(countP/float(countn) * 100.0, 2)
 
-                if val not in notInGroupNega1: #If the value is an invalid value or its group/class is -1
+                if response['Code'] not in notInGroupNega1: #If the value is an invalid value or its group/class is -1
                     proportionOvern = proportionOvern * 0
 
                 tempResp = str(countP) + " | " + str(proportionOverN) + "%(N) | " + str(proportionOvern) + "%(n) | "
                 isValidResponse = False
-                for response in dataset['Focus Feature']['Responses']:
+                for val in c:
                     if val == response['Code']:
                         isValidResponse = True
                         tempResp = tempResp + response['Group'] + " | " +  response['Code'] + " | " + response['Description']  
                         break
                 if not isValidResponse:
-                    tempResp = tempResp +  "-1" + " | " +   str(val) + " | " + "INVALID VALUE" 
+                    if response['Code'] not in presentInData:
+                        tempResp = tempResp + response['Group'] + " | " +  response['Code'] + " | " + response['Description']
+                    else:
+                        tempResp = tempResp +  "-1" + " | " + response['Code'] + " | " + "INVALID VALUE" 
                 arrTempItems.append(tempResp)
                          
         listFeat.delete(0, END)
@@ -255,6 +271,8 @@ def parseListBoxValues(raw_arr, delimiter, index):
     return proc_arr
 '''
 Selects the values of the focus feature
+and calculates the proportion of those values
+and the total
 '''
 def setFocusFeatureValues(evt, dataset, focusFeat, label):
     datasets = []
@@ -283,8 +301,8 @@ def setFocusFeatureValues(evt, dataset, focusFeat, label):
     svs.getTotalsAndProportions(datasets,allValues, selectedValues)
     label.configure(text = "Frequency: " + str(datasets[0]['Proportion']) + " , Proportion: " + str(round(datasets[0]['ProportionPercent']*100,2)) + "%" + ", Total: " + str(datasets[0]['Total']))
 
-    
-
+    if(set(allValues) == set(selectedValues)):
+        tkMessageBox.showwarning("Z-Test Warning", "WARNING: You selected all of the valid values of " + dataset['Focus Feature']['Code'] + " (those that are not in group -1). Z-Test will not work if all valid values are selected.")
 
 '''
 Verifies if the focus features and their selected values for datasets 1 and 2 are the same.
@@ -991,7 +1009,7 @@ class OOTO_Miner:
         self.buttonQuerySetDataA.configure(highlightbackground="#d9d9d9")
         self.buttonQuerySetDataA.configure(highlightcolor="black")
         self.buttonQuerySetDataA.configure(pady="0")
-        self.buttonQuerySetDataA.configure(text='''Set Data''')
+        self.buttonQuerySetDataA.configure(text='''Find Feature''')
         self.buttonQuerySetDataA.configure(width=96)
 
         self.listQuerySetDataA = Listbox(self.labelFrameQueryDataA)
@@ -1019,7 +1037,7 @@ class OOTO_Miner:
         self.buttonQueryAddFilterA.configure(highlightbackground="#d9d9d9")
         self.buttonQueryAddFilterA.configure(highlightcolor="black")
         self.buttonQueryAddFilterA.configure(pady="0")
-        self.buttonQueryAddFilterA.configure(text='''Add Filter''')
+        self.buttonQueryAddFilterA.configure(text='''Filter''')
         self.buttonQueryAddFilterA.configure(width=96)
 
         self.buttonQueryResetFilterA = Button(self.labelFrameQueryDataA)
@@ -1118,7 +1136,7 @@ class OOTO_Miner:
         self.buttonQuerySetDataB.configure(highlightbackground="#d9d9d9")
         self.buttonQuerySetDataB.configure(highlightcolor="black")
         self.buttonQuerySetDataB.configure(pady="0")
-        self.buttonQuerySetDataB.configure(text='''Set Data''')
+        self.buttonQuerySetDataB.configure(text='''Find Feature''')
         self.buttonQuerySetDataB.configure(width=96)
 
         self.listQuerySetDataB = Listbox(self.labelFrameQueryDataB)
@@ -1146,7 +1164,7 @@ class OOTO_Miner:
         self.buttonQueryAddFilterB.configure(highlightbackground="#d9d9d9")
         self.buttonQueryAddFilterB.configure(highlightcolor="black")
         self.buttonQueryAddFilterB.configure(pady="0")
-        self.buttonQueryAddFilterB.configure(text='''Add Filter''')
+        self.buttonQueryAddFilterB.configure(text='''Filter''')
         self.buttonQueryAddFilterB.configure(width=96)
 
         self.buttonQueryResetFilterB = Button(self.labelFrameQueryDataB)
@@ -1259,6 +1277,7 @@ class OOTO_Miner:
         self.buttonQueryZTest.configure(text='''Test''')
         self.buttonQueryZTest.configure(width=106)
 
+
         self.labelFrameQueryChi = LabelFrame(self.Tabs_t3)
         self.labelFrameQueryChi.place(relx=0.5, rely=0.78, relheight=0.1
                                     , relwidth=0.48)
@@ -1268,12 +1287,27 @@ class OOTO_Miner:
         self.labelFrameQueryChi.configure(background="#d9d9d9")
         self.labelFrameQueryChi.configure(width=480)
 
+        strarrQueryClass = ["-1"]
+        self.comboQueryClass = ttk.Combobox(self.Tabs_t3)
+        self.comboQueryClass.place(relx=0.18, rely=0.95, height=23, width=58)
+        self.comboQueryClass.configure(exportselection="0")
+        self.comboQueryClass.configure(takefocus="")
+        self.comboQueryClass.configure(values=strarrQueryClass)
+        #self.comboQueryClass.configure()
+        self.comboQueryClass.current(0)
+
+        global arrQueryCriticalValue
+        arrQueryCriticalValue = ["0.80", "0.90", "0.95", "0.98", "0.99"]
+
+        global arrQueryCriticalValueMapping
+        arrQueryCriticalValueMapping = {"0.80":1.28, "0.90":1.645, "0.95":1.96, "0.98":2.33, "0.99":2.58}
+  
         self.comboQueryCriticalValue = ttk.Combobox(self.labelFrameQueryZ)
         self.comboQueryCriticalValue.place(relx=0.24, rely=0.01, height=23, width=106)
         self.comboQueryCriticalValue.configure(exportselection="0")
         self.comboQueryCriticalValue.configure(takefocus="")
         self.comboQueryCriticalValue.configure(values=arrQueryCriticalValue)
-        self.comboQueryCriticalValue.current(0)
+        self.comboQueryCriticalValue.set(arrQueryCriticalValue[0])
 
         self.labelQueueCount = Label(self.Tabs_t3)
         self.labelQueueCount.place(relx=0.87, rely=0.01, height=23, width=106)
@@ -1841,14 +1875,17 @@ class OOTO_Miner:
         self.datasetA['Filter Features'].append(self.datasetA['Feature'])
         self.datasetA['Data'] = new_data
 
-        queryStrFilterA = ''
+        queryStrFilterA = 'Dataset A'
 
         for i in range(0, len(self.datasetA['Filter Features'])):
-            if i == 0:
-                queryStrFilterA = queryStrFilterA + self.datasetA['Filter Features'][i]['Code']
-            else:
-                queryStrFilterA = queryStrFilterA + "->" + self.datasetA['Filter Features'][i]['Code']
-
+            queryStrFilterA = queryStrFilterA + "->" + self.datasetA['Filter Features'][i]['Code']
+            for j in range(0,len(self.datasetA['Filter Features'][i]['Selected Responses'])):
+                if j == 0:
+                    queryStrFilterA = queryStrFilterA + "("
+                queryStrFilterA = queryStrFilterA + self.datasetA['Filter Features'][i]['Selected Responses'][j]['Code'] + " "
+                if j == (len(self.datasetA['Filter Features'][i]['Selected Responses'])-1):
+                    queryStrFilterA = queryStrFilterA + ")"
+                    
         # Concat the Filter String Here
         self.labelFrameQueryDataA.configure(text=queryStrFilterA)
 
@@ -1857,13 +1894,16 @@ class OOTO_Miner:
         self.datasetB['Filter Features'].append(self.datasetB['Feature'])
         self.datasetB['Data'] = new_data
 
-        queryStrFilterB = ''
+        queryStrFilterB = 'Dataset B'
 
         for i in range(0, len(self.datasetB['Filter Features'])):
-            if i == 0:
-                queryStrFilterB = queryStrFilterB + self.datasetB['Filter Features'][i]['Code']
-            else:
-                queryStrFilterB = queryStrFilterB + "->" + self.datasetB['Filter Features'][i]['Code']
+            queryStrFilterB = queryStrFilterB + "->" + self.datasetB['Filter Features'][i]['Code']
+            for j in range(0,len(self.datasetB['Filter Features'][i]['Selected Responses'])):
+                if j == 0:
+                    queryStrFilterB = queryStrFilterB + "("
+                queryStrFilterB = queryStrFilterB + self.datasetB['Filter Features'][i]['Selected Responses'][j]['Code'] + " "
+                if j == (len(self.datasetB['Filter Features'][i]['Selected Responses'])-1):
+                    queryStrFilterB = queryStrFilterB + ")"
 
         # Concat the Filter String Here
         self.labelFrameQueryDataB.configure(text=queryStrFilterB)
@@ -1876,21 +1916,19 @@ class OOTO_Miner:
         findFeature(self.entryQueryFeatureB.get(), self.listQueryDataB,self.datasetB,"Focus_Feature")
 
     def queryZTest(self, evt):
-        z95 = 1.645
-        z99 = 2.58
-        print 'Z Test'
+
+        confidenceInterval = self.comboQueryCriticalValue.get() #Get selected confidence interval
+        zCritical = arrQueryCriticalValueMapping[confidenceInterval] #Get corresponding Z Critical Value
 
         #Check if the selected focus feature and selected values of it are the same for both samples
         isSame = isSameFocusFeat(self.datasetA, self.datasetB, self.datasetA['Focus Feature']['Selected Values'], self.datasetB['Focus Feature']['Selected Values'])
         if(isSame == 1):
             #Calculate Z score between the two samples
             zScore, pPrime, SE = svs.ZTest(self.datasetA['Total'], self.datasetA['ProportionPercent'], self.datasetB['Total'], self.datasetB['ProportionPercent'])
-            #Get result if accept/reject at 95% confidence
-            z95Result = svs.compareZtoZCritical(zScore, z95)
-            #Get result if accept/reject at 99% confidence
-            z99Result = svs.compareZtoZCritical(zScore, z99)
-            #Display Results
-            self.labelQueryZTest.configure(text='Z-Score: ' + str(round(zScore,2)) +  ', 95%: ' + z95Result + ', 99%: ' + z99Result)
+            #Get result if accept/reject given the zCritical value
+            zResult = svs.compareZtoZCritical(zScore, zCritical)
+            #Display Z score and whether accept/reject at inputted confidence interval
+            self.labelQueryZTest.configure(text='Z-Score: ' + str(round(zScore,2)) +  ', ' + str(float(confidenceInterval)) + ' confidence: '+ zResult)
 
     def querySetType(self, evt):
         global queryType
