@@ -54,14 +54,9 @@ def destroy_OOTO_Miner():
     global w
     w.destroy()
     w = None
-
-def verify(features, populationDataset):
-    if len(features) <= 0:
-        return False
-    if len(populationDataset) <= 0:
-        return False
-    return True
-
+'''
+Reads features and their responses from the Variable Description file
+'''
 def readFeatures(filename, varMark):
     features = []
     with open(filename) as f:
@@ -74,6 +69,31 @@ def readFeatures(filename, varMark):
                 new_response = {'Group':row[0], 'Code':row[1], 'Description':row[2]}
                 new_feature['Responses'].append(new_response)
     return features
+
+'''
+Returns all of the group codes that are present in all features.
+'''
+def getCommonGroups(features):
+    groupCodes = []
+    print str(groupCodes)
+    for i in range(0, len(features)):
+        if i == 0:
+            for response in features[i]['Responses']:
+                groupCodes.append(response['Group'])
+        else:
+            for g in groupCodes:
+                isFound = False
+                for response in features[i]['Responses']:
+                    if g == response['Group']:
+                        isFound = True
+                        break
+                if isFound == False:
+                    groupCodes.remove(g)
+    
+    print str(groupCodes)
+                
+
+
 
 def readCSVDict(filename):
     rows = csv.DictReader(open(filename))
@@ -520,7 +540,7 @@ class OOTO_Miner:
         self.buttonPopulation.configure(highlightbackground="#d9d9d9")
         self.buttonPopulation.configure(highlightcolor="black")
         self.buttonPopulation.configure(pady="0")
-        self.buttonPopulation.configure(text='''Upload Population''')
+        self.buttonPopulation.configure(text='''Upload''')
         self.buttonPopulation.configure(state='normal')
 
         self.labelFrameZTest = LabelFrame(self.Tabs_t1)
@@ -870,7 +890,7 @@ class OOTO_Miner:
                                                 , relheight=0.19, relwidth=0.98)
         self.labelFrameVariableDescriptor.configure(relief=GROOVE)
         self.labelFrameVariableDescriptor.configure(foreground="black")
-        self.labelFrameVariableDescriptor.configure(text='''Variable Descriptor''')
+        self.labelFrameVariableDescriptor.configure(text='''Variable Description Generator''')
         self.labelFrameVariableDescriptor.configure(background="#d9d9d9")
         self.labelFrameVariableDescriptor.configure(width=980)
 
@@ -980,7 +1000,7 @@ class OOTO_Miner:
         self.labelInitialVarDesc.configure(background="#d9d9d9")
         self.labelInitialVarDesc.configure(disabledforeground="#a3a3a3")
         self.labelInitialVarDesc.configure(foreground="#000000")
-        self.labelInitialVarDesc.configure(text='''Upload Initial Variable Description:''')
+        self.labelInitialVarDesc.configure(text='''Variable Description:''')
         self.labelInitialVarDesc.configure(width=172)
 
         self.entryQueryPopulation = Entry(self.Tabs_t2)
@@ -1012,7 +1032,7 @@ class OOTO_Miner:
         self.labelInitialVarDesc.configure(background="#d9d9d9")
         self.labelInitialVarDesc.configure(disabledforeground="#a3a3a3")
         self.labelInitialVarDesc.configure(foreground="#000000")
-        self.labelInitialVarDesc.configure(text='''Upload Initial Population:''')
+        self.labelInitialVarDesc.configure(text='''Population Dataset:''')
         self.labelInitialVarDesc.configure(width=172)
 
 
@@ -1309,7 +1329,7 @@ class OOTO_Miner:
         self.labelQueryZTest.configure(text='''NO DATA''')
         self.labelQueryZTest.configure(width=862)
 
-        '''
+        
         self.buttonQueryZTest = Button(self.labelFrameQueryZ)
         self.buttonQueryZTest.place(relx=0.01, rely=0.01, height=23, width=106)
         self.buttonQueryZTest.configure(activebackground="#d9d9d9")
@@ -1320,9 +1340,9 @@ class OOTO_Miner:
         self.buttonQueryZTest.configure(highlightbackground="#d9d9d9")
         self.buttonQueryZTest.configure(highlightcolor="black")
         self.buttonQueryZTest.configure(pady="0")
-        self.buttonQueryZTest.configure(text=''''Test'''')
+        self.buttonQueryZTest.configure(text='''Test''')
         self.buttonQueryZTest.configure(width=106)
-        '''
+        
 
 
         self.labelFrameQueryChi = LabelFrame(self.Tabs_t3)
@@ -1350,7 +1370,7 @@ class OOTO_Miner:
         self.labelQueueCount = Label(self.Tabs_t3)
         self.labelQueueCount.place(relx=0.87, rely=0.01, height=23, width=106)
         self.labelQueueCount.configure(text='''Queue Count: 0''')
-
+        '''
         self.buttonTest = Button(self.labelFrameQueryChi)
         self.buttonTest.place(relx=0.01, rely=0.01, height=23, width=106)
         self.buttonTest.configure(activebackground="#d9d9d9")
@@ -1361,7 +1381,8 @@ class OOTO_Miner:
         self.buttonTest.configure(highlightbackground="#d9d9d9")
         self.buttonTest.configure(highlightcolor="black")
         self.buttonTest.configure(pady="0")
-        self.buttonTest.configure(text='''Test''')
+        self.buttonTest.configure(text=''''Test'''')
+        '''
         # self.buttonTest.configure(state='disabled')
 
         self.buttonTestQueue = Button(self.labelFrameQueryChi)
@@ -1454,7 +1475,7 @@ class OOTO_Miner:
         self.buttonQueryAddFilterB.bind('<Button-1>', self.queryAddFilterB)
         self.buttonQueryFeatureA.bind('<Button-1>', self.querySetFeatureA)
         self.buttonQueryFeatureB.bind('<Button-1>', self.querySetFeatureB)
-        #self.buttonQueryZTest.bind('<Button-1>', self.queryZTest)
+        self.buttonQueryZTest.bind('<Button-1>', self.queryZTest)
         self.buttonQueryZTestSvP.bind('<Button-1>', self.querySVP)
 
         self.buttonQueue.bind('<Button-1>', self.queue)
@@ -1752,7 +1773,7 @@ class OOTO_Miner:
         self.entryVariableFile.delete(0, END)
         self.entryPopulation.configure(state='normal')
         self.buttonPopulation.configure(state='normal')
-        self.buttonTest.configure(state='normal')
+        #self.buttonTest.configure(state='normal')
         self.buttonTestQueue.configure(state='normal')
         self.buttonPopulation.configure(state='normal')
         self.buttonClearQueue.configure(state='normal')
@@ -1851,7 +1872,10 @@ class OOTO_Miner:
         self.datasetA['Filter Features'].append(self.datasetA['Feature'])
         self.datasetA['Data'] = new_data
 
-        queryStrFilterA = self.labelFrameQueryDataA.cget("text")
+        if(queryType == 'Sample vs Sample'):
+            queryStrFilterA = 'Dataset A'
+        else:
+            queryStrFilterA = 'Population'
 
         for i in range(0, len(self.datasetA['Filter Features'])):
             queryStrFilterA = queryStrFilterA + "->" + self.datasetA['Filter Features'][i]['Code']
@@ -1874,7 +1898,10 @@ class OOTO_Miner:
         self.datasetB['Filter Features'].append(self.datasetB['Feature'])
         self.datasetB['Data'] = new_data
 
-        queryStrFilterB = self.labelFrameQueryDataB.cget("text")
+        if(queryType == 'Sample vs Sample'):
+            queryStrFilterB = 'Dataset B'
+        else:
+            queryStrFilterB = 'Samples'
 
         for i in range(0, len(self.datasetB['Filter Features'])):
             queryStrFilterB = queryStrFilterB + "->" + self.datasetB['Filter Features'][i]['Code']
@@ -1890,10 +1917,22 @@ class OOTO_Miner:
 
 
     def querySetFeatureA(self, evt):
-        findFeature(self.entryQueryFeatureA.get(), self.listQueryDataA,self.datasetA,"Focus_Feature")
+        try:
+            if(len(self.datasetA['Data']) <= 0):
+                tkMessageBox.showerror("Dataset error", "Dataset is empty. Please check if you uploaded your population dataset")
+                return -1
+            findFeature(self.entryQueryFeatureA.get(), self.listQueryDataA,self.datasetA,"Focus_Feature")
+        except NameError:
+            tkMessageBox.showerror("Features Error", "Features not found. Please upload your variable description file.")
 
     def querySetFeatureB(self, evt):
-        findFeature(self.entryQueryFeatureB.get(), self.listQueryDataB,self.datasetB,"Focus_Feature")
+        try:
+            if(len(self.datasetB['Data']) <= 0):
+                tkMessageBox.showerror("Dataset error", "Dataset is empty. Please check if you uploaded your population dataset")
+                return -1
+            findFeature(self.entryQueryFeatureB.get(), self.listQueryDataB,self.datasetB,"Focus_Feature")
+        except NameError:
+            tkMessageBox.showerror("Features Error", "Features not found. Please upload your variable description file.")
 
     def queryZTest(self, evt):
 
@@ -1957,12 +1996,12 @@ class OOTO_Miner:
         self.buttonQueryFeatureB.configure(state="normal")
         self.entryQueryFeatureA.configure(state="normal")
         self.entryQueryFeatureB.configure(state="normal")
-        #self.buttonQueryZTest.configure(state="normal")
+        self.buttonQueryZTest.configure(state="normal")
         self.comboQueryCriticalValue.configure(state="normal")
         self.buttonQueue.configure(state="normal")
         self.buttonClearQueue.configure(state="normal")
         self.buttonTestQueue.configure(state="normal")
-        self.buttonTest.configure(state="normal")
+        #self.buttonTest.configure(state="normal")
         self.labelQueryZTest.configure(state="normal")
         self.labelQueryDataA.configure(state="normal")
         self.labelQueryDataB.configure(state="normal")
@@ -1972,17 +2011,33 @@ class OOTO_Miner:
         self.listQueryDataA.configure(state="normal")
         self.listQueryDataB.configure(state="normal")
 
+        self.datasetA = resetDataset(self.datasetA)
+        self.entryQuerySetDataA.configure(text='')
+        self.entryQueryFeatureA.configure(text='')
+        self.labelQueryDataACount.configure(text="n: " + str(len(self.datasetA['Data'])))
+        self.labelQueryDataA.configure(text="")
+        self.listQueryDataA.delete(0,END)
+        self.listQuerySetDataA.delete(0,END)
+
+        self.datasetB = resetDataset(self.datasetB)
+        self.entryQuerySetDataB.configure(text='')
+        self.entryQueryFeatureB.configure(text='')
+        self.labelQueryDataBCount.configure(text="n: " + str(len(self.datasetB['Data'])))
+        self.labelQueryDataB.configure(text="")
+        self.listQueryDataB.delete(0,END)
+        self.listQuerySetDataB.delete(0,END)
+
         if queryType == 'Sample vs Population':
             self.buttonQueryFeatureA.configure(state="disabled")
             self.buttonQueryFeatureB.configure(state="disabled")
             self.entryQueryFeatureA.configure(state="disabled")
             self.entryQueryFeatureB.configure(state="disabled")
-            #self.buttonQueryZTest.configure(state="disabled")
+            self.buttonQueryZTest.configure(state="disabled")
             self.comboQueryCriticalValue.configure(state="disabled")
             self.buttonQueue.configure(state="disabled")
             self.buttonClearQueue.configure(state="disabled")
             self.buttonTestQueue.configure(state="disabled")
-            self.buttonTest.configure(state="disabled")
+            #self.buttonTest.configure(state="disabled")
             self.labelQueryZTest.configure(state="disabled")
             self.labelQueryDataA.configure(state="disabled")
             self.labelQueryDataB.configure(state="disabled")
@@ -1990,6 +2045,7 @@ class OOTO_Miner:
             self.listQueryDataB.configure(state="disabled")
             self.labelFrameQueryDataA.configure(text="Population")
             self.labelFrameQueryDataB.configure(text="Samples")
+            self.labelQueryDataBCount.configure(text="")
         else:
             self.buttonQueryZTestSvP.configure(state="disabled")
             self.comboQueryCriticalValueSvP.configure(state="disabled")
@@ -2012,6 +2068,7 @@ class OOTO_Miner:
         features = readFeatures(initVarDisc,"^")
         if (len(features)) > 0:
             tkMessageBox.showinfo("Initial Variable Description set","Initial Variable Description uploaded")
+            #getCommonGroups(features)
         else:
             tkMessageBox.showerror("Upload error", "Error uploading Initial Variable Description. Please try again.")
 
