@@ -32,7 +32,7 @@ import copy
 from collections import Counter
 import math
 
-#Format of console input: %run ./SampleVsPopulation.py <Path of Population Dataset> <Feature to get Samples by> <Feature B to focus on> <All values of feature B> <Selected values of Feature B> <Z Critical Value>
+
 
 '''
 Reads all of the rows in a csv file as a list of dictionaries
@@ -79,13 +79,22 @@ def getSampleTotalsAndProportions(records, samples, sampleFeature, selectedFeatu
     for record in records:
         for sample in samples:
             if(record[sampleFeature] == sample['Sample Name']):
-               if(record[selectedFeature] in allValues):
-                   sample['Total'] += 1
-               if(record[selectedFeature] in selectedValues):
-                   sample['Frequency'] += 1
-               break
+                try:
+                    if(record[selectedFeature] in allValues):
+                        sample['Total'] += 1
+                    if(record[selectedFeature] in selectedValues):
+                        sample['Frequency'] += 1
+                    break
+                except KeyError:
+                    sample['Total'] += 0
+                    sample['Frequency'] += 0
+                    sample['KeyError'] = "Selected feature not found for sample"
     for sample in samples:
-        sample['Proportion'] = float(sample['Frequency']) / float(sample['Total'])
+        if(float(sample['Total']) == 0):
+            sample['Proportion'] = 0
+            sample['TotalError'] = "Sample total is 0"
+        else:
+            sample['Proportion'] = float(sample['Frequency']) / float(sample['Total'])
 
         
 '''
@@ -97,11 +106,20 @@ F is the number of records in the population who answered any of the chosen valu
 def getPopTotalsAndProportions(records,selectedFeature,allValues,selectedValues):
     population = {'Total':0, 'Frequency':0}
     for record in records:
-        if(record[selectedFeature] in allValues):
-            population['Total'] += 1
-        if(record[selectedFeature] in selectedValues):
-            population['Frequency'] += 1
-    population['Proportion'] = float(population['Frequency']) / float(population['Total'])
+        try:
+            if(record[selectedFeature] in allValues):
+                population['Total'] += 1
+            if(record[selectedFeature] in selectedValues):
+                population['Frequency'] += 1
+        except KeyError:
+            population['Total'] += 0
+            population['Frequency'] += 0
+            population['KeyError'] = "Selected feature not found for population"
+    if(float(population['Total']) == 0):
+        population['Proportion'] = 0
+        population['TotalError'] = "Population total is 0"
+    else:
+        population['Proportion'] = float(population['Frequency']) / float(population['Total'])
     return population
 
 
@@ -109,14 +127,19 @@ def getPopTotalsAndProportions(records,selectedFeature,allValues,selectedValues)
 Calculate the standard error.
 '''
 def getStandardError(p,n):
-    return math.sqrt( (p * (1-p)) / float(n))
+    if(float(n) == 0):
+        return 0
+    else:
+        return math.sqrt( (p * (1-p)) / float(n))
 
 '''
 Calculate the z-score between a sample and the population
 '''
 def getZScore(sample, population):
     se = getStandardError(population['Proportion'], sample['Total'])
-
+    if se == 0:
+        z = 0
+        return z, se
     z = (sample['Proportion'] - population['Proportion']) / se
 
     return z,se
@@ -144,6 +167,71 @@ def makeResults(header, samples, population, zCriticalValue, fileName):
     
     writeOnCSV(rows, fileName)
 
+
+'''
+This method is similar but returns a result from a sample which shows
+the Z-Score for a particular variable. 
+'''
+def sampleVsPopulationSpecific(popDatasetPath, sampleFeature, sampleValue, selectedFeature, allValues, selectedValues, zCriticalValue, strDelim):
+    population_dataset = popDatasetPath#Get population dataset
+
+    sample = {'Sample Name':sampleValue, 'Total':0, 'Frequency':0} #Create sample
+    
+    allValues = allValues.split(strDelim)
+    selectedValues = selectedValues.split(strDelim)
+
+    samples = []
+    samples.append(sample)
+
+    getSampleTotalsAndProportions(population_dataset, samples, sampleFeature, selectedFeature, allValues, selectedValues)
+
+    population = getPopTotalsAndProportions(population_dataset, selectedFeature, allValues, selectedValues)
+
+    for sample in samples:
+        #Perform Z-Test and Standard Error of Sample Proportion vs the population
+        zScore, standardError = getZScore(sample,population)#Retrieve the z-score of the sample and the standard error to the population
+        sample['Z'] = zScore
+        sample['Standard Error'] = standardError
+        sample['Upper Bound'] = sample['Proportion'] + (zCriticalValue * sample['Standard Error'])
+        sample['Lower Bound'] = sample['Proportion'] - (zCriticalValue * sample['Standard Error'])
+        if(population['Proportion'] >= sample['Lower Bound'] and population['Proportion'] <= sample['Upper Bound']):
+            sample['Accept or Reject'] = 'Accept'
+        else:
+            sample['Accept or Reject'] = 'Reject'
+    
+    tempRow = []
+    tempRow.append(selectedFeature)
+    tempRow.append(population['Total'])
+    tempRow.append(population['Frequency'])
+    tempRow.append(population['Proportion'])
+    tempRow.append(sample['Sample Name'])
+    tempRow.append(sample['Total'])
+    tempRow.append(sample['Frequency'])
+    tempRow.append(sample['Proportion'])
+    tempRow.append(sample['Standard Error'])
+    tempRow.append(sample['Z'])
+    tempRow.append(zCriticalValue)
+    tempRow.append(sample['Lower Bound'])
+    tempRow.append(sample['Upper Bound'])
+    tempRow.append(sample['Accept or Reject'])
+
+    sampleKeyList = sample.keys()
+    popKeyList = population.keys()
+
+    if 'KeyError' in sampleKeyList:
+        tempRow.append(sample['KeyError'])
+    if 'TotalError' in sampleKeyList:
+        tempRow.append(sample['TotalError'])
+    if 'KeyError' in popKeyList:
+        tempRow.append(population['KeyError'])
+    if 'TotalError' in popKeyList:
+        tempRow.append(population['TotalError'])
+
+    return tempRow
+    
+
+
+
 '''
 Call this method to initiate the Sample vs Population
 '''
@@ -168,7 +256,7 @@ def sampleVsPopulation(popDatasetPath, sampleFeature, selectedFeature, allValues
     population = getPopTotalsAndProportions(records,selectedFeature,allValues,selectedValues)#Make the population and calculate N, F, and P of the population
 
     for sample in samples:
-        #Perform Z-Test and Standard Error of Sample Proportion avs the population
+        #Perform Z-Test and Standard Error of Sample Proportion vs the population
         zScore, standardError = getZScore(sample,population)#Retrieve the z-score of the sample and the standard error to the population
         sample['Z'] = zScore
         sample['Standard Error'] = standardError
@@ -181,7 +269,7 @@ def sampleVsPopulation(popDatasetPath, sampleFeature, selectedFeature, allValues
 
     
 
-    header = ['N','F','P','Sample','n','f','p','SE','Z','LB','UB','Accept/Reject']
+    header = ['N','F','P','Sample','n','f','p','SE','Z Score','Z Critical Value','LB','UB','Accept/Reject']
     saveFile = 'Sample vs Population_'+sampleFeature+'_'+selectedFeature+'.csv'
     makeResults(header, samples, population, zCriticalValue, saveFile)
 

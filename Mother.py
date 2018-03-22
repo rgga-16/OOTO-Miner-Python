@@ -10,9 +10,9 @@ from tkFileDialog import askopenfilename
 import copy
 import SampleVsPopulation as svp
 import SampleVsSample as svs
-# import ChiTest as ct
+import ChiTest as ct
 import os
-# import numpy as np
+import numpy as np
 from collections import Counter
 
 try:
@@ -55,6 +55,13 @@ def destroy_OOTO_Miner():
     w.destroy()
     w = None
 
+def verify(features, populationDataset):
+    if len(features) <= 0:
+        return False
+    if len(populationDataset) <= 0:
+        return False
+    return True
+
 def readFeatures(filename, varMark):
     features = []
     with open(filename) as f:
@@ -79,6 +86,15 @@ def writeCSVDict(filename, dataset):
         w.writerows(dataset)
 
 '''
+Writes a set of rows into a .csv file given the filename
+'''
+def writeOnCSV(rows, filename):
+	with open(filename, 'wb') as f:
+	    writer = csv.writer(f)
+	    writer.writerows(rows)
+	print 'Saved file is: ' + filename
+
+'''
 Returns a new dataset by filtering from the old one based on a feature and its selected values
 '''
 def filterDataset(dataset, feature, responses):
@@ -97,9 +113,10 @@ Clears all of the filters of the dataset and resets back to the uploaded populat
 def resetDataset(dataset):
     global populationDir
     populationDataset = readCSVDict(populationDir)
-    dataset = {'Data':[], 'Filter Features':[]}
+    new_dataset = {'Data':[], 'Filter Features':[]}
     for record in populationDataset:
-        dataset['Data'].append(record)
+        new_dataset['Data'].append(record)
+    return new_dataset
 
 
 
@@ -157,23 +174,51 @@ def makeUpdatedVariables(features, fileName):
                     responseRow.append('Group ' + response['Group'])
                     #Write that responseRow
                     writer.writerow(responseRow)
+
 '''
-Concatenates all of the focus feature values together using a ':'
+Concantenates values of a list into a string using a delimiter
+Example:
+if delimiter is ':'
+[1,2,3] -> '1:2:3'
+['a',2,'x'] -> 'a:2:x'
+'''
+def concatListToString(lst, delimiter):
+    listString = ""
+    for i in range(0, len(lst)):
+        if(i == (len(lst)-1)):
+            listString = listString + str(lst[i])
+        else:
+            listString = listString + str(lst[i]) + delimiter
+    
+    return listString
+
+'''
+Concatenates all of the focus feature values together into a string
 '''
 def getFocusFeatureValues(selectedFocusFeature, selectedFocusFeatureValues):
     allValues = ""
+    selectedValues = ""
+    responseCodes = []
+
+    for response in selectedFocusFeature['Responses']:
+        responseCodes.append(response['Code'])
+
+    allValues = concatListToString(responseCodes, ':')
+    selectedValues = concatListToString(selectedFocusFeatureValues, ':')
+    '''
     for i in range(0, len(selectedFocusFeature['Responses'])):
         if(i == len(selectedFocusFeature['Responses'])-1):
             allValues = allValues + str(selectedFocusFeature['Responses'][i]['Code'])
         else:
             allValues = allValues + str(selectedFocusFeature['Responses'][i]['Code']) + ":"          
-    selectedValues = ""
+    '''
+    '''
     for i in range(0, len(selectedFocusFeatureValues)):
         if(i == len(selectedFocusFeatureValues)-1):
             selectedValues = selectedValues + str(selectedFocusFeatureValues[i])
         else:
             selectedValues = selectedValues + str(selectedFocusFeatureValues[i]) + ":"
-
+    '''
     return allValues, selectedValues
   
 '''
@@ -357,7 +402,7 @@ def selectDatasetValues(evt, dataset, populationDataset, labelFeatCount):
 def saveDatasetFile(dataset):
     fileName = makeFileName(dataset)
     writeCSVDict(fileName, dataset['Data'])
-    tkMessageBox.showinfo("Dataset saved", "Dataset saved as " + fileName)
+    return fileName
 
 
 class OOTO_Miner:
@@ -810,8 +855,6 @@ class OOTO_Miner:
 
         self.comboBoxTestType.bind('<<ComboboxSelected>>', self.setTest)
 
-        self.comboCriticalValue.bind('<<ComboboxSelected>>', self.getCriticalValue)
-
         self.listFeatA.bind('<<ListboxSelect>>', self.selectValuesDatasetA)
         self.listFeatB.bind('<<ListboxSelect>>', self.selectValuesDatasetB)
         self.listAttributes.bind('<<ListboxSelect>>', self.selectFocusFeatureValues)
@@ -1059,7 +1102,7 @@ class OOTO_Miner:
         self.buttonQueryResetFilterA.configure(highlightbackground="#d9d9d9")
         self.buttonQueryResetFilterA.configure(highlightcolor="black")
         self.buttonQueryResetFilterA.configure(pady="0")
-        self.buttonQueryResetFilterA.configure(text='''Reset Filters''')
+        self.buttonQueryResetFilterA.configure(text='''Reset Dataset''')
         self.buttonQueryResetFilterA.configure(width=96)
 
         self.labelQueryDataACount = Label(self.labelFrameQueryDataA)
@@ -1186,7 +1229,7 @@ class OOTO_Miner:
         self.buttonQueryResetFilterB.configure(highlightbackground="#d9d9d9")
         self.buttonQueryResetFilterB.configure(highlightcolor="black")
         self.buttonQueryResetFilterB.configure(pady="0")
-        self.buttonQueryResetFilterB.configure(text='''Reset Filters''')
+        self.buttonQueryResetFilterB.configure(text='''Reset Dataset''')
 
         self.labelQueryDataBCount = Label(self.labelFrameQueryDataB)
         self.labelQueryDataBCount.place(relx=0.02, rely=0.25, height=23, width=96)
@@ -1266,6 +1309,7 @@ class OOTO_Miner:
         self.labelQueryZTest.configure(text='''NO DATA''')
         self.labelQueryZTest.configure(width=862)
 
+        '''
         self.buttonQueryZTest = Button(self.labelFrameQueryZ)
         self.buttonQueryZTest.place(relx=0.01, rely=0.01, height=23, width=106)
         self.buttonQueryZTest.configure(activebackground="#d9d9d9")
@@ -1276,8 +1320,9 @@ class OOTO_Miner:
         self.buttonQueryZTest.configure(highlightbackground="#d9d9d9")
         self.buttonQueryZTest.configure(highlightcolor="black")
         self.buttonQueryZTest.configure(pady="0")
-        self.buttonQueryZTest.configure(text='''Test''')
+        self.buttonQueryZTest.configure(text=''''Test'''')
         self.buttonQueryZTest.configure(width=106)
+        '''
 
 
         self.labelFrameQueryChi = LabelFrame(self.Tabs_t3)
@@ -1372,7 +1417,7 @@ class OOTO_Miner:
         self.comboQueryCriticalValueSvP.configure(exportselection="0")
         self.comboQueryCriticalValueSvP.configure(takefocus="")
         self.comboQueryCriticalValueSvP.configure(values=arrQueryCriticalValue)
-        self.comboQueryCriticalValueSvP.current(0)
+        self.comboQueryCriticalValueSvP.set(arrQueryCriticalValue[0])
         self.comboQueryCriticalValueSvP.configure(state="disabled")
 
         self.labelQueryZTestSvP = Label(self.labelFrameQuerySvP)
@@ -1409,17 +1454,17 @@ class OOTO_Miner:
         self.buttonQueryAddFilterB.bind('<Button-1>', self.queryAddFilterB)
         self.buttonQueryFeatureA.bind('<Button-1>', self.querySetFeatureA)
         self.buttonQueryFeatureB.bind('<Button-1>', self.querySetFeatureB)
-        self.buttonQueryZTest.bind('<Button-1>', self.queryZTest)
+        #self.buttonQueryZTest.bind('<Button-1>', self.queryZTest)
+        self.buttonQueryZTestSvP.bind('<Button-1>', self.querySVP)
 
-        self.buttonTest.bind('<Button-1>', self.test)
         self.buttonQueue.bind('<Button-1>', self.queue)
         self.buttonClearQueue.bind('<Button-1>', self.clearQueue)
         self.buttonTestQueue.bind('<Button-1>', self.testQueue)
 
-        '''
-        self.buttonQueryAddFilterA('<Button-1>', )
-        self.buttonQueryAddFilterA('<Button-1>', )
-        '''
+        
+        self.buttonQueryResetFilterA.bind('<Button-1>', self.queryResetDatasetA)
+        self.buttonQueryResetFilterB.bind('<Button-1>', self.queryResetDatasetB)
+        
 
 
         self.listQuerySetDataA.bind('<<ListboxSelect>>', self.querySelectDataValuesA)
@@ -1442,8 +1487,6 @@ class OOTO_Miner:
         global selectedFocusFeatureValues 
 
         global populationDir
-        global Za
-        Za = 1.27
         populationDir = ""
         self.populationDataset = []
         self.datasetA = {'Data':[], 'Filter Features':[]}
@@ -1452,8 +1495,8 @@ class OOTO_Miner:
         global tests
         tests = []
 
-        self.labelQueryDataACount.configure(text="Dataset Count: " + str(len(self.datasetA['Data'])))
-        self.labelQueryDataBCount.configure(text="Dataset Count: " + str(len(self.datasetB['Data']))) 
+        self.labelQueryDataACount.configure(text="n: " + str(len(self.datasetA['Data'])))
+        self.labelQueryDataBCount.configure(text="n: " + str(len(self.datasetB['Data']))) 
 
         
 
@@ -1515,8 +1558,6 @@ class OOTO_Miner:
     def setPopulation(self, evt):
         global populationDir
         populationDir = askopenfilename(title = "Select file",filetypes = (("csv files","*.csv"),("all files","*.*")))
-        self.entryPopulation.delete(0, END)
-        self.entryPopulation.insert(0, populationDir)
 
         self.entryQueryPopulation.delete(0,END)
         self.entryQueryPopulation.insert(0,populationDir)
@@ -1525,20 +1566,21 @@ class OOTO_Miner:
         self.populationDataset = readCSVDict(populationDir)
         self.datasetA['Data']=[]
         self.datasetB['Data']=[]
+
         if(len(list(self.populationDataset)) > 0):
             tkMessageBox.showinfo("Population set", "Population dataset uploaded")
             self.populationDataset = readCSVDict(populationDir)
             for record in self.populationDataset:
                 self.datasetA['Data'].append(record)
                 self.datasetB['Data'].append(record)
-            print len(self.datasetA['Data'])
+            self.labelQueryDataACount.configure(text="n: " + str(len(self.datasetA['Data'])) )
+            self.labelQueryDataBCount.configure(text="n: " + str(len(self.datasetB['Data'])) )
         else:
             tkMessageBox.showerror("Upload error", "Error uploading population dataset. Please try again.")
     
     def selectValuesDatasetA(self, evt):
         selectDatasetValues(evt, self.datasetA, self.populationDataset, self.labelFeatACount)
 
-        
     def selectFocusFeatureValues(self, evt):
         global selectedFocusFeatureValues
         listbox = evt.widget
@@ -1619,60 +1661,6 @@ class OOTO_Miner:
         for C in arrTempItemsC:
             self.listAttributes.insert(END, C)
 
-    
-
-    
-    #Do regular test based on what is inputted in the UI
-    def test(self, evt):
-        datasets = []
-        fileNames = []
-        datasets.append(self.datasetA)
-        datasets.append(self.datasetB)
-        global selectedFocusFeature
-        global sampleFeature
-        global Za
-        global allValues
-        global selectedFocusFeatureValues
-        global populationDir
-        global features
-        if(testType == 'Sample vs Population'):
-            for dataset in datasets:
-                convertDatasetValuesToGroups(dataset, features)
-                for feature in features:
-                    allValues, selectedValues = getFocusFeatureValues(feature, ['b'])
-
-
-            allValues, selectedValues = getFocusFeatureValues(selectedFocusFeature, selectedFocusFeatureValues)
-
-            saveFile = svp.sampleVsPopulation(populationDir, sampleFeature, selectedFocusFeature['Code'], allValues, selectedValues, Za)
-
-            tkMessageBox.showinfo(testType, testType + " completed. Results file saved as " + saveFile)
-
-        elif(testType == 'Sample vs Sample'):
-            allValues, selectedValues = getFocusFeatureValues(selectedFocusFeature, selectedFocusFeatureValues)
-            for i in range(0, len(datasets)):
-                fileName = makeFileName(datasets[i])
-                writeCSVDict(fileName, datasets[i]['Data'])
-                fileNames.append(fileName)
-            saveFile,z95,z99 = svs.sampleVsSample(fileNames, selectedFocusFeature['Code'], allValues, selectedValues)
-            removeFiles(fileNames)
-            tkMessageBox.showinfo(testType, testType + " completed. Results file saved as " + saveFile)
-        elif(testType == 'Chi-test'):
-            i = 0
-            for dataset in datasets:
-                convertDatasetValuesToGroups(dataset, features)
-                fileName = makeFileName(dataset)
-                i = i + 1
-                writeCSVDict(fileName, dataset['Data'])
-                fileNames.append(fileName)
-            if not (os.path.isfile("Updated-Variables.csv")):
-                makeUpdatedVariables(features, "Updated-Variables.csv")
-            saveFile = ct.chiTest(fileNames)
-            removeFiles(fileNames)
-            tkMessageBox.showinfo(testType, testType + " completed. Results file saved as " + saveFile)
-        else:
-            tkMessageBox.showerror("Error: No test selected", "Please select a test")
-
     #Function that happens when the 'Enqueue' button is pressed
     def queue(self, evt):
         datasets = []
@@ -1682,7 +1670,7 @@ class OOTO_Miner:
         if(testType == 'Sample vs Sample'):
             self.addToQueue(testType, datasetArgs=datasets)
         else:
-            tkMessageBox.showerror("Error: No test selected", "Please select a test")
+            tkMessageBox.showerror("Error: Sample vs Sample not selected", "Please select Sample vs Sample test")
 
     #Conducts all of the tests in the queue. 
     def testQueue(self, evt):
@@ -1693,9 +1681,7 @@ class OOTO_Miner:
         i = 0
         for test in tests:
             fileNames = []
-            if(test['Type'] == 'Sample vs Population'):
-                svp.sampleVsPopulation(test['Population Path'], test['Sample Feature'], test['Selected Feature'], test['SF All Values'], test['SF Selected Values'], test['Z Critical Value'])
-            elif(test['Type'] == 'Sample vs Sample'):
+            if(test['Type'] == 'Sample vs Sample'):
                 i += 1
                 for dataset in test['Datasets']:
                     convertDatasetValuesToGroups(dataset, features)
@@ -1708,8 +1694,6 @@ class OOTO_Miner:
                 tempString = "Chi-test complete. " + str(i) + "/" + str(len(tests)) + "complete."
                 self.listQueryDataB.insert(END, tempString)
                 removeFiles(fileNames)
-                
-
         tkMessageBox.showinfo("Test Queue Complete", "All of the tests in the queue have been completed.")
 
 
@@ -1801,31 +1785,6 @@ class OOTO_Miner:
             self.entryFeatB.configure(state='disabled')
             self.buttonShowA.configure(state='disabled')
             self.buttonShowB.configure(state='disabled')
-    '''
-    CHANGES HERE!
-    '''
-    def getCriticalValue(self, evt):
-        global criticalValue
-        global Za
-        criticalValue = self.comboCriticalValue.get()
-        if criticalValue == "0.80":
-            print 1.27
-            Za = 1.27
-        elif criticalValue == "0.90":
-            print 1.645
-            Za = 1.645
-        elif criticalValue == "0.95":
-            print 1.645
-            Za = 1.96
-        elif criticalValue == "0.98":
-            print 2.33
-            Za = 2.33
-        elif criticalValue == "0.99":
-            print 2.58
-            Za = 2.58
-        else:
-            print -1
-            Za = -1
 
     '''
     QUERY FUNCTIONS
@@ -1845,28 +1804,54 @@ class OOTO_Miner:
         self.setPopulation(evt)
 
     def querySetDataA(self, evt):
-        findFeature(self.entryQuerySetDataA.get(), self.listQuerySetDataA,self.datasetA,"Dataset_Feature")
-
+        try:
+            findFeature(self.entryQuerySetDataA.get(), self.listQuerySetDataA,self.datasetA,"Dataset_Feature")
+        except NameError:
+            tkMessageBox.showerror("Features Error", "Features not found. Please upload your variable description file.")
+    
     def querySetDataB(self, evt):
-        findFeature(self.entryQuerySetDataB.get(), self.listQuerySetDataB, self.datasetB,"Dataset_Feature")
+        try:
+            findFeature(self.entryQuerySetDataB.get(), self.listQuerySetDataB, self.datasetB,"Dataset_Feature")
+        except NameError:
+            tkMessageBox.showerror("Features Error", "Features not found. Please upload your variable description file.")
 
+    def queryResetDatasetA(self,evt):
+        self.datasetA = resetDataset(self.datasetA)
+        self.entryQuerySetDataA.configure(text='')
+        self.entryQueryFeatureA.configure(text='')
+        self.labelFrameQueryDataA.configure(text="Dataset A")
+        self.labelQueryDataACount.configure(text="n: " + str(len(self.datasetA['Data'])))
+        self.labelQueryDataA.configure(text="")
+        self.listQueryDataA.delete(0,END)
+        self.listQuerySetDataA.delete(0,END)
+
+    
+    def queryResetDatasetB(self,evt):
+        self.datasetB = resetDataset(self.datasetB)
+        self.entryQuerySetDataB.configure(text='')
+        self.entryQueryFeatureB.configure(text='')
+        self.labelFrameQueryDataB.configure(text="Dataset B")
+        self.labelQueryDataBCount.configure(text="n: " + str(len(self.datasetB['Data'])))
+        self.labelQueryDataB.configure(text="")
+        self.listQueryDataB.delete(0,END)
+        self.listQuerySetDataB.delete(0,END)
     
     def querySelectDataValuesA(self, evt):
         selectDatasetValues(evt, self.datasetA, self.populationDataset, self.labelQueryDataACount)
-        print 'Selecting values for Data A'
     
     def querySelectDataValuesB(self, evt):
         selectDatasetValues(evt, self.datasetB, self.populationDataset, self.labelQueryDataBCount)
-        print 'Selecting values for Data B'
 
     def queryAddFilterA(self, evt):
-        # print 'Saving Data A'
-        # saveDatasetFile(self.datasetA)
+        if len(self.datasetA['Data']) <= 0:
+            tkMessageBox.showerror("Dataset error", "Dataset is empty. Please check if you uploaded your population dataset")
+            return -1
+
         new_data = filterDataset(self.datasetA, self.datasetA['Feature'], self.datasetA['Feature']['Selected Responses'])
         self.datasetA['Filter Features'].append(self.datasetA['Feature'])
         self.datasetA['Data'] = new_data
 
-        queryStrFilterA = 'Dataset A'
+        queryStrFilterA = self.labelFrameQueryDataA.cget("text")
 
         for i in range(0, len(self.datasetA['Filter Features'])):
             queryStrFilterA = queryStrFilterA + "->" + self.datasetA['Filter Features'][i]['Code']
@@ -1881,11 +1866,15 @@ class OOTO_Miner:
         self.labelFrameQueryDataA.configure(text=queryStrFilterA)
 
     def queryAddFilterB(self, evt):
+        if len(self.datasetB['Data']) <= 0:
+            tkMessageBox.showerror("Dataset error", "Dataset is empty. Please check if you uploaded your population dataset")
+            return -1
+        
         new_data = filterDataset(self.datasetB, self.datasetB['Feature'], self.datasetB['Feature']['Selected Responses'])
         self.datasetB['Filter Features'].append(self.datasetB['Feature'])
         self.datasetB['Data'] = new_data
 
-        queryStrFilterB = 'Dataset B'
+        queryStrFilterB = self.labelFrameQueryDataB.cget("text")
 
         for i in range(0, len(self.datasetB['Filter Features'])):
             queryStrFilterB = queryStrFilterB + "->" + self.datasetB['Filter Features'][i]['Code']
@@ -1921,6 +1910,42 @@ class OOTO_Miner:
             #Display Z score and whether accept/reject at inputted confidence interval
             self.labelQueryZTest.configure(text='Z-Score: ' + str(round(zScore,2)) +  ', ' + str(float(confidenceInterval)) + ' confidence: '+ zResult)
 
+    def querySVP(self,evt):
+        confidenceInterval = self.comboQueryCriticalValueSvP.get() #Get selected confidence interval
+        zCritical = arrQueryCriticalValueMapping[confidenceInterval] #Get corresponding Z Critical Value
+        sampleFeature = self.datasetB['Feature']['Code']
+
+        #Iterate through every sample 
+        for sampleResponse in self.datasetB['Feature']['Responses']:
+            resultsRows = []
+
+            sampleValue = sampleResponse['Code'] #Get sample code
+            
+            header = ['Feature Code','N','F','P','Sample','n','f','p','SE','Z Score','Z Critical Value','LB','UB','Accept/Reject']
+            resultsRows.append(header)
+            
+            #Iterate through every feature
+            for feature in features:
+                featureValues = [] #Values that are not in group -1. This will be all values of the feature.
+                selectedFeatureValues = []#Values within featureValues that are selected by the user. By default, it is just those with group 'b'
+
+                for response in feature['Responses']:#Iterate through the values of the feature
+                    if response['Group'] != '-1': 
+                        featureValues.append(response['Code'])#Add to featureValues if value is not in group -1
+                        if(response['Group'] == 'a'): #MODIFY THIS SUCH THAT IT CAN BE SELECTED BY THE USER
+                            selectedFeatureValues.append(response['Code'])#Add to selectedFeatureValues if group is 'b'
+                
+                allValString = concatListToString(featureValues, ':')
+                selectedValString = concatListToString(selectedFeatureValues, ':')
+
+                print "All values: " + allValString
+                print "Selected values: " + selectedValString
+
+                resultRow = svp.sampleVsPopulationSpecific(self.datasetA['Data'],sampleFeature, sampleValue,feature['Code'], allValString, selectedValString,zCritical, ':')
+                resultsRows.append(resultRow)
+            writeOnCSV(resultsRows, "SVP_" +sampleFeature+"("+ sampleValue +")" + "_vs_" + self.datasetA['Feature']['Code']+".csv")
+        tkMessageBox.showinfo(testType, testType + " completed.")
+
     def querySetType(self, evt):
         global queryType
         queryType = self.comboQueryTest.get()
@@ -1932,7 +1957,7 @@ class OOTO_Miner:
         self.buttonQueryFeatureB.configure(state="normal")
         self.entryQueryFeatureA.configure(state="normal")
         self.entryQueryFeatureB.configure(state="normal")
-        self.buttonQueryZTest.configure(state="normal")
+        #self.buttonQueryZTest.configure(state="normal")
         self.comboQueryCriticalValue.configure(state="normal")
         self.buttonQueue.configure(state="normal")
         self.buttonClearQueue.configure(state="normal")
@@ -1952,7 +1977,7 @@ class OOTO_Miner:
             self.buttonQueryFeatureB.configure(state="disabled")
             self.entryQueryFeatureA.configure(state="disabled")
             self.entryQueryFeatureB.configure(state="disabled")
-            self.buttonQueryZTest.configure(state="disabled")
+            #self.buttonQueryZTest.configure(state="disabled")
             self.comboQueryCriticalValue.configure(state="disabled")
             self.buttonQueue.configure(state="disabled")
             self.buttonClearQueue.configure(state="disabled")
@@ -1963,24 +1988,20 @@ class OOTO_Miner:
             self.labelQueryDataB.configure(state="disabled")
             self.listQueryDataA.configure(state="disabled")
             self.listQueryDataB.configure(state="disabled")
+            self.labelFrameQueryDataA.configure(text="Population")
+            self.labelFrameQueryDataB.configure(text="Samples")
         else:
             self.buttonQueryZTestSvP.configure(state="disabled")
             self.comboQueryCriticalValueSvP.configure(state="disabled")
             self.labelQueryZTestSvP.configure(state="disabled")
+            self.labelFrameQueryDataA.configure(text="Dataset A")
+            self.labelFrameQueryDataB.configure(text="Dataset B")
 
     def querySetAllFeatures(self):
         #Test items
         global strarrAllFeatures
         strarrAllFeatures = list(self.listQuerySetDataA.get(0, END))
         
-
-
-
-    '''
-    allValues, selectedValues = getFocusFeatureValues(selectedFocusFeature, selectedFocusFeatureValues)
-    saveFile = svp.sampleVsPopulation(populationDir, sampleFeature, selectedFocusFeature['Code'], allValues, selectedValues, Za)
-    tkMessageBox.showinfo(testType, testType + " completed. Results file saved as " + saveFile)
-    '''
 
     def uploadInitVarDesc(self, evt):
         print "UPLOADED"
