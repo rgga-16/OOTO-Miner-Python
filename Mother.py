@@ -10,9 +10,9 @@ from tkFileDialog import askopenfilename
 import copy
 import SampleVsPopulation as svp
 import SampleVsSample as svs
-import ChiTest as ct
+# import ChiTest as ct
 import os
-import numpy as np
+# import numpy as np
 from collections import Counter
 
 try:
@@ -481,9 +481,9 @@ class OOTO_Miner:
         self.Tabs_t3 = ttk.Frame(self.Tabs)
         self.Tabs.add(self.Tabs_t3, padding=3)
         self.Tabs.tab(1, text="Test", underline="-1", )
-        self.Tabs_t1 = ttk.Frame(self.Tabs)
-        self.Tabs.add(self.Tabs_t1, padding=3)
-        self.Tabs.tab(2, text="Miner", underline="-1", )
+        #self.Tabs_t1 = ttk.Frame(self.Tabs)
+        #self.Tabs.add(self.Tabs_t1, padding=3)
+        #self.Tabs.tab(2, text="Miner", underline="-1", )
 
 
 
@@ -500,6 +500,7 @@ class OOTO_Miner:
         '''
         CHANGES HERE!
         '''
+        '''
         strarrTestType = ["Chi-test","Sample vs Sample","Sample vs Population"]
         self.comboBoxTestType = ttk.Combobox(self.Tabs_t1)
         self.comboBoxTestType.place(relx=0.01, rely=0.02, relheight=0.04
@@ -510,6 +511,7 @@ class OOTO_Miner:
         self.comboBoxTestType.configure(values=strarrTestType)
         self.comboBoxTestType.configure(state="readonly")
         # self.adjustViews()
+        '''
 
         ''' 
         self.buttonTestType = Button(top)
@@ -524,7 +526,7 @@ class OOTO_Miner:
         self.buttonTestType.configure(pady="0")
         self.buttonTestType.configure(text=''Select Test'')
         '''
-
+        '''
         self.textTestType = Label(self.Tabs_t1)
         self.textTestType.place(relx=0.01, rely=0.07, height=23, width=486)
         self.textTestType.configure(activebackground="#d9d9d9")
@@ -561,7 +563,9 @@ class OOTO_Miner:
         self.buttonPopulation.configure(highlightbackground="#d9d9d9")
         self.buttonPopulation.configure(highlightcolor="black")
         self.buttonPopulation.configure(pady="0")
-        self.buttonPopulation.configure(text='''Upload''')
+        self.buttonPopulation.configure(text="Upload")
+        '''
+        ''''
         self.buttonPopulation.configure(state='normal')
 
         self.labelFrameZTest = LabelFrame(self.Tabs_t1)
@@ -569,7 +573,7 @@ class OOTO_Miner:
                 , relwidth=0.48)
         self.labelFrameZTest.configure(relief=GROOVE)
         self.labelFrameZTest.configure(foreground="black")
-        self.labelFrameZTest.configure(text='''Z -Test''')
+        self.labelFrameZTest.configure(text='Z -Test')
         self.labelFrameZTest.configure(background="#d9d9d9")
         self.labelFrameZTest.configure(highlightbackground="#d9d9d9")
         self.labelFrameZTest.configure(highlightcolor="black")
@@ -585,8 +589,9 @@ class OOTO_Miner:
         self.labelZCriticalValue.configure(foreground="#000000")
         self.labelZCriticalValue.configure(highlightbackground="#d9d9d9")
         self.labelZCriticalValue.configure(highlightcolor="black")
-        self.labelZCriticalValue.configure(text='''Confidence Interval''')
-
+        self.labelZCriticalValue.configure(text=Confidence Interval)
+        '''
+        '''
         self.labelFeature = Label(self.labelFrameZTest)
         self.labelFeature.place(relx=0.02, rely=0.17, height=26, width=55)
         self.labelFeature.configure(activebackground="#f9f9f9")
@@ -596,7 +601,7 @@ class OOTO_Miner:
         self.labelFeature.configure(foreground="#000000")
         self.labelFeature.configure(highlightbackground="#d9d9d9")
         self.labelFeature.configure(highlightcolor="black")
-        self.labelFeature.configure(text='''Feature''')
+        self.labelFeature.configure(text='Feature')
 
         self.textFeature = Label(self.labelFrameZTest)
         self.textFeature.place(relx=0.17, rely=0.17, relheight=0.1, relwidth=0.8)
@@ -625,9 +630,9 @@ class OOTO_Miner:
         self.listAttributes.configure(selectmode=MULTIPLE)
         self.listAttributes.configure(state='disabled')
 
-
-
         '''
+        '''
+        
         self.entryCriticalValue = Entry(self.labelFrameZTest)
         self.entryCriticalValue.place(relx=0.25, rely=0.05, relheight=0.04
                 , relwidth=0.72)
@@ -645,6 +650,8 @@ class OOTO_Miner:
 
         '''
         CHANGES HERE!
+        '''
+
         '''
         strarrCriticalValue = ["0.80", "0.90", "0.95", "0.98", "0.99"]
         self.comboCriticalValue = ttk.Combobox(self.labelFrameZTest)
@@ -667,10 +674,11 @@ class OOTO_Miner:
         self.buttonGetFeat.configure(highlightbackground="#d9d9d9")
         self.buttonGetFeat.configure(highlightcolor="black")
         self.buttonGetFeat.configure(pady="0")
-        self.buttonGetFeat.configure(text='''Enter Feature Code''')
+        self.buttonGetFeat.configure(text='Enter Feature Code')
         self.buttonGetFeat.configure(width=156)
         self.buttonGetFeat.configure(state='disabled')
 
+        '''
         '''
         self.Entry1 = Entry(self.labelFrameZTest)
         self.Entry1.place(relx=0.25, rely=0.11, relheight=0.04, relwidth=0.38)
@@ -681,12 +689,12 @@ class OOTO_Miner:
         self.Entry1.configure(insertbackground="black")
         self.Entry1.configure(width=184)
         '''
-
+        '''
         self.labelFrameGenerateSamples = LabelFrame(self.Tabs_t1)
         self.labelFrameGenerateSamples.place(relx=0.01, rely=0.22, relheight=0.78, relwidth=0.49)
         self.labelFrameGenerateSamples.configure(relief=GROOVE)
         self.labelFrameGenerateSamples.configure(foreground="black")
-        self.labelFrameGenerateSamples.configure(text='''Generate Samples''')
+        self.labelFrameGenerateSamples.configure(text='Generate Samples')
         self.labelFrameGenerateSamples.configure(background="#d9d9d9")
         self.labelFrameGenerateSamples.configure(highlightbackground="#d9d9d9")
         self.labelFrameGenerateSamples.configure(highlightcolor="black")
@@ -708,7 +716,7 @@ class OOTO_Miner:
 
         self.labelSample = Label(self.labelFrameGenerateSamples)
         self.labelSample.place(relx=0.02, rely=0.11, relheight=0.05, relwidth=0.95)
-        self.labelSample.configure(text='''Sample Feature: None ''')
+        # self.labelSample.configure(text='Sample Feature: None )
         self.labelSample.configure(justify=LEFT)
 
         self.entryFocus = Entry(self.labelFrameZTest)
@@ -731,10 +739,10 @@ class OOTO_Miner:
         self.buttonSample.configure(highlightbackground="#d9d9d9")
         self.buttonSample.configure(highlightcolor="black")
         self.buttonSample.configure(pady="0")
-        self.buttonSample.configure(text='''Enter Sample Feature''')
-        self.buttonSample.configure(state='disabled')
-
+        # self.buttonSample.configure(text='Enter Sample Feature')
         '''
+        # self.buttonSample.configure(state='disabled')
+        '''        
         self.buttonFocus = Button(self.labelFrameGenerateSamples)
         self.buttonFocus.place(relx=0.51, rely=0.11, height=23, width=226)
         self.buttonFocus.configure(activebackground="#d9d9d9")
@@ -746,7 +754,7 @@ class OOTO_Miner:
         self.buttonFocus.configure(highlightcolor="black")
         self.buttonFocus.configure(pady="0")
         self.buttonFocus.configure(text='Enter Focus Feature')
-        '''
+        
 
         self.buttonShowA = Button(self.labelFrameGenerateSamples)
         self.buttonShowA.place(relx=0.02, rely=0.24, height=23, width=226)
@@ -758,7 +766,7 @@ class OOTO_Miner:
         self.buttonShowA.configure(highlightbackground="#d9d9d9")
         self.buttonShowA.configure(highlightcolor="black")
         self.buttonShowA.configure(pady="0")
-        self.buttonShowA.configure(text='''Show Features A''')
+        self.buttonShowA.configure(text='Show Features A')
         self.buttonShowA.configure(state='disabled')
 
         self.buttonShowB = Button(self.labelFrameGenerateSamples)
@@ -771,9 +779,10 @@ class OOTO_Miner:
         self.buttonShowB.configure(highlightbackground="#d9d9d9")
         self.buttonShowB.configure(highlightcolor="black")
         self.buttonShowB.configure(pady="0")
-        self.buttonShowB.configure(text='''Show Features B''')
-        self.buttonShowB.configure(state='disabled')
-
+        # self.buttonShowB.configure(text='Show Features B)
+        '''
+        # self.buttonShowB.configure(state='disabled')
+        '''
         self.listFeatA = Listbox(self.labelFrameGenerateSamples)
         self.listFeatA.place(relx=0.02, rely=0.41, relheight=0.48, relwidth=0.46)
         self.listFeatA.configure(background="white")
@@ -863,7 +872,11 @@ class OOTO_Miner:
         self.entryFeatB.configure(selectbackground="#c4c4c4")
         self.entryFeatB.configure(selectforeground="black")
         self.entryFeatB.configure(state='disabled')
+        
+        
         '''
+        '''
+        
         BINDING ELEMENTS FOR TAB 1
         notes: bind the functions as objects ( ie. setPopulation not setPopulation() )
         <Button-1> On left click
@@ -871,6 +884,7 @@ class OOTO_Miner:
         CHANGES HERE!
         '''
 
+        '''
         self.buttonPopulation.bind('<Button-1>', self.setPopulation)
         self.buttonSample.bind('<Button-1>', self.setSample)
         self.buttonShowA.bind('<Button-1>', self.setFeatA)
@@ -885,6 +899,7 @@ class OOTO_Miner:
         self.listFeatA.bind('<<ListboxSelect>>', self.selectValuesDatasetA)
         self.listFeatB.bind('<<ListboxSelect>>', self.selectValuesDatasetB)
         #self.listAttributes.bind('<<ListboxSelect>>', self.selectFocusFeatureValues)
+        '''
 
 
 
