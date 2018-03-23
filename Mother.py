@@ -13,6 +13,7 @@ import SampleVsSample as svs
 import ChiTest as ct
 import os
 import numpy as np
+from collections import Counter
 
 try:
     from Tkinter import *
@@ -54,6 +55,9 @@ def destroy_OOTO_Miner():
     w.destroy()
     w = None
 
+'''
+Reads features and their responses from the Variable Description file
+'''
 def readFeatures(filename, varMark):
     features = []
     with open(filename) as f:
@@ -66,22 +70,56 @@ def readFeatures(filename, varMark):
                 new_response = {'Group':row[0], 'Code':row[1], 'Description':row[2]}
                 new_feature['Responses'].append(new_response)
     return features
-'''
-def convertToGroup(features):
-    groupedFeatures = copy.deepcopy(features)
-    for feature in groupedFeatures:
-        for response in feature['Responses']:
-            '''
 
+'''
+Returns all of the group codes that are present in all features.
+'''
+def getCommonGroups(features):
+    groupCodes = []
+    print str(groupCodes)
+    for i in range(0, len(features)):
+        if i == 0:
+            for response in features[i]['Responses']:
+                groupCodes.append(response['Group'])
+        else:
+            for g in groupCodes:
+                isFound = False
+                for response in features[i]['Responses']:
+                    if g == response['Group']:
+                        isFound = True
+                        break
+                if isFound == False:
+                    groupCodes.remove(g)
+    
+    print str(groupCodes)
+                
+
+
+'''
+Reads a .csv file and returns a list of dictionaries where the header of the file 
+has all of the dictionary keys
+'''
 def readCSVDict(filename):
     rows = csv.DictReader(open(filename))
     return rows   
 
+'''
+Writes a list of dictionaries into a .csv file
+'''
 def writeCSVDict(filename, dataset):
     with open(filename, 'wb') as f:
         w = csv.DictWriter(f, dataset[0].keys())
         w.writeheader()
         w.writerows(dataset)
+
+'''
+Writes a set of rows into a .csv file given the filename
+'''
+def writeOnCSV(rows, filename):
+	with open(filename, 'wb') as f:
+	    writer = csv.writer(f)
+	    writer.writerows(rows)
+	print 'Saved file is: ' + filename
 
 '''
 Returns a new dataset by filtering from the old one based on a feature and its selected values
@@ -96,7 +134,28 @@ def filterDataset(dataset, feature, responses):
     
     return new_data
 
+'''
+Clears all of the filters of the dataset and resets the data back to that of
+the uploaded population file. 
+'''
+def resetDataset(dataset):
+    global populationDir
+    populationDataset = readCSVDict(populationDir)
+    new_dataset = {'Data':[], 'Filter Features':[]}
+    for record in populationDataset:
+        new_dataset['Data'].append(record)
+    return new_dataset
 
+
+'''
+For every feature, each value falls into a group.
+Each value in the dataset gets converted to its corresponding group.
+
+If a value in the dataset does not exist in the feature values in the variable description,
+its group is automatically assigned to -1.
+
+If a feature in the dataset does not exist in the variable description, assign that value to -1.
+'''
 def convertDatasetValuesToGroups(dataset, features):
     #response['Code'] == record[self.datasetA['Feature']['Code']] for response in self.datasetA['Selected Responses']
     for record in dataset['Data']:
@@ -107,27 +166,41 @@ def convertDatasetValuesToGroups(dataset, features):
                     if record[feature['Code']] == response['Code']:
                         record[feature['Code']] = response['Group']
                         converted = True
-                #if not any(record[feature['Code'] == response['Code'] for response in feature['Responses']):
                 if not converted:
                     record[feature['Code']] = '-1.0'
             else:
                 record[feature['Code']] = '-1.0'
     return dataset
 
+'''
+Remove the files given their filenames.
+'''
 def removeFiles(fileNames):
     for fileName in fileNames:
         os.remove(fileName)
-    
+
+'''
+Returns filename of the dataset based on the features it was filtered by and selected values for 
+each feature
+'''
 def makeFileName(dataset):
-    featureDesc = copy.deepcopy(dataset['Feature']['Description'])
-    if(len(featureDesc) > 10):
-        featureDesc = featureDesc[:11]
-    fileName = featureDesc
-    for response in dataset['Feature']['Selected Responses']:
-        fileName = fileName + response['Description'] + "_"
+    fileName = ''
+    for filterFeature in dataset['Filter Features']:
+        featureCode = copy.deepcopy(filterFeature['Code'])
+        fileName = fileName + "_" + str(featureCode)
+        for i in range(0, len(filterFeature['Selected Responses'])):
+            if i == 0:
+                fileName = fileName + "("
+            fileName = fileName + filterFeature['Selected Responses'][i]['Code'] + " "
+            if i == (len(filterFeature['Selected Responses'])-1):
+                fileName = fileName + ")"
     fileName = fileName + ".csv"
     return fileName
 
+'''
+Writes converted features (where the values are converted to their groups)
+into a csv file
+'''
 def makeUpdatedVariables(features, fileName):
     with open(fileName, "wb") as csv_file:
         writer = csv.writer(csv_file, delimiter=',')
@@ -147,27 +220,46 @@ def makeUpdatedVariables(features, fileName):
                     responseRow.append('Group ' + response['Group'])
                     #Write that responseRow
                     writer.writerow(responseRow)
+
 '''
-Concatenates all of the focus feature values together using a ':'
+Concantenates values of a list into a string using a delimiter
+Example:
+if delimiter is ':'
+[1,2,3] -> '1:2:3'
+['a',2,'x'] -> 'a:2:x'
+'''
+def concatListToString(lst, delimiter):
+    listString = ""
+    for i in range(0, len(lst)):
+        if(i == (len(lst)-1)):
+            listString = listString + str(lst[i])
+        else:
+            listString = listString + str(lst[i]) + delimiter
+    
+    return listString
+
+'''
+Concatenates all of the focus feature values together into a string
 '''
 def getFocusFeatureValues(selectedFocusFeature, selectedFocusFeatureValues):
     allValues = ""
-    for i in range(0, len(selectedFocusFeature['Responses'])):
-        if(i == len(selectedFocusFeature['Responses'])-1):
-            allValues = allValues + str(selectedFocusFeature['Responses'][i]['Code'])
-        else:
-            allValues = allValues + str(selectedFocusFeature['Responses'][i]['Code']) + ":"          
     selectedValues = ""
-    for i in range(0, len(selectedFocusFeatureValues)):
-        if(i == len(selectedFocusFeatureValues)-1):
-            selectedValues = selectedValues + str(selectedFocusFeatureValues[i])
-        else:
-            selectedValues = selectedValues + str(selectedFocusFeatureValues[i]) + ":"
+    responseCodes = []
+
+    for response in selectedFocusFeature['Responses']:
+        responseCodes.append(response['Code'])
+
+    allValues = concatListToString(responseCodes, ':')
+    selectedValues = concatListToString(selectedFocusFeatureValues, ':')
 
     return allValues, selectedValues
   
 '''
 Finds the feature and displays its responses.
+
+If the feature being searched is the one that will be focused on for Z-Test between
+two samples, it will also display all of the proportions, frequencies and total for each value of that 
+feature
 '''
 def findFeature(entryFeat, listFeat, dataset, *args):
         # Here is how to get the value from entryFeatA
@@ -175,6 +267,7 @@ def findFeature(entryFeat, listFeat, dataset, *args):
         print "Entered feature code: " + featCode
         arrTempItems = []
         found = False
+        hasFocusFeature = False
         #Get proper list of features from initial variable description
         for feature in features:
             if feature['Code'] == featCode:
@@ -184,6 +277,7 @@ def findFeature(entryFeat, listFeat, dataset, *args):
                         dataset['Feature'] = copy.deepcopy(feature)
                     if arg == "Focus_Feature":
                         dataset['Focus Feature'] = copy.deepcopy(feature)
+                        hasFocusFeature = True
                 for response in feature['Responses']:
                     tempResp = response['Code'] + " - " + response['Description']
                     arrTempItems.append(tempResp)
@@ -191,9 +285,71 @@ def findFeature(entryFeat, listFeat, dataset, *args):
         if not found:
             tkMessageBox.showerror("Error: Feature not found", "Feature not found in Variable Descriptor. Try again.")
 
+        #Getting the proportions and frequencies of each value (including invalid values) in the focus feature
+        if hasFocusFeature == True:
+            arrTempItems=[]
+            dataset['ColumnData']=[]
+            for record in dataset['Data']:
+                dataset['ColumnData'].append(record[featCode])
+            c = Counter(dataset['ColumnData']) #Counts the number of occurrences of each value of the focus feature
+            
+            countN = len(dataset['ColumnData'])#N is the size of the dataset
+            countn = 0 #n is the total number of values where their group is not -1
+
+            notInGroupNega1 = []#List that keeps track of the values whose group is not -1
+            presentInData = []#List of values that occurred at least once in the data
+
+            for response in dataset['Focus Feature']['Responses']:
+                for val in c:
+                    if val == response['Code']:
+                        presentInData.append(val)
+                        if response['Group'] != '-1':
+                            notInGroupNega1.append(val)
+                            countn = countn + int(c[val])
+                        break
+            '''
+            reminderN = "N = Total no. of records"
+            remindern = "n = Total no. of records where Group is not -1\n"
+            header = "Freq | p/N | p/n | Group | Code | Description"
+            
+            arrTempItems.append(reminderN)
+            arrTempItems.append(remindern)
+            arrTempItems.append(header)
+            '''
+            for response in dataset['Focus Feature']['Responses']:
+                countP = 0
+                print 'Value: ' + response['Code']
+                print 'Frequency: ' + str(countP)
+                print 'n:' + str(countn)
+                print 'N:' + str(countN)
+
+                if response['Code'] in presentInData: #If the value has occurred in the data
+                    countP = int(c[response['Code']])
+                
+                proportionOverN = round(countP/float(countN) * 100.0 ,2)
+                proportionOvern = round(countP/float(countn) * 100.0, 2)
+
+                if response['Code'] not in notInGroupNega1: #If the value is an invalid value or its group/class is -1
+                    proportionOvern = proportionOvern * 0
+
+                tempResp = str(countP) + " | " + str(proportionOverN) + "%(N) | " + str(proportionOvern) + "%(n) | "
+                isValidResponse = False
+                for val in c:
+                    if val == response['Code']:
+                        isValidResponse = True
+                        tempResp = tempResp + response['Group'] + " | " +  response['Code'] + " | " + response['Description']  
+                        break
+                if not isValidResponse:
+                    if response['Code'] not in presentInData:
+                        tempResp = tempResp + response['Group'] + " | " +  response['Code'] + " | " + response['Description']
+                    else:
+                        tempResp = tempResp +  "-1" + " | " + response['Code'] + " | " + "INVALID VALUE" 
+                arrTempItems.append(tempResp)
+                         
         listFeat.delete(0, END)
         for A in arrTempItems:
             listFeat.insert(END, A)
+        
 '''
 Splits an array retrieved from a listbox based on a delimiter, and appends to a new array
 which element of the split array given an index. The new array will be returned.
@@ -204,11 +360,13 @@ def parseListBoxValues(raw_arr, delimiter, index):
         temp = x.split(delimiter)
         proc_arr.append(temp[index])   
     return proc_arr
+
 '''
-Gets frequency and proportion of a dataset based on a feature and the values selected
-for that feature.
+Selects the values of the focus feature
+and calculates the proportion of those values
+and the total
 '''
-def getDatasetFreqAndProp(evt, dataset, focusFeat, label):
+def setFocusFeatureValues(evt, dataset, focusFeat, label):
     datasets = []
     allValues = []
     selectedValues = []
@@ -217,19 +375,26 @@ def getDatasetFreqAndProp(evt, dataset, focusFeat, label):
     tempAV = listbox.get(0,END)
     tempSV = [listbox.get(i) for i in listbox.curselection()]
     
-    allValues = parseListBoxValues(tempAV, " - ", 0)
-    selectedValues = parseListBoxValues(tempSV, " - ", 0)
+    allValuesRaw = parseListBoxValues(tempAV, " | ", 4)
+    selectedValues = parseListBoxValues(tempSV, " | ", 4)
+    
+    for val in allValuesRaw:
+        for response in dataset['Focus Feature']['Responses']:
+            if response['Code'] == val and response['Group'] != '-1':
+                allValues.append(val)
+                break
+    
+    print str(allValues)
 
     dataset['Focus Feature']['All Values'] = allValues
     dataset['Focus Feature']['Selected Values'] = selectedValues
-
-    dataset['ColumnData'] = []
-    for record in dataset['Data']:
-        dataset['ColumnData'].append(record[focusFeat])
-
+    
     datasets.append(dataset)
     svs.getTotalsAndProportions(datasets,allValues, selectedValues)
-    label.configure(text = "Frequency: " + str(datasets[0]['Proportion']) + " , Proportion: " + str(round(datasets[0]['ProportionPercent']*100,2)) + "%")
+    label.configure(text = "Frequency: " + str(datasets[0]['Proportion']) + " , Proportion: " + str(round(datasets[0]['ProportionPercent']*100,2)) + "%" + ", Total: " + str(datasets[0]['Total']))
+
+    if(set(allValues) == set(selectedValues)):
+        tkMessageBox.showwarning("Z-Test Warning", "WARNING: You selected all of the valid values of " + dataset['Focus Feature']['Code'] + " (those that are not in group -1). Z-Test will not work if all valid values are selected.")
 
 '''
 Verifies if the focus features and their selected values for datasets 1 and 2 are the same.
@@ -272,10 +437,13 @@ def selectDatasetValues(evt, dataset, populationDataset, labelFeatCount):
 
     labelFeatCount.configure(text="n: " + str(datasetCount))
 
+'''
+Saves the dataset as a .csv file
+'''
 def saveDatasetFile(dataset):
     fileName = makeFileName(dataset)
     writeCSVDict(fileName, dataset['Data'])
-    tkMessageBox.showinfo("Dataset saved", "Dataset saved as " + fileName)
+    return fileName
 
 
 class OOTO_Miner:
@@ -297,7 +465,7 @@ class OOTO_Miner:
         self.style.map('.',background=
             [('selected', _compcolor), ('active',_ana2color)])
 
-        top.geometry("1000x600+522+139")
+        top.geometry("1000x700+522+139")
         top.title("OOTO Miner")
         top.configure(background="#d9d9d9")
         top.configure(highlightbackground="#d9d9d9")
@@ -307,15 +475,17 @@ class OOTO_Miner:
         self.Tabs.place(relx=0.0, rely=0.0, relheight=1.0, relwidth=1.01)
         self.Tabs.configure(width=604)
         self.Tabs.configure(takefocus="")
-        self.Tabs_t1 = ttk.Frame(self.Tabs)
-        self.Tabs.add(self.Tabs_t1, padding=3)
-        self.Tabs.tab(0, text="Miner", underline="-1", )
-        self.Tabs_t3 = ttk.Frame(self.Tabs)
-        self.Tabs.add(self.Tabs_t3, padding=3)
-        self.Tabs.tab(1, text="Prober", underline="-1", )
         self.Tabs_t2 = ttk.Frame(self.Tabs)
         self.Tabs.add(self.Tabs_t2, padding=3)
-        self.Tabs.tab(2, text="Variable Descriptor", underline="-1", )
+        self.Tabs.tab(0, text="Start", underline="-1", )
+        self.Tabs_t3 = ttk.Frame(self.Tabs)
+        self.Tabs.add(self.Tabs_t3, padding=3)
+        self.Tabs.tab(1, text="Test", underline="-1", )
+        self.Tabs_t1 = ttk.Frame(self.Tabs)
+        self.Tabs.add(self.Tabs_t1, padding=3)
+        self.Tabs.tab(2, text="Miner", underline="-1", )
+
+
 
 
         self.menubar = Menu(top,font="TkMenuFont",bg=_bgcolor,fg=_fgcolor)
@@ -327,63 +497,6 @@ class OOTO_Miner:
         '''
         TAB 1 - TESTS
         '''
-        self.labelQueueCount = Label(self.Tabs_t1)
-        self.labelQueueCount.place(relx=0.64, rely=0.86, height=33, width=210)
-        self.labelQueueCount.configure(text='''Queue Count: 0''')
-
-        self.buttonTest = Button(self.Tabs_t1)
-        self.buttonTest.place(relx=0.877, rely=0.93, height=33, width=115)
-        self.buttonTest.configure(activebackground="#d9d9d9")
-        self.buttonTest.configure(activeforeground="#000000")
-        self.buttonTest.configure(background="#d9d9d9")
-        self.buttonTest.configure(disabledforeground="#a3a3a3")
-        self.buttonTest.configure(foreground="#000000")
-        self.buttonTest.configure(highlightbackground="#d9d9d9")
-        self.buttonTest.configure(highlightcolor="black")
-        self.buttonTest.configure(pady="0")
-        self.buttonTest.configure(text='''Test''')
-        self.buttonTest.configure(state='disabled')
-
-
-        self.buttonTestQueue = Button(self.Tabs_t1)
-        self.buttonTestQueue.place(relx=0.744, rely=0.93, height=33, width=115)
-        self.buttonTestQueue.configure(activebackground="#d9d9d9")
-        self.buttonTestQueue.configure(activeforeground="#000000")
-        self.buttonTestQueue.configure(background="#d9d9d9")
-        self.buttonTestQueue.configure(disabledforeground="#a3a3a3")
-        self.buttonTestQueue.configure(foreground="#000000")
-        self.buttonTestQueue.configure(highlightbackground="#d9d9d9")
-        self.buttonTestQueue.configure(highlightcolor="black")
-        self.buttonTestQueue.configure(pady="0")
-        self.buttonTestQueue.configure(text='''Test Queue''')
-        self.buttonTestQueue.configure(state='disabled')
-
-        self.buttonClearQueue = Button(self.Tabs_t1)
-        self.buttonClearQueue.place(relx=0.627, rely=0.93, height=33, width=115)
-        self.buttonClearQueue.configure(activebackground="#d9d9d9")
-        self.buttonClearQueue.configure(activeforeground="#000000")
-        self.buttonClearQueue.configure(background="#d9d9d9")
-        self.buttonClearQueue.configure(disabledforeground="#a3a3a3")
-        self.buttonClearQueue.configure(foreground="#000000")
-        self.buttonClearQueue.configure(highlightbackground="#d9d9d9")
-        self.buttonClearQueue.configure(highlightcolor="black")
-        self.buttonClearQueue.configure(pady="0")
-        self.buttonClearQueue.configure(text='''Clear Queue''')
-        self.buttonClearQueue.configure(state='disabled')
-
-        self.buttonQueue = Button(self.Tabs_t1)
-        self.buttonQueue.place(relx=0.51, rely=0.93, height=33, width=115)
-        self.buttonQueue.configure(activebackground="#d9d9d9")
-        self.buttonQueue.configure(activeforeground="#000000")
-        self.buttonQueue.configure(background="#d9d9d9")
-        self.buttonQueue.configure(disabledforeground="#a3a3a3")
-        self.buttonQueue.configure(foreground="#000000")
-        self.buttonQueue.configure(highlightbackground="#d9d9d9")
-        self.buttonQueue.configure(highlightcolor="black")
-        self.buttonQueue.configure(pady="0")
-        self.buttonQueue.configure(text='''Enqueue''')
-        self.buttonQueue.configure(state='disabled')
-
         '''
         CHANGES HERE!
         '''
@@ -448,7 +561,7 @@ class OOTO_Miner:
         self.buttonPopulation.configure(highlightbackground="#d9d9d9")
         self.buttonPopulation.configure(highlightcolor="black")
         self.buttonPopulation.configure(pady="0")
-        self.buttonPopulation.configure(text='''Upload Population''')
+        self.buttonPopulation.configure(text='''Upload''')
         self.buttonPopulation.configure(state='normal')
 
         self.labelFrameZTest = LabelFrame(self.Tabs_t1)
@@ -608,20 +721,6 @@ class OOTO_Miner:
         self.entryFocus.configure(width=184)
         self.entryFocus.configure(state='disabled')
 
-        '''
-        self.entryFocus.place(relx=0.51, rely=0.05, relheight=0.05
-                , relwidth=0.46)
-        self.entryFocus.configure(background="white")
-        self.entryFocus.configure(disabledforeground="#a3a3a3")
-        self.entryFocus.configure(font="TkFixedFont")
-        self.entryFocus.configure(foreground="#000000")
-        self.entryFocus.configure(highlightbackground="#d9d9d9")
-        self.entryFocus.configure(highlightcolor="black")
-        self.entryFocus.configure(insertbackground="black")
-        self.entryFocus.configure(selectbackground="#c4c4c4")
-        self.entryFocus.configure(selectforeground="black")
-        '''
-
         self.buttonSample = Button(self.labelFrameGenerateSamples)
         self.buttonSample.place(relx=0.51, rely=0.05, height=23, width=226)
         self.buttonSample.configure(activebackground="#d9d9d9")
@@ -778,19 +877,14 @@ class OOTO_Miner:
         self.buttonShowB.bind('<Button-1>', self.setFeatB)
         self.buttonSaveDatasets.bind('<Button-1>', self.saveDataset)
         self.buttonGetFeat.bind('<Button-1>', self.getFeat)
-        self.buttonTest.bind('<Button-1>', self.test)
-        self.buttonQueue.bind('<Button-1>', self.queue)
-        self.buttonClearQueue.bind('<Button-1>', self.clearQueue)
-        self.buttonTestQueue.bind('<Button-1>', self.testQueue)
+
         
 
         self.comboBoxTestType.bind('<<ComboboxSelected>>', self.setTest)
 
-        self.comboCriticalValue.bind('<<ComboboxSelected>>', self.getCriticalValue)
-
         self.listFeatA.bind('<<ListboxSelect>>', self.selectValuesDatasetA)
         self.listFeatB.bind('<<ListboxSelect>>', self.selectValuesDatasetB)
-        self.listAttributes.bind('<<ListboxSelect>>', self.selectFocusFeatureValues)
+        #self.listAttributes.bind('<<ListboxSelect>>', self.selectFocusFeatureValues)
 
 
 
@@ -803,7 +897,7 @@ class OOTO_Miner:
                                                 , relheight=0.19, relwidth=0.98)
         self.labelFrameVariableDescriptor.configure(relief=GROOVE)
         self.labelFrameVariableDescriptor.configure(foreground="black")
-        self.labelFrameVariableDescriptor.configure(text='''Variable Descriptor''')
+        self.labelFrameVariableDescriptor.configure(text='''Variable Description Generator''')
         self.labelFrameVariableDescriptor.configure(background="#d9d9d9")
         self.labelFrameVariableDescriptor.configure(width=980)
 
@@ -913,7 +1007,39 @@ class OOTO_Miner:
         self.labelInitialVarDesc.configure(background="#d9d9d9")
         self.labelInitialVarDesc.configure(disabledforeground="#a3a3a3")
         self.labelInitialVarDesc.configure(foreground="#000000")
-        self.labelInitialVarDesc.configure(text='''Upload Initial Variable Description:''')
+        self.labelInitialVarDesc.configure(text='''Variable Description:''')
+        self.labelInitialVarDesc.configure(width=172)
+
+        self.entryQueryPopulation = Entry(self.Tabs_t2)
+        self.entryQueryPopulation.place(relx=0.19, rely=0.35, relheight=0.04
+                                   , relwidth=0.64)
+        self.entryQueryPopulation.configure(background="white")
+        self.entryQueryPopulation.configure(disabledforeground="#a3a3a3")
+        self.entryQueryPopulation.configure(font="TkFixedFont")
+        self.entryQueryPopulation.configure(foreground="#000000")
+        self.entryQueryPopulation.configure(insertbackground="black")
+        self.entryQueryPopulation.configure(width=654)
+
+        self.buttonQueryPopulation = Button(self.Tabs_t2)
+        self.buttonQueryPopulation.place(relx=0.84, rely=0.35, height=23
+                                                 , width=146)
+        self.buttonQueryPopulation.configure(activebackground="#d9d9d9")
+        self.buttonQueryPopulation.configure(activeforeground="#000000")
+        self.buttonQueryPopulation.configure(background="#d9d9d9")
+        self.buttonQueryPopulation.configure(disabledforeground="#a3a3a3")
+        self.buttonQueryPopulation.configure(foreground="#000000")
+        self.buttonQueryPopulation.configure(highlightbackground="#d9d9d9")
+        self.buttonQueryPopulation.configure(highlightcolor="black")
+        self.buttonQueryPopulation.configure(pady="0")
+        self.buttonQueryPopulation.configure(text='''Upload Population''')
+        self.buttonQueryPopulation.configure(width=316)
+
+        self.labelInitialVarDesc = Label(self.Tabs_t2)
+        self.labelInitialVarDesc.place(relx=0.01, rely=0.3, height=26, width=250)
+        self.labelInitialVarDesc.configure(background="#d9d9d9")
+        self.labelInitialVarDesc.configure(disabledforeground="#a3a3a3")
+        self.labelInitialVarDesc.configure(foreground="#000000")
+        self.labelInitialVarDesc.configure(text='''Population Dataset:''')
         self.labelInitialVarDesc.configure(width=172)
 
 
@@ -932,33 +1058,8 @@ class OOTO_Miner:
         '''
         TAB 3 - QUERY
         '''
-
-        self.entryQueryPopulation = Entry(self.Tabs_t3)
-        self.entryQueryPopulation.place(relx=0.155, rely=0.02, relheight=0.04
-                                        , relwidth=0.51)
-        self.entryQueryPopulation.configure(background="white")
-        self.entryQueryPopulation.configure(disabledforeground="#a3a3a3")
-        self.entryQueryPopulation.configure(font="TkFixedFont")
-        self.entryQueryPopulation.configure(foreground="#000000")
-        self.entryQueryPopulation.configure(insertbackground="black")
-        self.entryQueryPopulation.configure(width=654)
-
-        self.buttonQueryPopulation = Button(self.Tabs_t3)
-        self.buttonQueryPopulation.place(relx=0.67, rely=0.02, height=23
-                                         , width=316)
-        self.buttonQueryPopulation.configure(activebackground="#d9d9d9")
-        self.buttonQueryPopulation.configure(activeforeground="#000000")
-        self.buttonQueryPopulation.configure(background="#d9d9d9")
-        self.buttonQueryPopulation.configure(disabledforeground="#a3a3a3")
-        self.buttonQueryPopulation.configure(foreground="#000000")
-        self.buttonQueryPopulation.configure(highlightbackground="#d9d9d9")
-        self.buttonQueryPopulation.configure(highlightcolor="black")
-        self.buttonQueryPopulation.configure(pady="0")
-        self.buttonQueryPopulation.configure(text='''Upload Population''')
-        self.buttonQueryPopulation.configure(width=316)
-
         self.labelFrameQueryDataA = LabelFrame(self.Tabs_t3)
-        self.labelFrameQueryDataA.place(relx=0.01, rely=0.07, relheight=0.88
+        self.labelFrameQueryDataA.place(relx=0.01, rely=0.07, relheight=0.7
                                         , relwidth=0.48)
         self.labelFrameQueryDataA.configure(relief=GROOVE)
         self.labelFrameQueryDataA.configure(foreground="black")
@@ -987,7 +1088,7 @@ class OOTO_Miner:
         self.buttonQuerySetDataA.configure(highlightbackground="#d9d9d9")
         self.buttonQuerySetDataA.configure(highlightcolor="black")
         self.buttonQuerySetDataA.configure(pady="0")
-        self.buttonQuerySetDataA.configure(text='''Set Data''')
+        self.buttonQuerySetDataA.configure(text='''Find Feature''')
         self.buttonQuerySetDataA.configure(width=96)
 
         self.listQuerySetDataA = Listbox(self.labelFrameQueryDataA)
@@ -1015,7 +1116,7 @@ class OOTO_Miner:
         self.buttonQueryAddFilterA.configure(highlightbackground="#d9d9d9")
         self.buttonQueryAddFilterA.configure(highlightcolor="black")
         self.buttonQueryAddFilterA.configure(pady="0")
-        self.buttonQueryAddFilterA.configure(text='''Add Filter''')
+        self.buttonQueryAddFilterA.configure(text='''Filter''')
         self.buttonQueryAddFilterA.configure(width=96)
 
         self.buttonQueryResetFilterA = Button(self.labelFrameQueryDataA)
@@ -1028,7 +1129,7 @@ class OOTO_Miner:
         self.buttonQueryResetFilterA.configure(highlightbackground="#d9d9d9")
         self.buttonQueryResetFilterA.configure(highlightcolor="black")
         self.buttonQueryResetFilterA.configure(pady="0")
-        self.buttonQueryResetFilterA.configure(text='''Reset Filters''')
+        self.buttonQueryResetFilterA.configure(text='''Reset Dataset''')
         self.buttonQueryResetFilterA.configure(width=96)
 
         self.labelQueryDataACount = Label(self.labelFrameQueryDataA)
@@ -1036,7 +1137,7 @@ class OOTO_Miner:
         self.labelQueryDataACount.configure(text='Count: ')
 
         self.entryQueryFeatureA = Entry(self.labelFrameQueryDataA)
-        self.entryQueryFeatureA.place(relx=0.02, rely=0.32, relheight=0.05
+        self.entryQueryFeatureA.place(relx=0.23, rely=0.32, relheight=0.05
                                       , relwidth=0.76)
         self.entryQueryFeatureA.configure(background="white")
         self.entryQueryFeatureA.configure(disabledforeground="#a3a3a3")
@@ -1046,7 +1147,7 @@ class OOTO_Miner:
         self.entryQueryFeatureA.configure(width=364)
 
         self.buttonQueryFeatureA = Button(self.labelFrameQueryDataA)
-        self.buttonQueryFeatureA.place(relx=0.79, rely=0.32, height=23, width=96)
+        self.buttonQueryFeatureA.place(relx=0.02, rely=0.32, height=23, width=96)
 
         self.buttonQueryFeatureA.configure(activebackground="#d9d9d9")
         self.buttonQueryFeatureA.configure(activeforeground="#000000")
@@ -1063,7 +1164,7 @@ class OOTO_Miner:
 
         self.listQueryDataA = Listbox(self.labelFrameQueryDataA)
         self.listQueryDataA.place(relx=0.02, rely=0.38, relheight=0.53
-                                       , relwidth=0.76)
+                                       , relwidth=0.97)
         self.listQueryDataA.configure(background="white")
         self.listQueryDataA.configure(disabledforeground="#a3a3a3")
         self.listQueryDataA.configure(font="TkFixedFont")
@@ -1081,11 +1182,11 @@ class OOTO_Miner:
         self.labelQueryDataA.configure(background="#d9d9d9")
         self.labelQueryDataA.configure(disabledforeground="#a3a3a3")
         self.labelQueryDataA.configure(foreground="#000000")
-        self.labelQueryDataA.configure(text='''Label''')
+        self.labelQueryDataA.configure(text='''NO DATA SELECTED''')
         self.labelQueryDataA.configure(width=462)
 
         self.labelFrameQueryDataB = LabelFrame(self.Tabs_t3)
-        self.labelFrameQueryDataB.place(relx=0.5, rely=0.07, relheight=0.88
+        self.labelFrameQueryDataB.place(relx=0.5, rely=0.07, relheight=0.7
                                         , relwidth=0.48)
         self.labelFrameQueryDataB.configure(relief=GROOVE)
         self.labelFrameQueryDataB.configure(foreground="black")
@@ -1114,7 +1215,7 @@ class OOTO_Miner:
         self.buttonQuerySetDataB.configure(highlightbackground="#d9d9d9")
         self.buttonQuerySetDataB.configure(highlightcolor="black")
         self.buttonQuerySetDataB.configure(pady="0")
-        self.buttonQuerySetDataB.configure(text='''Set Data''')
+        self.buttonQuerySetDataB.configure(text='''Find Feature''')
         self.buttonQuerySetDataB.configure(width=96)
 
         self.listQuerySetDataB = Listbox(self.labelFrameQueryDataB)
@@ -1142,7 +1243,7 @@ class OOTO_Miner:
         self.buttonQueryAddFilterB.configure(highlightbackground="#d9d9d9")
         self.buttonQueryAddFilterB.configure(highlightcolor="black")
         self.buttonQueryAddFilterB.configure(pady="0")
-        self.buttonQueryAddFilterB.configure(text='''Add Filter''')
+        self.buttonQueryAddFilterB.configure(text='''Filter''')
         self.buttonQueryAddFilterB.configure(width=96)
 
         self.buttonQueryResetFilterB = Button(self.labelFrameQueryDataB)
@@ -1155,14 +1256,14 @@ class OOTO_Miner:
         self.buttonQueryResetFilterB.configure(highlightbackground="#d9d9d9")
         self.buttonQueryResetFilterB.configure(highlightcolor="black")
         self.buttonQueryResetFilterB.configure(pady="0")
-        self.buttonQueryResetFilterB.configure(text='''Reset Filters''')
+        self.buttonQueryResetFilterB.configure(text='''Reset Dataset''')
 
         self.labelQueryDataBCount = Label(self.labelFrameQueryDataB)
         self.labelQueryDataBCount.place(relx=0.02, rely=0.25, height=23, width=96)
         self.labelQueryDataBCount.configure(text='Count: ')
 
         self.entryQueryFeatureB = Entry(self.labelFrameQueryDataB)
-        self.entryQueryFeatureB.place(relx=0.02, rely=0.32, relheight=0.05
+        self.entryQueryFeatureB.place(relx=0.23, rely=0.32, relheight=0.05
                                       , relwidth=0.76)
         self.entryQueryFeatureB.configure(background="white")
         self.entryQueryFeatureB.configure(disabledforeground="#a3a3a3")
@@ -1172,7 +1273,7 @@ class OOTO_Miner:
         self.entryQueryFeatureB.configure(width=364)
 
         self.buttonQueryFeatureB = Button(self.labelFrameQueryDataB)
-        self.buttonQueryFeatureB.place(relx=0.79, rely=0.32, height=23, width=96)
+        self.buttonQueryFeatureB.place(relx=0.02, rely=0.32, height=23, width=96)
 
         self.buttonQueryFeatureB.configure(activebackground="#d9d9d9")
         self.buttonQueryFeatureB.configure(activeforeground="#000000")
@@ -1187,7 +1288,7 @@ class OOTO_Miner:
 
         self.listQueryDataB = Listbox(self.labelFrameQueryDataB)
         self.listQueryDataB.place(relx=0.02, rely=0.38, relheight=0.53
-                                       , relwidth=0.76)
+                                       , relwidth=0.97)
         self.listQueryDataB.configure(background="white")
         self.listQueryDataB.configure(disabledforeground="#a3a3a3")
         self.listQueryDataB.configure(font="TkFixedFont")
@@ -1205,19 +1306,39 @@ class OOTO_Miner:
         self.labelQueryDataB.configure(background="#d9d9d9")
         self.labelQueryDataB.configure(disabledforeground="#a3a3a3")
         self.labelQueryDataB.configure(foreground="#000000")
-        self.labelQueryDataB.configure(text='''Label''')
+        self.labelQueryDataB.configure(text='''NO DATA SELECTED''')
         self.labelQueryDataB.configure(width=462)
 
-        self.labelQueryZTest = Label(self.Tabs_t3)
-        self.labelQueryZTest.place(relx=0.12, rely=0.95, height=26, width=862)
-        self.labelQueryZTest.configure(background="#d9d9d9")
+        global testTypes
+        testTypes = ["Sample vs Sample","Sample vs Population"]
+        self.comboQueryTest = ttk.Combobox(self.Tabs_t3)
+        self.comboQueryTest.place(relx=0.01, rely=0.02, height=23, width=316)
+        self.comboQueryTest.configure(exportselection="0")
+        self.comboQueryTest.configure(takefocus="")
+        self.comboQueryTest.configure(values=testTypes)
+        self.comboQueryTest.current(0)
+        self.comboQueryTest.configure(state="readonly")
+
+        self.labelFrameQueryZ = LabelFrame(self.Tabs_t3)
+        self.labelFrameQueryZ.place(relx=0.01, rely=0.78, relheight=0.1, relwidth=0.48)
+        self.labelFrameQueryZ.configure(relief=GROOVE)
+        self.labelFrameQueryZ.configure(foreground="black")
+        self.labelFrameQueryZ.configure(text='''Z-Test''')
+        self.labelFrameQueryZ.configure(background="#d9d9d9")
+        self.labelFrameQueryZ.configure(width=480)
+
+
+        self.labelQueryZTest = Label(self.labelFrameQueryZ)
+        self.labelQueryZTest.place(relx=0.47, rely=0.01, height=26, width=240)
+        # self.labelQueryZTest.configure(background="#d9d9d9")
         self.labelQueryZTest.configure(disabledforeground="#a3a3a3")
         self.labelQueryZTest.configure(foreground="#000000")
-        self.labelQueryZTest.configure(text='''Label''')
+        self.labelQueryZTest.configure(text='''NO DATA''')
         self.labelQueryZTest.configure(width=862)
 
-        self.buttonQueryZTest = Button(self.Tabs_t3)
-        self.buttonQueryZTest.place(relx=0.01, rely=0.95, height=23, width=106)
+        
+        self.buttonQueryZTest = Button(self.labelFrameQueryZ)
+        self.buttonQueryZTest.place(relx=0.01, rely=0.01, height=23, width=106)
         self.buttonQueryZTest.configure(activebackground="#d9d9d9")
         self.buttonQueryZTest.configure(activeforeground="#000000")
         self.buttonQueryZTest.configure(background="#d9d9d9")
@@ -1228,23 +1349,127 @@ class OOTO_Miner:
         self.buttonQueryZTest.configure(pady="0")
         self.buttonQueryZTest.configure(text='''Test''')
         self.buttonQueryZTest.configure(width=106)
+        
 
-        strarrQueryClass = ["-1"]
-        self.comboQueryClass = ttk.Combobox(self.Tabs_t3)
-        self.comboQueryClass.place(relx=0.18, rely=0.95, height=23, width=58)
-        self.comboQueryClass.configure(exportselection="0")
-        self.comboQueryClass.configure(takefocus="")
-        self.comboQueryClass.configure(values=strarrQueryClass)
-        #self.comboQueryClass.configure()
-        self.comboQueryClass.current(0)
 
-        strarrQueryCriticalValueA = ["0.80", "0.90", "0.95", "0.98", "0.99"]
-        self.comboQueryCriticalValueA = ttk.Combobox(self.Tabs_t3)
-        self.comboQueryCriticalValueA.place(relx=0.12, rely=0.95, height=23, width=58)
-        self.comboQueryCriticalValueA.configure(exportselection="0")
-        self.comboQueryCriticalValueA.configure(takefocus="")
-        self.comboQueryCriticalValueA.configure(values=strarrQueryCriticalValueA)
-        self.comboQueryCriticalValueA.current(0)
+        self.labelFrameQueryChi = LabelFrame(self.Tabs_t3)
+        self.labelFrameQueryChi.place(relx=0.5, rely=0.78, relheight=0.1
+                                    , relwidth=0.48)
+        self.labelFrameQueryChi.configure(relief=GROOVE)
+        self.labelFrameQueryChi.configure(foreground="black")
+        self.labelFrameQueryChi.configure(text='''Chi Test''')
+        self.labelFrameQueryChi.configure(background="#d9d9d9")
+        self.labelFrameQueryChi.configure(width=480)
+
+        global arrQueryCriticalValue
+        arrQueryCriticalValue = ["0.80", "0.90", "0.95", "0.98", "0.99"]
+
+        global arrQueryCriticalValueMapping
+        arrQueryCriticalValueMapping = {"0.80":1.28, "0.90":1.645, "0.95":1.96, "0.98":2.33, "0.99":2.58}
+  
+        self.comboQueryCriticalValue = ttk.Combobox(self.labelFrameQueryZ)
+        self.comboQueryCriticalValue.place(relx=0.24, rely=0.01, height=23, width=106)
+        self.comboQueryCriticalValue.configure(exportselection="0")
+        self.comboQueryCriticalValue.configure(takefocus="")
+        self.comboQueryCriticalValue.configure(values=arrQueryCriticalValue)
+        self.comboQueryCriticalValue.set(arrQueryCriticalValue[0])
+
+        self.labelQueueCount = Label(self.Tabs_t3)
+        self.labelQueueCount.place(relx=0.87, rely=0.01, height=23, width=106)
+        self.labelQueueCount.configure(text='''Queue Count: 0''')
+        '''
+        self.buttonTest = Button(self.labelFrameQueryChi)
+        self.buttonTest.place(relx=0.01, rely=0.01, height=23, width=106)
+        self.buttonTest.configure(activebackground="#d9d9d9")
+        self.buttonTest.configure(activeforeground="#000000")
+        self.buttonTest.configure(background="#d9d9d9")
+        self.buttonTest.configure(disabledforeground="#a3a3a3")
+        self.buttonTest.configure(foreground="#000000")
+        self.buttonTest.configure(highlightbackground="#d9d9d9")
+        self.buttonTest.configure(highlightcolor="black")
+        self.buttonTest.configure(pady="0")
+        self.buttonTest.configure(text=''''Test'''')
+        '''
+        # self.buttonTest.configure(state='disabled')
+
+        self.buttonTestQueue = Button(self.labelFrameQueryChi)
+        self.buttonTestQueue.place(relx=0.24, rely=0.01, height=23, width=106)
+        self.buttonTestQueue.configure(activebackground="#d9d9d9")
+        self.buttonTestQueue.configure(activeforeground="#000000")
+        self.buttonTestQueue.configure(background="#d9d9d9")
+        self.buttonTestQueue.configure(disabledforeground="#a3a3a3")
+        self.buttonTestQueue.configure(foreground="#000000")
+        self.buttonTestQueue.configure(highlightbackground="#d9d9d9")
+        self.buttonTestQueue.configure(highlightcolor="black")
+        self.buttonTestQueue.configure(pady="0")
+        self.buttonTestQueue.configure(text='''Test Queue''')
+        # self.buttonTestQueue.configure(state='disabled')
+
+        self.buttonClearQueue = Button(self.labelFrameQueryChi)
+        self.buttonClearQueue.place(relx=0.47, rely=0.01, height=23, width=106)
+        self.buttonClearQueue.configure(activebackground="#d9d9d9")
+        self.buttonClearQueue.configure(activeforeground="#000000")
+        self.buttonClearQueue.configure(background="#d9d9d9")
+        self.buttonClearQueue.configure(disabledforeground="#a3a3a3")
+        self.buttonClearQueue.configure(foreground="#000000")
+        self.buttonClearQueue.configure(highlightbackground="#d9d9d9")
+        self.buttonClearQueue.configure(highlightcolor="black")
+        self.buttonClearQueue.configure(pady="0")
+        self.buttonClearQueue.configure(text='''Clear Queue''')
+        # self.buttonClearQueue.configure(state='disabled')
+
+        self.buttonQueue = Button(self.labelFrameQueryChi)
+        self.buttonQueue.place(relx=0.7, rely=0.01, height=23, width=106)
+        self.buttonQueue.configure(activebackground="#d9d9d9")
+        self.buttonQueue.configure(activeforeground="#000000")
+        self.buttonQueue.configure(background="#d9d9d9")
+        self.buttonQueue.configure(disabledforeground="#a3a3a3")
+        self.buttonQueue.configure(foreground="#000000")
+        self.buttonQueue.configure(highlightbackground="#d9d9d9")
+        self.buttonQueue.configure(highlightcolor="black")
+        self.buttonQueue.configure(pady="0")
+        self.buttonQueue.configure(text='''Enqueue''')
+        # self.buttonQueue.configure(state='disabled')
+
+        self.labelFrameQuerySvP = LabelFrame(self.Tabs_t3)
+        self.labelFrameQuerySvP.place(relx=0.01, rely=0.88, relheight=0.1
+                                    , relwidth=0.48)
+        self.labelFrameQuerySvP.configure(relief=GROOVE)
+        self.labelFrameQuerySvP.configure(foreground="black")
+        self.labelFrameQuerySvP.configure(text='''Z-Test Sample Vs Population''')
+        self.labelFrameQuerySvP.configure(background="#d9d9d9")
+        self.labelFrameQuerySvP.configure(width=480)
+
+        self.comboQueryCriticalValueSvP = ttk.Combobox(self.labelFrameQuerySvP)
+        self.comboQueryCriticalValueSvP.place(relx=0.24, rely=0.01, height=23, width=106)
+        self.comboQueryCriticalValueSvP.configure(exportselection="0")
+        self.comboQueryCriticalValueSvP.configure(takefocus="")
+        self.comboQueryCriticalValueSvP.configure(values=arrQueryCriticalValue)
+        self.comboQueryCriticalValueSvP.set(arrQueryCriticalValue[0])
+        self.comboQueryCriticalValueSvP.configure(state="disabled")
+
+        self.labelQueryZTestSvP = Label(self.labelFrameQuerySvP)
+        self.labelQueryZTestSvP.place(relx=0.47, rely=0.01, height=26, width=240)
+        # self.labelQueryZTest.configure(background="#d9d9d9")
+        self.labelQueryZTestSvP.configure(disabledforeground="#a3a3a3")
+        self.labelQueryZTestSvP.configure(foreground="#000000")
+        self.labelQueryZTestSvP.configure(text='''NO DATA''')
+        self.labelQueryZTestSvP.configure(width=862)
+        self.labelQueryZTestSvP.configure(state="disabled")
+
+        self.buttonQueryZTestSvP = Button(self.labelFrameQuerySvP)
+        self.buttonQueryZTestSvP.place(relx=0.01, rely=0.01, height=23, width=106)
+        self.buttonQueryZTestSvP.configure(activebackground="#d9d9d9")
+        self.buttonQueryZTestSvP.configure(activeforeground="#000000")
+        self.buttonQueryZTestSvP.configure(background="#d9d9d9")
+        self.buttonQueryZTestSvP.configure(disabledforeground="#a3a3a3")
+        self.buttonQueryZTestSvP.configure(foreground="#000000")
+        self.buttonQueryZTestSvP.configure(highlightbackground="#d9d9d9")
+        self.buttonQueryZTestSvP.configure(highlightcolor="black")
+        self.buttonQueryZTestSvP.configure(pady="0")
+        self.buttonQueryZTestSvP.configure(text='''Test''')
+        self.buttonQueryZTestSvP.configure(width=106)
+        self.buttonQueryZTestSvP.configure(state="disabled")
 
         '''
         BINDING FOR QUERY TAB
@@ -1258,25 +1483,38 @@ class OOTO_Miner:
         self.buttonQueryFeatureA.bind('<Button-1>', self.querySetFeatureA)
         self.buttonQueryFeatureB.bind('<Button-1>', self.querySetFeatureB)
         self.buttonQueryZTest.bind('<Button-1>', self.queryZTest)
+        self.buttonQueryZTestSvP.bind('<Button-1>', self.querySVP)
+
+        self.buttonQueue.bind('<Button-1>', self.queue)
+        self.buttonClearQueue.bind('<Button-1>', self.clearQueue)
+        self.buttonTestQueue.bind('<Button-1>', self.testQueue)
+
+        
+        self.buttonQueryResetFilterA.bind('<Button-1>', self.queryResetDatasetA)
+        self.buttonQueryResetFilterB.bind('<Button-1>', self.queryResetDatasetB)
+        
+
 
         self.listQuerySetDataA.bind('<<ListboxSelect>>', self.querySelectDataValuesA)
         self.listQuerySetDataB.bind('<<ListboxSelect>>', self.querySelectDataValuesB)
 
-        self.listQueryDataA.bind('<<ListboxSelect>>', self.queryGetFrequencyAndProportionA)
-        self.listQueryDataB.bind('<<ListboxSelect>>', self.queryGetFrequencyAndProportionB)
+        
+        self.listQueryDataA.bind('<<ListboxSelect>>', self.setFocusFeatureValuesA)
+        self.listQueryDataB.bind('<<ListboxSelect>>', self.setFocusFeatureValuesB)
+        self.comboQueryTest.bind('<<ComboboxSelected>>', self.querySetType)
 
-        #######################################3
+        
+
+        #######################################
 
         global testType
-        testType = ''
+        testType = self.comboQueryTest.get()
         global sampleFeature
         global selectedFocusFeature
         global allValues
         global selectedFocusFeatureValues 
 
         global populationDir
-        global Za
-        Za = 1.27
         populationDir = ""
         self.populationDataset = []
         self.datasetA = {'Data':[], 'Filter Features':[]}
@@ -1285,14 +1523,15 @@ class OOTO_Miner:
         global tests
         tests = []
 
-        self.labelFeatACount.configure(text="Dataset Count: " + str(len(self.datasetA['Data'])))
-        self.labelFeatBCount.configure(text="Dataset Count: " + str(len(self.datasetB['Data']))) 
+        self.labelQueryDataACount.configure(text="n: " + str(len(self.datasetA['Data'])))
+        self.labelQueryDataBCount.configure(text="n: " + str(len(self.datasetB['Data']))) 
 
         
 
     '''
     Functions to be called by the bound commands
     '''
+    
     #Adds test to the queue
     def addToQueue(self, testType, **params):
         global tests
@@ -1324,7 +1563,7 @@ class OOTO_Miner:
     def makeInitialVarDesc(self):
         varFileDir = self.entryVariableFile.get()
         valFileDir = self.entryValuesFile.get()
-        print 'Make the Initial Variable Descriptor! (WIP)'
+        tkMessageBox.showinfo("Work in progress",'Make the Initial Variable Descriptor! (WIP)')
     
     def getVariableFile(self):
         varFileDir = askopenfilename(title = "Select variable file",filetypes = (("txt files","*.txt"),("all files","*.*")))
@@ -1348,14 +1587,14 @@ class OOTO_Miner:
     def setPopulation(self, evt):
         global populationDir
         populationDir = askopenfilename(title = "Select file",filetypes = (("csv files","*.csv"),("all files","*.*")))
-        self.entryPopulation.delete(0, END)
-        self.entryPopulation.insert(0, populationDir)
 
         self.entryQueryPopulation.delete(0,END)
         self.entryQueryPopulation.insert(0,populationDir)
 
         self.buttonPopulation.configure(state='normal')
         self.populationDataset = readCSVDict(populationDir)
+        self.datasetA['Data']=[]
+        self.datasetB['Data']=[]
 
         if(len(list(self.populationDataset)) > 0):
             tkMessageBox.showinfo("Population set", "Population dataset uploaded")
@@ -1363,14 +1602,18 @@ class OOTO_Miner:
             for record in self.populationDataset:
                 self.datasetA['Data'].append(record)
                 self.datasetB['Data'].append(record)
-            print len(self.datasetA['Data'])
+            self.labelQueryDataACount.configure(text="n: " + str(len(self.datasetA['Data'])) )
+            self.labelQueryDataBCount.configure(text="n: " + str(len(self.datasetB['Data'])) )
         else:
             tkMessageBox.showerror("Upload error", "Error uploading population dataset. Please try again.")
     
+    '''
+    Shows frequency and proportions for the values selected within dataset A
+    '''
     def selectValuesDatasetA(self, evt):
         selectDatasetValues(evt, self.datasetA, self.populationDataset, self.labelFeatACount)
 
-        
+    '''
     def selectFocusFeatureValues(self, evt):
         global selectedFocusFeatureValues
         listbox = evt.widget
@@ -1379,6 +1622,7 @@ class OOTO_Miner:
         for sv in selectedValues:
             valueArr = sv.split(" - ")
             selectedFocusFeatureValues.append(valueArr[0])
+    '''
         
 
     def selectValuesDatasetB(self, evt):
@@ -1451,112 +1695,49 @@ class OOTO_Miner:
         for C in arrTempItemsC:
             self.listAttributes.insert(END, C)
 
-    
-
-    
-    #Do regular test based on what is inputted in the UI
-    def test(self, evt):
-        datasets = []
-        fileNames = []
-        datasets.append(self.datasetA)
-        datasets.append(self.datasetB)
-        global selectedFocusFeature
-        global sampleFeature
-        global Za
-        global allValues
-        global selectedFocusFeatureValues
-        global populationDir
-        global features
-        if(testType == 'Sample vs Population'):
-            for dataset in datasets:
-                convertDatasetValuesToGroups(dataset, features)
-                for feature in features:
-                    allValues, selectedValues = getFocusFeatureValues(feature, ['b'])
-
-
-            
-
-            
-            '''
-            allValues, selectedValues = getFocusFeatureValues(selectedFocusFeature, selectedFocusFeatureValues)
-
-            saveFile = svp.sampleVsPopulation(populationDir, sampleFeature, selectedFocusFeature['Code'], allValues, selectedValues, Za)
-
-            tkMessageBox.showinfo(testType, testType + " completed. Results file saved as " + saveFile)
-            '''
-        elif(testType == 'Sample vs Sample'):
-            allValues, selectedValues = getFocusFeatureValues(selectedFocusFeature, selectedFocusFeatureValues)
-            for i in range(0, len(datasets)):
-                fileName = makeFileName(datasets[i])
-                writeCSVDict(fileName, datasets[i]['Data'])
-                fileNames.append(fileName)
-            saveFile,z95,z99 = svs.sampleVsSample(fileNames, selectedFocusFeature['Code'], allValues, selectedValues)
-            removeFiles(fileNames)
-            tkMessageBox.showinfo(testType, testType + " completed. Results file saved as " + saveFile)
-        elif(testType == 'Chi-test'):
-            i = 0
-            for dataset in datasets:
-                convertDatasetValuesToGroups(dataset, features)
-                fileName = makeFileName(dataset)
-                i = i + 1
-                writeCSVDict(fileName, dataset['Data'])
-                fileNames.append(fileName)
-            if not (os.path.isfile("Updated-Variables.csv")):
-                makeUpdatedVariables(features, "Updated-Variables.csv")
-            saveFile = ct.chiTest(fileNames)
-            removeFiles(fileNames)
-            tkMessageBox.showinfo(testType, testType + " completed. Results file saved as " + saveFile)
-        else:
-            tkMessageBox.showerror("Error: No test selected", "Please select a test")
-
-    #Function that happens when the 'Enqueue' button is pressed
+    '''
+    Function that happens when the 'Enqueue' button is pressed.
+    Adds Chi-Test to the queue
+    '''
     def queue(self, evt):
         datasets = []
         datasets.append(self.datasetA)
         datasets.append(self.datasetB)
         global testType
-        if(testType == 'Sample vs Population'):
-            allValues, selectedValues = getFocusFeatureValues(selectedFocusFeature, selectedFocusFeatureValues)
-            self.addToQueue(testType, popDirArg = populationDir, sampleFeatArg = sampleFeature, selectedFeatArg = selectedFocusFeature['Code'], allValArg = allValues, selValArg = selectedValues, zArg = Za)
-        elif(testType == 'Sample vs Sample'):
-            allValues, selectedValues = getFocusFeatureValues(selectedFocusFeature, selectedFocusFeatureValues)
-            self.addToQueue(testType, datasetArgs = datasets, selectedFeatArg = selectedFocusFeature['Code'], allValArg = allValues, selValArg = selectedValues)
-        elif(testType == 'Chi-test'):
+        if(testType == 'Sample vs Sample'):
             self.addToQueue(testType, datasetArgs=datasets)
         else:
-            tkMessageBox.showerror("Error: No test selected", "Please select a test")
-
-    #Conducts all of the tests in the queue. 
+            tkMessageBox.showerror("Error: Sample vs Sample not selected", "Please select Sample vs Sample test")
+    
+    '''
+    Conducts all of the chi-tests in the queue. 
+    '''
     def testQueue(self, evt):
         if len(tests) == 0:
             tkMessageBox.showerror("Empty queue", "Queue is empty. Please queue a test.")
             return -1
+        self.listQueryDataB.delete(0,END)
+        i = 0
         for test in tests:
             fileNames = []
-            if(test['Type'] == 'Sample vs Population'):
-                svp.sampleVsPopulation(test['Population Path'], test['Sample Feature'], test['Selected Feature'], test['SF All Values'], test['SF Selected Values'], test['Z Critical Value'])
-            elif(test['Type'] == 'Sample vs Sample'):
-                for i in range(0, len(test['Datasets'])):
-                    fileName = makeFileName(test['Datasets'][i])
-                    writeCSVDict(fileName, test['Datasets'][i]['Data'])
-                    fileNames.append(fileName)
-                svs.sampleVsSample(fileNames, test['Selected Feature'], test['SF All Values'], test['SF Selected Values'])
-                removeFiles(fileNames)
-            elif(test['Type'] == 'Chi-test'):
-                i = 0
+            if(test['Type'] == 'Sample vs Sample'):
+                i += 1
                 for dataset in test['Datasets']:
                     convertDatasetValuesToGroups(dataset, features)
                     fileName = makeFileName(dataset)
-                    i = i + 1
                     writeCSVDict(fileName, dataset['Data'])
                     fileNames.append(fileName)
                 if not (os.path.isfile("Updated-Variables.csv")):
                     makeUpdatedVariables(features, "Updated-Variables.csv")
-                ct.chiTest(fileNames)
+                saveFile = ct.chiTest(fileNames)
+                tempString = "Chi-test complete. " + str(i) + "/" + str(len(tests)) + "complete."
+                self.listQueryDataB.insert(END, tempString)
                 removeFiles(fileNames)
         tkMessageBox.showinfo("Test Queue Complete", "All of the tests in the queue have been completed.")
 
-
+    '''
+    Clears the tests in the queue.
+    '''
     def clearQueue(self, evt):
         tests[:] = []
         self.labelQueueCount.configure(text='Queue Count: ' + str(len(tests)))
@@ -1580,7 +1761,6 @@ class OOTO_Miner:
         self.listAttributes.delete(0,END)
 
         
-            
     # SET THE TEST WHEN SELECTED IN COMBOBOX
     def setTest(self, evt):
         global testType
@@ -1612,7 +1792,7 @@ class OOTO_Miner:
         self.entryVariableFile.delete(0, END)
         self.entryPopulation.configure(state='normal')
         self.buttonPopulation.configure(state='normal')
-        self.buttonTest.configure(state='normal')
+        #self.buttonTest.configure(state='normal')
         self.buttonTestQueue.configure(state='normal')
         self.buttonPopulation.configure(state='normal')
         self.buttonClearQueue.configure(state='normal')
@@ -1645,147 +1825,286 @@ class OOTO_Miner:
             self.entryFeatB.configure(state='disabled')
             self.buttonShowA.configure(state='disabled')
             self.buttonShowB.configure(state='disabled')
-    '''
-    CHANGES HERE!
-    '''
-    def getCriticalValue(self, evt):
-        global criticalValue
-        global Za
-        criticalValue = self.comboCriticalValue.get()
-        if criticalValue == "0.80":
-            print 1.27
-            Za = 1.27
-        elif criticalValue == "0.90":
-            print 1.645
-            Za = 1.645
-        elif criticalValue == "0.95":
-            print 1.645
-            Za = 1.96
-        elif criticalValue == "0.98":
-            print 2.33
-            Za = 2.33
-        elif criticalValue == "0.99":
-            print 2.58
-            Za = 2.58
-        else:
-            print -1
-            Za = -1
 
     '''
     QUERY FUNCTIONS
     '''
 
-    def queryGetFrequencyAndProportionA(self, evt):
-        print 'Getting freq and prop A'
-        getDatasetFreqAndProp(evt, self.datasetA, self.entryQueryFeatureA.get(), self.labelQueryDataA)
+    def setFocusFeatureValuesA(self, evt):
+        setFocusFeatureValues(evt, self.datasetA, self.entryQueryFeatureA.get(), self.labelQueryDataA)
     
-    def queryGetFrequencyAndProportionB(self, evt):
-        print 'Getting freq and prop B'
-        getDatasetFreqAndProp(evt, self.datasetB, self.entryQueryFeatureB.get(), self.labelQueryDataB)
-
+    def setFocusFeatureValuesB(self, evt):
+        setFocusFeatureValues(evt, self.datasetB, self.entryQueryFeatureB.get(), self.labelQueryDataB)
 
     def querySetPopulation(self, evt):
         self.setPopulation(evt)
 
     def querySetDataA(self, evt):
-        findFeature(self.entryQuerySetDataA.get(), self.listQuerySetDataA,self.datasetA,"Dataset_Feature")
-
+        try:
+            findFeature(self.entryQuerySetDataA.get(), self.listQuerySetDataA,self.datasetA,"Dataset_Feature")
+        except NameError:
+            tkMessageBox.showerror("Features Error", "Features not found. Please upload your variable description file.")
+    
     def querySetDataB(self, evt):
-        findFeature(self.entryQuerySetDataB.get(), self.listQuerySetDataB, self.datasetB,"Dataset_Feature")
+        try:
+            findFeature(self.entryQuerySetDataB.get(), self.listQuerySetDataB, self.datasetB,"Dataset_Feature")
+        except NameError:
+            tkMessageBox.showerror("Features Error", "Features not found. Please upload your variable description file.")
 
+    def queryResetDatasetA(self,evt):
+        self.datasetA = resetDataset(self.datasetA)
+        self.entryQuerySetDataA.configure(text='')
+        self.entryQueryFeatureA.configure(text='')
+        self.labelFrameQueryDataA.configure(text="Dataset A")
+        self.labelQueryDataACount.configure(text="n: " + str(len(self.datasetA['Data'])))
+        self.labelQueryDataA.configure(text="")
+        self.listQueryDataA.delete(0,END)
+        self.listQuerySetDataA.delete(0,END)
+
+    
+    def queryResetDatasetB(self,evt):
+        self.datasetB = resetDataset(self.datasetB)
+        self.entryQuerySetDataB.configure(text='')
+        self.entryQueryFeatureB.configure(text='')
+        self.labelFrameQueryDataB.configure(text="Dataset B")
+        self.labelQueryDataBCount.configure(text="n: " + str(len(self.datasetB['Data'])))
+        self.labelQueryDataB.configure(text="")
+        self.listQueryDataB.delete(0,END)
+        self.listQuerySetDataB.delete(0,END)
     
     def querySelectDataValuesA(self, evt):
         selectDatasetValues(evt, self.datasetA, self.populationDataset, self.labelQueryDataACount)
-        print 'Selecting values for Data A'
     
     def querySelectDataValuesB(self, evt):
         selectDatasetValues(evt, self.datasetB, self.populationDataset, self.labelQueryDataBCount)
-        print 'Selecting values for Data B'
 
     def queryAddFilterA(self, evt):
-        # print 'Saving Data A'
-        # saveDatasetFile(self.datasetA)
-        print "ADD FILTER"
+
+        #If the dataset is empty, do not push through with filtering.
+        if len(self.datasetA['Data']) <= 0:
+            tkMessageBox.showerror("Dataset error", "Dataset is empty. Please check if you uploaded your population dataset")
+            return -1
+
+        #Filter the data given the feature inputted and its values selected
         new_data = filterDataset(self.datasetA, self.datasetA['Feature'], self.datasetA['Feature']['Selected Responses'])
+        
+        #Add the feature to the dataset's filtered features
         self.datasetA['Filter Features'].append(self.datasetA['Feature'])
+        
+        #Assign the new set of filtered data
         self.datasetA['Data'] = new_data
 
-        queryStrFilterA = ''
+        if(queryType == 'Sample vs Sample'):
+            queryStrFilterA = 'Dataset A'
+        else:
+            queryStrFilterA = 'Population'
 
+        #Write the breadcrumb trail of the features and values the dataset was filtered by
         for i in range(0, len(self.datasetA['Filter Features'])):
-            if i == 0:
-                queryStrFilterA = queryStrFilterA + self.datasetA['Filter Features'][i]['Code']
-            else:
-                queryStrFilterA = queryStrFilterA + "->" + self.datasetA['Filter Features'][i]['Code']
-
-        # Concat the Filter String Here
+            queryStrFilterA = queryStrFilterA + "->" + self.datasetA['Filter Features'][i]['Code']
+            for j in range(0,len(self.datasetA['Filter Features'][i]['Selected Responses'])):
+                if j == 0:
+                    queryStrFilterA = queryStrFilterA + "("
+                queryStrFilterA = queryStrFilterA + self.datasetA['Filter Features'][i]['Selected Responses'][j]['Code'] + " "
+                if j == (len(self.datasetA['Filter Features'][i]['Selected Responses'])-1):
+                    queryStrFilterA = queryStrFilterA + ")"
+                    
         self.labelFrameQueryDataA.configure(text=queryStrFilterA)
 
     def queryAddFilterB(self, evt):
+
+        #If the dataset is empty, do not push through with filtering.
+        if len(self.datasetB['Data']) <= 0:
+            tkMessageBox.showerror("Dataset error", "Dataset is empty. Please check if you uploaded your population dataset")
+            return -1
+        
+        #Filter the data given the feature inputted and its values selected
         new_data = filterDataset(self.datasetB, self.datasetB['Feature'], self.datasetB['Feature']['Selected Responses'])
+        
+        #Add the feature to the dataset's filtered features
         self.datasetB['Filter Features'].append(self.datasetB['Feature'])
+
+        #Assign the new set of filtered data
         self.datasetB['Data'] = new_data
 
-        queryStrFilterB = ''
+        if(queryType == 'Sample vs Sample'):
+            queryStrFilterB = 'Dataset B'
+        else:
+            queryStrFilterB = 'Samples'
 
+        #Write the breadcrumb trail of the features and values the dataset was filtered by
         for i in range(0, len(self.datasetB['Filter Features'])):
-            if i == 0:
-                queryStrFilterB = queryStrFilterB + self.datasetB['Filter Features'][i]['Code']
-            else:
-                queryStrFilterB = queryStrFilterB + "->" + self.datasetB['Filter Features'][i]['Code']
+            queryStrFilterB = queryStrFilterB + "->" + self.datasetB['Filter Features'][i]['Code']
+            for j in range(0,len(self.datasetB['Filter Features'][i]['Selected Responses'])):
+                if j == 0:
+                    queryStrFilterB = queryStrFilterB + "("
+                queryStrFilterB = queryStrFilterB + self.datasetB['Filter Features'][i]['Selected Responses'][j]['Code'] + " "
+                if j == (len(self.datasetB['Filter Features'][i]['Selected Responses'])-1):
+                    queryStrFilterB = queryStrFilterB + ")"
 
         # Concat the Filter String Here
         self.labelFrameQueryDataB.configure(text=queryStrFilterB)
 
 
     def querySetFeatureA(self, evt):
-        findFeature(self.entryQueryFeatureA.get(), self.listQueryDataA,self.datasetA,"Focus_Feature")
+        try:
+            #If the dataset is empty, do not continue finding the feature
+            if(len(self.datasetA['Data']) <= 0):
+                tkMessageBox.showerror("Dataset error", "Dataset is empty. Please check if you uploaded your population dataset")
+                return -1
+            #Find the feature and display the dataset's frequencies and proportions for each of its values
+            findFeature(self.entryQueryFeatureA.get(), self.listQueryDataA,self.datasetA,"Focus_Feature")
+        except NameError:
+            tkMessageBox.showerror("Features Error", "Features not found. Please upload your variable description file.")
 
     def querySetFeatureB(self, evt):
-        findFeature(self.entryQueryFeatureB.get(), self.listQueryDataB,self.datasetB,"Focus_Feature")
+        try:
+            #If the dataset is empty, do not continue finding the feature
+            if(len(self.datasetB['Data']) <= 0):
+                tkMessageBox.showerror("Dataset error", "Dataset is empty. Please check if you uploaded your population dataset")
+                return -1
+            #Find the feature and display the dataset's frequencies and proportions for each of its values
+            findFeature(self.entryQueryFeatureB.get(), self.listQueryDataB,self.datasetB,"Focus_Feature")
+        except NameError:
+            tkMessageBox.showerror("Features Error", "Features not found. Please upload your variable description file.")
 
+    #Conduct the Z-Test between the two samples. 
     def queryZTest(self, evt):
-        z95 = 1.645
-        z99 = 2.58
-        print 'Z Test'
+
+        #Get selected confidence interval
+        confidenceInterval = self.comboQueryCriticalValue.get() 
+
+        #Get corresponding Z Critical Value of the confidence interval
+        zCritical = arrQueryCriticalValueMapping[confidenceInterval] 
 
         #Check if the selected focus feature and selected values of it are the same for both samples
         isSame = isSameFocusFeat(self.datasetA, self.datasetB, self.datasetA['Focus Feature']['Selected Values'], self.datasetB['Focus Feature']['Selected Values'])
         if(isSame == 1):
             #Calculate Z score between the two samples
             zScore, pPrime, SE = svs.ZTest(self.datasetA['Total'], self.datasetA['ProportionPercent'], self.datasetB['Total'], self.datasetB['ProportionPercent'])
-            #Get result if accept/reject at 95% confidence
-            z95Result = svs.compareZtoZCritical(zScore, z95)
-            #Get result if accept/reject at 99% confidence
-            z99Result = svs.compareZtoZCritical(zScore, z99)
-            #Display Results
-            self.labelQueryZTest.configure(text='Z-Score: ' + str(round(zScore,2)) +  ', 95%: ' + z95Result + ', 99%: ' + z99Result)
+            #Get result if accept/reject compared to the zCritical value
+            zResult = svs.compareZtoZCritical(zScore, zCritical)
+            #Display Z score and whether accept/reject at inputted confidence interval
+            self.labelQueryZTest.configure(text='Z-Score: ' + str(round(zScore,2)) +  ', ' + str(float(confidenceInterval)) + ' confidence: '+ zResult)
 
+    #Conduct Z-Test between the population and all samples
+    def querySVP(self,evt):
+        confidenceInterval = self.comboQueryCriticalValueSvP.get() #Get selected confidence interval
+        zCritical = arrQueryCriticalValueMapping[confidenceInterval] #Get corresponding Z Critical Value
+        sampleFeature = self.datasetB['Feature']['Code']
+
+        #Iterate through every sample 
+        for sampleResponse in self.datasetB['Feature']['Responses']:
+            resultsRows = []
+
+            sampleValue = sampleResponse['Code'] #Get sample code to get the samples by
+            
+            #Header of the results file
+            header = ['Feature Code','N','F','P','Sample','n','f','p','SE','Z Score','Z Critical Value','LB','UB','Accept/Reject']
+            resultsRows.append(header)
+            
+            #Iterate through every feature
+            for feature in features:
+                featureValues = [] #Values that are not in group -1. This will be all values of the feature.
+                selectedFeatureValues = []#Values within featureValues that are selected by the user. By default, it is just those with group 'b'
+
+                #Iterate through the values of the feature
+                for response in feature['Responses']:
+                    #If the group of that value is not -1
+                    if response['Group'] != '-1': 
+                        featureValues.append(response['Code'])#Add to the allValues that will determine n
+
+                        #If the group of the value is 'a'
+                        if(response['Group'] == 'a'): #MODIFY THIS SUCH THAT IT CAN BE SELECTED BY THE USER
+                            selectedFeatureValues.append(response['Code'])#Add to selectedValues that will determine p
+                
+                #Convert allValues to string separated by ':'
+                allValString = concatListToString(featureValues, ':')
+
+                #Convert selectedValues to string separated by ':'
+                selectedValString = concatListToString(selectedFeatureValues, ':')
+
+                #Get results of that sample vs population based on a feature given its values that determine
+                # n and values that determine p
+                resultRow = svp.sampleVsPopulationSpecific(self.datasetA['Data'],sampleFeature, sampleValue,feature['Code'], allValString, selectedValString,zCritical, ':')
+                
+                resultsRows.append(resultRow)
+            #Write all results of all Z-Tests on all features of that sample in to a .csv file
+            writeOnCSV(resultsRows, "SVP_" +sampleFeature+"("+ sampleValue +")" + "_vs_" + self.datasetA['Feature']['Code']+".csv")
+        tkMessageBox.showinfo(testType, testType + " completed.")
+
+    '''
+    Sets test type: Sample vs Sample (Chi-Test, Z-Test) or Sample vs Population (Z-Test)
+    '''
     def querySetType(self, evt):
         global queryType
-        queryType = self.comboQueryType.get()
+        queryType = self.comboQueryTest.get()
         self.adjustQueryViews()
 
     '''
+    Disables/enables views (buttons, entry fields etc.) based on test type selected
+    '''
     def adjustQueryViews(self):
-        self.listQuerySetDataB.configure(state='normal')
-        self.buttonQuerySaveB.configure(state='normal')
-        self.entryQuerySetDataB.configure(state='normal')
-        self.buttonQuerySetDataB.configure(state='normal')
-        self.labelQueryDataBCount.configure(state='normal')
-        self.labelFrameQueryDataA.configure(text='Dataset A')
-        self.labelFrameQueryDataB.configure(text='Dataset A')
+        self.buttonQueryFeatureA.configure(state="normal")
+        self.buttonQueryFeatureB.configure(state="normal")
+        self.entryQueryFeatureA.configure(state="normal")
+        self.entryQueryFeatureB.configure(state="normal")
+        self.buttonQueryZTest.configure(state="normal")
+        self.comboQueryCriticalValue.configure(state="normal")
+        self.buttonQueue.configure(state="normal")
+        self.buttonClearQueue.configure(state="normal")
+        self.buttonTestQueue.configure(state="normal")
+        #self.buttonTest.configure(state="normal")
+        self.labelQueryZTest.configure(state="normal")
+        self.labelQueryDataA.configure(state="normal")
+        self.labelQueryDataB.configure(state="normal")
+        self.buttonQueryZTestSvP.configure(state="normal")
+        self.comboQueryCriticalValueSvP.configure(state="normal")
+        self.labelQueryZTestSvP.configure(state="normal")
+        self.listQueryDataA.configure(state="normal")
+        self.listQueryDataB.configure(state="normal")
 
-        if queryType == 'Sample VS Population':
-            self.listQuerySetDataB.configure(state='disabled')
-            self.listQuerySetDataB.delete(0, END)
-            self.buttonQuerySaveB.configure(state='disabled')
-            self.entryQuerySetDataB.configure(state='disabled')
-            self.buttonQuerySetDataB.configure(state='disabled')
-            self.labelQueryDataBCount.configure(state='disabled')
-            self.labelFrameQueryDataA.configure(text='Sample')
-            self.labelFrameQueryDataB.configure(text='Population')
-            self.querySetAllFeatures()
+        self.datasetA = resetDataset(self.datasetA)
+        self.entryQuerySetDataA.configure(text='')
+        self.entryQueryFeatureA.configure(text='')
+        self.labelQueryDataACount.configure(text="n: " + str(len(self.datasetA['Data'])))
+        self.labelQueryDataA.configure(text="")
+        self.listQueryDataA.delete(0,END)
+        self.listQuerySetDataA.delete(0,END)
+
+        self.datasetB = resetDataset(self.datasetB)
+        self.entryQuerySetDataB.configure(text='')
+        self.entryQueryFeatureB.configure(text='')
+        self.labelQueryDataBCount.configure(text="n: " + str(len(self.datasetB['Data'])))
+        self.labelQueryDataB.configure(text="")
+        self.listQueryDataB.delete(0,END)
+        self.listQuerySetDataB.delete(0,END)
+
+        if queryType == 'Sample vs Population':
+            self.buttonQueryFeatureA.configure(state="disabled")
+            self.buttonQueryFeatureB.configure(state="disabled")
+            self.entryQueryFeatureA.configure(state="disabled")
+            self.entryQueryFeatureB.configure(state="disabled")
+            self.buttonQueryZTest.configure(state="disabled")
+            self.comboQueryCriticalValue.configure(state="disabled")
+            self.buttonQueue.configure(state="disabled")
+            self.buttonClearQueue.configure(state="disabled")
+            self.buttonTestQueue.configure(state="disabled")
+            #self.buttonTest.configure(state="disabled")
+            self.labelQueryZTest.configure(state="disabled")
+            self.labelQueryDataA.configure(state="disabled")
+            self.labelQueryDataB.configure(state="disabled")
+            self.listQueryDataA.configure(state="disabled")
+            self.listQueryDataB.configure(state="disabled")
+            self.labelFrameQueryDataA.configure(text="Population")
+            self.labelFrameQueryDataB.configure(text="Samples")
+            self.labelQueryDataBCount.configure(text="")
+        else:
+            self.buttonQueryZTestSvP.configure(state="disabled")
+            self.comboQueryCriticalValueSvP.configure(state="disabled")
+            self.labelQueryZTestSvP.configure(state="disabled")
+            self.labelFrameQueryDataA.configure(text="Dataset A")
+            self.labelFrameQueryDataB.configure(text="Dataset B")
 
     def querySetAllFeatures(self):
         #Test items
@@ -1793,14 +2112,8 @@ class OOTO_Miner:
         strarrAllFeatures = list(self.listQuerySetDataA.get(0, END))
         
     '''
-
-
+    Upload the variable description
     '''
-    allValues, selectedValues = getFocusFeatureValues(selectedFocusFeature, selectedFocusFeatureValues)
-    saveFile = svp.sampleVsPopulation(populationDir, sampleFeature, selectedFocusFeature['Code'], allValues, selectedValues, Za)
-    tkMessageBox.showinfo(testType, testType + " completed. Results file saved as " + saveFile)
-    '''
-
     def uploadInitVarDesc(self, evt):
         print "UPLOADED"
         initVarDisc = askopenfilename(title = "Select file",filetypes = (("csv files","*.csv"),("all files","*.*")))
@@ -1810,6 +2123,7 @@ class OOTO_Miner:
         features = readFeatures(initVarDisc,"^")
         if (len(features)) > 0:
             tkMessageBox.showinfo("Initial Variable Description set","Initial Variable Description uploaded")
+            #getCommonGroups(features)
         else:
             tkMessageBox.showerror("Upload error", "Error uploading Initial Variable Description. Please try again.")
 
