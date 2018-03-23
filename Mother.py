@@ -10,9 +10,9 @@ from tkFileDialog import askopenfilename
 import copy
 import SampleVsPopulation as svp
 import SampleVsSample as svs
-# import ChiTest as ct
+import ChiTest as ct
 import os
-# import numpy as np
+import numpy as np
 from collections import Counter
 
 try:
@@ -119,7 +119,6 @@ def writeOnCSV(rows, filename):
 	with open(filename, 'wb') as f:
 	    writer = csv.writer(f)
 	    writer.writerows(rows)
-	print 'Saved file is: ' + filename
 
 '''
 Returns a new dataset by filtering from the old one based on a feature and its selected values
@@ -1606,7 +1605,6 @@ class OOTO_Miner:
         self.entryQueryPopulation.delete(0,END)
         self.entryQueryPopulation.insert(0,populationDir)
 
-        self.buttonPopulation.configure(state='normal')
         self.populationDataset = readCSVDict(populationDir)
         self.datasetA['Data']=[]
         self.datasetB['Data']=[]
@@ -1623,12 +1621,10 @@ class OOTO_Miner:
             tkMessageBox.showerror("Upload error", "Error uploading population dataset. Please try again.")
     
     '''
-    Shows frequency and proportions for the values selected within dataset A
-    '''
     def selectValuesDatasetA(self, evt):
         selectDatasetValues(evt, self.datasetA, self.populationDataset, self.labelFeatACount)
 
-    '''
+
     def selectFocusFeatureValues(self, evt):
         global selectedFocusFeatureValues
         listbox = evt.widget
@@ -1637,8 +1633,7 @@ class OOTO_Miner:
         for sv in selectedValues:
             valueArr = sv.split(" - ")
             selectedFocusFeatureValues.append(valueArr[0])
-    '''
-        
+
 
     def selectValuesDatasetB(self, evt):
         selectDatasetValues(evt, self.datasetB, self.populationDataset, self.labelFeatBCount)
@@ -1709,6 +1704,7 @@ class OOTO_Miner:
         
         for C in arrTempItemsC:
             self.listAttributes.insert(END, C)
+    '''
 
     '''
     Function that happens when the 'Enqueue' button is pressed.
@@ -1758,7 +1754,7 @@ class OOTO_Miner:
         self.labelQueueCount.configure(text='Queue Count: ' + str(len(tests)))
         self.resetViews()
         tkMessageBox.showinfo("Reset", "Queue cleared.")
-        
+    '''
     def resetViews(self):
         global sampleFeature
         global selectedFocusFeature
@@ -1840,7 +1836,7 @@ class OOTO_Miner:
             self.entryFeatB.configure(state='disabled')
             self.buttonShowA.configure(state='disabled')
             self.buttonShowB.configure(state='disabled')
-
+    '''
     '''
     QUERY FUNCTIONS
     '''
@@ -2007,7 +2003,7 @@ class OOTO_Miner:
         confidenceInterval = self.comboQueryCriticalValueSvP.get() #Get selected confidence interval
         zCritical = arrQueryCriticalValueMapping[confidenceInterval] #Get corresponding Z Critical Value
         sampleFeature = self.datasetB['Feature']['Code']
-
+        self.listQueryDataB.delete(0,END)
         #Iterate through every sample 
         for sampleResponse in self.datasetB['Feature']['Responses']:
             resultsRows = []
@@ -2045,7 +2041,13 @@ class OOTO_Miner:
                 
                 resultsRows.append(resultRow)
             #Write all results of all Z-Tests on all features of that sample in to a .csv file
-            writeOnCSV(resultsRows, "SVP_" +sampleFeature+"("+ sampleValue +")" + "_vs_" + self.datasetA['Feature']['Code']+".csv")
+            fileName = "SVP.csv"
+            try:
+                fileName = "Z-Test_Sample " +sampleFeature+"("+ sampleValue +")" + "_vs_Pop" + self.datasetA['Feature']['Code']+".csv"
+            except KeyError:
+                fileName = "Z-Test_Sample " +sampleFeature+"("+ sampleValue +")" + "_vs_Pop.csv"
+            writeOnCSV(resultsRows, fileName)
+            self.listQueryDataB.insert(END, "Z-Test complete. Saved as " + fileName)
         tkMessageBox.showinfo(testType, testType + " completed.")
 
     '''
@@ -2110,7 +2112,6 @@ class OOTO_Miner:
             self.labelQueryDataA.configure(state="disabled")
             self.labelQueryDataB.configure(state="disabled")
             self.listQueryDataA.configure(state="disabled")
-            self.listQueryDataB.configure(state="disabled")
             self.labelFrameQueryDataA.configure(text="Population")
             self.labelFrameQueryDataB.configure(text="Samples")
             self.labelQueryDataBCount.configure(text="")
