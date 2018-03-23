@@ -54,6 +54,7 @@ def destroy_OOTO_Miner():
     global w
     w.destroy()
     w = None
+
 '''
 Reads features and their responses from the Variable Description file
 '''
@@ -94,11 +95,17 @@ def getCommonGroups(features):
                 
 
 
-
+'''
+Reads a .csv file and returns a list of dictionaries where the header of the file 
+has all of the dictionary keys
+'''
 def readCSVDict(filename):
     rows = csv.DictReader(open(filename))
     return rows   
 
+'''
+Writes a list of dictionaries into a .csv file
+'''
 def writeCSVDict(filename, dataset):
     with open(filename, 'wb') as f:
         w = csv.DictWriter(f, dataset[0].keys())
@@ -128,7 +135,8 @@ def filterDataset(dataset, feature, responses):
     return new_data
 
 '''
-Clears all of the filters of the dataset and resets back to the uploaded population file. 
+Clears all of the filters of the dataset and resets the data back to that of
+the uploaded population file. 
 '''
 def resetDataset(dataset):
     global populationDir
@@ -139,7 +147,15 @@ def resetDataset(dataset):
     return new_dataset
 
 
+'''
+For every feature, each value falls into a group.
+Each value in the dataset gets converted to its corresponding group.
 
+If a value in the dataset does not exist in the feature values in the variable description,
+its group is automatically assigned to -1.
+
+If a feature in the dataset does not exist in the variable description, assign that value to -1.
+'''
 def convertDatasetValuesToGroups(dataset, features):
     #response['Code'] == record[self.datasetA['Feature']['Code']] for response in self.datasetA['Selected Responses']
     for record in dataset['Data']:
@@ -150,17 +166,23 @@ def convertDatasetValuesToGroups(dataset, features):
                     if record[feature['Code']] == response['Code']:
                         record[feature['Code']] = response['Group']
                         converted = True
-                #if not any(record[feature['Code'] == response['Code'] for response in feature['Responses']):
                 if not converted:
                     record[feature['Code']] = '-1.0'
             else:
                 record[feature['Code']] = '-1.0'
     return dataset
 
+'''
+Remove the files given their filenames.
+'''
 def removeFiles(fileNames):
     for fileName in fileNames:
         os.remove(fileName)
-    
+
+'''
+Returns filename of the dataset based on the features it was filtered by and selected values for 
+each feature
+'''
 def makeFileName(dataset):
     fileName = ''
     for filterFeature in dataset['Filter Features']:
@@ -175,6 +197,10 @@ def makeFileName(dataset):
     fileName = fileName + ".csv"
     return fileName
 
+'''
+Writes converted features (where the values are converted to their groups)
+into a csv file
+'''
 def makeUpdatedVariables(features, fileName):
     with open(fileName, "wb") as csv_file:
         writer = csv.writer(csv_file, delimiter=',')
@@ -225,24 +251,15 @@ def getFocusFeatureValues(selectedFocusFeature, selectedFocusFeatureValues):
 
     allValues = concatListToString(responseCodes, ':')
     selectedValues = concatListToString(selectedFocusFeatureValues, ':')
-    '''
-    for i in range(0, len(selectedFocusFeature['Responses'])):
-        if(i == len(selectedFocusFeature['Responses'])-1):
-            allValues = allValues + str(selectedFocusFeature['Responses'][i]['Code'])
-        else:
-            allValues = allValues + str(selectedFocusFeature['Responses'][i]['Code']) + ":"          
-    '''
-    '''
-    for i in range(0, len(selectedFocusFeatureValues)):
-        if(i == len(selectedFocusFeatureValues)-1):
-            selectedValues = selectedValues + str(selectedFocusFeatureValues[i])
-        else:
-            selectedValues = selectedValues + str(selectedFocusFeatureValues[i]) + ":"
-    '''
+
     return allValues, selectedValues
   
 '''
 Finds the feature and displays its responses.
+
+If the feature being searched is the one that will be focused on for Z-Test between
+two samples, it will also display all of the proportions, frequencies and total for each value of that 
+feature
 '''
 def findFeature(entryFeat, listFeat, dataset, *args):
         # Here is how to get the value from entryFeatA
@@ -343,6 +360,7 @@ def parseListBoxValues(raw_arr, delimiter, index):
         temp = x.split(delimiter)
         proc_arr.append(temp[index])   
     return proc_arr
+
 '''
 Selects the values of the focus feature
 and calculates the proportion of those values
@@ -419,6 +437,9 @@ def selectDatasetValues(evt, dataset, populationDataset, labelFeatCount):
 
     labelFeatCount.configure(text="n: " + str(datasetCount))
 
+'''
+Saves the dataset as a .csv file
+'''
 def saveDatasetFile(dataset):
     fileName = makeFileName(dataset)
     writeCSVDict(fileName, dataset['Data'])
@@ -700,20 +721,6 @@ class OOTO_Miner:
         self.entryFocus.configure(width=184)
         self.entryFocus.configure(state='disabled')
 
-        '''
-        self.entryFocus.place(relx=0.51, rely=0.05, relheight=0.05
-                , relwidth=0.46)
-        self.entryFocus.configure(background="white")
-        self.entryFocus.configure(disabledforeground="#a3a3a3")
-        self.entryFocus.configure(font="TkFixedFont")
-        self.entryFocus.configure(foreground="#000000")
-        self.entryFocus.configure(highlightbackground="#d9d9d9")
-        self.entryFocus.configure(highlightcolor="black")
-        self.entryFocus.configure(insertbackground="black")
-        self.entryFocus.configure(selectbackground="#c4c4c4")
-        self.entryFocus.configure(selectforeground="black")
-        '''
-
         self.buttonSample = Button(self.labelFrameGenerateSamples)
         self.buttonSample.place(relx=0.51, rely=0.05, height=23, width=226)
         self.buttonSample.configure(activebackground="#d9d9d9")
@@ -877,7 +884,7 @@ class OOTO_Miner:
 
         self.listFeatA.bind('<<ListboxSelect>>', self.selectValuesDatasetA)
         self.listFeatB.bind('<<ListboxSelect>>', self.selectValuesDatasetB)
-        self.listAttributes.bind('<<ListboxSelect>>', self.selectFocusFeatureValues)
+        #self.listAttributes.bind('<<ListboxSelect>>', self.selectFocusFeatureValues)
 
 
 
@@ -1524,6 +1531,7 @@ class OOTO_Miner:
     '''
     Functions to be called by the bound commands
     '''
+    
     #Adds test to the queue
     def addToQueue(self, testType, **params):
         global tests
@@ -1555,7 +1563,7 @@ class OOTO_Miner:
     def makeInitialVarDesc(self):
         varFileDir = self.entryVariableFile.get()
         valFileDir = self.entryValuesFile.get()
-        print 'Make the Initial Variable Descriptor! (WIP)'
+        tkMessageBox.showinfo("Work in progress",'Make the Initial Variable Descriptor! (WIP)')
     
     def getVariableFile(self):
         varFileDir = askopenfilename(title = "Select variable file",filetypes = (("txt files","*.txt"),("all files","*.*")))
@@ -1599,9 +1607,13 @@ class OOTO_Miner:
         else:
             tkMessageBox.showerror("Upload error", "Error uploading population dataset. Please try again.")
     
+    '''
+    Shows frequency and proportions for the values selected within dataset A
+    '''
     def selectValuesDatasetA(self, evt):
         selectDatasetValues(evt, self.datasetA, self.populationDataset, self.labelFeatACount)
 
+    '''
     def selectFocusFeatureValues(self, evt):
         global selectedFocusFeatureValues
         listbox = evt.widget
@@ -1610,6 +1622,7 @@ class OOTO_Miner:
         for sv in selectedValues:
             valueArr = sv.split(" - ")
             selectedFocusFeatureValues.append(valueArr[0])
+    '''
         
 
     def selectValuesDatasetB(self, evt):
@@ -1682,7 +1695,10 @@ class OOTO_Miner:
         for C in arrTempItemsC:
             self.listAttributes.insert(END, C)
 
-    #Function that happens when the 'Enqueue' button is pressed
+    '''
+    Function that happens when the 'Enqueue' button is pressed.
+    Adds Chi-Test to the queue
+    '''
     def queue(self, evt):
         datasets = []
         datasets.append(self.datasetA)
@@ -1692,8 +1708,10 @@ class OOTO_Miner:
             self.addToQueue(testType, datasetArgs=datasets)
         else:
             tkMessageBox.showerror("Error: Sample vs Sample not selected", "Please select Sample vs Sample test")
-
-    #Conducts all of the tests in the queue. 
+    
+    '''
+    Conducts all of the chi-tests in the queue. 
+    '''
     def testQueue(self, evt):
         if len(tests) == 0:
             tkMessageBox.showerror("Empty queue", "Queue is empty. Please queue a test.")
@@ -1717,7 +1735,9 @@ class OOTO_Miner:
                 removeFiles(fileNames)
         tkMessageBox.showinfo("Test Queue Complete", "All of the tests in the queue have been completed.")
 
-
+    '''
+    Clears the tests in the queue.
+    '''
     def clearQueue(self, evt):
         tests[:] = []
         self.labelQueueCount.configure(text='Queue Count: ' + str(len(tests)))
@@ -1741,7 +1761,6 @@ class OOTO_Miner:
         self.listAttributes.delete(0,END)
 
         
-            
     # SET THE TEST WHEN SELECTED IN COMBOBOX
     def setTest(self, evt):
         global testType
@@ -1812,14 +1831,10 @@ class OOTO_Miner:
     '''
 
     def setFocusFeatureValuesA(self, evt):
-        print 'Getting freq and prop A'
         setFocusFeatureValues(evt, self.datasetA, self.entryQueryFeatureA.get(), self.labelQueryDataA)
     
     def setFocusFeatureValuesB(self, evt):
-        print 'Getting freq and prop B'
         setFocusFeatureValues(evt, self.datasetB, self.entryQueryFeatureB.get(), self.labelQueryDataB)
-
-
 
     def querySetPopulation(self, evt):
         self.setPopulation(evt)
@@ -1864,12 +1879,19 @@ class OOTO_Miner:
         selectDatasetValues(evt, self.datasetB, self.populationDataset, self.labelQueryDataBCount)
 
     def queryAddFilterA(self, evt):
+
+        #If the dataset is empty, do not push through with filtering.
         if len(self.datasetA['Data']) <= 0:
             tkMessageBox.showerror("Dataset error", "Dataset is empty. Please check if you uploaded your population dataset")
             return -1
 
+        #Filter the data given the feature inputted and its values selected
         new_data = filterDataset(self.datasetA, self.datasetA['Feature'], self.datasetA['Feature']['Selected Responses'])
+        
+        #Add the feature to the dataset's filtered features
         self.datasetA['Filter Features'].append(self.datasetA['Feature'])
+        
+        #Assign the new set of filtered data
         self.datasetA['Data'] = new_data
 
         if(queryType == 'Sample vs Sample'):
@@ -1877,6 +1899,7 @@ class OOTO_Miner:
         else:
             queryStrFilterA = 'Population'
 
+        #Write the breadcrumb trail of the features and values the dataset was filtered by
         for i in range(0, len(self.datasetA['Filter Features'])):
             queryStrFilterA = queryStrFilterA + "->" + self.datasetA['Filter Features'][i]['Code']
             for j in range(0,len(self.datasetA['Filter Features'][i]['Selected Responses'])):
@@ -1886,16 +1909,22 @@ class OOTO_Miner:
                 if j == (len(self.datasetA['Filter Features'][i]['Selected Responses'])-1):
                     queryStrFilterA = queryStrFilterA + ")"
                     
-        # Concat the Filter String Here
         self.labelFrameQueryDataA.configure(text=queryStrFilterA)
 
     def queryAddFilterB(self, evt):
+
+        #If the dataset is empty, do not push through with filtering.
         if len(self.datasetB['Data']) <= 0:
             tkMessageBox.showerror("Dataset error", "Dataset is empty. Please check if you uploaded your population dataset")
             return -1
         
+        #Filter the data given the feature inputted and its values selected
         new_data = filterDataset(self.datasetB, self.datasetB['Feature'], self.datasetB['Feature']['Selected Responses'])
+        
+        #Add the feature to the dataset's filtered features
         self.datasetB['Filter Features'].append(self.datasetB['Feature'])
+
+        #Assign the new set of filtered data
         self.datasetB['Data'] = new_data
 
         if(queryType == 'Sample vs Sample'):
@@ -1903,6 +1932,7 @@ class OOTO_Miner:
         else:
             queryStrFilterB = 'Samples'
 
+        #Write the breadcrumb trail of the features and values the dataset was filtered by
         for i in range(0, len(self.datasetB['Filter Features'])):
             queryStrFilterB = queryStrFilterB + "->" + self.datasetB['Filter Features'][i]['Code']
             for j in range(0,len(self.datasetB['Filter Features'][i]['Selected Responses'])):
@@ -1918,37 +1948,46 @@ class OOTO_Miner:
 
     def querySetFeatureA(self, evt):
         try:
+            #If the dataset is empty, do not continue finding the feature
             if(len(self.datasetA['Data']) <= 0):
                 tkMessageBox.showerror("Dataset error", "Dataset is empty. Please check if you uploaded your population dataset")
                 return -1
+            #Find the feature and display the dataset's frequencies and proportions for each of its values
             findFeature(self.entryQueryFeatureA.get(), self.listQueryDataA,self.datasetA,"Focus_Feature")
         except NameError:
             tkMessageBox.showerror("Features Error", "Features not found. Please upload your variable description file.")
 
     def querySetFeatureB(self, evt):
         try:
+            #If the dataset is empty, do not continue finding the feature
             if(len(self.datasetB['Data']) <= 0):
                 tkMessageBox.showerror("Dataset error", "Dataset is empty. Please check if you uploaded your population dataset")
                 return -1
+            #Find the feature and display the dataset's frequencies and proportions for each of its values
             findFeature(self.entryQueryFeatureB.get(), self.listQueryDataB,self.datasetB,"Focus_Feature")
         except NameError:
             tkMessageBox.showerror("Features Error", "Features not found. Please upload your variable description file.")
 
+    #Conduct the Z-Test between the two samples. 
     def queryZTest(self, evt):
 
-        confidenceInterval = self.comboQueryCriticalValue.get() #Get selected confidence interval
-        zCritical = arrQueryCriticalValueMapping[confidenceInterval] #Get corresponding Z Critical Value
+        #Get selected confidence interval
+        confidenceInterval = self.comboQueryCriticalValue.get() 
+
+        #Get corresponding Z Critical Value of the confidence interval
+        zCritical = arrQueryCriticalValueMapping[confidenceInterval] 
 
         #Check if the selected focus feature and selected values of it are the same for both samples
         isSame = isSameFocusFeat(self.datasetA, self.datasetB, self.datasetA['Focus Feature']['Selected Values'], self.datasetB['Focus Feature']['Selected Values'])
         if(isSame == 1):
             #Calculate Z score between the two samples
             zScore, pPrime, SE = svs.ZTest(self.datasetA['Total'], self.datasetA['ProportionPercent'], self.datasetB['Total'], self.datasetB['ProportionPercent'])
-            #Get result if accept/reject given the zCritical value
+            #Get result if accept/reject compared to the zCritical value
             zResult = svs.compareZtoZCritical(zScore, zCritical)
             #Display Z score and whether accept/reject at inputted confidence interval
             self.labelQueryZTest.configure(text='Z-Score: ' + str(round(zScore,2)) +  ', ' + str(float(confidenceInterval)) + ' confidence: '+ zResult)
 
+    #Conduct Z-Test between the population and all samples
     def querySVP(self,evt):
         confidenceInterval = self.comboQueryCriticalValueSvP.get() #Get selected confidence interval
         zCritical = arrQueryCriticalValueMapping[confidenceInterval] #Get corresponding Z Critical Value
@@ -1958,8 +1997,9 @@ class OOTO_Miner:
         for sampleResponse in self.datasetB['Feature']['Responses']:
             resultsRows = []
 
-            sampleValue = sampleResponse['Code'] #Get sample code
+            sampleValue = sampleResponse['Code'] #Get sample code to get the samples by
             
+            #Header of the results file
             header = ['Feature Code','N','F','P','Sample','n','f','p','SE','Z Score','Z Critical Value','LB','UB','Accept/Reject']
             resultsRows.append(header)
             
@@ -1968,29 +2008,42 @@ class OOTO_Miner:
                 featureValues = [] #Values that are not in group -1. This will be all values of the feature.
                 selectedFeatureValues = []#Values within featureValues that are selected by the user. By default, it is just those with group 'b'
 
-                for response in feature['Responses']:#Iterate through the values of the feature
+                #Iterate through the values of the feature
+                for response in feature['Responses']:
+                    #If the group of that value is not -1
                     if response['Group'] != '-1': 
-                        featureValues.append(response['Code'])#Add to featureValues if value is not in group -1
+                        featureValues.append(response['Code'])#Add to the allValues that will determine n
+
+                        #If the group of the value is 'a'
                         if(response['Group'] == 'a'): #MODIFY THIS SUCH THAT IT CAN BE SELECTED BY THE USER
-                            selectedFeatureValues.append(response['Code'])#Add to selectedFeatureValues if group is 'b'
+                            selectedFeatureValues.append(response['Code'])#Add to selectedValues that will determine p
                 
+                #Convert allValues to string separated by ':'
                 allValString = concatListToString(featureValues, ':')
+
+                #Convert selectedValues to string separated by ':'
                 selectedValString = concatListToString(selectedFeatureValues, ':')
 
-                print "All values: " + allValString
-                print "Selected values: " + selectedValString
-
+                #Get results of that sample vs population based on a feature given its values that determine
+                # n and values that determine p
                 resultRow = svp.sampleVsPopulationSpecific(self.datasetA['Data'],sampleFeature, sampleValue,feature['Code'], allValString, selectedValString,zCritical, ':')
+                
                 resultsRows.append(resultRow)
+            #Write all results of all Z-Tests on all features of that sample in to a .csv file
             writeOnCSV(resultsRows, "SVP_" +sampleFeature+"("+ sampleValue +")" + "_vs_" + self.datasetA['Feature']['Code']+".csv")
         tkMessageBox.showinfo(testType, testType + " completed.")
 
+    '''
+    Sets test type: Sample vs Sample (Chi-Test, Z-Test) or Sample vs Population (Z-Test)
+    '''
     def querySetType(self, evt):
         global queryType
         queryType = self.comboQueryTest.get()
         self.adjustQueryViews()
 
-
+    '''
+    Disables/enables views (buttons, entry fields etc.) based on test type selected
+    '''
     def adjustQueryViews(self):
         self.buttonQueryFeatureA.configure(state="normal")
         self.buttonQueryFeatureB.configure(state="normal")
@@ -2058,7 +2111,9 @@ class OOTO_Miner:
         global strarrAllFeatures
         strarrAllFeatures = list(self.listQuerySetDataA.get(0, END))
         
-
+    '''
+    Upload the variable description
+    '''
     def uploadInitVarDesc(self, evt):
         print "UPLOADED"
         initVarDisc = askopenfilename(title = "Select file",filetypes = (("csv files","*.csv"),("all files","*.*")))

@@ -172,8 +172,8 @@ def makeResults(header, samples, population, zCriticalValue, fileName):
 This method is similar but returns a result from a sample which shows
 the Z-Score for a particular variable. 
 '''
-def sampleVsPopulationSpecific(popDatasetPath, sampleFeature, sampleValue, selectedFeature, allValues, selectedValues, zCriticalValue, strDelim):
-    population_dataset = popDatasetPath#Get population dataset
+def sampleVsPopulationSpecific(popDataset, sampleFeature, sampleValue, selectedFeature, allValues, selectedValues, zCriticalValue, strDelim):
+    population_dataset = popDataset#Get population dataset
 
     sample = {'Sample Name':sampleValue, 'Total':0, 'Frequency':0} #Create sample
     
