@@ -331,7 +331,7 @@ def findFeature(entryFeat, listFeat, dataset, *args):
                 if response['Code'] not in notInGroupNega1: #If the value is an invalid value or its group/class is -1
                     proportionOvern = proportionOvern * 0
 
-                tempResp = str(countP) + " | " + str(proportionOverN) + "%(N) | " + str(proportionOvern) + "%(n) | "
+                tempResp = str(format(countP, '04')) + " | " + str(format(proportionOverN, '05')) + "%(N) | " + str(format(proportionOvern, '05')) + "%(n) | "
                 isValidResponse = False
                 for val in c:
                     if val == response['Code']:
@@ -405,10 +405,10 @@ def isSameFocusFeat(dataset1, dataset2, selectedValD1, selectedValD2):
         if(np.array_equal(selectedValD1, selectedValD2)):
             return 1
         else:
-            tkMessageBox.showerror('Unequal values', 'Selected values on both datasets are not equal.')
+            tkMessageBox.showerror('Error: Unequal values', 'Selected values on both datasets are not equal.')
             return -1
     else:
-        tkMessageBox.showerror('Unequal feature', 'Feature code on both datasets are not equal.')
+        tkMessageBox.showerror('Error: Unequal feature', 'Feature code on both datasets are not equal.')
         return -1
 
 
@@ -1045,7 +1045,7 @@ class OOTO_Miner:
         self.buttonQueryPopulation.configure(highlightbackground="#d9d9d9")
         self.buttonQueryPopulation.configure(highlightcolor="black")
         self.buttonQueryPopulation.configure(pady="0")
-        self.buttonQueryPopulation.configure(text='''Upload Population''')
+        self.buttonQueryPopulation.configure(text='''Upload''')
         self.buttonQueryPopulation.configure(width=316)
 
         self.labelInitialVarDesc = Label(self.Tabs_t2)
@@ -1612,7 +1612,7 @@ class OOTO_Miner:
             self.labelQueryDataACount.configure(text="n: " + str(len(self.datasetA['Data'])) )
             self.labelQueryDataBCount.configure(text="n: " + str(len(self.datasetB['Data'])) )
         else:
-            tkMessageBox.showerror("Upload error", "Error uploading population dataset. Please try again.")
+            tkMessageBox.showerror("Error: Upload error", "Error uploading population dataset. Please try again.")
     
     '''
     def selectValuesDatasetA(self, evt):
@@ -1708,9 +1708,9 @@ class OOTO_Miner:
         datasets = []
         datasets.append(self.datasetA)
         datasets.append(self.datasetB)
-        global testType
-        if(testType == 'Sample vs Sample'):
-            self.addToQueue(testType, datasetArgs=datasets)
+        global queryType
+        if(queryType == 'Sample vs Sample'):
+            self.addToQueue(queryType, datasetArgs=datasets)
         else:
             tkMessageBox.showerror("Error: Sample vs Sample not selected", "Please select Sample vs Sample test")
     
@@ -1719,7 +1719,7 @@ class OOTO_Miner:
     '''
     def testQueue(self, evt):
         if len(tests) == 0:
-            tkMessageBox.showerror("Empty queue", "Queue is empty. Please queue a test.")
+            tkMessageBox.showerror("Error: Empty queue", "Queue is empty. Please queue a test.")
             return -1
         self.listQueryDataB.delete(0,END)
         i = 0
@@ -1746,7 +1746,6 @@ class OOTO_Miner:
     def clearQueue(self, evt):
         tests[:] = []
         self.labelQueueCount.configure(text='Queue Count: ' + str(len(tests)))
-        self.resetViews()
         tkMessageBox.showinfo("Reset", "Queue cleared.")
     '''
     def resetViews(self):
@@ -1848,13 +1847,13 @@ class OOTO_Miner:
         try:
             findFeature(self.entryQuerySetDataA.get(), self.listQuerySetDataA,self.datasetA,"Dataset_Feature")
         except NameError:
-            tkMessageBox.showerror("Features Error", "Features not found. Please upload your variable description file.")
+            tkMessageBox.showerror("Error: No features", "Features not found. Please upload your variable description file.")
     
     def querySetDataB(self, evt):
         try:
             findFeature(self.entryQuerySetDataB.get(), self.listQuerySetDataB, self.datasetB,"Dataset_Feature")
         except NameError:
-            tkMessageBox.showerror("Features Error", "Features not found. Please upload your variable description file.")
+            tkMessageBox.showerror("Error: No features", "Features not found. Please upload your variable description file.")
 
     def queryResetDatasetA(self,evt):
         self.datasetA = resetDataset(self.datasetA)
@@ -1887,12 +1886,16 @@ class OOTO_Miner:
 
         #If the dataset is empty, do not push through with filtering.
         if len(self.datasetA['Data']) <= 0:
-            tkMessageBox.showerror("Dataset error", "Dataset is empty. Please check if you uploaded your population dataset")
+            tkMessageBox.showerror("Error: Empty dataset", "Dataset is empty. Please check if you uploaded your population dataset")
             return -1
 
         #Filter the data given the feature inputted and its values selected
-        new_data = filterDataset(self.datasetA, self.datasetA['Feature'], self.datasetA['Feature']['Selected Responses'])
-        
+        try:
+            new_data = filterDataset(self.datasetA, self.datasetA['Feature'], self.datasetA['Feature']['Selected Responses'])
+        except KeyError:
+            tkMessageBox.showerror("Error: No selected responses", "You did not select any responses. Please select at least one.")
+            return -1
+
         #Add the feature to the dataset's filtered features
         self.datasetA['Filter Features'].append(self.datasetA['Feature'])
         
@@ -1920,12 +1923,16 @@ class OOTO_Miner:
 
         #If the dataset is empty, do not push through with filtering.
         if len(self.datasetB['Data']) <= 0:
-            tkMessageBox.showerror("Dataset error", "Dataset is empty. Please check if you uploaded your population dataset")
+            tkMessageBox.showerror("Error: Empty dataset", "Dataset is empty. Please check if you uploaded your population dataset")
             return -1
         
         #Filter the data given the feature inputted and its values selected
-        new_data = filterDataset(self.datasetB, self.datasetB['Feature'], self.datasetB['Feature']['Selected Responses'])
-        
+        try:
+            new_data = filterDataset(self.datasetB, self.datasetB['Feature'], self.datasetB['Feature']['Selected Responses'])
+        except KeyError:
+            tkMessageBox.showerror("Error: No selected responses", "You did not select any responses. Please select at least one.")
+            return -1
+
         #Add the feature to the dataset's filtered features
         self.datasetB['Filter Features'].append(self.datasetB['Feature'])
 
@@ -1955,23 +1962,23 @@ class OOTO_Miner:
         try:
             #If the dataset is empty, do not continue finding the feature
             if(len(self.datasetA['Data']) <= 0):
-                tkMessageBox.showerror("Dataset error", "Dataset is empty. Please check if you uploaded your population dataset")
+                tkMessageBox.showerror("Error: Empty dataset", "Dataset is empty. Please check if you uploaded your population dataset")
                 return -1
             #Find the feature and display the dataset's frequencies and proportions for each of its values
             findFeature(self.entryQueryFeatureA.get(), self.listQueryDataA,self.datasetA,"Focus_Feature")
         except NameError:
-            tkMessageBox.showerror("Features Error", "Features not found. Please upload your variable description file.")
+            tkMessageBox.showerror("Error: No features", "Features not found. Please upload your variable description file.")
 
     def querySetFeatureB(self, evt):
         try:
             #If the dataset is empty, do not continue finding the feature
             if(len(self.datasetB['Data']) <= 0):
-                tkMessageBox.showerror("Dataset error", "Dataset is empty. Please check if you uploaded your population dataset")
+                tkMessageBox.showerror("Error: Empty dataset", "Dataset is empty. Please check if you uploaded your population dataset")
                 return -1
             #Find the feature and display the dataset's frequencies and proportions for each of its values
             findFeature(self.entryQueryFeatureB.get(), self.listQueryDataB,self.datasetB,"Focus_Feature")
         except NameError:
-            tkMessageBox.showerror("Features Error", "Features not found. Please upload your variable description file.")
+            tkMessageBox.showerror("Error: No features", "Features not found. Please upload your variable description file.")
 
     #Conduct the Z-Test between the two samples. 
     def queryZTest(self, evt):
@@ -2132,10 +2139,10 @@ class OOTO_Miner:
         global features
         features = readFeatures(initVarDisc,"^")
         if (len(features)) > 0:
-            tkMessageBox.showinfo("Initial Variable Description set","Initial Variable Description uploaded")
+            tkMessageBox.showinfo("Variable description set","Variable description uploaded")
             #getCommonGroups(features)
         else:
-            tkMessageBox.showerror("Upload error", "Error uploading Initial Variable Description. Please try again.")
+            tkMessageBox.showerror("Error: Upload Variable description", "Error uploading variable description. Please try again.")
 
             
 
