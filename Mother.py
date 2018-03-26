@@ -911,7 +911,7 @@ class OOTO_Miner:
                                                 , relheight=0.19, relwidth=0.98)
         self.labelFrameVariableDescriptor.configure(relief=GROOVE)
         self.labelFrameVariableDescriptor.configure(foreground="black")
-        self.labelFrameVariableDescriptor.configure(text='''Variable Description Generator''')
+        self.labelFrameVariableDescriptor.configure(text='''Variable Description Generator (Not yet functional)''')
         self.labelFrameVariableDescriptor.configure(background="#d9d9d9")
         self.labelFrameVariableDescriptor.configure(width=980)
 
@@ -1407,7 +1407,7 @@ class OOTO_Miner:
         # self.buttonTest.configure(state='disabled')
 
         self.buttonTestQueue = Button(self.labelFrameQueryChi)
-        self.buttonTestQueue.place(relx=0.24, rely=0.01, height=23, width=106)
+        self.buttonTestQueue.place(relx=0.7, rely=0.01, height=23, width=106)
         self.buttonTestQueue.configure(activebackground="#d9d9d9")
         self.buttonTestQueue.configure(activeforeground="#000000")
         self.buttonTestQueue.configure(background="#d9d9d9")
@@ -1416,7 +1416,7 @@ class OOTO_Miner:
         self.buttonTestQueue.configure(highlightbackground="#d9d9d9")
         self.buttonTestQueue.configure(highlightcolor="black")
         self.buttonTestQueue.configure(pady="0")
-        self.buttonTestQueue.configure(text='''Test Queue''')
+        self.buttonTestQueue.configure(text='''Run Miner''')
         # self.buttonTestQueue.configure(state='disabled')
 
         self.buttonClearQueue = Button(self.labelFrameQueryChi)
@@ -1429,11 +1429,11 @@ class OOTO_Miner:
         self.buttonClearQueue.configure(highlightbackground="#d9d9d9")
         self.buttonClearQueue.configure(highlightcolor="black")
         self.buttonClearQueue.configure(pady="0")
-        self.buttonClearQueue.configure(text='''Clear Queue''')
+        self.buttonClearQueue.configure(text='''Clear All''')
         # self.buttonClearQueue.configure(state='disabled')
 
         self.buttonQueue = Button(self.labelFrameQueryChi)
-        self.buttonQueue.place(relx=0.7, rely=0.01, height=23, width=106)
+        self.buttonQueue.place(relx=0.01, rely=0.01, height=23, width=106)
         self.buttonQueue.configure(activebackground="#d9d9d9")
         self.buttonQueue.configure(activeforeground="#000000")
         self.buttonQueue.configure(background="#d9d9d9")
@@ -1517,16 +1517,10 @@ class OOTO_Miner:
         self.listQueryDataB.bind('<<ListboxSelect>>', self.setFocusFeatureValuesB)
         self.comboQueryTest.bind('<<ComboboxSelected>>', self.querySetType)
 
-        
-
         #######################################
 
-        global testType
-        testType = self.comboQueryTest.get()
-        global sampleFeature
-        global selectedFocusFeature
-        global allValues
-        global selectedFocusFeatureValues 
+        global queryType
+        queryType = self.comboQueryTest.get()
 
         global populationDir
         populationDir = ""
