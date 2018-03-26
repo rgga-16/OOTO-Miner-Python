@@ -1193,7 +1193,7 @@ class OOTO_Miner:
 
         self.labelQueryDataAFeature = Label(self.labelFrameQueryDataA)
         self.labelQueryDataAFeature.place(relx=0.02, rely=0.38, relheight=0.05, relwidth=0.97)
-        self.labelQueryDataAFeature.configure(text='''NO FEATURE FOUND''')
+        self.labelQueryDataAFeature.configure(text='''''')
 
         self.labelQueryDataA = Label(self.labelFrameQueryDataA)
         self.labelQueryDataA.place(relx=0.02, rely=0.91, height=26, width=462)
@@ -1321,7 +1321,7 @@ class OOTO_Miner:
 
         self.labelQueryDataBFeature = Label(self.labelFrameQueryDataB)
         self.labelQueryDataBFeature.place(relx=0.02, rely=0.38, relheight=0.05, relwidth=0.97)
-        self.labelQueryDataBFeature.configure(text='''NO FEATURE FOUND''')
+        self.labelQueryDataBFeature.configure(text='''''')
 
         self.labelQueryDataB = Label(self.labelFrameQueryDataB)
         self.labelQueryDataB.place(relx=0.02, rely=0.91, height=26, width=462)
@@ -1974,6 +1974,16 @@ class OOTO_Miner:
                 return -1
             #Find the feature and display the dataset's frequencies and proportions for each of its values
             findFeature(self.entryQueryFeatureA.get(), self.listQueryDataA,self.datasetA,"Focus_Feature")
+            
+            #Get the feature description
+            featureDesc = self.datasetA['Focus Feature']['Description']
+            
+            #If the description is too long
+            if len(featureDesc) > 70:
+                featureDesc = featureDesc[:71] + '...' #Shorten it
+            
+            #Display the description
+            self.labelQueryDataAFeature.config(text = featureDesc)
         except NameError:
             tkMessageBox.showerror("Error: No features", "Features not found. Please upload your variable description file.")
 
@@ -1985,6 +1995,16 @@ class OOTO_Miner:
                 return -1
             #Find the feature and display the dataset's frequencies and proportions for each of its values
             findFeature(self.entryQueryFeatureB.get(), self.listQueryDataB,self.datasetB,"Focus_Feature")
+            
+            #Get the feature description
+            featureDesc = self.datasetB['Focus Feature']['Description']
+            
+            #If the description is too long
+            if len(featureDesc) > 70:
+                featureDesc = featureDesc[:71] + '...' #Shorten it
+
+            #Display the description
+            self.labelQueryDataBFeature.config(text = featureDesc)
         except NameError:
             tkMessageBox.showerror("Error: No features", "Features not found. Please upload your variable description file.")
 
