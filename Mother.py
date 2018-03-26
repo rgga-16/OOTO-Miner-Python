@@ -1177,7 +1177,7 @@ class OOTO_Miner:
 
 
         self.listQueryDataA = Listbox(self.labelFrameQueryDataA)
-        self.listQueryDataA.place(relx=0.02, rely=0.38, relheight=0.53
+        self.listQueryDataA.place(relx=0.02, rely=0.43, relheight=0.48
                                        , relwidth=0.97)
         self.listQueryDataA.configure(background="white")
         self.listQueryDataA.configure(disabledforeground="#a3a3a3")
@@ -1190,6 +1190,10 @@ class OOTO_Miner:
         self.listQueryDataA.configure(highlightcolor="black")
         self.listQueryDataA.configure(selectbackground="#c4c4c4")
         self.listQueryDataA.configure(selectforeground="black")
+
+        self.labelQueryDataAFeature = Label(self.labelFrameQueryDataA)
+        self.labelQueryDataAFeature.place(relx=0.02, rely=0.38, relheight=0.05, relwidth=0.97)
+        self.labelQueryDataAFeature.configure(text='''NO FEATURE FOUND''')
 
         self.labelQueryDataA = Label(self.labelFrameQueryDataA)
         self.labelQueryDataA.place(relx=0.02, rely=0.91, height=26, width=462)
@@ -1301,7 +1305,7 @@ class OOTO_Miner:
         self.buttonQueryFeatureB.configure(width=96)
 
         self.listQueryDataB = Listbox(self.labelFrameQueryDataB)
-        self.listQueryDataB.place(relx=0.02, rely=0.38, relheight=0.53
+        self.listQueryDataB.place(relx=0.02, rely=0.43, relheight=0.48
                                        , relwidth=0.97)
         self.listQueryDataB.configure(background="white")
         self.listQueryDataB.configure(disabledforeground="#a3a3a3")
@@ -1314,6 +1318,10 @@ class OOTO_Miner:
         self.listQueryDataB.configure(highlightcolor="black")
         self.listQueryDataB.configure(selectbackground="#c4c4c4")
         self.listQueryDataB.configure(selectforeground="black")
+
+        self.labelQueryDataBFeature = Label(self.labelFrameQueryDataB)
+        self.labelQueryDataBFeature.place(relx=0.02, rely=0.38, relheight=0.05, relwidth=0.97)
+        self.labelQueryDataBFeature.configure(text='''NO FEATURE FOUND''')
 
         self.labelQueryDataB = Label(self.labelFrameQueryDataB)
         self.labelQueryDataB.place(relx=0.02, rely=0.91, height=26, width=462)
