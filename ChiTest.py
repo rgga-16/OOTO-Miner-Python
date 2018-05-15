@@ -187,7 +187,6 @@ def readTableToFloat(table):
 
 
 def doFile(table,fileNum,results,converter,z, H):
-
 	header, rows = readTableToFloat(table)
 	header , rows = sortTableColumns(header,rows)
 
@@ -205,7 +204,7 @@ def doFile(table,fileNum,results,converter,z, H):
 
 	proportions = getProportions(numpiRows, totals)
 	
-	#print "proportions "+ str(proportions)
+	print "proportions "+ str(proportions)
 	
 
 	errors = getStandardError(proportions,totals) #Retrieve standard error of proportion
@@ -222,11 +221,11 @@ def doFile(table,fileNum,results,converter,z, H):
 	
 	
 	print "totals"
-	print totals
+	#print totals
 	lenrow = len(totals)
 
 	print "colsum"
-	print colSum
+	#print colSum
 	lencol =  len(colSum)
 
 
@@ -404,6 +403,16 @@ def doFile(table,fileNum,results,converter,z, H):
 
         for group in proportions_list: #for every group
                 if(len(group) >= 2):
+
+                        '''
+                        This specific if statement deletes any 0 values in the proportions list in case
+                        there is one as the first element of the group array.
+                        There should only be a proportion value for a and b. The proportion for everything
+                        else is 1 - (a+b).
+                        '''
+                        if(len(group) > 2):
+                                del group[0]
+
                         results_temp.append(str(round(float(group[0])*100,2))+'%') #append proportion of answer a for each group
                         results_temp.append(str(round(float(group[1])*100,2))+'%') #append proportion of answer b for each group
                         results_temp.append(str(round((1-(float(group[0])+float(group[1])))*100, 2))+'%') #apend proportion of other answers for each group
@@ -505,9 +514,9 @@ def chiTest(datasetPaths):
     dataset_names = []
 
     for x in range(0, len(clusternames)):
-      clustername_arr = clusternames[x].split('\\')
-      dataset_names.append(clustername_arr[len(clustername_arr)-1])#Getting the dataset name from its file path
-      dataset_headers.append("Dataset " + str(x+1))
+        clustername_arr = clusternames[x].split('\\')
+        dataset_names.append(clustername_arr[len(clustername_arr)-1])#Getting the dataset name from its file path
+        dataset_headers.append("Dataset " + str(x+1))
 
     results.append(dataset_headers)
     results.append(dataset_names) #Append dataset names
@@ -516,7 +525,7 @@ def chiTest(datasetPaths):
     population_and_proportionHeaders = [] #Headers Ni and Pi for each cluster i
 
     for x in range(0, len(clusternames)):
-      population_and_proportionHeaders.append("N"+str(x+1)) #Add Header "Nx" for each cluster x. Total of x
+        population_and_proportionHeaders.append("N"+str(x+1)) #Add Header "Nx" for each cluster x. Total of x
 
     for x in range(0, len(clusternames)):
       population_and_proportionHeaders.append("P"+str(x+1)+"(a)") #Add Header "Px" for each cluster x. Proportion of x

@@ -26,8 +26,6 @@ class Table(object):
 			self.rows.append(row)
 
 
-
-
 	def getPrintable(self, rowList):
 		for row in self.rows:
 			rowLine = []
