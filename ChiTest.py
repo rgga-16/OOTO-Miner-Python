@@ -258,159 +258,159 @@ def doFile(table,fileNum,results,converter,z, H):
 
 	chistat = np.sum(chi)
 
-	if(chistat > z): #If the chi score is greater than the chi-square critical value, add it to the results
-                higherOrLower=""
+	#if(chistat > z): #If the chi score is greater than the chi-square critical value, add it to the results
+        higherOrLower=""
 
 
-                tolerableFive =  expected.size
-                tolerableFive = int(tolerableFive*0.20)
+        tolerableFive =  expected.size
+        tolerableFive = int(tolerableFive*0.20)
 
 
-                numFive = 0
-                for el in range(0,shapeexpected.size):
-                        if shapeexpected[el][0] < 5:
-                                numFive = numFive +1
+        numFive = 0
+        for el in range(0,shapeexpected.size):
+                if shapeexpected[el][0] < 5:
+                        numFive = numFive +1
 
-                if numFive > tolerableFive:
-                        chistat = np.nan
+        if numFive > tolerableFive:
+                chistat = np.nan
 
-                if(not np.isnan(chistat)):
-                        print "observed",
-                        print numpiRows[0][1]
-                        print "expected",
-                        print expected[0][1]
-                        if(expected[0][1] < numpiRows[0][1] ):
-                                higherOrLower ="+"
-                        else: 
-                                higherOrLower = "-" 
+        if(not np.isnan(chistat)):
+                print "observed",
+                print numpiRows[0][1]
+                print "expected",
+                print expected[0][1]
+                if(expected[0][1] < numpiRows[0][1] ):
+                        higherOrLower ="+"
+                else: 
+                        higherOrLower = "-" 
 
 
-                # print chistat
+        # print chistat
 
-                print "Chi-Square"
-                print chi
-                print "Chi -stat"
-                print chistat
-                """
-                print "Population count "+ str(PopulationCount)
-                print "Pop Count "+ str(colSum)
-                print "Errors" + str(errors)
-                print "Pop Proportions "+ str(PopQuestionProp) 
-                print "Lower "+ str(lowerBounds)
-                print "Upper "+str(upperBounds)
-                """
-                #if(chistat > z):
-                thequestion = converter.convert(fileNum)
-                print "The H " + str(H)
-                print "The Question "+ thequestion
-                if(np.isnan(chistat)):
-                        chistat = ""
+        print "Chi-Square"
+        print chi
+        print "Chi -stat"
+        print chistat
+        """
+        print "Population count "+ str(PopulationCount)
+        print "Pop Count "+ str(colSum)
+        print "Errors" + str(errors)
+        print "Pop Proportions "+ str(PopQuestionProp) 
+        print "Lower "+ str(lowerBounds)
+        print "Upper "+str(upperBounds)
+        """
+        #if(chistat > z):
+        thequestion = converter.convert(fileNum)
+        print "The H " + str(H)
+        print "The Question "+ thequestion
+        if(np.isnan(chistat)):
+                chistat = ""
 
-                print colSum.size
-                print totals.size		
+        print colSum.size
+        print totals.size		
 
-                degreeFreedom = (colSum.size - 1) * (totals.size -1)
+        degreeFreedom = (colSum.size - 1) * (totals.size -1)
 
-                proportions_list = proportions.tolist()
-                totals_list = totals.tolist() #populations for all groups
+        proportions_list = proportions.tolist()
+        totals_list = totals.tolist() #populations for all groups
 
-                thequestion = string.capwords(thequestion)
+        thequestion = string.capwords(thequestion)
                                 
-                results_temp = [thequestion,H,chistat,higherOrLower,degreeFreedom];
+        results_temp = [thequestion,H,chistat,higherOrLower,degreeFreedom];
                 
                 
-                #results_temp.extend(proportions_list[:,1])
+        #results_temp.extend(proportions_list[:,1])
 
-                chiCritical = 0.0 
+        chiCritical = 0.0 
                 
-                #Determine the chi critical value to compare chi score with
-                #based on the degree of freedom
+        #Determine the chi critical value to compare chi score with
+        #based on the degree of freedom
 
-                if(degreeFreedom == 1):
-                        chiCritical = '6.635'
-                        results_temp.append(str(chiCritical))
-                elif(degreeFreedom == 2):
-                        chiCritical = '9.21'
-                        results_temp.append(str(chiCritical))
-                elif(degreeFreedom == 3):
-                        chiCritical = '11.345'
-                        results_temp.append(str(chiCritical))
-                elif(degreeFreedom == 4):
-                        chiCritical = '13.277'
-                        results_temp.append(str(chiCritical))
-                elif(degreeFreedom == 5):
-                        chiCritical = '15.086'
-                        results_temp.append(str(chiCritical))
-                elif(degreeFreedom == 6):
-                        chiCritical = '16.812'
-                        results_temp.append(str(chiCritical))
-                elif(degreeFreedom == 7):
-                        chiCritical = '18.475'
-                        results_temp.append(str(chiCritical))
-                elif(degreeFreedom == 8):
-                        chiCritical = '20.09'
-                        results_temp.append(str(chiCritical))
-                elif(degreeFreedom == 9):
-                        chiCritical = '21.666'
-                        results_temp.append(str(chiCritical))
-                elif(degreeFreedom == 10):
-                        chiCritical = '23.209'
-                        results_temp.append(str(chiCritical))
-                elif(degreeFreedom == 11):
-                        chiCritical = '24.725'
-                        results_temp.append(str(chiCritical))
-                elif(degreeFreedom == 12):
-                        chiCritical = '26.217'
-                        results_temp.append(str(chiCritical))
-                elif(degreeFreedom == 13):
-                        chiCritical = '27.688'
-                        results_temp.append(str(chiCritical))
-                elif(degreeFreedom == 14):
-                        chiCritical = '29.141'
-                        results_temp.append(str(chiCritical))
-                elif(degreeFreedom == 15):
-                        chiCritical = '30.578'
-                        results_temp.append(str(chiCritical))
-                elif(degreeFreedom == 16):
-                        chiCritical = '32'
-                        results_temp.append(str(chiCritical))
-                elif(degreeFreedom == 17):
-                        chiCritical = '33.409'
-                        results_temp.append(str(chiCritical))
-                elif(degreeFreedom == 18):
-                        chiCritical = '34.805'
-                        results_temp.append(str(chiCritical))
-                elif(degreeFreedom == 19):
-                        chiCritical = '36.191'
-                        results_temp.append(str(chiCritical))
-                elif(degreeFreedom == 20):
-                        chiCritical = '37.566'
-                        results_temp.append(str(chiCritical))
+        if(degreeFreedom == 1):
+                chiCritical = '6.635'
+                results_temp.append(str(chiCritical))
+        elif(degreeFreedom == 2):
+                chiCritical = '9.21'
+                results_temp.append(str(chiCritical))
+        elif(degreeFreedom == 3):
+                chiCritical = '11.345'
+                results_temp.append(str(chiCritical))
+        elif(degreeFreedom == 4):
+                chiCritical = '13.277'
+                results_temp.append(str(chiCritical))
+        elif(degreeFreedom == 5):
+                chiCritical = '15.086'
+                results_temp.append(str(chiCritical))
+        elif(degreeFreedom == 6):
+                chiCritical = '16.812'
+                results_temp.append(str(chiCritical))
+        elif(degreeFreedom == 7):
+                chiCritical = '18.475'
+                results_temp.append(str(chiCritical))
+        elif(degreeFreedom == 8):
+                chiCritical = '20.09'
+                results_temp.append(str(chiCritical))
+        elif(degreeFreedom == 9):
+                chiCritical = '21.666'
+                results_temp.append(str(chiCritical))
+        elif(degreeFreedom == 10):
+                chiCritical = '23.209'
+                results_temp.append(str(chiCritical))
+        elif(degreeFreedom == 11):
+                chiCritical = '24.725'
+                results_temp.append(str(chiCritical))
+        elif(degreeFreedom == 12):
+                chiCritical = '26.217'
+                results_temp.append(str(chiCritical))
+        elif(degreeFreedom == 13):
+                chiCritical = '27.688'
+                results_temp.append(str(chiCritical))
+        elif(degreeFreedom == 14):
+                chiCritical = '29.141'
+                results_temp.append(str(chiCritical))
+        elif(degreeFreedom == 15):
+                chiCritical = '30.578'
+                results_temp.append(str(chiCritical))
+        elif(degreeFreedom == 16):
+                chiCritical = '32'
+                results_temp.append(str(chiCritical))
+        elif(degreeFreedom == 17):
+                chiCritical = '33.409'
+                results_temp.append(str(chiCritical))
+        elif(degreeFreedom == 18):
+                chiCritical = '34.805'
+                results_temp.append(str(chiCritical))
+        elif(degreeFreedom == 19):
+                chiCritical = '36.191'
+                results_temp.append(str(chiCritical))
+        elif(degreeFreedom == 20):
+                chiCritical = '37.566'
+                results_temp.append(str(chiCritical))
                 
-                else:
-                        chiCritical = '100'
-                        results_temp.append(str(chiCritical))
+        else:
+                chiCritical = '100'
+                results_temp.append(str(chiCritical))
                                             
 
-                #Determine if the chi score is > than the chi critical value
-                if( not(type(chistat) is str) and (float(chistat) > float(chiCritical)) ):#If yes
-                        results_temp.append('1')#Chi score is significant
-                else:#otherwise
-                        results_temp.append('0')#Chi score is insignificant
+        #Determine if the chi score is > than the chi critical value
+        if( not(type(chistat) is str) and (float(chistat) > float(chiCritical)) ):#If yes
+                results_temp.append('1')#Chi score is significant
+        else:#otherwise
+                results_temp.append('0')#Chi score is insignificant
                 
 
-                results_temp.extend(totals_list) #append populations for all groups
+        results_temp.extend(totals_list) #append populations for all groups
                                 
 
-                for group in proportions_list: #for every group
-                        if(len(group) >= 2):
-                                results_temp.append(str(round(float(group[0])*100,2))+'%') #append proportion of answer a for each group
-                                results_temp.append(str(round(float(group[1])*100,2))+'%') #append proportion of answer b for each group
-                                results_temp.append(str(round((1-(float(group[0])+float(group[1])))*100, 2))+'%') #apend proportion of other answers for each group
-                                #results_temp.append(group[i]) #append each proportion of every answer for each group
-                                #print group[i]
+        for group in proportions_list: #for every group
+                if(len(group) >= 2):
+                        results_temp.append(str(round(float(group[0])*100,2))+'%') #append proportion of answer a for each group
+                        results_temp.append(str(round(float(group[1])*100,2))+'%') #append proportion of answer b for each group
+                        results_temp.append(str(round((1-(float(group[0])+float(group[1])))*100, 2))+'%') #apend proportion of other answers for each group
+                        #results_temp.append(group[i]) #append each proportion of every answer for each group
+                        #print group[i]
                                              
-                results.append(results_temp)
+        results.append(results_temp)
 	
 
 
