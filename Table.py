@@ -8,6 +8,7 @@ class Table(object):
 		header = [head]
 		header = header + keys
 		self.rows.append(header)
+		#print "Table keys"
 		#print keys
 
 		#print len(groups[0][keys[0]])
@@ -18,7 +19,6 @@ class Table(object):
 			row = [i]
 
 			for k in keys:
-
 				if k not in groups[i]:
 					row.append(str(0))
 				else:

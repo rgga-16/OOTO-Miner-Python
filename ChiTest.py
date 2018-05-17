@@ -190,14 +190,17 @@ def doFile(table,fileNum,results,converter,z, H):
 	header, rows = readTableToFloat(table)
 	header , rows = sortTableColumns(header,rows)
 
-	# print "Header after i killed it "+ str(header)
-	# print "diz are da header"
-	# print header	
-	# print "diz are the rows"
-	# print rows
+	print "Header after i killed it "+ str(header)
+	print "diz are da header"
+	print header	
+	print "diz are the rows"
+	print rows
 	numpiRows = np.asarray(rows)
 	labelCols = numpiRows[:,0]
 	numpiRows=np.delete(numpiRows, 0, axis=1)
+
+        if(len(numpiRows[0]) > 2 and numpiRows[0][0] == 0):
+                numpiRows = np.delete(numpiRows,0,axis=1)
 
 	totals =  getSumRows(numpiRows)
 	#print "total: "+str(totals)
@@ -205,6 +208,21 @@ def doFile(table,fileNum,results,converter,z, H):
 	proportions = getProportions(numpiRows, totals)
 	
 	print "proportions "+ str(proportions)
+
+        proportions_list = proportions.tolist()
+
+        for group in proportions_list: #for every group
+                if(len(group) >= 2):
+                        '''
+                        This specific if statement deletes any 0 values in the proportions list in case
+                        there is one as the first element of the group array.
+                        There should only be a proportion value for a and b. The proportion for everything
+                        else is 1 - (a+b).
+                        '''
+                        if(len(group) > 2):
+                                del group[0]
+                        
+                       
 	
 
 	errors = getStandardError(proportions,totals) #Retrieve standard error of proportion
@@ -260,7 +278,7 @@ def doFile(table,fileNum,results,converter,z, H):
 	#if(chistat > z): #If the chi score is greater than the chi-square critical value, add it to the results
         higherOrLower=""
 
-
+        '''
         tolerableFive =  expected.size
         tolerableFive = int(tolerableFive*0.20)
 
@@ -272,7 +290,7 @@ def doFile(table,fileNum,results,converter,z, H):
 
         if numFive > tolerableFive:
                 chistat = np.nan
-
+        '''
         if(not np.isnan(chistat)):
                 print "observed",
                 print numpiRows[0][1]
@@ -302,15 +320,17 @@ def doFile(table,fileNum,results,converter,z, H):
         thequestion = converter.convert(fileNum)
         print "The H " + str(H)
         print "The Question "+ thequestion
+        '''
         if(np.isnan(chistat)):
                 chistat = ""
+        '''
 
         print colSum.size
         print totals.size		
 
         degreeFreedom = (colSum.size - 1) * (totals.size -1)
 
-        proportions_list = proportions.tolist()
+        
         totals_list = totals.tolist() #populations for all groups
 
         thequestion = string.capwords(thequestion)
@@ -403,16 +423,6 @@ def doFile(table,fileNum,results,converter,z, H):
 
         for group in proportions_list: #for every group
                 if(len(group) >= 2):
-
-                        '''
-                        This specific if statement deletes any 0 values in the proportions list in case
-                        there is one as the first element of the group array.
-                        There should only be a proportion value for a and b. The proportion for everything
-                        else is 1 - (a+b).
-                        '''
-                        if(len(group) > 2):
-                                del group[0]
-
                         results_temp.append(str(round(float(group[0])*100,2))+'%') #append proportion of answer a for each group
                         results_temp.append(str(round(float(group[1])*100,2))+'%') #append proportion of answer b for each group
                         results_temp.append(str(round((1-(float(group[0])+float(group[1])))*100, 2))+'%') #apend proportion of other answers for each group
@@ -548,9 +558,20 @@ def chiTest(datasetPaths):
       theTable = getTable(i,clusters,vList,header[i]) #Generates a table matrix for all datasets to do the chi-test for the question
 
       doFile(theTable,i,results,converter,z[y], H) #Chi test on the question and then writing it in the file
-      theTable.getPrintable(tableList)
+      
+
+      #Remove the column with -1 in the table.
+      if('-1' in theTable.rows[0]):
+        position = theTable.rows[0].index('-1')#Get index of the -1 column.
+        for row in theTable.rows:#Delete the entire -1 column.
+                del row[position]
+
       print "Table",
       print theTable.rows
+
+      theTable.getPrintable(tableList)
+
+
     #print results
     fileName = 'Chi-Test_' #Get filename of save file
     for name in dataset_names:
