@@ -3,6 +3,9 @@ import math
 import numpy as np
 import sys
 import string
+
+import xlsxwriter
+
 from Table import Table
 from clean import ColConverter
 
@@ -11,9 +14,54 @@ from clean import ColConverter
 def writeOnCSV(rows, filename):
 	with open(filename, 'wb') as f:
 	    writer = csv.writer(f)
-	    #writer.writerow(header)
 	    writer.writerows(rows)
+
+
+def writeonXLSX(rows, filename, header):
+        wb = xlsxwriter.Workbook(filename,{'strings_to_numbers':True})
+        wb.guess_types = True
+        ws = wb.add_worksheet()
+
+        sig_col = header.index("Is significant")
+        cutoff_col = header.index("Cut-off")
+        header_index = findHeader(rows, header)
+        ws.write('A1','Probability(0.05/0.01/0.001)')
+        ws.write('B1',0.01)
+        for row in range(0,len(rows)):
+                for col in range(0,len(rows[row])):
+                        #If the element is under the Is Significant column and is not the header
+                        if(col == sig_col and row != header_index):
+                                ws.write_formula(row+1,col,"IF(C:C>F:F,1,0)")
+                        elif(col==cutoff_col and row != header_index):
+                                ws.write_formula(row+1,col,"=IF(B1=0.05,IF(E:E=1,3.84,IF(E:E=2,5.99,-1)),IF(B1=0.01,IF(E:E=1,6.635,IF(E:E=2,9.21,-1)),IF(B1=0.001,IF(E:E=1,10.8,IF(E:E=2,13.8,-1)),-1)))")
+                        #If the element is a list
+                        elif(isinstance(rows[row][col],list)):
+                                #Write the first element of it
+                                ws.write(row+1,col,rows[row][col][0])
+                        elif(isinstance(rows[row][col],basestring)):
+                                string = str(rows[row][col])
+                                try:
+                                        string.decode('utf8')
+                                except UnicodeDecodeError:
+                                        string.decode('latin-1')
+                                ws.write(row+1,col,string)
+                        else:
+                                try:
+                                        ws.write(row+1,col,rows[row][col])
+                                except TypeError:
+                                        ws.write(row+1,col,"")
+                        
         
+        wb.close()
+
+'''
+Returns index of the header in a set of rows
+'''
+def findHeader(rows, header):
+        for i in range(0,len(rows)):
+                if(rows[i][0] == header[0]):
+                        return i
+        return -1
 
 
 def readHeader(filename):
@@ -293,13 +341,22 @@ def doFile(table,fileNum,results,converter,z, H):
         '''
         if(not np.isnan(chistat)):
                 print "observed",
-                print numpiRows[0][1]
+                try:
+                        print numpiRows[0][1]
+                except IndexError:
+                        print 'empty'
                 print "expected",
-                print expected[0][1]
-                if(expected[0][1] < numpiRows[0][1] ):
-                        higherOrLower ="+"
-                else: 
-                        higherOrLower = "-" 
+                try:
+                        print expected[0][1]
+                except IndexError:
+                        print 'empty'
+                try:
+                        if(expected[0][1] < numpiRows[0][1] ):
+                                higherOrLower ="+"
+                        else: 
+                                higherOrLower = "-" 
+                except IndexError:
+                        higherOrLower = "-1"
 
 
         # print chistat
@@ -320,10 +377,10 @@ def doFile(table,fileNum,results,converter,z, H):
         thequestion = converter.convert(fileNum)
         print "The H " + str(H)
         print "The Question "+ thequestion
-        '''
+        
         if(np.isnan(chistat)):
                 chistat = ""
-        '''
+        
 
         print colSum.size
         print totals.size		
@@ -575,17 +632,13 @@ def chiTest(datasetPaths):
     #print results
     fileName = 'Chi-Test_' #Get filename of save file
     for name in dataset_names:
-        fileName = fileName + name + '_'
+        fileName = fileName + name + '_' 
 
-    fileName = fileName + '.csv'    
-
-    writeOnCSV(results,fileName)
+    writeonXLSX(results,fileName+'.xlsx',results_headers)
     #print tableList
-    writeOnCSV(tableList,"Tables "+fileName)
+    writeOnCSV(tableList,"Tables "+fileName+'.csv')
     return fileName
 
-  #results = converter.cleanRows(results)
-  #writeOnCSV(results,filename)
 
   # print "results"
   # print results
