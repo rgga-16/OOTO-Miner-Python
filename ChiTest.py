@@ -40,19 +40,23 @@ def writeonXLSX(rows, filename, header):
                                 ws.write(row+1,col,rows[row][col][0])
                         elif(isinstance(rows[row][col],basestring)):
                                 string = str(rows[row][col])
+                                '''
                                 try:
                                         string.decode('utf8')
                                 except UnicodeDecodeError:
                                         string.decode('latin-1')
+                                '''
                                 ws.write(row+1,col,string)
                         else:
                                 try:
                                         ws.write(row+1,col,rows[row][col])
                                 except TypeError:
-                                        ws.write(row+1,col,"")
-                        
-        
-        wb.close()
+                                        ws.write(row+1,col,"")                
+        try:
+                wb.close()
+        except UnicodeDecodeError:
+                print 'Error in writing .xlsx file. Check your Variable Description for characters out of the UTF-8 character set.  Saving instead as .csv'
+                writeOnCSV(rows,filename+'.csv')
 
 '''
 Returns index of the header in a set of rows
@@ -548,6 +552,8 @@ def getVariableList(filename, varMarker): #Reads the question
 	return variables
 
 def chiTest(datasetPaths):
+  reload(sys)
+  sys.setdefaultencoding('utf8')
   #change to ur own.
   vList = getVariableList('Updated-Variables.csv', '^') #Get Variable Description
   header = readHeader(datasetPaths[0]) #Read the header from one of the datasets which include the question codes
@@ -603,7 +609,7 @@ def chiTest(datasetPaths):
     results_headers = ["Feature","Question","Chi","Higher Or Lower", "Degrees of Freedom", "Cut-off", "Is significant"] #Results headers
     results_headers.extend(population_and_proportionHeaders) #Append the population and proportion headers for each cluster to results headers
     results.append(results_headers) #Append these as header names to the results
-    print results
+    #print results
 
     for i in range(0,len(header)): #Iterate over each question
       if header[i] not in vList.keys(): #If the question code is not found in Variable Description
