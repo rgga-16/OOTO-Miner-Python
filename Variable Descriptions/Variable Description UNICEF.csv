@@ -175,7 +175,7 @@ b,5, Daily or almost daily
 b,6, Several times each day
 b,7, Almost all the time
 -1,8, Prefer not to say
-^,b6d,In a public place (for example; in libraries; cafés; computer shops)
+^,b6d,In a public place (for example; in libraries; cafes; computer shops)
 a,1, Never
 a,2, Hardly ever
 b,3, At least every month
@@ -293,11 +293,11 @@ b,2, Yes
 a,1, No
 b,2, Yes
 -1,3, Prefer not to say
-^,b9b,I use freeWIFI (at home; in school; coffee shop or cafés; malls; etc.)
+^,b9b,I use freeWIFI (at home; in school; coffee shop or cafes; malls; etc.)
 a,1, No
 b,2, Yes
 -1,3, Prefer not to say
-^,b9c,I pay for internet I use (e.g. in a cybercafé or internet cafe; PisoNet)
+^,b9c,I pay for internet I use (e.g. in a cybercafe or internet cafe; PisoNet)
 a,1, No
 b,2, Yes
 -1,3, Prefer not to say
@@ -337,7 +337,7 @@ a,2, Yes; sometimes
 b,3, No; not often
 -1,4, Other (please specify)
 -1,5, Prefer not to say
-^,c2,What do you think about this sentence: ‘There are lots of things on the internet that are good for children of my age’?
+^,c2,What do you think about this sentence: 'There are lots of things on the internet that are good for children of my age'?
 a,1, Not true
 b,2, A bit true
 b,3, Fairly true
@@ -1124,7 +1124,7 @@ a,1, Public; so everyone can see it
 b,2, Partially private; so that friends of friends or my networks can see me
 -1,3, Private so only my friends can see
 -1,4, Prefer not to say
-^,d10,How do you usually respond to requests from people to become your ‘friends’ online?
+^,d10,How do you usually respond to requests from people to become your 'friends' online?
 a,1, I usually accept all requests
 b,2, I accept only if we have friends in common
 b,3, I accept only if I know them
@@ -1643,7 +1643,7 @@ b,3, 3 to 4
 b,4, 5 to 10
 b,5, More than 10
 -1,6, Prefer not to say
-^,f11,In the PAST YEAR; has anything EVER happened online that bothered or upset you in some way? (e.g.; made you feel uncomfortable; scared or that you shouldn’t have seen it)?
+^,f11,In the PAST YEAR; has anything EVER happened online that bothered or upset you in some way? (e.g.; made you feel uncomfortable; scared or that you shouldn't have seen it)?
 a,1, No
 b,2, Yes
 -1,3, Prefer not to say
@@ -1745,7 +1745,7 @@ b,1, Yes
 ^,f16i,I blocked the person from contacting me
 a,0, No
 b,1, Yes
-^,f16j,I reported the problem online  (e.g.; clicked on a ‘report abuse’ button; contacted an internet advisor or Internet Service Provider (ISP))
+^,f16j,I reported the problem online  (e.g.; clicked on a report abuse button; contacted an internet advisor or Internet Service Provider (ISP))
 a,0, No
 b,1, Yes
 ^,f16k,Other actions taken
@@ -1781,7 +1781,7 @@ b,1, Yes
 ^,f21d,On a media sharing platform (YouTube; Instagram; Flickr)
 a,0, No
 b,1, Yes
-^,f21e,By instant messaging (MSN; What’s app; Skype etc.)
+^,f21e,By instant messaging (MSN; What's app; Skype etc.)
 a,0, No
 b,1, Yes
 ^,f21f,In a chatroom
@@ -2139,32 +2139,32 @@ b,3, Sometimes
 b,4, Often
 b,5, Very often
 -1,6, Prefer not to say
-^,f45e,I think the amount of time I spend on the internet causes problems for me
+^,f45e,I think the amount of time�I spend on the�internet causes problems for me
 a,1, Never
 a,2, Hardly ever
 b,3, Sometimes
 b,4, Often
 b,5, Very often
 -1,6, Prefer not to say
-^,f45f,I feel I have to check my device (e.g. phone or computer) to see if anything new has just happened
+^,f45f,I�feel�I�have to check my device (e.g. phone or computer) to see if anything new has just happened
 a,1, Never
 a,2, Hardly ever
 b,3, Sometimes
 b,4, Often
 b,5, Very often
 -1,6, Prefer not to say
-^,h1,Here is a picture of a ladder. The top of the ladder ‘10’ is the best possible life for you and the bottom ‘0’ is the worst possible life for you. In general; where on the ladder do you feel you stand at the moment? Mark the circle next to the number that best describes where you stand.
-a,0, 0
-a,1, 1
-a,2, 2
-a,3, 3
-a,4, 4
-b,5, 5
-b,6, 6
-b,7, 7
-b,8, 8
-b,9, 9
-b,10, 10
+^,h1,Here is a picture of a ladder. The top of the ladder10 is the best possible life for you and the bottom0 is the worst possible life for you. In general; where on the ladder do you feel you stand at the moment? Mark the circle next to the number that best describes where you stand.
+a,0,0
+a,1,1
+a,2,2
+a,3,3
+a,4,4
+b,5,5
+b,6,6
+b,7,7
+b,8,8
+b,9,9
+b,10,10
 ^,h2a,Your mother or father (including step/foster mother or father)
 a,0, No
 b,1, Yes
@@ -2521,8 +2521,8 @@ b,4, Often
 b,5, Very often
 -1,6, Prefer not to say
 ^,j1,How much do you like school at present?
-a,1, I don'-1 like it at all
-a,2, I don'-1 like it very much
+a,1, I Don't like it at all
+a,2, I Don't like it very much
 b,3, I like it a bit
 b,4, I like it a lot
 -1,5, Prefer not to say
@@ -2607,7 +2607,7 @@ b,2, A bit true for me
 b,3, Fairly true for me
 b,4, Very true for me
 -1,5, Prefer not to say
-^,k1d,I get worried when I �?nd out my friends are having fun without me 
+^,k1d,I get worried when I find out my friends are having fun without me 
 a,1, Not true for me
 b,2, A bit true for me
 b,3, Fairly true for me
@@ -2870,7 +2870,7 @@ b,2, A bit true for me
 b,3, Fairly true for me
 b,4, Very true for me
 -1,5, Prefer not to say
-^,a21c,People seem to think they’re better than me
+^,a21c,People seem to think they are better than me
 a,1, Not true for me
 b,2, A bit true for me
 b,3, Fairly true for me
@@ -3008,7 +3008,7 @@ b,4, Beyond college degree (MA/MS/MBA/PhD/Law/Medicine)
 a,1, In the Philippines
 a,2, Abroad
 a,3, I have other plans--I want to do business. 
-b,4, I don'-1 like to work.
+b,4, I Don't like to work.
 -1,5, Prefer not to say
 ^,a29a,When I use the internet; I learn about different things that I could study; do or become what I want to be as productive as possible.
 a,1, Never
@@ -3117,7 +3117,7 @@ b,1, Yes
 ^,g9i,Other (specify)
 a,0, No
 b,1, Yes
-^,g9k,I didn’t tell anyone about it
+^,g9k,I didn't tell anyone about it
 a,0, No
 b,1, Yes
 ^,g9l,Prefer not to say
@@ -3132,19 +3132,19 @@ b,1, Yes
 ^,l41c,Someone in my family is an overseas Filipino worker (OFW) who provides for us.
 a,0, No
 b,1, Yes
-^,l41d,Some relatives; who are not OFW’s; gives us monthly allowance.
+^,l41d,Some relatives; who are not OFWs; gives us monthly allowance.
 a,0, No
 b,1, Yes
 ^,l41e,Our family has a business. (i.e. sari-sari store; vulcanizing shop; etc.)
 a,0, No
 b,1, Yes
-^,l41f,Our family receives a stipend from the government (i.e. member of 4P’s or any allowance from the local government unit)
+^,l41f,Our family receives a stipend from the government (i.e. member of 4s or any allowance from the local government unit)
 a,0, No
 b,1, Yes
 ^,l41g,Others
 a,0, No
 b,1, Yes
-^,l35a,Your child’s health
+^,l35a,Your child's health
 a,0, No
 b,1, Yes
 ^,l35b,Having enough money to care for your child
@@ -3165,7 +3165,7 @@ b,1, Yes
 ^,l35g,A stranger contacting your child on the internet
 a,0, No
 b,1, Yes
-^,l35h,Your child’s sexual activities
+^,l35h,Your child's sexual activities
 a,0, No
 b,1, Yes
 ^,l35i,Your child becoming a victim of crime
@@ -3447,7 +3447,7 @@ b,2, A bit true for me
 b,3, Fairly true for me
 b,4, Very true for me
 -1,5, Prefer not to say
-^,l8l,I know which information I should and shouldn’t share online
+^,l8l,I know which information I should and shouldn't share online
 a,1, Not true for me
 b,2, A bit true for me
 b,3, Fairly true for me
@@ -3465,7 +3465,7 @@ b,2, A bit true for me
 b,3, Fairly true for me
 b,4, Very true for me
 -1,5, Prefer not to say
-^,l8n,I know when I should and shouldn’t share information online
+^,l8n,I know when I should and shouldn't share information online
 a,1, Not true for me
 b,2, A bit true for me
 b,3, Fairly true for me
@@ -3558,27 +3558,27 @@ b,1, Yes
 ^,l49a,Started a discussion with you about what he/she does on the internet?
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l49b,Told you about things she/he finds upsetting on the internet?
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l49c,Asked for your advice on how she/he should act online?
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l49d,Asked for products and/or services that she/he has seen advertisements for online?
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l49e,Asked for your help with a situation on the internet that she/he cannot handle?
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l12a,Use a web or phone camera (e.g.; for Skype or video chat)
 a,1, Allowed to do this anytime
@@ -3758,147 +3758,147 @@ b,5, Very often
 ^,l21a,Had contact on the internet with someone that my child had not met face-to-face before
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l21b,Been treated in a hurtful or nasty way on the internet by someone? (This includes being teased repeatedly in a way he/she did not like; or being deliberately excluded or left out of things.)
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l21d,Treated someone else in a hurtful or nasty way on the internet? (This includes having teased someone repeatedly in a way he/she did not like; or threatened; or deliberately excluded or left them out of things.)
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l21c,Met anyone face-to-face that my child first got to know on the internet
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l21e,Sent or received any messages with inappropriate content in words; photos or videos (pertaining to sex; sexual intercourse or nudity) using the internet?
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l22a,Ways of physically harming or hurting themselves
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l22b,Ways of committing suicid
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l22c,Ways to be very thin (such as anorexic or bulimic)
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l22d,Hate messages that attack certain groups or individuals(e.g.; people of different colour or religion or nationality)
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l22e,Their experiences of taking drugs
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l22f,Gory or violent images
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
-^,l23a,Somebody used his or her personal information in a way he or she didn’t like
+^,l23a,Somebody used his or her personal information in a way he or she didn't like
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l23b,The device s/he uses got a virus
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l23c,S/he lost money by being cheated on the internet
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
-^,l23d,Somebody used my child’s password to access his or her information or to pretend to be him or her
+^,l23d,Somebody used my child's password to access his or her information or to pretend to be him or her
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l23e,Somebody created a page or image about him or her that was hostile or hurtful
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l23f,S/he spent too much money on online games or in-app purchases
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l23g, S/he was asked to make an in-app purchase when playing an online game (e.g. to progress faster in the game)
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l23h,Someone found out where your child was because they tracked his/her phone
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l24a,S/he has seen images on the internet that are obviously sexual
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l24b,S/he has received a sexual message (this could be words; pictures or videos)
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l24c,S/he has sent or posted a sexual message (this could be words; pictures or videos about them or someone else)
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
-^,l24d,S/he was sent a message that s/he did not want with advertisements for or links to X-rated websites [use local term for ‘X-rated’]
+^,l24d,S/he was sent a message that s/he did not want with advertisements for or links to X-rated websites [use local term for'X-rated']
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l24e,S/he opened a message or a link in a message that showed pictures of naked people or of people having sex that s/he did not want
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l24f,S/he has seen or received a sexual message; image or video about someone else that s/he did not want
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l24g,S/he has been asked for sexual information about him/herself (like what his/her body looks like without clothes on or sexual things s/he has done) when s/he did not want to answer such questions
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l24h,S/he has been asked to talk about sexual acts with someone on the internet when s/he did not want to
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l24i,S/he has been asked by someone on the internet to do something sexual when s/he did not want to
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l24j,S/he has been asked on the internet for a photo or video showing her/his private parts [translate as appropriate] when s/he did not want to
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l27,Estimated total annual income bracket
 a,1, Less than P40000
@@ -3915,7 +3915,7 @@ a,2, College
 b,3, High School
 b,4, Elementary
 b,5, Pre-school
--1,6, Don'-1 know
+-1,6, Don't know
 -1,7, Others
 ^,l37,Language
 a,1, Tagalog
@@ -4417,27 +4417,27 @@ b,1, Yes
 ^,l49a,Discuss with you about internet
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l49b,Told you things he/she finds on the internet
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l49c,Ask advice on how he/she act online
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l49d,Ask products/services from online ads
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l49e,Ask help for situations he/she can't handle online
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l12a,Use a web or phone camera
 a,1, Allowed to do this anytime
@@ -4542,7 +4542,7 @@ a,2, Hardly ever
 b,3, At least every month
 b,4, At least every week
 b,5, Daily or almost daily
--1,6, Don'-1 know
+-1,6, Don't know
 -1,7, Prefer not to say
 ^,l13a,Blocking websites for your child
 a,1, No
@@ -4622,186 +4622,186 @@ b,3, Sometimes
 b,4, Often
 b,5, Very often
 -1,6, Prefer not to say
-^,l15,As far as you are aware; in the past year; how often has anything happened online that bothered or upset your child in some way (e.g. made them feel uncomfortable; upset; or feel that they shouldn’t have seen it)?
+^,l15,As far as you are aware; in the past year; how often has anything happened online that bothered or upset your child in some way (e.g. made them feel uncomfortable; upset; or feel that they shouldn't have seen it)?
 a,1, Never
 a,2, Hardly ever
 b,3, At least every month
 b,4, At least every week
 b,5, Daily or almost daily
--1,6, Don'-1 know
+-1,6, Don't know
 -1,7, Prefer not to say
 ^,l17,The last time something happened online that bothered or upset your child; how upset was she/he about what happened (if at all)?
 a,1, Not at all upset
 b,2, A bit upset
 b,3, Fairly upset
 b,4, Very  upset
--1,5, Don'-1 know
+-1,5, Don't know
 -1,6, Prefer not to say
 ^,l18,In the NEXT few months; is it likely that something will happen online that will bother or upset your child? This could be things they may see; be sent or do online.
 a,1, Not at all likely
 a,2, Not very likely
 b,3, Fairly likely
 b,4, Very likely
--1,5, Don'-1 know
+-1,5, Don't know
 -1,6, Prefer not to say
 ^,l19,Do you feel you can help your child to cope with things online that bother or upset them?
 a,1, Not at all
 a,2, Not very much
 b,3, A fair amount
 b,4, Definitely
--1,5, Don'-1 know
+-1,5, Don't know
 -1,6, Prefer not to say
 ^,l20,Do you think your child can cope with things online that bother or upset them?
 a,1, Not at all
 a,2, Not very much
 b,3, A fair amount
 b,4, Definitely
--1,5, Don'-1 know
+-1,5, Don't know
 -1,6, Prefer not to say
 ^,l21a,Had contact on the internet with someone that my child had not met face-to-face before
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l21b,Been treated in a hurtful or nasty way on the internet by someone? (This includes being teased repeatedly in a way he/she did not like; or being deliberately excluded or left out of things.)
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l21d,Treated someone else in a hurtful or nasty way on the internet? (This includes having teased someone repeatedly in a way he/she did not like; or threatened; or deliberately excluded or left them out of things.)
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l21c,Met anyone face-to-face that my child first got to know on the internet
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l21e,Sent or received any messages with inappropriate content in words; photos or videos (pertaining to sex; sexual intercourse or nudity) using the internet?
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l22a,Ways of physically harming themselves
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l22b,Ways of suicide
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l22c,Ways to be thin
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l22d,Hate messages
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l22e,Drug experience
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l22f,Gory images
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
-^,l23a,Somebody used his or her personal information in a way he or she didn’t like
+^,l23a,Somebody used his or her personal information in a way he or she didn't like
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l23b,Has a virus
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l23c,Lose money online
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l23d,Use child's password and pretend to be him/her
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l23e,Create page or image to hurt him/her
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l23f,Spend too much money
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l23g,Was ask to make in-app purchase in an online game
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l23h,Tracked your child's phone
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l24a,Seen images that are sexual
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l24b,Recieve sexual message
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l24c,Post sexual message
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l24d,Recieve a link to x-rated website
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l24e,Open message that show naked people
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l24f,Seen or recieve sexual message unwated
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l24g,Asked about sexual information
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l24h,Asked to talk about sexual acts
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l24i,Asked to do something sexual
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l24j,Asked for a photo/video showing private parts
 a,1, No
 b,2, Yes
--1,3, Don'-1 know
+-1,3, Don't know
 -1,4, Prefer not to say
 ^,l25a,Your child's school
 a,0, No
