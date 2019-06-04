@@ -1576,7 +1576,7 @@ class OOTO_Miner:
     DEFINING BOUND COMMANDS
     '''
     #Create the Initial Variable Descriptor
-    def makeInitialVarDesc(self):
+    def makeInitialVarDesc(self, evt):
         varFileDir = self.entryVariableFile.get()
         valFileDir = self.entryValuesFile.get()
         tkMessageBox.showinfo("Work in progress",'Make the Initial Variable Descriptor! (WIP)')
