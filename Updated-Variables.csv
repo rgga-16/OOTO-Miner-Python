@@ -1,0 +1,216 @@
+^,b1,Gender
+a,Group a
+b,Group b
+^,b2,Age
+a,Group a
+b,Group b
+c,Group c
+^,b3,Age Group
+a,Group a
+b,Group b
+c,Group c
+^,b4,Socio-Economic Status
+a,Group a
+b,Group b
+^,b5,Urban-Rural setting of household
+a,Group a
+b,Group b
+^,a1,Can you access the internet any time you want to?
+a,Group a
+b,Group b
+-1,Group -1
+^,a2,Number of Internet Access Points
+a,Group a
+b,Group b
+^,a3,Are you able to use the Internet at school?
+a,Group a
+b,Group b
+-1,Group -1
+^,a4,Are you able to use the Internet at home?
+a,Group a
+b,Group b
+-1,Group -1
+^,a5,Do you use the Internet at a friend's house?
+a,Group a
+b,Group b
+-1,Group -1
+^,a6,Do you use a public place to use the Internet?
+a,Group a
+b,Group b
+-1,Group -1
+^,a7,Do you use an Internet shop to use the Internet?
+a,Group a
+b,Group b
+-1,Group -1
+^,a8,"How often do you go online, compared to other children, ? "
+-1,Group -1
+a,Group a
+b,Group b
+^,d1,Number of Devices Used to Access the Internet
+a,Group a
+b,Group b
+^,d2,Do you use a mobile phone to access the Internet?
+a,Group a
+b,Group b
+-1,Group -1
+^,d3,Do you use a desktop computer to access the Internet?
+a,Group a
+b,Group b
+-1,Group -1
+^,d4,Do you use a laptop to access the Internet?
+a,Group a
+b,Group b
+-1,Group -1
+^,d5,Do you use a smart tablet to access the Internet?
+a,Group a
+b,Group b
+-1,Group -1
+^,u1,How many of the following online activities do you do every day?
+a,Group a
+b,Group b
+^,u2,How often do you use the Internet for school work?
+a,Group a
+b,Group b
+-1,Group -1
+^,u3,How often do you use the Internet for personal stuff?
+a,Group a
+b,Group b
+-1,Group -1
+^,u4,"Compared to other children, my digital skills are good"
+-1,Group -1
+a,Group a
+b,Group b
+^,v1,I can be more myself online than in the real world
+-1,Group -1
+a,Group a
+b,Group b
+^,v2,I feel safer in the online world
+-1,Group -1
+a,Group a
+b,Group b
+^,v3,People are nicer to me in the online world
+-1,Group -1
+a,Group a
+b,Group b
+^,v4,I pretend to be someone else when I am online
+-1,Group -1
+a,Group a
+b,Group b
+^,r1,I actively look for new friends on the Internet
+-1,Group -1
+a,Group a
+b,Group b
+^,r2,I send personal personal information to new online friends
+-1,Group -1
+a,Group a
+b,Group b
+^,r3,I do video calls with persons I only met on internet
+-1,Group -1
+a,Group a
+b,Group b
+^,r4,I engage in the following risky online activities
+a,Group a
+b,Group b
+^,n1,I received hurtful online messages
+a,Group a
+b,Group b
+-1,Group -1
+^,n2,Nasty messages about me were passed around online
+a,Group a
+b,Group b
+-1,Group -1
+^,n3,I was threatened to be bullied on the Internet
+a,Group a
+b,Group b
+-1,Group -1
+^,n4,I engage in excessive Internet use
+-1,Group -1
+a,Group a
+b,Group b
+^,n5,I forget to eat while on the internet
+-1,Group -1
+a,Group a
+b,Group b
+^,n6,My performance in school is affected too much Internet
+-1,Group -1
+a,Group a
+b,Group b
+^,s1,I can count on my family for anything
+-1,Group -1
+a,Group a
+b,Group b
+^,s2,I get adequate advise from my parents
+-1,Group -1
+a,Group a
+b,Group b
+^,s3,I tell my parents about what troubles me on the Internet
+-1,Group -1
+a,Group a
+b,Group b
+^,s4,My parents supervise my use of the Internet
+-1,Group -1
+a,Group a
+b,Group b
+^,s5,My parents use software and other technical restrictions on my Internet use
+-1,Group -1
+a,Group a
+b,Group b
+^,s6,My parents are aware of my social media use
+-1,Group -1
+a,Group a
+b,Group b
+^,s7,My teachers advise me on proper Internet use
+-1,Group -1
+a,Group a
+b,Group b
+^,s8,"Among friends, we help each other on proper Internet use"
+-1,Group -1
+a,Group a
+b,Group b
+^,p1,"In general, I usually do as I am told"
+-1,Group -1
+a,Group a
+b,Group b
+^,p2,"In school, my friends find me aggressive"
+-1,Group -1
+a,Group a
+b,Group b
+^,p3,I am often by myself in school
+-1,Group -1
+a,Group a
+b,Group b
+^,p4,I feel I need to be always into something new
+-1,Group -1
+a,Group a
+b,Group b
+^,p5,I am cautious in every new thing that I do
+-1,Group -1
+a,Group a
+b,Group b
+^,p6,Other children are treated better than me
+-1,Group -1
+a,Group a
+b,Group b
+^,p7,Children think that I am not intelligent enough
+-1,Group -1
+a,Group a
+b,Group b
+^,p8,Children call me ugly names
+-1,Group -1
+a,Group a
+b,Group b
+^,p9,I like dangerous and risky activities
+-1,Group -1
+a,Group a
+b,Group b
+^,p10,"I do exciting, fun activities, and I dont care of the danger"
+-1,Group -1
+a,Group a
+b,Group b
+^,p11,I engage in the following risky offline activities
+a,Group a
+b,Group b
+^,p12,I can handle negative situations in the real world
+-1,Group -1
+a,Group a
+b,Group b

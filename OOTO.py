@@ -1581,12 +1581,12 @@ class OOTO_Miner:
         valFileDir = self.entryValuesFile.get()
         tkMessageBox.showinfo("Work in progress",'Make the Initial Variable Descriptor! (WIP)')
     
-    def getVariableFile(self):
+    def getVariableFile(self, evt):
         varFileDir = askopenfilename(title = "Select variable file",filetypes = (("txt files","*.txt"),("all files","*.*")))
         self.entryVariableFile.delete(0, END)
         self.entryVariableFile.insert(0, varFileDir)
     
-    def getValuesFile(self):
+    def getValuesFile(self, evt):
         valFileDir = askopenfilename(title = "Select values file",filetypes = (("txt files","*.txt"),("all files","*.*")))
         self.entryValuesFile.delete(0,END)
         self.entryValuesFile.insert(0, valFileDir)
